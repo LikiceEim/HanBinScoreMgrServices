@@ -1,0 +1,353 @@
+2018/5/4 13:20:22:331
+异常消息：An error occurred while executing the command definition. See the inner exception for details.
+异常类型：System.Data.Entity.Core.EntityCommandExecutionException
+异常方法：ExecuteStoreCommands
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceByMonitorTreeIdAndUserId(Int32 userId, Int32 monitorTreeId) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 6679
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.Get6MonthAlarmTypeDeviceCount(Get6MonthAlarmTypeDeviceCountParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5719
+内部异常：
+　异常消息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+　异常类型：System.Data.SqlClient.SqlException
+　异常方法：OnError
+　异常源：.Net SqlClient Data Provider
+　异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+　内部异常：
+　　异常消息：等待的操作过时。
+　　异常类型：System.ComponentModel.Win32Exception
+　　异常方法：
+　　异常源：
+
+
+2018/5/4 13:21:52:770
+异常消息：An error occurred while executing the command definition. See the inner exception for details.
+异常类型：System.Data.Entity.Core.EntityCommandExecutionException
+异常方法：ExecuteStoreCommands
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceByMonitorTreeIdAndUserId(Int32 userId, Int32 monitorTreeId) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 6679
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceRuningTypeCount(GetDeviceRuningTypeCountParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5649
+内部异常：
+　异常消息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+　异常类型：System.Data.SqlClient.SqlException
+　异常方法：OnError
+　异常源：.Net SqlClient Data Provider
+　异常堆栈：   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   在 System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+　内部异常：
+　　异常消息：等待的操作过时。
+　　异常类型：System.ComponentModel.Win32Exception
+　　异常方法：
+　　异常源：
+
+
+2018/5/4 13:26:53:653
+异常消息：An error occurred while executing the command definition. See the inner exception for details.
+异常类型：System.Data.Entity.Core.EntityCommandExecutionException
+异常方法：ExecuteStoreCommands
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetServerTreeList() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 1095
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 506
+内部异常：
+　异常消息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+　异常类型：System.Data.SqlClient.SqlException
+　异常方法：OnError
+　异常源：.Net SqlClient Data Provider
+　异常堆栈：   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   在 System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+　内部异常：
+　　异常消息：等待的操作过时。
+　　异常类型：System.ComponentModel.Win32Exception
+　　异常方法：
+　　异常源：
+
+
+2018/5/4 13:28:06:769
+异常消息：An error occurred while executing the command definition. See the inner exception for details.
+异常类型：System.Data.Entity.Core.EntityCommandExecutionException
+异常方法：ExecuteStoreCommands
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetServerTreeList() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 1095
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 506
+内部异常：
+　异常消息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+　异常类型：System.Data.SqlClient.SqlException
+　异常方法：OnError
+　异常源：.Net SqlClient Data Provider
+　异常堆栈：   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   在 System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+　内部异常：
+　　异常消息：等待的操作过时。
+　　异常类型：System.ComponentModel.Win32Exception
+　　异常方法：
+　　异常源：
+
+
+2018/5/4 13:29:06:975
+异常消息：An error occurred while executing the command definition. See the inner exception for details.
+异常类型：System.Data.Entity.Core.EntityCommandExecutionException
+异常方法：ExecuteStoreCommands
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+   在 System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlan.Execute[TResultType](ObjectContext context, ObjectParameterCollection parameterValues)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__a()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeList(Int32 useType) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 938
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 504
+内部异常：
+　异常消息：Timeout 时间已到。在操作完成之前超时时间已过或服务器未响应。
+　异常类型：System.Data.SqlClient.SqlException
+　异常方法：OnError
+　异常源：.Net SqlClient Data Provider
+　异常堆栈：   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniError(TdsParserStateObject stateObj, UInt32 error)
+   在 System.Data.SqlClient.TdsParserStateObject.ReadSniSyncOverAsync()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadNetworkPacket()
+   在 System.Data.SqlClient.TdsParserStateObject.TryPrepareBuffer()
+   在 System.Data.SqlClient.TdsParserStateObject.TryReadByte(Byte& value)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition.ExecuteStoreCommands(EntityCommand entityCommand, CommandBehavior behavior)
+　内部异常：
+　　异常消息：等待的操作过时。
+　　异常类型：System.ComponentModel.Win32Exception
+　　异常方法：
+　　异常源：
+
+
+2018/5/4 18:22:31:976
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.IsAccess()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.IsAgentAccess(AgentAccessParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 493
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/4 18:51:10:516
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWGData>b__7
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.<GetWGData>b__7(Gateway wg) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 145
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.GetWGData(GetWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 137
+
+
+2018/5/4 18:53:38:239
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWGData>b__7
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.<GetWGData>b__7(Gateway wg) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 145
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.GetWGData(GetWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 137
+
+
+2018/5/4 19:01:13:594
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWGData>b__7
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.<GetWGData>b__7(Gateway wg) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 145
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.GetWGData(GetWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 137
+
+

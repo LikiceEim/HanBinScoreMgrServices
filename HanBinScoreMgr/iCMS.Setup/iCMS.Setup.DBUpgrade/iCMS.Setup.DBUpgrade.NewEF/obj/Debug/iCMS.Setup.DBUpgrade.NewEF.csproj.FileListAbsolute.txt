@@ -1,0 +1,16 @@
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\iCMS.Setup.DBUpgrade.NewEF.dll.config
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\iCMS.Setup.DBUpgrade.NewEF.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\iCMS.Setup.DBUpgrade.NewEF.pdb
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\EntityFramework.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\EntityFramework.SqlServer.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\obj\Debug\iCMS.Setup.DBUpgrade.NewEF.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\obj\Debug\iCMS.Setup.DBUpgrade.NewEF.pdb
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\iCMS.Setup.DBUpgrade.NewEF.dll.config
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\iCMS.Setup.DBUpgrade.NewEF.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\iCMS.Setup.DBUpgrade.NewEF.pdb
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\EntityFramework.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\bin\Debug\EntityFramework.SqlServer.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\obj\Debug\iCMS.Setup.DBUpgrade.NewEF.csproj.CoreCompileInputs.cache
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\obj\Debug\iCMS.Setup.DBUpgrade.NewEF.csproj.CopyComplete
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\obj\Debug\iCMS.Setup.DBUpgrade.NewEF.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.NewEF\obj\Debug\iCMS.Setup.DBUpgrade.NewEF.pdb

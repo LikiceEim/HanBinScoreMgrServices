@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="iCMS.Presentation.Server.Statistics.StatisticsService" CodeBehind="StatisticsService.svc.cs" %>

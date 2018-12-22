@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7E00B80-6696-45BC-AF86-090E9D95DA06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iMesh</RootNamespace>
+    <AssemblyName>iMesh</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppProtocolParamDef.cs" />
+    <Compile Include="CheckMeasDef.cs" />
+    <Compile Include="MeshAdapte_adapter.cs" />
+    <Compile Include="ComDevice.cs" />
+    <Compile Include="CommDef.cs" />
+    <Compile Include="CommStackLog.cs" />
+    <Compile Include="DataTypeConverter.cs" />
+    <Compile Include="FCS.cs" />
+    <Compile Include="IO\SUSI\ControlSusiGPIO.cs" />
+    <Compile Include="IO\SUSI\EZini.cs" />
+    <Compile Include="IO\SUSI\PluginInstance.cs" />
+    <Compile Include="IO\SUSI\PluginInterface.cs" />
+    <Compile Include="IO\SUSI\Susi4.cs" />
+    <Compile Include="ManagerOperator.cs" />
+    <Compile Include="HDLC.cs" />
+    <Compile Include="IAppProtocol.cs" />
+    <Compile Include="IO\ZLAN\ControlZlanGPIO.cs" />
+    <Compile Include="IStackLayer.cs" />
+    <Compile Include="IUserRequest.cs" />
+    <Compile Include="MESH.cs" />
+    <Compile Include="MeshAdapter.cs" />
+    <Compile Include="MeshAdapter_Body.cs" />
+    <Compile Include="MeshAdapter_Req.cs" />
+    <Compile Include="MeshAdapter_Update.cs" />
+    <Compile Include="MeshAPI.cs" />
+    <Compile Include="MESH_Api.cs" />
+    <Compile Include="MESH_Reply.cs" />
+    <Compile Include="Monitor.cs" />
+    <Compile Include="ParamDef.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyInfo.cs" />
+    <Compile Include="RequestInfo.cs" />
+    <Compile Include="Serial.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="UserRequestQueue.cs" />
+    <Compile Include="MeshParamDef.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="iMesh.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ICSharpCode.SharpZipLib.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

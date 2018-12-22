@@ -1,0 +1,2367 @@
+2018/5/15 10:32:34:694
+异常消息：序列不包含任何元素
+异常类型：System.InvalidOperationException
+异常方法：First
+异常源：System.Core
+异常堆栈：   在 System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeList(Int32 useType) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 966
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 505
+
+
+2018/5/15 10:51:50:992
+异常消息：序列不包含任何元素
+异常类型：System.InvalidOperationException
+异常方法：First
+异常源：System.Core
+异常堆栈：   在 System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeList(Int32 useType) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 966
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 505
+
+
+2018/5/15 11:11:07:479
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ConfigMeasureDefine(Stream stream)
+   在 iCMS.Service.WirelessSensors.ConfigWSMeasureDefine.SetWSNMeasureDefine(ConfigWSMeasureDefineParameter para) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Services.WirelessSensors\SensorsManager\ConfigWSMeasureDefine.cs:行号 195
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 11:30:12:904
+异常消息：序列不包含任何元素
+异常类型：System.InvalidOperationException
+异常方法：First
+异常源：System.Core
+异常堆栈：   在 System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeList(Int32 useType) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 966
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 505
+
+
+2018/5/15 11:34:04:885
+异常消息：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.UriFormatException
+异常方法：CreateThis
+异常源：System
+异常堆栈：   在 System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   在 System.Uri..ctor(String uriString)
+   在 System.Net.WebRequest.Create(String requestUriString)
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method, Int32 timeout) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 273
+
+
+2018/5/15 13:37:22:165
+异常消息：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.UriFormatException
+异常方法：CreateThis
+异常源：System
+异常堆栈：   在 System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   在 System.Uri..ctor(String uriString)
+   在 System.Net.WebRequest.Create(String requestUriString)
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method, Int32 timeout) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 273
+
+
+2018/5/15 13:41:29:440
+异常消息：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.UriFormatException
+异常方法：CreateThis
+异常源：System
+异常堆栈：   在 System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   在 System.Uri..ctor(String uriString)
+   在 System.Net.WebRequest.Create(String requestUriString)
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 45
+
+
+2018/5/15 13:41:32:504
+异常消息：输入字符串的格式不正确。
+异常类型：System.FormatException
+异常方法：ParseDouble
+异常源：mscorlib
+异常堆栈：   在 System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Convert.ToDouble(String value, IFormatProvider provider)
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber()
+   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonConverter[] converters)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonConverter[] converters)
+   在 iCMS.Common.Component.Tool.Extensions.Json.JsonDeserialize[T](String jsonString) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\Json.cs:行号 97
+   在 iCMS.Service.Web.DAUService.DAUManager.<>c__DisplayClass1f.<StartCollection>b__19() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DAUService\DAUManager.cs:行号 336
+
+
+2018/5/15 13:41:33:579
+异常消息：无法连接到远程服务器
+异常类型：System.Net.WebException
+异常方法：GetRequestStream
+异常源：System
+异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 56
+内部异常：
+　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.50.107:3895
+　异常类型：System.Net.Sockets.SocketException
+　异常方法：DoConnect
+　异常源：System
+　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 13:41:33:598
+异常消息：Unexpected character encountered while parsing value: h. Path '', line 0, position 0.
+异常类型：Newtonsoft.Json.JsonReaderException
+异常方法：ParseValue
+异常源：Newtonsoft.Json
+异常堆栈：   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonConverter[] converters)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonConverter[] converters)
+   在 iCMS.Common.Component.Tool.Extensions.Json.JsonDeserialize[T](String jsonString) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\Json.cs:行号 97
+   在 iCMS.Service.Web.DAUService.DAUManager.<>c__DisplayClass1f.<StartCollection>b__19() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DAUService\DAUManager.cs:行号 336
+
+
+2018/5/15 13:41:46:843
+异常消息：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.UriFormatException
+异常方法：CreateThis
+异常源：System
+异常堆栈：   在 System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   在 System.Uri..ctor(String uriString)
+   在 System.Net.WebRequest.Create(String requestUriString)
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 45
+
+
+2018/5/15 13:41:46:878
+异常消息：输入字符串的格式不正确。
+异常类型：System.FormatException
+异常方法：ParseDouble
+异常源：mscorlib
+异常堆栈：   在 System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Convert.ToDouble(String value, IFormatProvider provider)
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber()
+   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonConverter[] converters)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonConverter[] converters)
+   在 iCMS.Common.Component.Tool.Extensions.Json.JsonDeserialize[T](String jsonString) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\Json.cs:行号 97
+   在 iCMS.Service.Web.DAUService.DAUManager.<>c__DisplayClass2e.<StopCollection>b__22() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DAUService\DAUManager.cs:行号 424
+
+
+2018/5/15 13:41:47:899
+异常消息：无法连接到远程服务器
+异常类型：System.Net.WebException
+异常方法：GetRequestStream
+异常源：System
+异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 56
+内部异常：
+　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.50.107:3895
+　异常类型：System.Net.Sockets.SocketException
+　异常方法：DoConnect
+　异常源：System
+　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 13:41:47:916
+异常消息：Unexpected character encountered while parsing value: h. Path '', line 0, position 0.
+异常类型：Newtonsoft.Json.JsonReaderException
+异常方法：ParseValue
+异常源：Newtonsoft.Json
+异常堆栈：   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonConverter[] converters)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonConverter[] converters)
+   在 iCMS.Common.Component.Tool.Extensions.Json.JsonDeserialize[T](String jsonString) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\Json.cs:行号 97
+   在 iCMS.Service.Web.DAUService.DAUManager.<>c__DisplayClass2e.<StopCollection>b__22() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DAUService\DAUManager.cs:行号 424
+
+
+2018/5/15 13:42:11:682
+异常消息：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.UriFormatException
+异常方法：CreateThis
+异常源：System
+异常堆栈：   在 System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   在 System.Uri..ctor(String uriString)
+   在 System.Net.WebRequest.Create(String requestUriString)
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 45
+
+
+2018/5/15 13:42:11:745
+异常消息：输入字符串的格式不正确。
+异常类型：System.FormatException
+异常方法：ParseDouble
+异常源：mscorlib
+异常堆栈：   在 System.Number.ParseDouble(String value, NumberStyles options, NumberFormatInfo numfmt)
+   在 System.Convert.ToDouble(String value, IFormatProvider provider)
+   在 Newtonsoft.Json.JsonTextReader.ParseNumber()
+   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonConverter[] converters)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonConverter[] converters)
+   在 iCMS.Common.Component.Tool.Extensions.Json.JsonDeserialize[T](String jsonString) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\Json.cs:行号 97
+   在 iCMS.Service.Web.DAUService.DAUManager.<>c__DisplayClass2e.<StopCollection>b__22() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DAUService\DAUManager.cs:行号 424
+
+
+2018/5/15 13:42:11:746
+异常消息：无法连接到远程服务器
+异常类型：System.Net.WebException
+异常方法：GetRequestStream
+异常源：System
+异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 56
+内部异常：
+　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.50.107:3895
+　异常类型：System.Net.Sockets.SocketException
+　异常方法：DoConnect
+　异常源：System
+　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 13:42:11:777
+异常消息：Unexpected character encountered while parsing value: h. Path '', line 0, position 0.
+异常类型：Newtonsoft.Json.JsonReaderException
+异常方法：ParseValue
+异常源：Newtonsoft.Json
+异常堆栈：   在 Newtonsoft.Json.JsonTextReader.ParseValue()
+   在 Newtonsoft.Json.JsonTextReader.ReadInternal()
+   在 Newtonsoft.Json.JsonTextReader.Read()
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.ReadForType(JsonReader reader, JsonContract contract, Boolean hasConverter)
+   在 Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   在 Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonConverter[] converters)
+   在 Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonConverter[] converters)
+   在 iCMS.Common.Component.Tool.Extensions.Json.JsonDeserialize[T](String jsonString) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\Json.cs:行号 97
+   在 iCMS.Service.Web.DAUService.DAUManager.<>c__DisplayClass2e.<StopCollection>b__22() 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DAUService\DAUManager.cs:行号 424
+
+
+2018/5/15 14:02:50:537
+异常消息：序列不包含任何元素
+异常类型：System.InvalidOperationException
+异常方法：First
+异常源：System.Core
+异常堆栈：   在 System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeList(Int32 useType) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 966
+   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 505
+
+
+2018/5/15 15:15:18:684
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：GetMeasureSiteDetailInfo
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetMeasureSiteDetailInfo(GetMeasureSiteDetailInfoParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5645
+
+
+2018/5/15 15:16:12:660
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：GetMeasureSiteDetailInfo
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetMeasureSiteDetailInfo(GetMeasureSiteDetailInfoParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5645
+
+
+2018/5/15 16:37:39:976
+异常消息：The cast to value type 'System.Int32' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+异常类型：System.InvalidOperationException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetColumnValueWithErrorHandling[TColumn](Int32 ordinal)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetMeasureSiteDetailInfo(GetMeasureSiteDetailInfoParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5669
+
+
+2018/5/15 16:39:05:842
+异常消息：The cast to value type 'System.Int32' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+异常类型：System.InvalidOperationException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetColumnValueWithErrorHandling[TColumn](Int32 ordinal)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetMeasureSiteDetailInfo(GetMeasureSiteDetailInfoParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5669
+
+
+2018/5/15 16:40:34:358
+异常消息：The cast to value type 'System.Int32' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+异常类型：System.InvalidOperationException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetColumnValueWithErrorHandling[TColumn](Int32 ordinal)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetMeasureSiteDetailInfo(GetMeasureSiteDetailInfoParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5669
+
+
+2018/5/15 16:46:41:292
+异常消息：The cast to value type 'System.Int32' failed because the materialized value is null. Either the result type's generic parameter or the query must use a nullable type.
+异常类型：System.InvalidOperationException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetColumnValueWithErrorHandling[TColumn](Int32 ordinal)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetMeasureSiteDetailInfo(GetMeasureSiteDetailInfoParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5669
+
+
+2018/5/15 17:25:46:513
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ConfigTriggerDefine(Stream stream)
+   在 iCMS.Service.WirelessSensors.ConfigWSUploadTrigger.SetWSNUploadTriggerDefine(String measureSiteIds, String triggerStatus) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Services.WirelessSensors\SensorsManager\ConfigWSUploadTrigger.cs:行号 546
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 17:26:27:486
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ConfigTriggerDefine(Stream stream)
+   在 iCMS.Service.WirelessSensors.ConfigWSUploadTrigger.SetWSNUploadTriggerDefine(String measureSiteIds, String triggerStatus) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Services.WirelessSensors\SensorsManager\ConfigWSUploadTrigger.cs:行号 546
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 17:27:08:884
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ConfigTriggerDefine(Stream stream)
+   在 iCMS.Service.WirelessSensors.ConfigWSUploadTrigger.SetWSNUploadTriggerDefine(String measureSiteIds, String triggerStatus) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Services.WirelessSensors\SensorsManager\ConfigWSUploadTrigger.cs:行号 546
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 17:27:25:433
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ConfigTriggerDefine(Stream stream)
+   在 iCMS.Service.WirelessSensors.ConfigWSUploadTrigger.SetWSNUploadTriggerDefine(String measureSiteIds, String triggerStatus) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Services.WirelessSensors\SensorsManager\ConfigWSUploadTrigger.cs:行号 546
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/15 17:41:31:711
+异常消息：WGID：2：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:41:52:800
+异常消息：WGID：8：没有终结点在侦听可以接受消息的 http://192.168.50.107:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:41:53:983
+异常消息：WGID：11：没有终结点在侦听可以接受消息的 http://192.168.50.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:41:55:156
+异常消息：WGID：15：没有终结点在侦听可以接受消息的 http://192.168.60.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:41:55:212
+异常消息：WGID：16：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:47:13:857
+异常消息：WGID：2：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:47:35:032
+异常消息：WGID：8：没有终结点在侦听可以接受消息的 http://192.168.50.107:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:47:36:202
+异常消息：WGID：11：没有终结点在侦听可以接受消息的 http://192.168.50.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:47:37:437
+异常消息：WGID：15：没有终结点在侦听可以接受消息的 http://192.168.60.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:47:37:542
+异常消息：WGID：16：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:54:19:266
+异常消息：WGID：2：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:54:40:444
+异常消息：WGID：8：没有终结点在侦听可以接受消息的 http://192.168.50.107:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:54:41:640
+异常消息：WGID：11：没有终结点在侦听可以接受消息的 http://192.168.50.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:54:42:786
+异常消息：WGID：15：没有终结点在侦听可以接受消息的 http://192.168.60.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:54:42:813
+异常消息：WGID：16：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:55:46:620
+异常消息：WGID：2：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:56:07:779
+异常消息：WGID：8：没有终结点在侦听可以接受消息的 http://192.168.50.107:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:56:08:977
+异常消息：WGID：11：没有终结点在侦听可以接受消息的 http://192.168.50.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:56:10:144
+异常消息：WGID：15：没有终结点在侦听可以接受消息的 http://192.168.60.1:3895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 17:56:10:178
+异常消息：WGID：16：无效的 URI: 未能确定 URI 的格式。
+异常类型：System.Exception
+异常方法：
+异常源：
+
+
+2018/5/15 19:01:54:386
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:02:41:126
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:03:41:105
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:04:41:102
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:05:41:108
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:06:41:112
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:07:41:127
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:08:41:110
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:09:41:077
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:10:41:081
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:11:41:104
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:12:41:110
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:13:41:134
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:14:41:085
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:15:41:136
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:16:41:129
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:17:41:135
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:18:41:137
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:19:41:139
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:20:41:136
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:21:41:138
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:22:41:143
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:23:41:129
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:24:41:143
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:25:41:097
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:26:41:105
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:27:41:129
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:28:41:136
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:29:41:140
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:30:41:153
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:31:41:132
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:32:41:150
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:33:41:123
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:34:41:135
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:35:41:139
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:36:41:143
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:37:41:161
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:38:41:155
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:39:41:161
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:40:41:158
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:41:41:151
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:42:41:160
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:43:41:133
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:44:41:167
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:45:41:162
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:46:41:121
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:47:41:149
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:48:41:127
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:49:41:174
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:50:41:175
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:51:41:155
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:52:41:220
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:53:41:234
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:54:41:149
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:55:41:156
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:56:41:136
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:57:41:145
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:58:41:166
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 19:59:41:146
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:00:41:156
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:01:41:188
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:02:41:187
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:03:41:176
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:04:41:191
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:05:41:185
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:06:41:199
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:07:41:202
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:08:41:216
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:09:41:199
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:10:41:178
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:11:41:159
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:12:41:205
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:13:41:231
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:14:41:154
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:15:41:200
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:16:41:263
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:17:41:171
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:18:41:266
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:19:41:198
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:20:41:254
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:21:41:171
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:22:41:178
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:23:41:200
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:24:41:311
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:25:41:167
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:26:41:305
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:27:41:194
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:28:41:909
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:29:41:265
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:30:41:275
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:31:41:210
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:32:41:250
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:33:41:193
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:34:41:244
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:35:41:212
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:36:41:197
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:37:41:209
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:38:41:222
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:39:41:300
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:40:41:214
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:41:41:252
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:42:41:250
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:43:41:215
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:44:41:220
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:45:41:228
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:46:41:200
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:47:41:220
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:48:41:222
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:49:41:259
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:50:41:266
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:51:41:246
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:52:41:269
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:53:41:247
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:54:41:297
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:55:41:247
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:56:41:247
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:57:41:264
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:58:41:239
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 20:59:41:360
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:00:41:241
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:01:41:263
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:02:41:247
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:03:41:231
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:04:41:247
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:05:41:243
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:06:41:252
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:07:41:225
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:08:41:244
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:09:41:255
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:10:41:265
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:11:41:340
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:12:41:261
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:13:41:260
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:14:41:257
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:15:41:262
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:16:41:277
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:17:41:280
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:18:41:274
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:19:41:268
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:20:41:282
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:21:41:309
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:22:41:290
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:23:41:304
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:24:41:293
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:25:41:275
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:26:41:281
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:27:41:283
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:28:41:303
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:29:41:349
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:30:41:266
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:31:41:343
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:32:41:288
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:33:41:355
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:34:41:319
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:35:41:350
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:36:41:273
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:37:41:281
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:38:41:279
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:39:41:280
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:40:41:264
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:41:41:286
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:42:41:334
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:43:41:298
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:44:41:304
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:45:41:300
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:46:41:292
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:47:41:297
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:48:41:311
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:49:41:264
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:50:41:296
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:51:41:355
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:52:41:285
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:53:41:312
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:54:41:279
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:55:41:379
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:56:41:297
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:57:41:324
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:58:41:362
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 21:59:41:344
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:00:41:328
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:01:41:364
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:02:41:323
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:03:41:317
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:04:41:321
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:05:41:317
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:06:41:328
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:07:41:326
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:08:41:289
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:09:41:326
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:10:41:359
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:11:41:332
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:12:41:323
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:13:41:353
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:14:41:301
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:15:41:330
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:16:41:354
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:17:41:359
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:18:41:332
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:19:41:306
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:20:41:428
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:21:41:325
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:22:41:347
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:23:41:396
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:24:41:367
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:25:41:316
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:26:41:372
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:27:41:311
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:28:41:967
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:29:41:339
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:30:41:331
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+
+2018/5/15 22:31:41:326
+异常消息：获取左侧导航监测树参数异常
+异常类型：System.Exception
+异常方法：GetMonitorTreeDataForNavigation
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.DiagnosticAnalysis.DiagnosticAnalysisManager.GetMonitorTreeDataForNavigation(GetMonitorTreeDataForNavigationParameter Parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DiagnosticAnalysis\DiagnosticAnalysisManager.cs:行号 522
+
+

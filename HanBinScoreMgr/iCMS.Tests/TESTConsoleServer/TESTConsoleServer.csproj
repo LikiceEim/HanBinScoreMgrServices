@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B6937AE0-81DA-482C-B970-9F00A8A0A7D8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TESTConsoleServer</RootNamespace>
+    <AssemblyName>TESTConsoleServer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HanBin.Presentation.Service\HanBin.Presentation.Service\HanBin.Presentation.Service.csproj">
+      <Project>{25c9aeef-a7c4-4e7f-aaa4-ff92ef87e23e}</Project>
+      <Name>HanBin.Presentation.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\iCMS.Common.Component.Data.Base.DB.csproj">
+      <Project>{a4a72aca-3374-4439-bc1c-fce7b9285002}</Project>
+      <Name>iCMS.Common.Component.Data.Base.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\iCMS.Common.Component.Tool.Extensions.csproj">
+      <Project>{e45f518e-26e5-443c-ba21-25f36963b920}</Project>
+      <Name>iCMS.Common.Component.Tool.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\iCMS.Common.Component.Tool.IoC.csproj">
+      <Project>{9858950f-059c-4add-a060-c92a89aefe6e}</Project>
+      <Name>iCMS.Common.Component.Tool.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
+      <Project>{838EC5E0-955C-4E74-AD45-26477E388E54}</Project>
+      <Name>iCMS.Common.Component.Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
+      <Project>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</Project>
+      <Name>iCMS.Frameworks.Core.DB.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\iCMS.Frameworks.Core.Repository.csproj">
+      <Project>{f63e170e-09a3-4298-98ff-9823bc88f99d}</Project>
+      <Name>iCMS.Frameworks.Core.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

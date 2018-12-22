@@ -1,0 +1,23 @@
+﻿1.添加表
+2.添加字段
+3.添加函数
+4.升级数据
+5.添加模块
+6.添加角色
+7.添加视图
+8.添加存储过程 备注：删除SP_UpdateTypeData AddMonitorTree
+9.添加触发器
+10.添加数据表索引
+11.添加角色和模块关联表
+12.添加用户和WS关联表
+13.添加形貌图报警阈值数据
+14.执行添加监测树脚本  AddMonitorTree
+exec AddMonitorTree
+15.轴承库处理
+16.添加诊断报告和维修日志
+17.添加系统说明
+17.执行存储过程处理设备类型表，测量位置类型表，系统参数表 
+   SP_UpdateTypeData 
+   exec SP_UpdateTypeData 3;
+   exec SP_UpdateTypeData 6;
+   exec SP_UpdateTypeData 1;

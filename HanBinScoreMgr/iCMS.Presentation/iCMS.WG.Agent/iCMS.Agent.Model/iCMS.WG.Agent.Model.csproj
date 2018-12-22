@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{119CF7C9-D0BC-4E68-8C20-EE6E5DEDFE3E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.WG.Agent.Model</RootNamespace>
+    <AssemblyName>iCMS.WG.Agent.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CacheOfSamplingData.cs" />
+    <Compile Include="ModeForApp\CalibrateSensorTaskModel.cs" />
+    <Compile Include="ModeForApp\ConfigMeasureDefineTaskModel.cs" />
+    <Compile Include="ModeForApp\GetSNCodeTaskModel.cs" />
+    <Compile Include="ModeForApp\ReSetWSTaskModel.cs" />
+    <Compile Include="ModeForApp\RestoreWGTaskModel.cs" />
+    <Compile Include="ModeForApp\RestoreWSTaskModel.cs" />
+    <Compile Include="ModeForApp\SetNetworkIDTaskModel.cs" />
+    <Compile Include="ModeForApp\SetWSIDTaskModel.cs" />
+    <Compile Include="ModeForApp\ReSetWGTaskModel.cs" />
+    <Compile Include="ModeForApp\SetSNCodeTaskModel.cs" />
+    <Compile Include="ModeForApp\SetWSnStatesModel.cs" />
+    <Compile Include="ModeForApp\TaskModelBase.cs" />
+    <Compile Include="DeviceStatus.cs" />
+    <Compile Include="ModeForApp\TimeCalibrationTaskModel.cs" />
+    <Compile Include="ModeForApp\ConfigTriggerDefineTaskModel.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\CharacteristicValueData.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\GetSNBunchCode.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\MeasureDefine.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\NetworkID.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\ReceiveObject.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\Reset.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\SetFactoryReset.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\SetNewWSID.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\SetSNBunchCode.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\TransducerAdjust.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\UpdateFirmWareDataInfo.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\UpdateFirmWareDescInfo.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\WaveDataInfo.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\WaveDescInfo.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\WSSelfReport.cs" />
+    <Compile Include="ModelForMesh\ReceiveObject\WSTemperature.cs" />
+    <Compile Include="ModelForMesh\SendObject\CheckMonitor.cs" />
+    <Compile Include="ModelForMesh\SendObject\FactoryResetWG.cs" />
+    <Compile Include="ModelForMesh\SendObject\FactoryResetWS.cs" />
+    <Compile Include="ModelForMesh\SendObject\GetSNCode.cs" />
+    <Compile Include="ModelForMesh\SendObject\RepeatWaveData.cs" />
+    <Compile Include="ModelForMesh\SendObject\RepeatWaveInfo.cs" />
+    <Compile Include="ModelForMesh\SendObject\ReSetWG.cs" />
+    <Compile Include="ModelForMesh\SendObject\ReSetWS.cs" />
+    <Compile Include="ModelForMesh\SendObject\SendMeasureDefine.cs" />
+    <Compile Include="ModelForMesh\SendObject\SendObject.cs" />
+    <Compile Include="ModelForMesh\SendObject\SetNetworkID.cs" />
+    <Compile Include="ModelForMesh\SendObject\SetNewWSID.cs" />
+    <Compile Include="ModelForMesh\SendObject\SetSNCode.cs" />
+    <Compile Include="ModelForMesh\SendObject\CalibrateTime.cs" />
+    <Compile Include="ModelForMesh\SendObject\WSUpdateInfo.cs" />
+    <Compile Include="ModelForMesh\SendObject\SendTriggerDefine.cs" />
+    <Compile Include="WSWaveInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ModeForApp\UpdateFirmwareTaskModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCMS.Agent.Common\iCMS.WG.Agent.Common.csproj">
+      <Project>{65a13a09-a901-45bb-8858-4d9a89e194cc}</Project>
+      <Name>iCMS.WG.Agent.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCMS.Agent.iMesh\iMesh.csproj">
+      <Project>{e7e00b80-6696-45bc-af86-090e9d95da06}</Project>
+      <Name>iMesh</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

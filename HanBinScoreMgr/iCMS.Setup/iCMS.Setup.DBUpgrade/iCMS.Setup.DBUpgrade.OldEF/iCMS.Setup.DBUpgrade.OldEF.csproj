@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E216FC2-5435-4784-81E3-5CB8054B2E8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.Setup.DBUpgrade.OldEF</RootNamespace>
+    <AssemblyName>iCMS.Setup.DBUpgrade.OldEF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Mapping\T_AlmRecordMap.cs" />
+    <Compile Include="Models\Mapping\T_BEARINGMap.cs" />
+    <Compile Include="Models\Mapping\T_COMMap.cs" />
+    <Compile Include="Models\Mapping\T_CommonMap.cs" />
+    <Compile Include="Models\Mapping\T_DevGroupMap.cs" />
+    <Compile Include="Models\Mapping\T_DeviceMap.cs" />
+    <Compile Include="Models\Mapping\T_FactoryMap.cs" />
+    <Compile Include="Models\Mapping\T_ImageMap.cs" />
+    <Compile Include="Models\Mapping\T_MeasureSiteMap.cs" />
+    <Compile Include="Models\Mapping\T_ModuleMap.cs" />
+    <Compile Include="Models\Mapping\T_MonitorTreeMap.cs" />
+    <Compile Include="Models\Mapping\T_MonitorTreePropertyMap.cs" />
+    <Compile Include="Models\Mapping\T_MSiteAlmMap.cs" />
+    <Compile Include="Models\Mapping\T_MSiteDataMap.cs" />
+    <Compile Include="Models\Mapping\T_OperationMap.cs" />
+    <Compile Include="Models\Mapping\T_PlantMap.cs" />
+    <Compile Include="Models\Mapping\T_RoleMap.cs" />
+    <Compile Include="Models\Mapping\T_RoleModuleMap.cs" />
+    <Compile Include="Models\Mapping\T_SingalAlmSetMap.cs" />
+    <Compile Include="Models\Mapping\T_SysLogMap.cs" />
+    <Compile Include="Models\Mapping\T_UserLogMap.cs" />
+    <Compile Include="Models\Mapping\T_UserMap.cs" />
+    <Compile Include="Models\Mapping\T_VibScanMap.cs" />
+    <Compile Include="Models\Mapping\T_VibSingalHisDataMap.cs" />
+    <Compile Include="Models\Mapping\T_VibSingalMap.cs" />
+    <Compile Include="Models\Mapping\T_VibSingalRTDataMap.cs" />
+    <Compile Include="Models\Mapping\T_WGMap.cs" />
+    <Compile Include="Models\Mapping\T_WSMap.cs" />
+    <Compile Include="Models\OiCMSDBContext.cs" />
+    <Compile Include="Models\T_AlmRecord.cs" />
+    <Compile Include="Models\T_BEARING.cs" />
+    <Compile Include="Models\T_COM.cs" />
+    <Compile Include="Models\T_Common.cs" />
+    <Compile Include="Models\T_DevGroup.cs" />
+    <Compile Include="Models\T_Device.cs" />
+    <Compile Include="Models\T_Factory.cs" />
+    <Compile Include="Models\T_Image.cs" />
+    <Compile Include="Models\T_MeasureSite.cs" />
+    <Compile Include="Models\T_Module.cs" />
+    <Compile Include="Models\T_MonitorTree.cs" />
+    <Compile Include="Models\T_MonitorTreeProperty.cs" />
+    <Compile Include="Models\T_MSiteAlm.cs" />
+    <Compile Include="Models\T_MSiteData.cs" />
+    <Compile Include="Models\T_Operation.cs" />
+    <Compile Include="Models\T_Plant.cs" />
+    <Compile Include="Models\T_Role.cs" />
+    <Compile Include="Models\T_RoleModule.cs" />
+    <Compile Include="Models\T_SingalAlmSet.cs" />
+    <Compile Include="Models\T_SysLog.cs" />
+    <Compile Include="Models\T_User.cs" />
+    <Compile Include="Models\T_UserLog.cs" />
+    <Compile Include="Models\T_VibScan.cs" />
+    <Compile Include="Models\T_VibSingal.cs" />
+    <Compile Include="Models\T_VibSingalHisData.cs" />
+    <Compile Include="Models\T_VibSingalRTData.cs" />
+    <Compile Include="Models\T_WG.cs" />
+    <Compile Include="Models\T_WS.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

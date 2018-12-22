@@ -1,0 +1,362 @@
+2018/5/9 10:33:01:376
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.EditWSData(EditWSDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 897
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/9 10:34:06:543
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.EditWSData(EditWSDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 897
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/9 10:34:34:680
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.EditWSData(EditWSDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 897
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/9 13:37:21:238
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.50.66:1232/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.EditWSData(EditWSDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 897
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。 192.168.50.66:1232
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/9 17:26:29:451
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 17:38:59:243
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:06:13:158
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:08:01:379
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:10:52:482
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:11:38:127
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:13:41:193
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:15:31:913
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:19:23:665
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:23:43:668
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:25:34:421
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:27:29:270
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:27:59:209
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceAndMSiteDataForDeviceTree(DeviceAndMSiteDataForDeviceTreeParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 619
+
+
+2018/5/9 18:28:24:640
+异常消息：The entity type DeviceRelationWG is not part of the model for the current context.
+异常类型：System.InvalidOperationException
+异常方法：UpdateEntitySetMappingsForType
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Internal.InternalContext.UpdateEntitySetMappingsForType(Type entityType)
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   在 System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   在 iCMS.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 83
+   在 iCMS.Service.Web.DevicesConfig.DevicesConfigManager.GetDeviceRuningTypeCount(GetDeviceRuningTypeCountParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\DevicesConfig\DevicesConfigManager.cs:行号 5907
+
+

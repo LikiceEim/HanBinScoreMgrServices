@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="iCMS.WG.AgentServer.ConfigService" CodeBehind="ConfigService.svc.cs" %>

@@ -1,0 +1,14 @@
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\iCMS.Setup.DBUpgrade.OldEF.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\iCMS.Setup.DBUpgrade.OldEF.pdb
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\EntityFramework.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\EntityFramework.SqlServer.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\obj\Debug\iCMS.Setup.DBUpgrade.OldEF.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\obj\Debug\iCMS.Setup.DBUpgrade.OldEF.pdb
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\iCMS.Setup.DBUpgrade.OldEF.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\iCMS.Setup.DBUpgrade.OldEF.pdb
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\EntityFramework.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\bin\Debug\EntityFramework.SqlServer.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\obj\Debug\iCMS.Setup.DBUpgrade.OldEF.csproj.CoreCompileInputs.cache
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\obj\Debug\iCMS.Setup.DBUpgrade.OldEF.csproj.CopyComplete
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\obj\Debug\iCMS.Setup.DBUpgrade.OldEF.dll
+E:\HanBinPointManagement\HanBinProject\iCMS_1.6\iCMS_1.6\iCMS.Setup\iCMS.Setup.DBUpgrade\iCMS.Setup.DBUpgrade.OldEF\obj\Debug\iCMS.Setup.DBUpgrade.OldEF.pdb

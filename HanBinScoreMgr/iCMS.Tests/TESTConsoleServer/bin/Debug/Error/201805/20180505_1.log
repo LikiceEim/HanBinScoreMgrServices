@@ -1,0 +1,252 @@
+2018/5/5 11:07:41:031
+异常消息：An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+异常类型：System.Data.Entity.Core.EntityException
+异常方法：Execute
+异常源：EntityFramework.SqlServer
+异常堆栈：   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   在 System.Lazy`1.CreateValue()
+   在 System.Lazy`1.LazyInitValue()
+   在 System.Lazy`1.get_Value()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__3[TResult](IEnumerable`1 sequence)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   在 System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   在 System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   在 System.Linq.Queryable.Count[TSource](IQueryable`1 source)
+   在 iCMS.Service.Web.Statistics.StatisticsManager.GetAlertCountByUserID(AlarmRemindDeviceCountParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\Statistics\StatisticsManager.cs:行号 1790
+内部异常：
+　异常消息：The underlying provider failed on Open.
+　异常类型：System.Data.Entity.Core.EntityException
+　异常方法：Open
+　异常源：EntityFramework
+　异常堆栈：   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+   在 System.Data.Entity.Core.Objects.ObjectContext.EnsureConnection()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClassb.<GetResults>b__9()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+　内部异常：
+　　异常消息：An exception has been raised that is likely due to a transient failure. If you are connecting to a SQL Azure database consider using SqlAzureExecutionStrategy.
+　　异常类型：System.Data.Entity.Core.EntityException
+　　异常方法：Execute
+　　异常源：EntityFramework.SqlServer
+　　异常堆栈：   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.Core.EntityClient.EntityConnection.Open()
+　　内部异常：
+　　　异常消息：已成功与服务器建立连接，但是在登录前的握手期间发生错误。 (provider: TCP Provider, error: 0 - 远程主机强迫关闭了一个现有的连接。)
+　　　异常类型：System.Data.SqlClient.SqlException
+　　　异常方法：.ctor
+　　　异常源：.Net SqlClient Data Provider
+　　　异常堆栈：   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+　　　内部异常：
+　　　　异常消息：远程主机强迫关闭了一个现有的连接。
+　　　　异常类型：System.ComponentModel.Win32Exception
+　　　　异常方法：
+　　　　异常源：
+
+
+2018/5/5 11:37:03:457
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWGData>b__7
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.<GetWGData>b__7(Gateway wg) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 159
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.GetWGData(GetWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 151
+
+
+2018/5/5 11:51:19:947
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWGData>b__7
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.<GetWGData>b__7(Gateway wg) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 160
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.GetWGData(GetWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 151
+
+
+2018/5/5 11:57:14:248
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWGData>b__7
+异常源：iCMS.Service.Web
+异常堆栈：   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.<GetWGData>b__7(Gateway wg) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 160
+   在 System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.GetWGData(GetWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 151
+
+
+2018/5/5 13:08:37:975
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1896/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.AddWGData(AddWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 317
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1896
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/5 13:56:14:184
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.AddWGData(AddWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 317
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1895
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/5 15:10:01:911
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1111/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Send(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.ReSetAgent()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.AddWGData(AddWGDataParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 317
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1111
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+
+2018/5/5 16:06:35:030
+异常消息：没有终结点在侦听可以接受消息的 http://192.168.20.5:1895/ConfigService.svc。这通常是由于不正确的地址或者 SOAP 操作导致的。如果存在此情况，请参见 InnerException 以了解详细信息。
+异常类型：System.ServiceModel.EndpointNotFoundException
+异常方法：HandleReturnMessage
+异常源：mscorlib
+异常堆栈：
+Server stack trace: 
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+   在 System.ServiceModel.Channels.HttpOutput.Send(TimeSpan timeout)
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.SendRequest(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Dispatcher.RequestChannelBinder.Request(Message message, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   在 iCMS.WG.AgentServer.IConfigService.IsAccess()
+   在 iCMS.Service.Web.WirelessDevicesConfig.WirelessDevicesConfigManager.IsAgentAccess(AgentAccessParameter parameter) 位置 d:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Services\iCMS.Service\WirelessDevicesConfig\WirelessDevicesConfigManager.cs:行号 504
+内部异常：
+　异常消息：无法连接到远程服务器
+　异常类型：System.Net.WebException
+　异常方法：GetRequestStream
+　异常源：System
+　异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 System.ServiceModel.Channels.HttpOutput.WebRequestHttpOutput.GetOutputStream()
+　内部异常：
+　　异常消息：由于目标计算机积极拒绝，无法连接。 192.168.20.5:1895
+　　异常类型：System.Net.Sockets.SocketException
+　　异常方法：DoConnect
+　　异常源：System
+　　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+

@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D90D99B7-1119-4E4D-BB58-970BD2D370C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.Setup.DBUpgrade.NewEF</RootNamespace>
+    <AssemblyName>iCMS.Setup.DBUpgrade.NewEF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\iCMSDB1Context.cs" />
+    <Compile Include="Models\Mapping\T_DATA_REALTIME_COLLECT_INFOMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_DEVICE_MSITEDATA_1Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_DEVICE_MSITEDATA_2Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_DEVICE_MSITEDATA_3Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_DEVICE_MSITEDATA_4Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_WS_MSITEDATA_1Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_WS_MSITEDATA_2Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_WS_MSITEDATA_3Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_TEMPE_WS_MSITEDATA_4Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_ACCMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_DISPMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_ENVLMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_LQMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_VELMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VIBSINGAL_RTMap.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VOLTAGE_WS_MSITEDATA_1Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VOLTAGE_WS_MSITEDATA_2Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VOLTAGE_WS_MSITEDATA_3Map.cs" />
+    <Compile Include="Models\Mapping\T_DATA_VOLTAGE_WS_MSITEDATA_4Map.cs" />
+    <Compile Include="Models\Mapping\T_DICT_CONFIGMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_CONNECT_STATUS_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_DEVICE_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_EIGEN_VALUE_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_MEASURE_SITE_MONITOR_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_MEASURE_SITE_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_MONITORTREE_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_SENSOR_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_VIBRATING_SIGNAL_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_WAVE_LENGTH_VALUEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_WAVE_LOWERLIMIT_VALUEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_WAVE_UPPERLIMIT_VALUEMap.cs" />
+    <Compile Include="Models\Mapping\T_DICT_WIRELESS_GATEWAY_TYPEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_BEARINGMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_DEVICEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_DEV_ALMRECORDMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_FACTORYMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_IMAGEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_MEASURESITEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_MODULEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_MONITOR_TREEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_MONITOR_TREE_PROPERTYMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_OPERATIONMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_ROLEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_ROLEMODULEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_SYSLOGMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_TEMPE_DEVICE_SET_MSITEALMMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_TEMPE_WS_SET_MSITEALMMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_USERLOGMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_USERMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_USER_RALATION_DEVICEMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_VIBRATING_SET_SIGNALALMMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_VIBSINGALMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_VOLTAGE_SET_MSITEALMMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_WGMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_WSMap.cs" />
+    <Compile Include="Models\Mapping\T_SYS_WSN_ALMRECORDMap.cs" />
+    <Compile Include="Models\Mapping\ViewGetMSInfoMap.cs" />
+    <Compile Include="Models\Mapping\View_ACCHistoryDataMap.cs" />
+    <Compile Include="Models\Mapping\View_DevHistoryDataMap.cs" />
+    <Compile Include="Models\Mapping\View_DeviceTempHistortyDataMap.cs" />
+    <Compile Include="Models\Mapping\View_DISPHistoryDataMap.cs" />
+    <Compile Include="Models\Mapping\View_ENVLHistoryDataMap.cs" />
+    <Compile Include="Models\Mapping\View_Get_WS_StatusMap.cs" />
+    <Compile Include="Models\Mapping\View_Get_WS_Status_ForTriggerMap.cs" />
+    <Compile Include="Models\Mapping\View_LQHistoryDataMap.cs" />
+    <Compile Include="Models\Mapping\View_VELHistoryDataMap.cs" />
+    <Compile Include="Models\T_DATA_REALTIME_COLLECT_INFO.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_DEVICE_MSITEDATA_1.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_DEVICE_MSITEDATA_2.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_DEVICE_MSITEDATA_3.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_DEVICE_MSITEDATA_4.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_WS_MSITEDATA_1.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_WS_MSITEDATA_2.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_WS_MSITEDATA_3.cs" />
+    <Compile Include="Models\T_DATA_TEMPE_WS_MSITEDATA_4.cs" />
+    <Compile Include="Models\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_ACC.cs" />
+    <Compile Include="Models\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_DISP.cs" />
+    <Compile Include="Models\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_ENVL.cs" />
+    <Compile Include="Models\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_LQ.cs" />
+    <Compile Include="Models\T_DATA_VIBRATING_SIGNAL_CHAR_HIS_VEL.cs" />
+    <Compile Include="Models\T_DATA_VIBSINGAL_RT.cs" />
+    <Compile Include="Models\T_DATA_VOLTAGE_WS_MSITEDATA_1.cs" />
+    <Compile Include="Models\T_DATA_VOLTAGE_WS_MSITEDATA_2.cs" />
+    <Compile Include="Models\T_DATA_VOLTAGE_WS_MSITEDATA_3.cs" />
+    <Compile Include="Models\T_DATA_VOLTAGE_WS_MSITEDATA_4.cs" />
+    <Compile Include="Models\T_DICT_CONFIG.cs" />
+    <Compile Include="Models\T_DICT_CONNECT_STATUS_TYPE.cs" />
+    <Compile Include="Models\T_DICT_DEVICE_TYPE.cs" />
+    <Compile Include="Models\T_DICT_EIGEN_VALUE_TYPE.cs" />
+    <Compile Include="Models\T_DICT_MEASURE_SITE_MONITOR_TYPE.cs" />
+    <Compile Include="Models\T_DICT_MEASURE_SITE_TYPE.cs" />
+    <Compile Include="Models\T_DICT_MONITORTREE_TYPE.cs" />
+    <Compile Include="Models\T_DICT_SENSOR_TYPE.cs" />
+    <Compile Include="Models\T_DICT_VIBRATING_SIGNAL_TYPE.cs" />
+    <Compile Include="Models\T_DICT_WAVE_LENGTH_VALUE.cs" />
+    <Compile Include="Models\T_DICT_WAVE_LOWERLIMIT_VALUE.cs" />
+    <Compile Include="Models\T_DICT_WAVE_UPPERLIMIT_VALUE.cs" />
+    <Compile Include="Models\T_DICT_WIRELESS_GATEWAY_TYPE.cs" />
+    <Compile Include="Models\T_SYS_BEARING.cs" />
+    <Compile Include="Models\T_SYS_DEVICE.cs" />
+    <Compile Include="Models\T_SYS_DEV_ALMRECORD.cs" />
+    <Compile Include="Models\T_SYS_FACTORY.cs" />
+    <Compile Include="Models\T_SYS_IMAGE.cs" />
+    <Compile Include="Models\T_SYS_MEASURESITE.cs" />
+    <Compile Include="Models\T_SYS_MODULE.cs" />
+    <Compile Include="Models\T_SYS_MONITOR_TREE.cs" />
+    <Compile Include="Models\T_SYS_MONITOR_TREE_PROPERTY.cs" />
+    <Compile Include="Models\T_SYS_OPERATION.cs" />
+    <Compile Include="Models\T_SYS_ROLE.cs" />
+    <Compile Include="Models\T_SYS_ROLEMODULE.cs" />
+    <Compile Include="Models\T_SYS_SYSLOG.cs" />
+    <Compile Include="Models\T_SYS_TEMPE_DEVICE_SET_MSITEALM.cs" />
+    <Compile Include="Models\T_SYS_TEMPE_WS_SET_MSITEALM.cs" />
+    <Compile Include="Models\T_SYS_USER.cs" />
+    <Compile Include="Models\T_SYS_USERLOG.cs" />
+    <Compile Include="Models\T_SYS_USER_RALATION_DEVICE.cs" />
+    <Compile Include="Models\T_SYS_VIBRATING_SET_SIGNALALM.cs" />
+    <Compile Include="Models\T_SYS_VIBSINGAL.cs" />
+    <Compile Include="Models\T_SYS_VOLTAGE_SET_MSITEALM.cs" />
+    <Compile Include="Models\T_SYS_WG.cs" />
+    <Compile Include="Models\T_SYS_WS.cs" />
+    <Compile Include="Models\T_SYS_WSN_ALMRECORD.cs" />
+    <Compile Include="Models\ViewGetMSInfo.cs" />
+    <Compile Include="Models\View_ACCHistoryData.cs" />
+    <Compile Include="Models\View_DevHistoryData.cs" />
+    <Compile Include="Models\View_DeviceTempHistortyData.cs" />
+    <Compile Include="Models\View_DISPHistoryData.cs" />
+    <Compile Include="Models\View_ENVLHistoryData.cs" />
+    <Compile Include="Models\View_Get_WS_Status.cs" />
+    <Compile Include="Models\View_Get_WS_Status_ForTrigger.cs" />
+    <Compile Include="Models\View_LQHistoryData.cs" />
+    <Compile Include="Models\View_VELHistoryData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

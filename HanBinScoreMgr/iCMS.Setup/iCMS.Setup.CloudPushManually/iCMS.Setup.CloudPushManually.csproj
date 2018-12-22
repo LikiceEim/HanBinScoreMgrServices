@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4ED7CCF-FECD-43B2-BD18-256BDCD0CA36}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.Setup.CloudPushManually</RootNamespace>
+    <AssemblyName>iCMS.Setup.CloudPushManually</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlarmDataPushFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlarmDataPushFrm.Designer.cs">
+      <DependentUpon>AlarmDataPushFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommunicationHelper.cs" />
+    <Compile Include="CustomizedPushFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomizedPushFrm.Designer.cs">
+      <DependentUpon>CustomizedPushFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DBConfigFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DBConfigFrm.Designer.cs">
+      <DependentUpon>DBConfigFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\ICMSTreeNode.cs" />
+    <Compile Include="Enum\EnumSortOrder.cs" />
+    <Compile Include="FormWorkBackGround.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWorkBackGround.Designer.cs">
+      <DependentUpon>FormWorkBackGround.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\CloudDataProvider.cs" />
+    <Compile Include="Function\CloudPushHelper.cs" />
+    <Compile Include="MainFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PushManually.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PushManually.designer.cs">
+      <DependentUpon>PushManually.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebBrowserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebBrowserForm.Designer.cs">
+      <DependentUpon>WebBrowserForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AlarmDataPushFrm.resx">
+      <DependentUpon>AlarmDataPushFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomizedPushFrm.resx">
+      <DependentUpon>CustomizedPushFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DBConfigFrm.resx">
+      <DependentUpon>DBConfigFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWorkBackGround.resx">
+      <DependentUpon>FormWorkBackGround.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="PushManually.resx">
+      <DependentUpon>PushManually.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WebBrowserForm.resx">
+      <DependentUpon>WebBrowserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\iCMS.Common.Component.Data.Base.DB.csproj">
+      <Project>{a4a72aca-3374-4439-bc1c-fce7b9285002}</Project>
+      <Name>iCMS.Common.Component.Data.Base.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Enum\iCMS.Common.Component.Data.Enum.csproj">
+      <Project>{e5ba3139-a5d3-45d4-9185-94f14816958c}</Project>
+      <Name>iCMS.Common.Component.Data.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\iCMS.Common.Component.Tool.Extensions.csproj">
+      <Project>{e45f518e-26e5-443c-ba21-25f36963b920}</Project>
+      <Name>iCMS.Common.Component.Tool.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
+      <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
+      <Name>iCMS.Common.Component.Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
+      <Project>{65448bed-3be1-4bf0-9c24-38771adc1830}</Project>
+      <Name>iCMS.Frameworks.Core.DB.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\iCMS.Frameworks.Core.Repository.csproj">
+      <Project>{f63e170e-09a3-4298-98ff-9823bc88f99d}</Project>
+      <Name>iCMS.Frameworks.Core.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Presentation\iCMS.Presentation.CloudCommunication\iCMS.Cloud.Common\iCMS.Cloud.Common.csproj">
+      <Project>{ca42962e-9787-43ac-a206-9c5014498eb1}</Project>
+      <Name>iCMS.Cloud.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Presentation\iCMS.Presentation.CloudCommunication\iCMS.Cloud.Interface\iCMS.Cloud.Interface.csproj">
+      <Project>{901f0f50-2453-4321-a6c4-5dc310324df7}</Project>
+      <Name>iCMS.Cloud.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Presentation\iCMS.Presentation.CloudCommunication\jiaxun\iCMS.Cloud.JiaXun.Commons\iCMS.Cloud.JiaXun.Commons.csproj">
+      <Project>{aba037b0-75ef-43a0-a320-d4ed3fbe5779}</Project>
+      <Name>iCMS.Cloud.JiaXun.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Presentation\iCMS.Presentation.CloudCommunication\jiaxun\iCMS.Cloud.JiaXun.DataConvert\iCMS.Cloud.JiaXun.DataConvert.csproj">
+      <Project>{5bf3f054-e412-488d-bd4d-a88bb80d4663}</Project>
+      <Name>iCMS.Cloud.JiaXun.DataConvert</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Presentation\iCMS.Presentation.CloudCommunication\jiaxun\iCMS.Cloud.JiaXun.Interface\iCMS.Cloud.JiaXun.Interface.csproj">
+      <Project>{5bdb8d0b-539e-4638-b0eb-349921ae4b29}</Project>
+      <Name>iCMS.Cloud.JiaXun.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

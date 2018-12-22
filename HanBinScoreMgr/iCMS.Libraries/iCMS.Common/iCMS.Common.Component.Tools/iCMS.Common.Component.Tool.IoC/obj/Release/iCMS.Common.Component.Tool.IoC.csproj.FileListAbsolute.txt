@@ -1,0 +1,7 @@
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Release\iCMS.Common.Component.Tool.IoC.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Release\iCMS.Common.Component.Tool.IoC.pdb
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Release\Microsoft.Practices.Unity.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Release\iCMS.Common.Component.Tool.IoC.csprojResolveAssemblyReference.cache
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Release\iCMS.Common.Component.Tool.IoC.dll
+D:\解决方案融合\06_Software\02_Construct\iCMS_1.6\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Release\iCMS.Common.Component.Tool.IoC.pdb

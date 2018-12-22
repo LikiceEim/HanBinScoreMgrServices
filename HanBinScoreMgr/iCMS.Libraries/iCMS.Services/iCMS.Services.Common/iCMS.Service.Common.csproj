@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E55F2355-7BCC-45FF-A04A-D23525398257}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.Service.Common</RootNamespace>
+    <AssemblyName>iCMS.Service.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionsExtensions.cs" />
+    <Compile Include="ExecuteDB.cs" />
+    <Compile Include="IPaging.cs" />
+    <Compile Include="MonitorTreeHelper.cs" />
+    <Compile Include="Paging.cs" />
+    <Compile Include="RecordAlarmCount.cs" />
+    <Compile Include="ServiceDependencyRegistrar.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\iCMS.Common.Component.Data.Base.DB.csproj">
+      <Project>{a4a72aca-3374-4439-bc1c-fce7b9285002}</Project>
+      <Name>iCMS.Common.Component.Data.Base.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base\iCMS.Common.Component.Data.Base.csproj">
+      <Project>{1922fdfa-b1ff-4e76-b060-9adaf84db519}</Project>
+      <Name>iCMS.Common.Component.Data.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Enum\iCMS.Common.Component.Data.Enum.csproj">
+      <Project>{e5ba3139-a5d3-45d4-9185-94f14816958c}</Project>
+      <Name>iCMS.Common.Component.Data.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\iCMS.Common.Component.Data.Response.csproj">
+      <Project>{23665d79-6512-4d95-8ddd-33ae736ad479}</Project>
+      <Name>iCMS.Common.Component.Data.Response</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
+      <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
+      <Name>iCMS.Common.Component.Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
+      <Project>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</Project>
+      <Name>iCMS.Frameworks.Core.DB.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\iCMS.Frameworks.Core.Repository.csproj">
+      <Project>{F63E170E-09A3-4298-98FF-9823BC88F99D}</Project>
+      <Name>iCMS.Frameworks.Core.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

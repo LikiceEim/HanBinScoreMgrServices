@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B3943D7-9B14-4F21-8BB5-740E14B74150}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.WG.Agent</RootNamespace>
+    <AssemblyName>iCMS.WG.Agent</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ComFunction.cs" />
+    <Compile Include="CommunicationWithMesh.cs" />
+    <Compile Include="CommunicationWithServer.cs" />
+    <Compile Include="Operators\CalibrateSensorOper.cs" />
+    <Compile Include="Operators\RefreshAllWSStatesOper.cs" />
+    <Compile Include="Operators\ConfigMeasureDefineOper.cs" />
+    <Compile Include="Operators\GetSNCodeOper.cs" />
+    <Compile Include="Operators\RefreshWSStatesOper.cs" />
+    <Compile Include="Operators\ReSetAgentOper.cs" />
+    <Compile Include="Operators\ReSetWSOper.cs" />
+    <Compile Include="Operators\RestoreWGOper.cs" />
+    <Compile Include="Operators\RestoreWSOper.cs" />
+    <Compile Include="Operators\SetNetworkIDOper.cs" />
+    <Compile Include="Operators\SetNewWSIDOper.cs" />
+    <Compile Include="Operators\operatorFactory.cs" />
+    <Compile Include="Operators\ReSetWGOper.cs" />
+    <Compile Include="Operators\SetSNCodeOper.cs" />
+    <Compile Include="Operators\SetWSnStatesOper.cs" />
+    <Compile Include="Operators\TimeCalibrationOper.cs" />
+    <Compile Include="Operators\ConfigTriggerDefineOper.cs" />
+    <Compile Include="SyncTools.cs" />
+    <Compile Include="AsyncTools.cs" />
+    <Compile Include="Operators\IOperator.cs" />
+    <Compile Include="Operators\UpdateFirmwareOper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WGAgent.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base\iCMS.Common.Component.Data.Base.csproj">
+      <Project>{1922fdfa-b1ff-4e76-b060-9adaf84db519}</Project>
+      <Name>iCMS.Common.Component.Data.Base</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Request\iCMS.Common.Component.Data.Request.csproj">
+      <Project>{9a9ec48e-9724-4081-91f3-bc2cc3087113}</Project>
+      <Name>iCMS.Common.Component.Data.Request</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\iCMS.Common.Component.Data.Response.csproj">
+      <Project>{23665d79-6512-4d95-8ddd-33ae736ad479}</Project>
+      <Name>iCMS.Common.Component.Data.Response</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
+      <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
+      <Name>iCMS.Common.Component.Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCMS.Agent.Common\iCMS.WG.Agent.Common.csproj">
+      <Project>{65a13a09-a901-45bb-8858-4d9a89e194cc}</Project>
+      <Name>iCMS.WG.Agent.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCMS.Agent.iMesh\iMesh.csproj">
+      <Project>{e7e00b80-6696-45bc-af86-090e9d95da06}</Project>
+      <Name>iMesh</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCMS.Agent.Model\iCMS.WG.Agent.Model.csproj">
+      <Project>{119cf7c9-d0bc-4e68-8c20-ee6e5dedfe3e}</Project>
+      <Name>iCMS.WG.Agent.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iCMS.Agent.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

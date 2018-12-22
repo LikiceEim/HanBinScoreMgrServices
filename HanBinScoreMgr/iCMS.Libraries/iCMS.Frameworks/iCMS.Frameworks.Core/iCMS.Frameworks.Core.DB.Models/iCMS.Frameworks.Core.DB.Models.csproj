@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iCMS.Frameworks.Core.DB.Models</RootNamespace>
+    <AssemblyName>iCMS.Frameworks.Core.DB.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bearing.cs" />
+    <Compile Include="CloudConfig.cs" />
+    <Compile Include="CloudLog.cs" />
+    <Compile Include="CloudPush.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="ConnectStatusType.cs" />
+    <Compile Include="DevAlmRecord.cs" />
+    <Compile Include="Device.cs" />
+    <Compile Include="DeviceRelationWG.cs" />
+    <Compile Include="DeviceType.cs" />
+    <Compile Include="DiagnoseReport.cs" />
+    <Compile Include="EigenValueType.cs" />
+    <Compile Include="EntityBase.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Gateway.cs" />
+    <Compile Include="HelpDocument.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="MaintainReport.cs" />
+    <Compile Include="MeasureSite.cs" />
+    <Compile Include="MeasureSiteBearing.cs" />
+    <Compile Include="MeasureSiteMonitorType.cs" />
+    <Compile Include="MeasureSiteType.cs" />
+    <Compile Include="ModBusRegisterAddress.cs" />
+    <Compile Include="Module.cs" />
+    <Compile Include="MonitorTree.cs" />
+    <Compile Include="MonitorTreeProperty.cs" />
+    <Compile Include="MonitorTreeType.cs" />
+    <Compile Include="Operation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RealTimeAlarmThreshold.cs" />
+    <Compile Include="RealTimeCollectInfo.cs" />
+    <Compile Include="Role.cs" />
+    <Compile Include="RoleModule.cs" />
+    <Compile Include="SensorType.cs" />
+    <Compile Include="SignalAlmSet.cs" />
+    <Compile Include="SpeedConversionCoeff.cs" />
+    <Compile Include="SpeedDeviceMSitedata.cs" />
+    <Compile Include="SpeedDeviceMSitedata_1.cs" />
+    <Compile Include="SpeedDeviceMSitedata_2.cs" />
+    <Compile Include="SpeedDeviceMSitedata_3.cs" />
+    <Compile Include="SpeedDeviceMSitedata_4.cs" />
+    <Compile Include="SpeedMDFExtend.cs" />
+    <Compile Include="SpeedSamplingMDF.cs" />
+    <Compile Include="SysLog.cs" />
+    <Compile Include="TempeDeviceMsitedata.cs" />
+    <Compile Include="TempeDeviceMsitedata_1.cs" />
+    <Compile Include="TempeDeviceMsitedata_2.cs" />
+    <Compile Include="TempeDeviceMsitedata_3.cs" />
+    <Compile Include="TempeDeviceMsitedata_4.cs" />
+    <Compile Include="TempeDeviceSetMSiteAlm.cs" />
+    <Compile Include="TempeWSMsitedata.cs" />
+    <Compile Include="TempeWSMsitedata_1.cs" />
+    <Compile Include="TempeWSMsitedata_2.cs" />
+    <Compile Include="TempeWSMsitedata_3.cs" />
+    <Compile Include="TempeWSMsitedata_4.cs" />
+    <Compile Include="TempeWSSetMSiteAlm.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserLog.cs" />
+    <Compile Include="UserRalationDevice.cs" />
+    <Compile Include="UserRelationDeviceAlmRecord.cs" />
+    <Compile Include="UserRelationDiagnoseReport.cs" />
+    <Compile Include="UserRelationMaintainReport.cs" />
+    <Compile Include="UserRelationWS.cs" />
+    <Compile Include="UserRelationWSAlmRecord.cs" />
+    <Compile Include="VibratingSingalCharHisAcc.cs" />
+    <Compile Include="VibratingSingalCharHisDisp.cs" />
+    <Compile Include="VibratingSingalCharHisEnvl.cs" />
+    <Compile Include="VibratingSingalCharHisLQ.cs" />
+    <Compile Include="VibratingSingalCharHisVel.cs" />
+    <Compile Include="VibratingSingalType.cs" />
+    <Compile Include="VibSingal.cs" />
+    <Compile Include="VibSingalRT.cs" />
+    <Compile Include="VoltageSetMSiteAlm.cs" />
+    <Compile Include="VoltageWSMsitedata.cs" />
+    <Compile Include="VoltageWSMSiteData_1.cs" />
+    <Compile Include="VoltageWSMSiteData_2.cs" />
+    <Compile Include="VoltageWSMSiteData_3.cs" />
+    <Compile Include="VoltageWSMSiteData_4.cs" />
+    <Compile Include="WaveLengthValues.cs" />
+    <Compile Include="WaveLowerLimitValues.cs" />
+    <Compile Include="WaveUpperLimitValues.cs" />
+    <Compile Include="WirelessGatewayType.cs" />
+    <Compile Include="WS.cs" />
+    <Compile Include="WSnAlmRecord.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\iCMS.Common.Component.Data.Base.DB.csproj">
+      <Project>{A4A72ACA-3374-4439-BC1C-FCE7B9285002}</Project>
+      <Name>iCMS.Common.Component.Data.Base.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Enum\iCMS.Common.Component.Data.Enum.csproj">
+      <Project>{e5ba3139-a5d3-45d4-9185-94f14816958c}</Project>
+      <Name>iCMS.Common.Component.Data.Enum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Extend\iCMS.Common.Component.Data.Extend.csproj">
+      <Project>{E4DF3564-48C0-429C-A775-787881523A81}</Project>
+      <Name>iCMS.Common.Component.Data.Extend</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
