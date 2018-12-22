@@ -18,9 +18,11 @@ namespace iCMS.Frameworks.Core.Repository
         {
 
         }
-     
-        public  DbSet<HBUser> HBUsers { get; set; }
+
+        public DbSet<HBUser> HBUsers { get; set; }
 
         public DbSet<HBRole> HBRoles { get; set; }
+
+        public DbSet<Organization> Organizations { get; set; }
     }
 }

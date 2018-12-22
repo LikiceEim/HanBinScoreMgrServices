@@ -1,4 +1,5 @@
 ﻿using iCMS.Common.Component.Data.Base;
+using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
 using System.ServiceModel;
@@ -8,8 +9,9 @@ namespace HanBin.Presentation.Service.SystemManage
 {
 
     [ServiceContract]
-  public  interface IHanBinSystemManageService
+    public interface IHanBinSystemManageService
     {
+        #region 用户管理
         [WebInvoke(UriTemplate = "Login",
               BodyStyle = WebMessageBodyStyle.Bare,
               Method = "POST",
@@ -37,6 +39,14 @@ namespace HanBin.Presentation.Service.SystemManage
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter);
+        #endregion
 
+        #region 单位管理
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param);
+        #endregion
     }
 }

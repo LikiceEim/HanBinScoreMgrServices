@@ -140,6 +140,7 @@
     <Compile Include="DevicesConfig\GetWGMaintainListParameter.cs" />
     <Compile Include="DiagnosticControl\HasRTTrendDataForSpeedParameter.cs" />
     <Compile Include="DiagnosticControl\MaintainReportParameter.cs" />
+    <Compile Include="HanBin.OrganManage\AddOrganParam.cs" />
     <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
     <Compile Include="HanBin.SystemManage\LoginParameter.cs" />

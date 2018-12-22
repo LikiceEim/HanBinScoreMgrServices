@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HanBin.Services.SystemManager
 {
-public    interface IUserManager
+    public interface IUserManager
     {
         BaseResponse<LoginResult> Login(LoginParameter parameter);
 

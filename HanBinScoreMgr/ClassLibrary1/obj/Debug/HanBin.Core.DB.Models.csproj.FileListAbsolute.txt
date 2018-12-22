@@ -21,3 +21,10 @@ E:\HanBinScoreMgr\ClassLibrary1\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
 E:\HanBinScoreMgr\ClassLibrary1\obj\Debug\HanBin.Core.DB.Models.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgr\ClassLibrary1\obj\Debug\HanBin.Core.DB.Models.dll
 E:\HanBinScoreMgr\ClassLibrary1\obj\Debug\HanBin.Core.DB.Models.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\bin\Debug\HanBin.Core.DB.Models.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\bin\Debug\HanBin.Core.DB.Models.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\bin\Debug\iCMS.Common.Component.Data.Base.DB.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\obj\Debug\HanBin.Core.DB.Models.csprojResolveAssemblyReference.cache
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\obj\Debug\HanBin.Core.DB.Models.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\ClassLibrary1\obj\Debug\HanBin.Core.DB.Models.pdb
