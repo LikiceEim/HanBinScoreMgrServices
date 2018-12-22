@@ -25,6 +25,6 @@ E:\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Co
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\bin\Debug\iCMS.Common.Component.Tool.Extensions.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\bin\Debug\iCMS.Common.Component.Tool.Extensions.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\bin\Debug\Newtonsoft.Json.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\iCMS.Common.Component.Tool.Extensions.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\iCMS.Common.Component.Tool.Extensions.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\iCMS.Common.Component.Tool.Extensions.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\iCMS.Common.Component.Tool.Extensions.csprojResolveAssemblyReference.cache

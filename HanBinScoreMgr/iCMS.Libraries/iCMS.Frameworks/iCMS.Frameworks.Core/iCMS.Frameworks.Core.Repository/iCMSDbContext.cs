@@ -24,5 +24,7 @@ namespace iCMS.Frameworks.Core.Repository
         public DbSet<HBRole> HBRoles { get; set; }
 
         public DbSet<Organization> Organizations { get; set; }
+
+        public DbSet<Officer> Officers { get; set; }
     }
 }

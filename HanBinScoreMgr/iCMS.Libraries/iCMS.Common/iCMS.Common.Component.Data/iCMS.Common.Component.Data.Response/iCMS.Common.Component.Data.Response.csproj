@@ -118,6 +118,7 @@
     <Compile Include="DiagnosticControl\HasRTTrendDataForSpeedResult.cs" />
     <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />
     <Compile Include="HanBin.SystemManager\LoginResult.cs" />
+    <Compile Include="HanBinOrganManager\GetOrganDetailInfoResult.cs" />
     <Compile Include="Statistics\GetConfigTreeDevStateResult.cs" />
     <Compile Include="Statistics\GetDeviceRealTimeDataResult.cs" />
     <Compile Include="Statistics\GetDevInfoByGroupIDResult.cs" />

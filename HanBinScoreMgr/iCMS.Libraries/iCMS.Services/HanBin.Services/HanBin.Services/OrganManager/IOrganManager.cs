@@ -1,5 +1,6 @@
 ﻿using iCMS.Common.Component.Data.Base;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
+using iCMS.Common.Component.Data.Response.HanBinOrganManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,11 @@ namespace HanBin.Services.OrganManager
     public interface IOrganManager
     {
         BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param);
+
+        BaseResponse<GetOrganDetailInfoResult> GetOrganDetailInfo(GetOrganDetailInfoParameter parameter);
+
+        BaseResponse<bool> EditOrganizationRecord(EditOrganParameter parameter);
+
+        BaseResponse<bool> DeleteOrganRecord(DeleteOrganParameter param);
     }
 }

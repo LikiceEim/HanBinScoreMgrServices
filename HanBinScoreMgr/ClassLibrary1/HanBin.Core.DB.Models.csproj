@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="HBUser.cs" />
     <Compile Include="HBRole.cs" />
+    <Compile Include="Officer.cs" />
     <Compile Include="Organization.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

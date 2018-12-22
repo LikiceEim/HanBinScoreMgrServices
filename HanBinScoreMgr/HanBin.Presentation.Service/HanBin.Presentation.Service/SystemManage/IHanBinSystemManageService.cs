@@ -2,6 +2,7 @@
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
+using iCMS.Common.Component.Data.Response.HanBinOrganManager;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 
@@ -47,6 +48,24 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetOrganDetailInfoResult> GetOrganDetailInfo(GetOrganDetailInfoParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> EditOrganizationRecord(EditOrganParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> DeleteOrganRecord(DeleteOrganParameter param);
         #endregion
     }
 }
