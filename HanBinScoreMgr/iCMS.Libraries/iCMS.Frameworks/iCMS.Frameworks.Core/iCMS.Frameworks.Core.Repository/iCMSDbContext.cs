@@ -26,5 +26,7 @@ namespace iCMS.Frameworks.Core.Repository
         public DbSet<Organization> Organizations { get; set; }
 
         public DbSet<Officer> Officers { get; set; }
+
+        public DbSet<OrganCategory> OrganCategories { get; set; }
     }
 }

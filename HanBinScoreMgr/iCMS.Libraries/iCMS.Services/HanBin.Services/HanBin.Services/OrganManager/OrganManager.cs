@@ -21,6 +21,12 @@ namespace HanBin.Services.OrganManager
         [Dependency]
         public IRepository<Officer> officerRepository { get; set; }
 
+        [Dependency]
+        public IRepository<OrganCategory> organCategoryRepository { get; set; }
+
+        [Dependency]
+        public IRepository<OrganType> organTypeRepository { get; set; }
+
         #region 添加单位
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {
@@ -183,6 +189,43 @@ namespace HanBin.Services.OrganManager
                 return response;
             }
 
+        }
+        #endregion
+
+        #region 获取单位类型
+        public BaseResponse<GetOrganTypeResult> GetOrganTypeList()
+        {
+            BaseResponse<GetOrganTypeResult> response = new BaseResponse<GetOrganTypeResult>();
+            GetOrganTypeResult result = new GetOrganTypeResult();
+            try
+            {
+                var categories = organCategoryRepository.GetDatas<OrganCategory>(t => !t.IsDeleted, true).ToArray().Select(t =>
+                {
+                    CategoryInfo category = new CategoryInfo();
+                    category.CategoryID = t.CategoryID;
+                    category.CategoryName = t.CategoryName;
+
+                    var organTypeList = organTypeRepository.GetDatas<OrganType>(n => !n.IsDeleted && t.CategoryID == t.CategoryID, true).ToArray().Select(n =>
+                    {
+                        OrganTypeInfo info = new OrganTypeInfo();
+                        info.OrganTypeID = n.OrganTypeID;
+                        info.OrganTypeName = n.OrganTypeName;
+
+                        return info;
+                    });
+                    category.OrganTypeList.AddRange(organTypeList);
+                    return category;
+                }).ToList();
+                result.CategoryList = categories;
+                response.Result = result;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = "获取单位类型信息异常";
+                return response;
+            }
         }
         #endregion
 
