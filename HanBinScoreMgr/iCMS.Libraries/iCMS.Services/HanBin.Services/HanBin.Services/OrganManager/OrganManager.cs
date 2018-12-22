@@ -17,6 +17,7 @@ namespace HanBin.Services.OrganManager
         [Dependency]
         public IRepository<Organization> organRepository { get; set; }
 
+        #region 添加单位
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {
             BaseResponse<bool> response = new BaseResponse<bool>();
@@ -50,5 +51,6 @@ namespace HanBin.Services.OrganManager
                 return response;
             }
         }
+        #endregion
     }
 }
