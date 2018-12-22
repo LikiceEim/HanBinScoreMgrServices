@@ -194,3 +194,6 @@ E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Service.Common.pdb
 E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.exe
 E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\TESTConsoleServer.exe.config
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.exe
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.pdb
