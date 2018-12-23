@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="OfficerManager\IOfficerManager.cs" />
+    <Compile Include="OfficerManager\OfficerManager.cs" />
     <Compile Include="OrganManager\IOrganManager.cs" />
     <Compile Include="OrganManager\OrganManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

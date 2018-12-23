@@ -30,5 +30,15 @@ namespace iCMS.Frameworks.Core.Repository
         public DbSet<OrganType> OrganTypes { get; set; }
 
         public DbSet<OrganCategory> OrganCategories { get; set; }
+
+        public DbSet<UploadFile> UploadFiles { get; set; }
+
+        public DbSet<ScoreApply> ScoreApplies { get; set; }
+
+        public DbSet<ScoreItem> ScoreItems { get; set; }
+
+        public DbSet<ScoreChangeHistory> ScoreChangeHistories { get; set; }
+
+        public DbSet<OfficerLevelType> OfficerLevelTypes { get; set; }
     }
 }

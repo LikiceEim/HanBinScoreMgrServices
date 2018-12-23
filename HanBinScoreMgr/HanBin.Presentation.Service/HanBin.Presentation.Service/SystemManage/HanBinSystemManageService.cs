@@ -10,6 +10,8 @@ using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using HanBin.Services.OrganManager;
 using iCMS.Common.Component.Data.Response.HanBinOrganManager;
+using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
+using HanBin.Services.OfficerManager;
 
 namespace HanBin.Presentation.Service.SystemManage
 {
@@ -17,11 +19,13 @@ namespace HanBin.Presentation.Service.SystemManage
     {
         private IUserManager userManager;
         private IOrganManager organManager;
+        private IOfficerManager officerManager;
 
-        public HanBinSystemManageService(IUserManager userManager, IOrganManager organManager)
+        public HanBinSystemManageService(IUserManager userManager, IOrganManager organManager, IOfficerManager officerManager)
         {
             this.userManager = userManager;
             this.organManager = organManager;
+            this.officerManager = officerManager;
         }
 
         #region 用户管理
@@ -77,6 +81,15 @@ namespace HanBin.Presentation.Service.SystemManage
         public BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter)
         {
             return organManager.GetOrganList(parameter);
+        }
+        #endregion
+        #endregion
+
+        #region 干部管理
+        #region 添加干部
+        public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
+        {
+            return officerManager.AddOfficerRecord(parameter);
         }
         #endregion
         #endregion

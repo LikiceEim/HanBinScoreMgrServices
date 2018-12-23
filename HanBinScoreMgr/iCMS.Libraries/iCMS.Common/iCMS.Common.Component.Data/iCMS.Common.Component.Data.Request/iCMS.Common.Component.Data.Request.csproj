@@ -140,6 +140,8 @@
     <Compile Include="DevicesConfig\GetWGMaintainListParameter.cs" />
     <Compile Include="DiagnosticControl\HasRTTrendDataForSpeedParameter.cs" />
     <Compile Include="DiagnosticControl\MaintainReportParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\AddOfficerParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\ApplyItem.cs" />
     <Compile Include="HanBin.OrganManage\AddOrganParam.cs" />
     <Compile Include="HanBin.OrganManage\DeleteOrganParameter.cs" />
     <Compile Include="HanBin.OrganManage\EditOrganParameter.cs" />

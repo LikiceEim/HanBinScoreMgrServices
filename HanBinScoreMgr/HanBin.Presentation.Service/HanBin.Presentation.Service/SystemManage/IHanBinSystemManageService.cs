@@ -1,4 +1,5 @@
 ﻿using iCMS.Common.Component.Data.Base;
+using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
@@ -72,6 +73,14 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter);
+        #endregion
+
+        #region 干部管理
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+            Method = "POST",
+            RequestFormat = WebMessageFormat.Json,
+            ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter);
         #endregion
     }
 }
