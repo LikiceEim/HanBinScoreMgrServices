@@ -66,6 +66,12 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> DeleteOrganRecord(DeleteOrganParameter param);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter);
         #endregion
     }
 }

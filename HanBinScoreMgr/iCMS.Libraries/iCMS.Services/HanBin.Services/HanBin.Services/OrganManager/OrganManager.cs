@@ -3,13 +3,16 @@ using iCMS.Common.Component.Data.Base;
 using iCMS.Common.Component.Data.Enum;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using iCMS.Common.Component.Data.Response.HanBinOrganManager;
+using iCMS.Common.Component.Tool;
 using iCMS.Frameworks.Core.Repository;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iCMS.Service.Common;
 
 namespace HanBin.Services.OrganManager
 {
@@ -224,6 +227,81 @@ namespace HanBin.Services.OrganManager
             {
                 response.IsSuccessful = false;
                 response.Reason = "获取单位类型信息异常";
+                return response;
+            }
+        }
+        #endregion
+
+        #region 获取单位列表
+        public BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter)
+        {
+            BaseResponse<GetOrganListResult> response = new BaseResponse<GetOrganListResult>();
+            GetOrganListResult result = new GetOrganListResult();
+            try
+            {
+                using (iCMSDbContext dbContext = new iCMSDbContext())
+                {
+                    var organQuerable = dbContext.Organizations.Where(t => !t.IsDeleted);
+                    if (parameter.OrganTypeID.HasValue && parameter.OrganTypeID.Value > 0)
+                    {
+                        organQuerable = organQuerable.Where(t => t.OrganTypeID == parameter.OrganTypeID.Value);
+                    }
+                    if (!string.IsNullOrEmpty(parameter.Keyword))
+                    {
+                        organQuerable = organQuerable.Where(t => t.OrganCode.ToUpper().Equals(parameter.Keyword.ToUpper()) || t.OrganFullName.ToUpper().Equals(parameter.Keyword.ToUpper()));
+                    }
+
+                    var organListLinq = from organ in organQuerable
+                                        join organType in dbContext.OrganTypes on organ.OrganTypeID equals organType.OrganTypeID
+                                        into group1
+                                        from g1 in group1
+                                        join category in dbContext.OrganCategories on g1.CategoryID equals category.CategoryID
+                                        into group2
+                                        from g2 in group2
+                                        join item in dbContext.Officers.GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
+                                        into group3
+                                        from g3 in group3
+                                        select new OrganInfo
+                                        {
+                                            OrganID = organ.OrganID,
+                                            OrganCode = organ.OrganCode,
+                                            OrganFullName = organ.OrganFullName,
+                                            OrganTypeID = organ.OrganTypeID,
+                                            OrganTypeName = g1.OrganTypeName,
+                                            OrganCategoryID = g2.CategoryID,
+                                            OrganCategoryName = g2.CategoryName,
+                                            OfficerQuanlity = g3.Count(),
+                                            AddDate = organ.AddDate
+                                        };
+
+                    ListSortDirection sortOrder = parameter.Order.ToLower().Equals("asc") ? ListSortDirection.Ascending : ListSortDirection.Descending;
+                    PropertySortCondition[] sortList = new PropertySortCondition[]
+                    {
+                        new PropertySortCondition(parameter.Sort, sortOrder),
+                        new PropertySortCondition("UserID", sortOrder),
+                    };
+
+                    organListLinq = organListLinq.OrderBy(sortList);
+
+                    int count = organQuerable.Count();
+                    if (parameter.Page > -1)
+                    {
+                        organListLinq = organListLinq
+                            .Skip((parameter.Page - 1) * parameter.PageSize)
+                            .Take(parameter.PageSize);
+                    }
+
+                    result.OrganInfoList.AddRange(organListLinq.ToList());
+                    result.Total = count;
+                    response.Result = result;
+
+                    return response;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
                 return response;
             }
         }

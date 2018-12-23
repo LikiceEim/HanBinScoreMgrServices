@@ -72,6 +72,13 @@ namespace HanBin.Presentation.Service.SystemManage
             return organManager.DeleteOrganRecord(param);
         }
         #endregion
+
+        #region 获取单位列表
+        public BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter)
+        {
+            return organManager.GetOrganList(parameter);
+        }
+        #endregion
         #endregion
     }
 }
