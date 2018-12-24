@@ -92,6 +92,13 @@ namespace HanBin.Presentation.Service.SystemManage
             return officerManager.AddOfficerRecord(parameter);
         }
         #endregion
+
+        #region 获取干部详细信息（不包含积分）
+        public BaseResponse<bool> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
+        {
+            return officerManager.GetOfficerDetailInfo(parameter);
+        }
+        #endregion
         #endregion
     }
 }

@@ -81,6 +81,12 @@ namespace HanBin.Presentation.Service.SystemManage
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter);
         #endregion
     }
 }

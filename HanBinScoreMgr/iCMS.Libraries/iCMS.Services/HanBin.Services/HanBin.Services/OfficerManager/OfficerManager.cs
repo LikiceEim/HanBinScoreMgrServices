@@ -99,5 +99,13 @@ namespace HanBin.Services.OfficerManager
             return response;
         }
         #endregion
+
+        #region 获取干部基础信息（不包含积分信息）
+        public BaseResponse<bool> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
+        {
+            return null;
+        }
+
+        #endregion
     }
 }

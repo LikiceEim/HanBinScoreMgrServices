@@ -11,5 +11,7 @@ namespace HanBin.Services.OfficerManager
     public interface IOfficerManager
     {
         BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter);
+
+        BaseResponse<bool> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter);
     }
 }
