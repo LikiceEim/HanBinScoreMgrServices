@@ -44,6 +44,10 @@ namespace HanBin.Core.DB.Models
         /// </summary>
         public int LevelID { get; set; }
         /// <summary>
+        /// 分管工作
+        /// </summary>
+        public string Duty { get; set; }
+        /// <summary>
         /// 入职日期
         /// </summary>
         public DateTime OnOfficeDate { get; set; }

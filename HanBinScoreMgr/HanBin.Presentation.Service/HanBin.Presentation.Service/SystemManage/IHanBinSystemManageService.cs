@@ -2,6 +2,7 @@
 using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
+using iCMS.Common.Component.Data.Response.HanBin.OfficerManager;
 using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
 using iCMS.Common.Component.Data.Response.HanBinOrganManager;
 using System.ServiceModel;
@@ -86,7 +87,31 @@ namespace HanBin.Presentation.Service.SystemManage
          Method = "POST",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<bool> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter);
+        BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetOfficerScoreDetailInfoResult> GetOfficerScoreDetailInfo(GetOfficerScoreDetailInfoParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetApplyDetailInfoResult> GetApplyDetailInfo(GetApplyDetailInfoParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter);
         #endregion
     }
 }

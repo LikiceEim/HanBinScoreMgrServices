@@ -12,6 +12,7 @@ using HanBin.Services.OrganManager;
 using iCMS.Common.Component.Data.Response.HanBinOrganManager;
 using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
 using HanBin.Services.OfficerManager;
+using iCMS.Common.Component.Data.Response.HanBin.OfficerManager;
 
 namespace HanBin.Presentation.Service.SystemManage
 {
@@ -94,9 +95,37 @@ namespace HanBin.Presentation.Service.SystemManage
         #endregion
 
         #region 获取干部详细信息（不包含积分）
-        public BaseResponse<bool> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
+        public BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
         {
             return officerManager.GetOfficerDetailInfo(parameter);
+        }
+        #endregion
+
+        #region 获取干部积分信息
+        public BaseResponse<GetOfficerScoreDetailInfoResult> GetOfficerScoreDetailInfo(GetOfficerScoreDetailInfoParameter parameter)
+        {
+            return officerManager.GetOfficerScoreDetailInfo(parameter);
+        }
+        #endregion
+
+        #region 编辑积分申请时候，获取积分申请详细信息
+        public BaseResponse<GetApplyDetailInfoResult> GetApplyDetailInfo(GetApplyDetailInfoParameter parameter)
+        {
+            return officerManager.GetApplyDetailInfo(parameter);
+        }
+        #endregion
+
+        #region 撤销积分申请
+        public BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter)
+        {
+            return officerManager.CancelScoreApply(parameter);
+        }
+        #endregion
+
+        #region 删除干部
+        public BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter)
+        {
+            return officerManager.DeleteOfficerRecord(parameter);
         }
         #endregion
         #endregion

@@ -1,0 +1,4 @@
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\bin\Debug\HanBin.Common.Commonent.Data.Enum.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\bin\Debug\HanBin.Common.Commonent.Data.Enum.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\obj\Debug\HanBin.Common.Commonent.Data.Enum.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\obj\Debug\HanBin.Common.Commonent.Data.Enum.pdb

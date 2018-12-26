@@ -44,7 +44,6 @@
     <Compile Include="EnumDevFormType.cs" />
     <Compile Include="EnumMeasureSiteThresholdType.cs" />
     <Compile Include="Cloud\EnumMonitorTreeType.cs" />
-    <Compile Include="EnumAlarmRecordType.cs" />
     <Compile Include="EnumAlarmStatus.cs" />
     <Compile Include="EnumBaseDataType.cs" />
     <Compile Include="EnumCloudConfigIsUse.cs" />

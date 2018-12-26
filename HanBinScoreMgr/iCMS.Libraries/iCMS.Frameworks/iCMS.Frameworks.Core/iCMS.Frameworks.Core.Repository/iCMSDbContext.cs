@@ -31,7 +31,7 @@ namespace iCMS.Frameworks.Core.Repository
 
         public DbSet<OrganCategory> OrganCategories { get; set; }
 
-        public DbSet<UploadFile> UploadFiles { get; set; }
+        public DbSet<ApplyUploadFile> ApplyUploadFiles { get; set; }
 
         public DbSet<ScoreApply> ScoreApplies { get; set; }
 

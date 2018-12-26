@@ -144,3 +144,5 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\obj\Debug\HanBin.Services.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\obj\Debug\HanBin.Services.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\obj\Debug\HanBin.Services.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\HanBin.Common.Commonent.Data.Enum.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\HanBin.Common.Commonent.Data.Enum.pdb
