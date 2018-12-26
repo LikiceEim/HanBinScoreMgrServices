@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreService\HanBinScoreService.cs" />
+    <Compile Include="ScoreService\IHanBinScoreService.cs" />
     <Compile Include="SystemManage\HanBinSystemManageService.cs" />
     <Compile Include="SystemManage\IHanBinSystemManageService.cs" />
   </ItemGroup>

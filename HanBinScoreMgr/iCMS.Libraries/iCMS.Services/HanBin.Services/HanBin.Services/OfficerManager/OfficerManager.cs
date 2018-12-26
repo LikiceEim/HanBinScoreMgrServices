@@ -12,6 +12,7 @@ using iCMS.Service.Common;
 using iCMS.Common.Component.Data.Response.HanBin.OfficerManager;
 using iCMS.Common.Component.Tool;
 using HanBin.Common.Commonent.Data.Enum;
+using System.ComponentModel;
 
 namespace HanBin.Services.OfficerManager
 {
@@ -325,6 +326,82 @@ namespace HanBin.Services.OfficerManager
                 LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 获取干部列表
+        public BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter)
+        {
+            BaseResponse<GetOfficerListResult> response = new BaseResponse<GetOfficerListResult>();
+            GetOfficerListResult result = new GetOfficerListResult();
+            try
+            {
+                using (iCMSDbContext dbContext = new iCMSDbContext())
+                {
+                    var officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted);
+                    if (parameter.OrganizationID.HasValue && parameter.OrganizationID.Value > 0)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.OrganizationID == parameter.OrganizationID);
+                    }
+
+                    var officerLinq = from off in officerQuerable
+                                      join org in dbContext.Organizations
+                                      on off.OrganizationID equals org.OrganID
+                                      join pos in dbContext.OfficerPositionTypes on off.PositionID equals pos.PositionID
+                                      join lev in dbContext.OfficerLevelTypes on off.OfficerID equals lev.LevelID
+                                      where org.OrganFullName.ToUpper().Contains(parameter.Keyword.ToUpper()) || org.OrganCode.ToUpper().Contains(parameter.Keyword.ToUpper())
+                                      select new OfficerDetailInfo
+                                      {
+                                          OfficerID = off.OfficerID,
+                                          Name = off.Name,
+                                          Gender = off.Gender,
+                                          Birthday = off.Birthday,
+                                          OrganizationName = org.OrganFullName,
+                                          PositionID = pos.PositionID,
+                                          PositionName = pos.PositionName,
+                                          LevelID = lev.LevelID,
+                                          LevelName = lev.LevelName,
+                                          OnOfficeDate = off.OnOfficeDate,
+                                          OrganizationID = org.OrganID,
+                                          CurrentScore = off.CurrentScore,
+                                          IdentifyNumber = off.IdentifyCardNumber
+                                      };
+
+
+                    if (!string.IsNullOrEmpty(parameter.Keyword))
+                    {
+                        officerLinq = officerLinq.Where(t => t.Name.Contains(parameter.Keyword) || t.IdentifyNumber.Contains(parameter.Keyword));
+                    }
+                    ListSortDirection sortOrder = parameter.Order.ToLower().Equals("asc") ? ListSortDirection.Ascending : ListSortDirection.Descending;
+                    PropertySortCondition[] sortList = new PropertySortCondition[]
+                    {
+                        new PropertySortCondition(parameter.Sort, sortOrder),
+                        new PropertySortCondition("OfficerID", sortOrder),
+                    };
+
+                    officerLinq = officerLinq.OrderBy(sortList);
+                    int count = officerLinq.Count();
+                    if (parameter.Page > -1)
+                    {
+                        officerLinq = officerLinq
+                            .Skip((parameter.Page - 1) * parameter.PageSize)
+                            .Take(parameter.PageSize);
+                    }
+
+                    result.OfficerInfoList.AddRange(officerLinq.ToList());
+                    result.Total = count;
+                    response.Result = result;
+
+                    return response;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = "获取单位列表发生异常";
 
                 return response;
             }

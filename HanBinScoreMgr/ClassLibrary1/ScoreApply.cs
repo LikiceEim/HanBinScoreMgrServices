@@ -63,5 +63,10 @@ namespace HanBin.Core.DB.Models
         /// </summary>
         public string ApplySummary { get; set; }
 
+        /// <summary>
+        /// 驳回理由
+        /// </summary>
+        public string RejectReason { get; set; }
+
     }
 }

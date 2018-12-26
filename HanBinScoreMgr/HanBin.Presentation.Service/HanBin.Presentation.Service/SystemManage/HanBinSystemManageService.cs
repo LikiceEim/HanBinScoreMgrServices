@@ -128,6 +128,13 @@ namespace HanBin.Presentation.Service.SystemManage
             return officerManager.DeleteOfficerRecord(parameter);
         }
         #endregion
+
+        #region 获取单位列表
+        public BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter)
+        {
+            return officerManager.GetOfficerList(parameter);
+        }
+        #endregion
         #endregion
     }
 }

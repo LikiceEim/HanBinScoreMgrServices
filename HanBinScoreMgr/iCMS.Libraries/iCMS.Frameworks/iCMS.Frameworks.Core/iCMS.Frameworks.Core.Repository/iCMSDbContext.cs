@@ -40,5 +40,7 @@ namespace iCMS.Frameworks.Core.Repository
         public DbSet<ScoreChangeHistory> ScoreChangeHistories { get; set; }
 
         public DbSet<OfficerLevelType> OfficerLevelTypes { get; set; }
+
+        public DbSet<OfficerPositionType> OfficerPositionTypes { get; set; }
     }
 }

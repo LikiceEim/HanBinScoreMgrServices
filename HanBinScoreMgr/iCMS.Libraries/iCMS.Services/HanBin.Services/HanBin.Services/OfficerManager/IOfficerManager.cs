@@ -22,5 +22,7 @@ namespace HanBin.Services.OfficerManager
         BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter);
 
         BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter);
+
+        BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter);
     }
 }

@@ -146,6 +146,7 @@
     <Compile Include="HanBin.OfficerManager\DeleteOfficerParameter.cs" />
     <Compile Include="HanBin.OfficerManager\GetApplyDetailInfoParameter.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerListParameter.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerScoreDetailInfoParameter.cs" />
     <Compile Include="HanBin.OrganManage\AddOrganParam.cs" />
     <Compile Include="HanBin.OrganManage\DeleteOrganParameter.cs" />

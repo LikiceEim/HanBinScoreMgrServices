@@ -112,6 +112,12 @@ namespace HanBin.Presentation.Service.SystemManage
              RequestFormat = WebMessageFormat.Json,
              ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter);
         #endregion
     }
 }

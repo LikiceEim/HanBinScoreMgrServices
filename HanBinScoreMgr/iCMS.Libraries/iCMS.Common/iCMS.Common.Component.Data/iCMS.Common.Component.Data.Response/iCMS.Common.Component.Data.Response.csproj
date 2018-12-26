@@ -118,6 +118,7 @@
     <Compile Include="DiagnosticControl\HasRTTrendDataForSpeedResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetApplyDetailInfoResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoResult.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerListResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerScoreDetailInfoResult.cs" />
     <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />
     <Compile Include="HanBin.SystemManager\LoginResult.cs" />
