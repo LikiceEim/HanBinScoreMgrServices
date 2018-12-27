@@ -72,6 +72,8 @@
     <Compile Include="ConstObject.cs" />
     <Compile Include="ComponentException.cs" />
     <Compile Include="ConvertUtility.cs" />
+    <Compile Include="CORSExtension\CustomHeaderMessageInspector.cs" />
+    <Compile Include="CORSExtension\EnableCrossOriginResourceSharingBehavior.cs" />
     <Compile Include="DataAccessException.cs" />
     <Compile Include="EcanSecurity.cs" />
     <Compile Include="EnumHelper.cs" />

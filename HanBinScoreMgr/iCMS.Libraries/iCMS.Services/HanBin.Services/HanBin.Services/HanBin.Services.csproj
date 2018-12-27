@@ -60,6 +60,8 @@
     <Compile Include="OrganManager\IOrganManager.cs" />
     <Compile Include="OrganManager\OrganManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScoreManager\IScoreManager.cs" />
+    <Compile Include="ScoreManager\ScoreManager.cs" />
     <Compile Include="SystemManager\IUserManager.cs" />
     <Compile Include="SystemManager\UserManager.cs" />
   </ItemGroup>

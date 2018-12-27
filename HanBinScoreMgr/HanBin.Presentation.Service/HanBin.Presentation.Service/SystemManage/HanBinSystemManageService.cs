@@ -13,9 +13,13 @@ using iCMS.Common.Component.Data.Response.HanBinOrganManager;
 using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
 using HanBin.Services.OfficerManager;
 using iCMS.Common.Component.Data.Response.HanBin.OfficerManager;
+using System.ServiceModel.Activation;
+using System.ServiceModel.Web;
 
 namespace HanBin.Presentation.Service.SystemManage
 {
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
+    [JavascriptCallbackBehavior(UrlParameterName = "jsoncallback")]
     public class HanBinSystemManageService : IHanBinSystemManageService
     {
         private IUserManager userManager;
@@ -135,6 +139,11 @@ namespace HanBin.Presentation.Service.SystemManage
             return officerManager.GetOfficerList(parameter);
         }
         #endregion
+
+        public BaseResponse<GetOrganTypeResult> GetOrganTypeList()
+        {
+            return organManager.GetOrganTypeList();
+        }
         #endregion
     }
 }

@@ -153,6 +153,7 @@
     <Compile Include="HanBin.OrganManage\EditOrganParameter.cs" />
     <Compile Include="HanBin.OrganManage\GetOrganDetailInfoParameter.cs" />
     <Compile Include="HanBin.OrganManage\GetOrganInfoListParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\AddScoreItemParameter.cs" />
     <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
     <Compile Include="HanBin.SystemManage\LoginParameter.cs" />

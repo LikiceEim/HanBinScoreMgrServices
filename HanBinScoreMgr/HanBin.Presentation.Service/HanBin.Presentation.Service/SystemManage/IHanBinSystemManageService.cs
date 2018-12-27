@@ -74,6 +74,12 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetOrganTypeResult> GetOrganTypeList();
         #endregion
 
         #region 干部管理

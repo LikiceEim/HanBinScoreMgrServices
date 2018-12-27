@@ -20,5 +20,7 @@ namespace HanBin.Services.OrganManager
         BaseResponse<bool> DeleteOrganRecord(DeleteOrganParameter param);
 
         BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter);
+
+        BaseResponse<GetOrganTypeResult> GetOrganTypeList();
     }
 }
