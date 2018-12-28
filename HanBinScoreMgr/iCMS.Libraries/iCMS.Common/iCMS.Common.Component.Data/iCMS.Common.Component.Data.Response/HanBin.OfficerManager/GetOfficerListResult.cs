@@ -46,4 +46,38 @@ namespace iCMS.Common.Component.Data.Response.HanBin.OfficerManager
 
         public string IdentifyNumber { get; set; }
     }
+
+    public class GetLevelListResult
+    {
+        public List<LevelSummaryInfo> LevelList { get; set; }
+
+        public GetLevelListResult()
+        {
+            LevelList = new List<LevelSummaryInfo>();
+        }
+    }
+
+    public class LevelSummaryInfo
+    {
+        public int LevelID { get; set; }
+
+        public string LevelName { get; set; }
+    }
+    public class GetPositionListResult
+    {
+        public List<PositionSummaryInfo> PositionList { get; set; }
+
+        public GetPositionListResult()
+        {
+            PositionList = new List<PositionSummaryInfo>();
+        }
+    }
+
+    public class PositionSummaryInfo
+    {
+        public int PositionID { get; set; }
+
+        public string PositionName { get; set; }
+    }
+
 }

@@ -304,6 +304,7 @@ namespace HanBin.Services.OrganManager
                                             OrganID = organ.OrganID,
                                             OrganCode = organ.OrganCode,
                                             OrganFullName = organ.OrganFullName,
+                                            OrganShortName = organ.OrganShortName,
                                             OrganTypeID = organ.OrganTypeID,
                                             OrganTypeName = g1.OrganTypeName,
                                             OrganCategoryID = g2.CategoryID,

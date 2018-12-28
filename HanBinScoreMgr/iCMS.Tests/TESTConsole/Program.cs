@@ -16,7 +16,6 @@ using iCMS.Common.Component.Data.Request.DiagnosticControl;
 using iCMS.Common.Component.Data.Request.WirelessSensors;
 
 using iCMS.Common.Component.Data.Request.DiagnosticAnalysis;
-using iCMS.Common.Component.Data.Request.Cloud;
 using iCMS.Common.Component.Data.Enum;
 
 using iCMS.Common.Component.Data.Request.DevicesConfig;

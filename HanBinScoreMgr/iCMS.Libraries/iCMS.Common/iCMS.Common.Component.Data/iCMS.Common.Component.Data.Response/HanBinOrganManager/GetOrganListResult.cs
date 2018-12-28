@@ -26,6 +26,8 @@ namespace iCMS.Common.Component.Data.Response.HanBinOrganManager
 
         public string OrganFullName { get; set; }
 
+        public string OrganShortName { get; set; }
+
         public int OrganTypeID { get; set; }
 
         public string OrganTypeName { get; set; }

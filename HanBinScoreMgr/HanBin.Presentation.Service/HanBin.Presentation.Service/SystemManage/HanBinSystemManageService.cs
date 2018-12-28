@@ -145,5 +145,21 @@ namespace HanBin.Presentation.Service.SystemManage
             return organManager.GetOrganTypeList();
         }
         #endregion
+
+
+        public BaseResponse<GetOrganSummaryResult> GetOrganSummary()
+        {
+            return officerManager.GetOrganSummary();
+        }
+
+        public BaseResponse<GetPositionListResult> GetPositionSummary()
+        {
+            return officerManager.GetPositionSummary();
+        }
+
+        public BaseResponse<GetLevelListResult> GetLevelSummary()
+        {
+            return officerManager.GetLevelSummary();
+        }
     }
 }

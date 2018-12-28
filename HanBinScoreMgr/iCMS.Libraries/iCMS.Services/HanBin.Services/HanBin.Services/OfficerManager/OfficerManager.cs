@@ -24,9 +24,15 @@ namespace HanBin.Services.OfficerManager
         public IRepository<ScoreApply> scoreApplyRepository { get; set; }
         [Dependency]
         public IRepository<ScoreItem> scoreItemRepository { get; set; }
-
+        [Dependency]
         public IRepository<ApplyUploadFile> applyUploadFileRepository { get; set; }
+        [Dependency]
+        public IRepository<Organization> organRepository { get; set; }
 
+        [Dependency]
+        public IRepository<OfficerPositionType> positionRepository { get; set; }
+        [Dependency]
+        public IRepository<OfficerLevelType> levelRepository { get; set; }
         #region 添加干部
         public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
         {
@@ -423,5 +429,85 @@ namespace HanBin.Services.OfficerManager
             }
         }
         #endregion
+
+        #region 添加干部时候，获取单位信息
+        public BaseResponse<GetOrganSummaryResult> GetOrganSummary()
+        {
+            BaseResponse<GetOrganSummaryResult> response = new BaseResponse<GetOrganSummaryResult>();
+            GetOrganSummaryResult result = new GetOrganSummaryResult();
+            try
+            {
+                var organList = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).Select(t => new OrganSummaryInfo
+                {
+                    OrganID = t.OrganID,
+                    OrganFullName = t.OrganFullName,
+                    OrganTypeID = t.OrganTypeID
+                }).ToList();
+
+                result.OrganList.AddRange(organList);
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+        #region 添加干部时候，获取职位信息
+        public BaseResponse<GetPositionListResult> GetPositionSummary()
+        {
+            BaseResponse<GetPositionListResult> response = new BaseResponse<GetPositionListResult>();
+            GetPositionListResult result = new GetPositionListResult();
+            try
+            {
+                var positionList = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).Select(t => new PositionSummaryInfo
+                {
+                    PositionID = t.PositionID,
+                    PositionName = t.PositionName
+                }).ToList();
+
+                result.PositionList.AddRange(positionList);
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
+        #region 添加干部时候，获取级别信息
+        public BaseResponse<GetLevelListResult> GetLevelSummary()
+        {
+            BaseResponse<GetLevelListResult> response = new BaseResponse<GetLevelListResult>();
+            GetLevelListResult result = new GetLevelListResult();
+            try
+            {
+                var positionList = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).Select(t => new LevelSummaryInfo
+                {
+                    LevelID = t.LevelID,
+                    LevelName = t.LevelName
+                }).ToList();
+
+                result.LevelList.AddRange(positionList);
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+        #endregion
+
     }
 }

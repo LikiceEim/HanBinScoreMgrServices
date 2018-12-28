@@ -24,5 +24,11 @@ namespace HanBin.Services.OfficerManager
         BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter);
 
         BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter);
+
+        BaseResponse<GetOrganSummaryResult> GetOrganSummary();
+
+        BaseResponse<GetPositionListResult> GetPositionSummary();
+
+        BaseResponse<GetLevelListResult> GetLevelSummary();
     }
 }

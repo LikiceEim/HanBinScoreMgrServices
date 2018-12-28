@@ -125,5 +125,23 @@ namespace HanBin.Presentation.Service.SystemManage
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter);
         #endregion
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+         BaseResponse<GetOrganSummaryResult> GetOrganSummary();
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetPositionListResult> GetPositionSummary();
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetLevelListResult> GetLevelSummary();
     }
 }

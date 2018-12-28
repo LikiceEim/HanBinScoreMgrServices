@@ -22,4 +22,5 @@ namespace iCMS.Common.Component.Data.Request.HanBin.OfficerManager
 
         public int PageSize { get; set; }
     }
+
 }
