@@ -235,4 +235,3 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\HanBin.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Service.Common.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.csprojResolveAssemblyReference.cache
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\Resource\ErrorCode.json

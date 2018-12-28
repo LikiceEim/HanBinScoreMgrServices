@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iCMS.Common.Component.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace iCMS.Common.Component.Data.Request.HanBin.OrganManage
 {
-    public class AddOrganParameter
+    public class AddOrganParameter : BaseRequest
     {
         /// <summary>
         /// 单位编码

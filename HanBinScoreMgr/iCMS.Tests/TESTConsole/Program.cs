@@ -21,6 +21,7 @@ using iCMS.Common.Component.Data.Enum;
 
 using iCMS.Common.Component.Data.Request.DevicesConfig;
 using iCMS.Common.Component.Data.Request.Statistics;
+using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 
 namespace TESTConsole
 {
@@ -28,15 +29,15 @@ namespace TESTConsole
     {
         static void Main(string[] args)
         {
-            RestClient client = new RestClient("http://localhost:2892/Web/StatisticsService");
+            RestClient client = new RestClient("http://localhost:2892/HanBin/SystemService");
 
-            string method = "GetWSMaintainReportSimpleInfo";
+            string method = "GetOrganTypeList";
 
-            GetWSMaintainReportSimpleInfoParameter param = new GetWSMaintainReportSimpleInfoParameter();
-            param.UserID = 1011;
-            string json = param.ToClientString();
 
-            string retPost = client.Post(json, method);
+
+            // string json = param.ToClientString();
+
+            string retPost = client.Post("", method);
 
             Console.WriteLine("post请求：" + retPost);
             Console.ReadKey();

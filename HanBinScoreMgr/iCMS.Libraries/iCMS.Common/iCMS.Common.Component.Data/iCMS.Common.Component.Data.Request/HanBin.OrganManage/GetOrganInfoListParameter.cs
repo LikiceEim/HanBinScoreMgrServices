@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iCMS.Common.Component.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace iCMS.Common.Component.Data.Request.HanBin.OrganManage
     /// <summary>
     /// 获取单位列表请求参数
     /// </summary>
-    public class GetOrganInfoListParameter
+    public class GetOrganInfoListParameter : BaseRequest
     {
         /// <summary>
         /// 单位分类

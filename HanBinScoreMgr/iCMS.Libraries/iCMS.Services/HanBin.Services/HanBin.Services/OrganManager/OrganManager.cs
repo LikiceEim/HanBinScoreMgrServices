@@ -30,6 +30,11 @@ namespace HanBin.Services.OrganManager
         [Dependency]
         public IRepository<OrganType> organTypeRepository { get; set; }
 
+        [Dependency]
+        public IRepository<OfficerPositionType> officerPositionRepository { get; set; }
+        [Dependency]
+        public IRepository<OfficerLevelType> officerLevelRepository { get; set; }
+
         #region 添加单位
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {
@@ -83,22 +88,34 @@ namespace HanBin.Services.OrganManager
                 result.OrganFullName = organ.OrganFullName;
                 result.OrganShortName = organ.OrganShortName;
                 result.OrganTypeID = organ.OrganTypeID;
-                result.OrganTypeName = string.Empty;
-                result.OrganCategoryID = 0;
-                result.OrganCategoryName = string.Empty;
+                var organType = organTypeRepository.GetDatas<OrganType>(t => t.OrganTypeID == organ.OrganTypeID && !t.IsDeleted, true).FirstOrDefault();
+                if (organType != null)
+                {
+                    result.OrganTypeName = organType.OrganTypeName;
+                    var organCategory = organCategoryRepository.GetDatas<OrganCategory>(t => t.CategoryID == organType.CategoryID && !t.IsDeleted, true).FirstOrDefault();
+                    if (organCategory != null)
+                    {
+                        result.OrganCategoryID = organCategory.CategoryID;
+                        result.OrganCategoryName = organCategory.CategoryName;
+                    }
+                }
 
                 //获取单位下的干部
                 var officerInfo = officerRepository.GetDatas<Officer>(t => t.OrganizationID == organ.OrganID && !t.IsDeleted, true).ToArray().Select(t =>
                 {
+                    var level = officerLevelRepository.GetDatas<OfficerLevelType>(l => !l.IsDeleted && l.LevelID == t.LevelID, true).FirstOrDefault();
+                    var position = officerPositionRepository.GetDatas<OfficerPositionType>(p => p.IsDeleted && p.PositionID == t.PositionID, true).FirstOrDefault();
+                    string levelName = level == null ? string.Empty : level.LevelName;
+                    string positionName = position == null ? string.Empty : position.PositionName;
                     return new OfficerInfo
                     {
                         OfficerID = t.OfficerID,
                         Name = t.Name,
                         Birthday = t.Birthday,
                         PositionID = t.PositionID,
-                        PositonName = string.Empty,
+                        PositonName = positionName,
                         LevelID = t.LevelID,
-                        IevelName = string.Empty,
+                        IevelName = levelName,
                         OnOfficeDate = t.OnOfficeDate,
                         CurrentScore = t.CurrentScore
                     };
@@ -208,7 +225,7 @@ namespace HanBin.Services.OrganManager
                     category.CategoryID = t.CategoryID;
                     category.CategoryName = t.CategoryName;
 
-                    var organTypeList = organTypeRepository.GetDatas<OrganType>(n => !n.IsDeleted && t.CategoryID == t.CategoryID, true).ToArray().Select(n =>
+                    var organTypeList = organTypeRepository.GetDatas<OrganType>(n => !n.IsDeleted && n.CategoryID == t.CategoryID, true).ToArray().Select(n =>
                     {
                         OrganTypeInfo info = new OrganTypeInfo();
                         info.OrganTypeID = n.OrganTypeID;
@@ -237,6 +254,23 @@ namespace HanBin.Services.OrganManager
         {
             BaseResponse<GetOrganListResult> response = new BaseResponse<GetOrganListResult>();
             GetOrganListResult result = new GetOrganListResult();
+
+            if (string.IsNullOrEmpty(parameter.Sort))
+            {
+                parameter.Sort = "OrganCode";
+            }
+            if (string.IsNullOrEmpty(parameter.Order))
+            {
+                parameter.Order = "asc";
+            }
+            if (parameter.Page == 0)
+            {
+                parameter.Page = 1;
+            }
+            if (parameter.PageSize == 0)
+            {
+                parameter.PageSize = 10;
+            }
             try
             {
                 using (iCMSDbContext dbContext = new iCMSDbContext())
@@ -251,6 +285,7 @@ namespace HanBin.Services.OrganManager
                         organQuerable = organQuerable.Where(t => t.OrganCode.ToUpper().Equals(parameter.Keyword.ToUpper()) || t.OrganFullName.ToUpper().Equals(parameter.Keyword.ToUpper()));
                     }
 
+
                     var organListLinq = from organ in organQuerable
                                         join organType in dbContext.OrganTypes on organ.OrganTypeID equals organType.OrganTypeID
                                         into group1
@@ -258,9 +293,12 @@ namespace HanBin.Services.OrganManager
                                         join category in dbContext.OrganCategories on g1.CategoryID equals category.CategoryID
                                         into group2
                                         from g2 in group2
+
+
                                         join item in dbContext.Officers.GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
                                         into group3
-                                        from g3 in group3
+                                        from g3 in group3.DefaultIfEmpty()
+
                                         select new OrganInfo
                                         {
                                             OrganID = organ.OrganID,
@@ -278,12 +316,12 @@ namespace HanBin.Services.OrganManager
                     PropertySortCondition[] sortList = new PropertySortCondition[]
                     {
                         new PropertySortCondition(parameter.Sort, sortOrder),
-                        new PropertySortCondition("UserID", sortOrder),
+                        new PropertySortCondition("OrganID", sortOrder),
                     };
 
                     organListLinq = organListLinq.OrderBy(sortList);
 
-                    int count = organQuerable.Count();
+                    int count = organListLinq.Count();
                     if (parameter.Page > -1)
                     {
                         organListLinq = organListLinq
