@@ -64,7 +64,7 @@ namespace HanBin.Services.SystemManager
                 user.OrganizationID = parameter.OrganizationID;
                 user.AddUserID = parameter.AddUserID;
                 user.LastUpdateDate = DateTime.Now;
-                user.LastUpdateID = parameter.AddUserID;
+                user.LastUpdateUserID = parameter.AddUserID;
 
                 OperationResult operationResult = hbUserReosiory.AddNew<HBUser>(user);
                 if (operationResult.ResultType != EnumOperationResultType.Success)
@@ -79,7 +79,6 @@ namespace HanBin.Services.SystemManager
                 response.IsSuccessful = false;
                 return response;
             }
-            throw new NotImplementedException();
         }
 
         public BaseResponse<bool> EditUser(EditUserParameter parameter)
@@ -96,7 +95,7 @@ namespace HanBin.Services.SystemManager
                 userInDB.UserToken = parameter.UserToken;
                 userInDB.RoleID = parameter.RoleID;
                 userInDB.OrganizationID = parameter.OrganizationID;
-                userInDB.LastUpdateID = parameter.LastUpdateUserID;
+                userInDB.LastUpdateUserID = parameter.LastUpdateUserID;
                 userInDB.LastUpdateDate = DateTime.Now;
                 userInDB.Gender = parameter.Gender;
 
@@ -107,10 +106,10 @@ namespace HanBin.Services.SystemManager
 
                 }
                 return response;
-
             }
             catch (Exception e)
             {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = "修改用户发生异常";
                 return response;
@@ -119,11 +118,25 @@ namespace HanBin.Services.SystemManager
 
         public BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter)
         {
-
             BaseResponse<GetUserInfoResult> response = new BaseResponse<GetUserInfoResult>();
             try
             {
-
+                if (string.IsNullOrEmpty(parameter.Sort))
+                {
+                    parameter.Sort = "UserToken";
+                }
+                if (string.IsNullOrEmpty(parameter.Order))
+                {
+                    parameter.Order = "asc";
+                }
+                if (parameter.Page == 0)
+                {
+                    parameter.Page = 1;
+                }
+                if (parameter.PageSize == 0)
+                {
+                    parameter.PageSize = 10;
+                }
 
                 switch (parameter.Sort)
                 {
@@ -196,7 +209,7 @@ namespace HanBin.Services.SystemManager
                                 RoleName = roleNameObj == null ? "" : roleNameObj.RoleName,
                                 UserToken = user.UserToken,
                                 Gender = user.Gender,
-                                LastUpdateUserID = user.LastUpdateID,
+                                LastUpdateUserID = user.LastUpdateUserID,
                                 OrganizationID = user.OrganizationID,
                                 OrganizationName = string.Empty
                             };

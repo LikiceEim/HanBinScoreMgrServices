@@ -16,4 +16,21 @@ namespace iCMS.Common.Component.Data.Request.HanBin.ScoreManager
 
         public int AddUserID { get; set; }
     }
+
+    public class EditScoreItemParameter
+    {
+        public int ItemID { get; set; }
+
+        public int ItemScore { get; set; }
+
+        public string ItemDescription { get; set; }
+
+        public int EditUserID { get; set; }
+
+    }
+
+    public class DeleteScoreItemParameter
+    {
+        public int ItemID { get; set; }
+    }
 }

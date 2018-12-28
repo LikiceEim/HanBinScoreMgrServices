@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace iCMS.Common.Component.Data.Request.HanBin.SystemManage
 {
-  public  class LoginParameter:BaseRequest
+    public class LoginParameter : BaseRequest
     {
         public string UserName { get; set; }
 
         public string PWD { get; set; }
     }
 
-    public class AddUserParameter
+    public class AddUserParameter : BaseRequest
     {
         public string UserToken { get; set; }
 
@@ -28,8 +28,8 @@ namespace iCMS.Common.Component.Data.Request.HanBin.SystemManage
 
         public int AddUserID { get; set; }
 
-  
-    } 
+
+    }
 
 
 }

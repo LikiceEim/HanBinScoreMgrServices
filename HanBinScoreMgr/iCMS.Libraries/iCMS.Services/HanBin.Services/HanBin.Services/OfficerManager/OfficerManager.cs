@@ -36,7 +36,7 @@ namespace HanBin.Services.OfficerManager
             //4. 添加积分变更记录
             BaseResponse<bool> response = new BaseResponse<bool>();
             //iCMSDbContext dbContext = new iCMSDbContext();
-
+            OperationResult operResult = null;
             try
             {
                 ExecuteDB.ExecuteTrans((dbContext) =>
@@ -54,7 +54,11 @@ namespace HanBin.Services.OfficerManager
                     officer.CurrentScore = officer.InitialScore;
                     officer.LastUpdateDate = DateTime.Now;
                     officer.LastUpdateUserID = parameter.AddUserID;
-                    dbContext.Officers.AddNew<Officer>(dbContext, officer);
+                    operResult = dbContext.Officers.AddNew<Officer>(dbContext, officer);
+                    if (operResult.ResultType != iCMS.Common.Component.Data.Enum.EnumOperationResultType.Success)
+                    {
+                        throw new Exception("数据库操作异常");
+                    }
 
                     int extraScore = 0;
                     if (parameter.ApplyItemList.Any())
@@ -68,10 +72,16 @@ namespace HanBin.Services.OfficerManager
                             scApply.ApplyStatus = 1;//自动设置为审批通过
                             scApply.ProposeID = officer.AddUserID;
                             scApply.AddUserID = officer.AddUserID;
+                            scApply.LastUpdateDate = DateTime.Now;
+                            scApply.LastUpdateUserID = officer.AddUserID;
                             scApply.ApplySummary = t.ApplySummary;
                             scApply.IsDeleted = false;
 
-                            dbContext.ScoreApplies.AddNew<ScoreApply>(dbContext, scApply);
+                            operResult = dbContext.ScoreApplies.AddNew<ScoreApply>(dbContext, scApply);
+                            if (operResult.ResultType != iCMS.Common.Component.Data.Enum.EnumOperationResultType.Success)
+                            {
+                                throw new Exception("数据库操作异常");
+                            }
                             //保存变化的分值，最后更新CurrentScore
                             extraScore += scApply.ItemScore;
 
@@ -84,11 +94,17 @@ namespace HanBin.Services.OfficerManager
                             his.ProcessUserID = null;
                             his.ProposeID = scApply.ProposeID;
                             his.AddUserID = scApply.AddUserID;
-                            var scoreItem = dbContext.ScoreItems.Where(x => x.ItemID == his.ItemID).First();
-                            his.Content = string.Format("{0}  {1} {2}", his.ItemScore, his.AddDate, scoreItem.ItemDescription);
+                            var scoreItem = dbContext.ScoreItems.Where(x => x.ItemID == his.ItemID).FirstOrDefault();
+                            if (scoreItem != null)
+                            {
+                                his.Content = string.Format("{0}  {1} {2}", his.ItemScore, his.AddDate, scoreItem.ItemDescription);
+                            }
 
-                            dbContext.ScoreChangeHistories.AddNew<ScoreChangeHistory>(dbContext, his);
-
+                            operResult = dbContext.ScoreChangeHistories.AddNew<ScoreChangeHistory>(dbContext, his);
+                            if (operResult.ResultType != iCMS.Common.Component.Data.Enum.EnumOperationResultType.Success)
+                            {
+                                throw new Exception("数据库操作异常");
+                            }
                         });
                     }
 

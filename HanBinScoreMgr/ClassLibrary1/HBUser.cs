@@ -25,16 +25,17 @@ namespace HanBin.Core.DB.Models
 
         public int RoleID { get; set; }
 
-    
-
         public DateTime LastUpdateDate { get; set; }
 
         public int AddUserID { get; set; }
 
-        public int LastUpdateID { get; set; }
+        public int LastUpdateUserID { get; set; }
 
+        /// <summary>
+        /// 使用状态 启用/禁用
+        /// </summary>
         public bool UseStatus { get; set; }
 
-        public bool IsDeleted{ get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

@@ -52,48 +52,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cloud\BaseDataListResult.cs" />
-    <Compile Include="Cloud\CloudConfigDataResult.cs" />
-    <Compile Include="Cloud\CloudConfigMappingData.cs" />
-    <Compile Include="Cloud\CloudPushErrorDataResult.cs" />
-    <Compile Include="Cloud\DevAlmRecordResult.cs" />
-    <Compile Include="Cloud\DeviceTypeResult.cs" />
-    <Compile Include="Cloud\EigenValueTypeResult.cs" />
-    <Compile Include="Cloud\GetCloudConfigInfoResult.cs" />
-    <Compile Include="Cloud\GetCloudLogDataResult.cs" />
-    <Compile Include="Cloud\GetCloudPushDataErrorDataResult.cs" />
-    <Compile Include="Cloud\GetCloudPushDataResult.cs" />
-    <Compile Include="Cloud\DeviceResult.cs" />
-    <Compile Include="Cloud\MeasureSiteResult.cs" />
-    <Compile Include="Cloud\MeasureSiteTypeResult.cs" />
-    <Compile Include="Cloud\MonitorResult.cs" />
-    <Compile Include="Cloud\MonitorTreePropertyResult.cs" />
-    <Compile Include="Cloud\MonitorTreeTypeResult.cs" />
-    <Compile Include="Cloud\PlatformInfoResult.cs" />
-    <Compile Include="Cloud\ReceiveCloudProxyNotifyResult.cs" />
-    <Compile Include="Cloud\SignalAlmSetResult.cs" />
-    <Compile Include="Cloud\StatisticCloudLogDataResult.cs" />
-    <Compile Include="Cloud\TempeDeviceMsitedata.cs" />
-    <Compile Include="Cloud\TempeDeviceSetMSiteAlmResult.cs" />
-    <Compile Include="Cloud\TempeWSSetMSiteAlmResult.cs" />
-    <Compile Include="Cloud\VibratingSingalCharHisAccResult.cs" />
-    <Compile Include="Cloud\VibSignalTypeResult.cs" />
-    <Compile Include="Cloud\VibSingalResult.cs" />
-    <Compile Include="Cloud\VoltageSetMSiteAlmResult.cs" />
-    <Compile Include="Cloud\VoltageWSMSiteData_1Result.cs" />
-    <Compile Include="Cloud\WaveLengthValuesResult.cs" />
-    <Compile Include="Cloud\WaveLowerLimitValuesResult.cs" />
-    <Compile Include="Cloud\WaveUpperLimitValuesResult.cs" />
-    <Compile Include="Cloud\WGResult.cs" />
-    <Compile Include="Cloud\WsnAlmRecordResult.cs" />
-    <Compile Include="Cloud\WSResult.cs" />
     <Compile Include="Common\ResponseResult.cs" />
     <Compile Include="Common\CommonInfo.cs" />
     <Compile Include="Common\SelectItemResult.cs" />
-    <Compile Include="DAUAgent\GetDAUMDFResult.cs" />
-    <Compile Include="DAUAgent\SetDAUAgentMDFResult.cs" />
-    <Compile Include="DAUAgent\StartCollectionResult.cs" />
-    <Compile Include="DAUAgent\StopCollectionResult.cs" />
     <Compile Include="DAUService\GetAllWSInfoByDAUIDResult.cs" />
     <Compile Include="DAUService\GetAvailableTemperatureWSByDAUIDResult.cs" />
     <Compile Include="DAUService\GetDAUInfoListByDAUIDResult.cs" />
@@ -120,6 +81,7 @@
     <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerListResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerScoreDetailInfoResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetScoreItemListResult.cs" />
     <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />
     <Compile Include="HanBin.SystemManager\LoginResult.cs" />
     <Compile Include="HanBinOrganManager\GetOrganDetailInfoResult.cs" />
@@ -250,7 +212,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="NewFolder1\" />
     <Folder Include="Other\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

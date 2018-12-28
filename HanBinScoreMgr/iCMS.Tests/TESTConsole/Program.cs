@@ -22,6 +22,8 @@ using iCMS.Common.Component.Data.Enum;
 using iCMS.Common.Component.Data.Request.DevicesConfig;
 using iCMS.Common.Component.Data.Request.Statistics;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
+using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
+using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 
 namespace TESTConsole
 {
@@ -31,15 +33,27 @@ namespace TESTConsole
         {
             RestClient client = new RestClient("http://localhost:2892/HanBin/SystemService");
 
-            string method = "GetOrganTypeList";
+            for (int i = 0; i < 5; i++)
+            {
+                string method = "AddUser";
+                AddUserParameter param = new AddUserParameter();
+                param.UserToken = "Test2" + i;
+                param.Gender = 1;
+                param.AddUserID = 1;
+                param.OrganizationID = 1;
+                param.PWD = "pawword";
+                param.RoleID = 1;
 
 
 
-            // string json = param.ToClientString();
+                string json = param.ToClientString();
 
-            string retPost = client.Post("", method);
+                string retPost = client.Post(json, method);
+                Console.WriteLine("post请求：" + retPost);
+            }
 
-            Console.WriteLine("post请求：" + retPost);
+
+
             Console.ReadKey();
         }
 
