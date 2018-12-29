@@ -48,10 +48,8 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Framewor
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Common.Component.Data.Base.DB.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Common.Component.Data.Enum.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Common.Component.Data.Extend.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Common.Component.Data.Enum.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\bin\Debug\iCMS.Common.Component.Data.Extend.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\obj\Debug\iCMS.Frameworks.Core.DB.Models.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\obj\Debug\iCMS.Frameworks.Core.DB.Models.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\obj\Debug\iCMS.Frameworks.Core.DB.Models.pdb

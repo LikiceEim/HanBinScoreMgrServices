@@ -83,6 +83,7 @@
     <Compile Include="FrepTools.cs" />
     <Compile Include="ICacheManager.cs" />
     <Compile Include="JsonSort.cs" />
+    <Compile Include="JsonWebToken.cs" />
     <Compile Include="LogHelper.cs" />
     <Compile Include="MD5Helper.cs" />
     <Compile Include="MemoryCacheManager.cs" />

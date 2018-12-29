@@ -55,5 +55,47 @@ namespace HanBin.Presentation.Service.ScoreService
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> CheckScoreApply(CheckScoreApplyParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<SystemStatSummaryResult> SystemStatSummary();
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetBlackBoardResult> GetBlackBoard(GetBlackBoardParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<WhatsToDoSummaryResult> GetWhatsToDoSummary(GetWhatsToDoSummaryParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetWhatsToDoDetailListResult> GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter);
     }
 }

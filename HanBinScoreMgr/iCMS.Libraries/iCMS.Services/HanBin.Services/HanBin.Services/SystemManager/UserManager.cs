@@ -21,19 +21,36 @@ namespace HanBin.Services.SystemManager
         [Dependency]
         public IRepository<HBUser> hbUserReosiory { get; set; }
 
-
+        /// <summary>
+        /// 登陆后返回Token 和角色ID
+        /// </summary>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public BaseResponse<LoginResult> Login(LoginParameter parameter)
         {
             BaseResponse<LoginResult> response = new BaseResponse<LoginResult>();
             LoginResult result = new LoginResult();
             try
             {
+                var encodePWD = MD5Helper.MD5Encrypt64(parameter.PWD);
                 var user = hbUserReosiory.GetDatas<HBUser>(t => t.UserToken.Equals(parameter.UserName)
-                && t.PWD.Equals(parameter.PWD)
+                && t.PWD.Equals(encodePWD)
                 && t.UseStatus && !t.IsDeleted, true).FirstOrDefault();
                 if (user != null)
                 {
                     result.RoleID = user.RoleID;
+                    result.UserID = user.UserID;
+
+                    var payload = new Dictionary<string, object>
+                            {
+                                    {"name", user.UserToken },                
+                                    {"exp",1000},
+                                    {"role",user.RoleID }
+                            };
+                    var privateKey = AppConfigHelper.GetConfigValue("PrivateKey");
+
+                    result.Token = JsonWebToken.Encode(payload, privateKey, JwtHashAlgorithm.HS512);
+
                     response.Result = result;
 
                     return response;
@@ -51,7 +68,6 @@ namespace HanBin.Services.SystemManager
             }
         }
 
-
         public BaseResponse<bool> AddUser(AddUserParameter parameter)
         {
             BaseResponse<bool> response = new BaseResponse<bool>();
@@ -59,7 +75,7 @@ namespace HanBin.Services.SystemManager
             {
                 HBUser user = new HBUser();
                 user.UserToken = parameter.UserToken;
-                user.PWD = parameter.PWD;
+                user.PWD = MD5Helper.MD5Encrypt64(parameter.PWD);//密码MD5加密
                 user.RoleID = parameter.RoleID;
                 user.OrganizationID = parameter.OrganizationID;
                 user.AddUserID = parameter.AddUserID;

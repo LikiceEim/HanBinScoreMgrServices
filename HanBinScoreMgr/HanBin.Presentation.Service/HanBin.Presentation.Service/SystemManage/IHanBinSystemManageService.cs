@@ -3,6 +3,7 @@ using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
 using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
 using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 using iCMS.Common.Component.Data.Response.HanBin.OfficerManager;
+using iCMS.Common.Component.Data.Response.HanBin.ScoreManager;
 using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
 using iCMS.Common.Component.Data.Response.HanBinOrganManager;
 using System.ServiceModel;
@@ -130,7 +131,7 @@ namespace HanBin.Presentation.Service.SystemManage
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-         BaseResponse<GetOrganSummaryResult> GetOrganSummary();
+        BaseResponse<GetOrganSummaryResult> GetOrganSummary();
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
@@ -143,5 +144,7 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetLevelListResult> GetLevelSummary();
+
+     
     }
 }

@@ -52,5 +52,40 @@ namespace HanBin.Presentation.Service.ScoreService
         {
             return scoreManager.CheckScoreApply(parameter);
         }
+
+        public BaseResponse<SystemStatSummaryResult> SystemStatSummary()
+        {
+            return scoreManager.SystemStatSummary();
+        }
+
+        public BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter)
+        {
+            return scoreManager.GetHonourBoard(parameter);
+        }
+
+        public BaseResponse<GetBlackBoardResult> GetBlackBoard(GetBlackBoardParameter parameter)
+        {
+            return scoreManager.GetBlackBoard(parameter);
+        }
+
+        public BaseResponse<WhatsToDoSummaryResult> GetWhatsToDoSummary(GetWhatsToDoSummaryParameter parameter)
+        {
+            return scoreManager.GetWhatsToDoSummary(parameter);
+        }
+
+        public BaseResponse<GetWhatsToDoDetailListResult> GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter)
+        {
+            return scoreManager.GetWhatsToDoDetailList(parameter);
+        }
+
+        public BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter)
+        {
+            return scoreManager.GetHighLevelFeedBackSummary(parameter);
+        }
+
+        public BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter)
+        {
+            return scoreManager.GetHighLevelFeedBackDetailList(parameter);
+        }
     }
 }

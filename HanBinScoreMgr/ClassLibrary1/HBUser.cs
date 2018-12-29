@@ -15,6 +15,9 @@ namespace HanBin.Core.DB.Models
         [Key]
         public int UserID { get; set; }
 
+        /// <summary>
+        /// 用户ID, 唯一标识用户
+        /// </summary>
         public string UserToken { get; set; }
 
         public string PWD { get; set; }

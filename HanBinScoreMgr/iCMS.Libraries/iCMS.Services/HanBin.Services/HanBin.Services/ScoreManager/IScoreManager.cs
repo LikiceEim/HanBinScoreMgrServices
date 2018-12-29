@@ -24,5 +24,19 @@ namespace HanBin.Services.ScoreManager
         BaseResponse<bool> EditScoreApply(EditScoreApplyParameter parameter);
 
         BaseResponse<bool> CheckScoreApply(CheckScoreApplyParameter parameter);
+
+        BaseResponse<SystemStatSummaryResult> SystemStatSummary();
+
+        BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter);
+
+        BaseResponse<GetBlackBoardResult> GetBlackBoard(GetBlackBoardParameter parameter);
+
+        BaseResponse<WhatsToDoSummaryResult> GetWhatsToDoSummary(GetWhatsToDoSummaryParameter parameter);
+
+        BaseResponse<GetWhatsToDoDetailListResult> GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter);
+
+        BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter);
+
+        BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter);
     }
 }

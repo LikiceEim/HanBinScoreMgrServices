@@ -36,5 +36,18 @@ namespace iCMS.Common.Component.Tool
 
             return byte2String;
         }
+
+        /// <summary>
+        /// 64位MD5
+        /// </summary>
+        /// <param name="src"></param>
+        /// <returns></returns>
+        public static string MD5Encrypt64(string src)
+        {
+            MD5 md5 = MD5.Create(); //实例化一个md5对像
+            // 加密后是一个字节类型的数组，这里要注意编码UTF8/Unicode等的选择　
+            byte[] s = md5.ComputeHash(Encoding.UTF8.GetBytes(src));
+            return Convert.ToBase64String(s);
+        }
     }
 }

@@ -32,9 +32,14 @@ namespace HanBin.Services.ScoreManager
         [Dependency]
         public IRepository<ScoreChangeHistory> schRepository { get; set; }
 
-
         [Dependency]
         public IRepository<Organization> organRepository { get; set; }
+
+        [Dependency]
+        public IRepository<HBUser> userRepository { get; set; }
+
+        [Dependency]
+        public IRepository<OfficerPositionType> positionRepository { get; set; }
 
         #region 积分条目字典CRUD
         public BaseResponse<bool> AddScoreItem(AddScoreItemParameter parameter)
@@ -337,6 +342,350 @@ namespace HanBin.Services.ScoreManager
                 return response;
             }
         }
+        #endregion
+
+        #region 首页
+        #region 系统统计
+        public BaseResponse<SystemStatSummaryResult> SystemStatSummary()
+        {
+            BaseResponse<SystemStatSummaryResult> respose = new BaseResponse<SystemStatSummaryResult>();
+            SystemStatSummaryResult result = new SystemStatSummaryResult();
+            try
+            {
+                result.OrganizatonCount = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).Count();
+                result.OfficerCount = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).Count();
+                result.UserCount = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true).Count();
+
+                result.AvarageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).Select(t => t.CurrentScore).Average();
+
+                respose.Result = result;
+                return respose;
+            }
+            catch (Exception e)
+            {
+                respose.IsSuccessful = false;
+                respose.Reason = e.Message;
+                return respose;
+            }
+        }
+
+        #endregion
+
+        #region 获取红榜数据
+        public BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter)
+        {
+            BaseResponse<GetHonourBoardResult> response = new BaseResponse<GetHonourBoardResult>();
+            GetHonourBoardResult result = new GetHonourBoardResult();
+            try
+            {
+                int rank = parameter.RankNumber;
+                if (rank < 1)
+                {
+                    throw new Exception("参数异常");
+                }
+
+                var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+
+                var scoreRankList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
+                {
+                    int positionID = t.PositionID;
+                    var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
+                    var positionName = position == null ? string.Empty : position.PositionName;
+
+                    return new ScoreRankInfo
+                    {
+                        OfficerID = t.OfficerID,
+                        OfficerName = t.Name,
+                        CurrentScore = t.CurrentScore,
+                        Gender = t.Gender,
+                        PositionName = positionName
+
+                    };
+                });
+
+                result.RankList.AddRange(scoreRankList);
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 获取黑榜数据
+        public BaseResponse<GetBlackBoardResult> GetBlackBoard(GetBlackBoardParameter parameter)
+        {
+            BaseResponse<GetBlackBoardResult> response = new BaseResponse<GetBlackBoardResult>();
+            GetBlackBoardResult result = new GetBlackBoardResult();
+            try
+            {
+                int rank = parameter.RankNumber;
+                if (rank < 1)
+                {
+                    throw new Exception("参数异常");
+                }
+
+                var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+
+                //按照分数升序排列
+                var scoreRankList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderBy(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
+                {
+                    int positionID = t.PositionID;
+                    var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
+                    var positionName = position == null ? string.Empty : position.PositionName;
+
+                    return new ScoreRankInfo
+                    {
+                        OfficerID = t.OfficerID,
+                        OfficerName = t.Name,
+                        CurrentScore = t.CurrentScore,
+                        Gender = t.Gender,
+                        PositionName = positionName
+
+                    };
+                });
+
+                result.RankList.AddRange(scoreRankList);
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 待我审核【总览信息】
+        public BaseResponse<WhatsToDoSummaryResult> GetWhatsToDoSummary(GetWhatsToDoSummaryParameter parameter)
+        {
+            BaseResponse<WhatsToDoSummaryResult> response = new BaseResponse<WhatsToDoSummaryResult>();
+            WhatsToDoSummaryResult result = new WhatsToDoSummaryResult();
+
+            try
+            {
+                var applySummaryList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyStatus == (int)EnumApproveStatus.Approving, true).ToArray().Select(t =>
+                {
+                    int proposeUserID = t.ProposeID;
+
+                    var user = userRepository.GetDatas<HBUser>(u => u.UserID == proposeUserID, true).FirstOrDefault();
+                    string applyTitle = string.Format("{0}提交了一个申请", user == null ? string.Empty : user.UserToken);
+                    return new WhatToDoInfo
+                    {
+                        ApplyID = t.ApplyID,
+                        ApplyDate = t.AddDate,
+                        ApplyTitle = applyTitle
+                    };
+                });
+
+                result.WhatToDoList.AddRange(applySummaryList);
+                response.Result = result;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 待我审批【详细信息】
+        public BaseResponse<GetWhatsToDoDetailListResult> GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter)
+        {
+            BaseResponse<GetWhatsToDoDetailListResult> response = new BaseResponse<GetWhatsToDoDetailListResult>();
+            GetWhatsToDoDetailListResult result = new GetWhatsToDoDetailListResult();
+            try
+            {
+                var applyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyStatus == (int)EnumApproveStatus.Approving, true);
+                int total = applyQuerable.Count();
+
+                var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
+                var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
+                var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+
+                var scoreItemArray = scoreItemRepository.GetDatas<ScoreItem>(t =>
+                    !t.IsDeleted, true).ToList();
+
+                var Linq = applyQuerable
+                            .Skip((parameter.Page - 1) * parameter.PageSize)
+                            .Take(parameter.PageSize).ToList();
+
+                Linq.ForEach(t =>
+                {
+                    ApplyDetail applyDetail = new ApplyDetail();
+                    applyDetail.ApplyID = t.ApplyID;
+                    var officer = officerArray.Where(o => o.OfficerID == t.OfficerID).FirstOrDefault();
+                    if (officer != null)
+                    {
+                        applyDetail.OfficerName = officer.Name;
+                        applyDetail.IdentifyCardNumber = officer.IdentifyCardNumber;
+                        applyDetail.OrganID = officer.OrganizationID;
+
+                        var organ = organArray.Where(g => g.OrganID == officer.OrganizationID).FirstOrDefault();
+                        if (organ != null)
+                        {
+                            applyDetail.OrganFullName = organ.OrganFullName;
+                        }
+                    }
+
+                    applyDetail.PositionID = officer.PositionID;
+                    var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
+                    if (position != null)
+                    {
+                        applyDetail.PositionName = position.PositionName;
+                    }
+                    applyDetail.ItemScore = t.ItemScore;
+
+                    var scoreItem = scoreItemArray.Where(s => s.ItemID == t.ItemID).FirstOrDefault();
+                    if (scoreItem != null)
+                    {
+                        applyDetail.ItemDescription = scoreItem.ItemDescription;
+                    }
+
+                    var files = ufRepository.GetDatas<ApplyUploadFile>(f => !f.IsDeleted && f.ApplyID == t.ApplyID, true).Select(f => f.FilePath).ToList();
+                    applyDetail.UploadFileList.AddRange(files);
+
+                    result.ApplyDetailList.Add(applyDetail);
+                    result.Total = total;
+                });
+
+                response.Result = result;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 上级反馈【总览信息】
+        public BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter)
+        {
+            BaseResponse<GetHighLevelFeedBackSummaryResult> response = new BaseResponse<GetHighLevelFeedBackSummaryResult>();
+            GetHighLevelFeedBackSummaryResult result = new GetHighLevelFeedBackSummaryResult();
+
+            try
+            {
+                var approvedApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true).ToArray().Select(t =>
+                {
+                    int proposeUserID = t.ProposeID;
+
+                    var user = userRepository.GetDatas<HBUser>(u => u.UserID == proposeUserID, true).FirstOrDefault();
+                    string feedBackTitle = string.Format("{0}提交的申请已{1}", user == null ? string.Empty : user.UserToken, t.ApplyStatus == (int)EnumApproveStatus.Pass ? "通过审核" : "被驳回");
+                    return new FeedBackSummaryInfo
+                    {
+                        ApplyID = t.ApplyID,
+                        LastUpdateDate = t.LastUpdateDate,
+                        FeedBackTitle = feedBackTitle
+                    };
+                });
+
+                result.FeedBackList.AddRange(approvedApplyList);
+                response.Result = result;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 上级反馈【详细信息】
+        public BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter)
+        {
+            BaseResponse<GetHighLevelFeedBackDetailListResult> response = new BaseResponse<GetHighLevelFeedBackDetailListResult>();
+            GetHighLevelFeedBackDetailListResult result = new GetHighLevelFeedBackDetailListResult();
+            try
+            {
+                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true);
+                int total = approvedApplyQuerable.Count();
+
+                var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
+                var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
+                var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+
+                var scoreItemArray = scoreItemRepository.GetDatas<ScoreItem>(t =>
+                    !t.IsDeleted, true).ToList();
+
+                var Linq = approvedApplyQuerable
+                            .Skip((parameter.Page - 1) * parameter.PageSize)
+                            .Take(parameter.PageSize).ToList();
+
+                Linq.ForEach(t =>
+                {
+                    ApprovedApplyDetail approvedApply = new ApprovedApplyDetail();
+                    approvedApply.ApplyID = t.ApplyID;
+                    var officer = officerArray.Where(o => o.OfficerID == t.OfficerID).FirstOrDefault();
+                    if (officer != null)
+                    {
+                        approvedApply.OfficerName = officer.Name;
+                        approvedApply.IdentifyCardNumber = officer.IdentifyCardNumber;
+                        approvedApply.OrganID = officer.OrganizationID;
+
+                        var organ = organArray.Where(g => g.OrganID == officer.OrganizationID).FirstOrDefault();
+                        if (organ != null)
+                        {
+                            approvedApply.OrganFullName = organ.OrganFullName;
+                        }
+                    }
+
+                    approvedApply.PositionID = officer.PositionID;
+                    var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
+                    if (position != null)
+                    {
+                        approvedApply.PositionName = position.PositionName;
+                    }
+                    approvedApply.ItemScore = t.ItemScore;
+
+                    var scoreItem = scoreItemArray.Where(s => s.ItemID == t.ItemID).FirstOrDefault();
+                    if (scoreItem != null)
+                    {
+                        approvedApply.ItemDescription = scoreItem.ItemDescription;
+                    }
+
+                    var files = ufRepository.GetDatas<ApplyUploadFile>(f => !f.IsDeleted && f.ApplyID == t.ApplyID, true).Select(f => f.FilePath).ToList();
+                    approvedApply.UploadFileList.AddRange(files);
+                    approvedApply.ApproveStatus = t.ApplyStatus;
+                    approvedApply.RejectReason = t.RejectReason;
+
+                    result.ApplovedApplyDetailList.Add(approvedApply);
+
+                });
+
+                response.Result = result;
+                result.Total = total;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
         #endregion
     }
 }

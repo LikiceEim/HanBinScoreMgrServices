@@ -137,10 +137,6 @@
       <Project>{e5ba3139-a5d3-45d4-9185-94f14816958c}</Project>
       <Name>iCMS.Common.Component.Data.Enum</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Extend\iCMS.Common.Component.Data.Extend.csproj">
-      <Project>{E4DF3564-48C0-429C-A775-787881523A81}</Project>
-      <Name>iCMS.Common.Component.Data.Extend</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
