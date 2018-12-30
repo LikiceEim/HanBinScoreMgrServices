@@ -38,5 +38,9 @@ namespace HanBin.Services.ScoreManager
         BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter);
 
         BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter);
+
+        BaseResponse<GetScoreChangeHistoryResult> GetScoreChangeHistory(GetScoreChangeHistoryParameter parameter);
+
+        BaseResponse<ScorePublicShowResult> ScorePublicShow(ScorePublicShowParameter parameter);
     }
 }

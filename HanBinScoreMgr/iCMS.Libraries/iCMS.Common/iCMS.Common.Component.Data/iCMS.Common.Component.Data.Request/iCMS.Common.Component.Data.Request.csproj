@@ -59,8 +59,10 @@
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackDetailListParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackSummaryParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetHonourBoardParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoSummaryParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\ScorePublicShowParameter.cs" />
     <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
     <Compile Include="HanBin.SystemManage\LoginParameter.cs" />

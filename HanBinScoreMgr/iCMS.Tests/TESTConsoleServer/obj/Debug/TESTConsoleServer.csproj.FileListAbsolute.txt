@@ -194,9 +194,8 @@ E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Service.Common.pdb
 E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.exe
 E:\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\Resource\ErrorCode.json
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\TESTConsoleServer.exe.config
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.exe
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\TESTConsoleServer.exe
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\TESTConsoleServer.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\EntityFramework.dll
@@ -212,8 +211,8 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\Micro
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\Microsoft.Practices.Unity.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\Newtonsoft.Json.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Base.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Response.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Request.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Response.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\HanBin.Services.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\AppFramework.Analysis.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\ICSharpCode.SharpZipLib.dll
@@ -228,11 +227,12 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Frameworks.Core.Repository.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Base.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Response.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Request.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Response.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\HanBin.Services.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Common.Component.Data.Enum.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\HanBin.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\iCMS.Service.Common.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.csprojResolveAssemblyReference.cache
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\Resource\ErrorCode.json
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.exe
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\obj\Debug\TESTConsoleServer.pdb

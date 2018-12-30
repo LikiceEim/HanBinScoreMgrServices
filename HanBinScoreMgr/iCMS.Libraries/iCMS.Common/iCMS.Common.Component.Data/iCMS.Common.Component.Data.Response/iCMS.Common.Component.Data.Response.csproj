@@ -63,8 +63,10 @@
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackDetailListResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackSummaryResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetHonourBoardResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetScoreItemListResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListResult.cs" />
+    <Compile Include="HanBin.ScoreManager\ScorePublicShowResult.cs" />
     <Compile Include="HanBin.ScoreManager\SystemStatSummaryResult.cs" />
     <Compile Include="HanBin.ScoreManager\WhatsToDoSummaryResult.cs" />
     <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />

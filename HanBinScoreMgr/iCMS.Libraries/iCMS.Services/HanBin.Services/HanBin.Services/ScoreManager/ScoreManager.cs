@@ -40,6 +40,10 @@ namespace HanBin.Services.ScoreManager
 
         [Dependency]
         public IRepository<OfficerPositionType> positionRepository { get; set; }
+        [Dependency]
+        public IRepository<ScoreChangeHistory> schisRepository { get; set; }
+        [Dependency]
+        public IRepository<OfficerLevelType> levelRepository { get; set; }
 
         #region 积分条目字典CRUD
         public BaseResponse<bool> AddScoreItem(AddScoreItemParameter parameter)
@@ -675,6 +679,121 @@ namespace HanBin.Services.ScoreManager
 
                 response.Result = result;
                 result.Total = total;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 变更公示
+        public BaseResponse<GetScoreChangeHistoryResult> GetScoreChangeHistory(GetScoreChangeHistoryParameter parameter)
+        {
+            BaseResponse<GetScoreChangeHistoryResult> response = new BaseResponse<GetScoreChangeHistoryResult>();
+            GetScoreChangeHistoryResult result = new GetScoreChangeHistoryResult();
+
+            try
+            {
+                IQueryable<ScoreChangeHistory> scHisQuerable = schisRepository.GetDatas<ScoreChangeHistory>(t => true, true).OrderByDescending(t => t.AddDate);
+                if (parameter.RankNumber.HasValue && parameter.RankNumber.Value > 0)
+                {
+                    //取前N条
+                    scHisQuerable = scHisQuerable.Take(parameter.RankNumber.Value);
+                }
+
+                int total = scHisQuerable.Count();
+
+                int? page = parameter.Page;
+                int? pageSize = parameter.PageSize;
+                if (page.HasValue && page.Value > 0 && pageSize.HasValue && pageSize.Value > 0)
+                {
+                    //分页
+                    scHisQuerable = scHisQuerable
+                           .Skip((page.Value - 1) * pageSize.Value)
+                           .Take(pageSize.Value);
+
+                }
+                scHisQuerable.ToList().ForEach(t =>
+                {
+                    ScoreChange sc = new ScoreChange();
+                    sc.ItemScore = t.ItemScore;
+                    sc.Content = t.Content;
+                    sc.AddDate = t.AddDate;
+
+                    result.ScoreChangeHisList.Add(sc);
+                });
+
+                result.Total = total;
+                response.Result = result;
+                return response;
+
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 积分公示【首页及跳转页】
+        public BaseResponse<ScorePublicShowResult> ScorePublicShow(ScorePublicShowParameter parameter)
+        {
+            BaseResponse<ScorePublicShowResult> response = new BaseResponse<ScorePublicShowResult>();
+            ScorePublicShowResult result = new ScorePublicShowResult();
+            try
+            {
+                var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
+                var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+                var levelArray = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).ToList();
+
+                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore);
+                int total = officers.Count();
+
+                officers = officers
+                           .Skip((parameter.Page - 1) * parameter.PageSize)
+                           .Take(parameter.PageSize).OrderByDescending(t => t.CurrentScore);
+                int rank = 1;
+                officers.ToList().ForEach(t =>
+                       {
+                           //计算一个积分公示
+                           OfficerScoreShowInfo offPubShow = new OfficerScoreShowInfo();
+                           offPubShow.CurrentScore = t.CurrentScore;
+                           offPubShow.Rank = rank++;
+                           offPubShow.Name = t.Name;
+                           offPubShow.Gender = t.Gender;
+                           offPubShow.Birthday = t.Birthday;
+                           var organ = organArray.Where(o => o.OrganID == t.OrganizationID).FirstOrDefault();
+                           if (organ != null)
+                           {
+                               offPubShow.OrganFullName = organ.OrganFullName;
+                           }
+
+                           var position = positionArray.Where(p => p.PositionID == t.PositionID).FirstOrDefault();
+                           if (position != null)
+                           {
+                               offPubShow.PositionName = position.PositionName;
+                           }
+                           var level = levelArray.Where(l => l.LevelID == t.LevelID).FirstOrDefault();
+                           if (level != null)
+                           {
+                               offPubShow.LevelName = level.LevelName;
+                           }
+
+                           offPubShow.OnOfficeDate = t.OnOfficeDate;
+                           result.OfficerScoreShowList.Add(offPubShow);
+                       });
+
+                result.Total = total;
+                response.Result = result;
+
                 return response;
             }
             catch (Exception e)

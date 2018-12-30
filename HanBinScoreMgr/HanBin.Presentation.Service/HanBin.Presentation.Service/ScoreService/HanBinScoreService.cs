@@ -87,5 +87,15 @@ namespace HanBin.Presentation.Service.ScoreService
         {
             return scoreManager.GetHighLevelFeedBackDetailList(parameter);
         }
+
+        public BaseResponse<GetScoreChangeHistoryResult> GetScoreChangeHistory(GetScoreChangeHistoryParameter parameter)
+        {
+            return scoreManager.GetScoreChangeHistory(parameter);
+        }
+
+        public BaseResponse<ScorePublicShowResult> ScorePublicShow(ScorePublicShowParameter parameter)
+        {
+            return scoreManager.ScorePublicShow(parameter);
+        }
     }
 }

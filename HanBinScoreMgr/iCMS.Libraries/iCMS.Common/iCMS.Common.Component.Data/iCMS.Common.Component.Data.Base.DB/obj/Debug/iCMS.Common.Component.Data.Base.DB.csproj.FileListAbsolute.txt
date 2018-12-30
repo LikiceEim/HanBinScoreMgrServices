@@ -19,5 +19,6 @@ E:\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Com
 E:\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\iCMS.Common.Component.Data.Base.DB.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\bin\Debug\iCMS.Common.Component.Data.Base.DB.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\iCMS.Common.Component.Data.Base.DB.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\iCMS.Common.Component.Data.Base.DB.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\iCMS.Common.Component.Data.Base.DB.pdb
