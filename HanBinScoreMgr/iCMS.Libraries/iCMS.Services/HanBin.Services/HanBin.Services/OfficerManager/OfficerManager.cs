@@ -359,6 +359,11 @@ namespace HanBin.Services.OfficerManager
         {
             BaseResponse<GetOfficerListResult> response = new BaseResponse<GetOfficerListResult>();
             GetOfficerListResult result = new GetOfficerListResult();
+            if (string.IsNullOrEmpty(parameter.Sort))
+            {
+                parameter.Sort = "OfficerID";
+                parameter.Order = "asc";
+            }
             try
             {
                 using (iCMSDbContext dbContext = new iCMSDbContext())
@@ -368,26 +373,35 @@ namespace HanBin.Services.OfficerManager
                     {
                         officerQuerable = officerQuerable.Where(t => t.OrganizationID == parameter.OrganizationID);
                     }
+                    if (parameter.LevelID.HasValue && parameter.LevelID.Value > 0)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.LevelID == parameter.LevelID.Value);
+
+                    }
 
                     var officerLinq = from off in officerQuerable
                                       join org in dbContext.Organizations
                                       on off.OrganizationID equals org.OrganID
-                                      join pos in dbContext.OfficerPositionTypes on off.PositionID equals pos.PositionID
-                                      join lev in dbContext.OfficerLevelTypes on off.OfficerID equals lev.LevelID
-                                      where org.OrganFullName.ToUpper().Contains(parameter.Keyword.ToUpper()) || org.OrganCode.ToUpper().Contains(parameter.Keyword.ToUpper())
+                                      into group1
+                                      from g1 in group1
+                                      join pos in dbContext.OfficerPositionTypes on off.PositionID equals pos.PositionID into group2
+                                      from g2 in group2
+                                      join lev in dbContext.OfficerLevelTypes on off.OfficerID equals lev.LevelID into group3
+                                      from g3 in group3
+                                      //where org.OrganFullName.ToUpper().Contains(parameter.Keyword.ToUpper()) || org.OrganCode.ToUpper().Contains(parameter.Keyword.ToUpper())
                                       select new OfficerDetailInfo
                                       {
                                           OfficerID = off.OfficerID,
                                           Name = off.Name,
                                           Gender = off.Gender,
                                           Birthday = off.Birthday,
-                                          OrganizationName = org.OrganFullName,
-                                          PositionID = pos.PositionID,
-                                          PositionName = pos.PositionName,
-                                          LevelID = lev.LevelID,
-                                          LevelName = lev.LevelName,
+                                          OrganizationName = g1.OrganFullName,
+                                          PositionID = g2.PositionID,
+                                          PositionName = g2.PositionName,
+                                          LevelID = g3.LevelID,
+                                          LevelName = g3.LevelName,
                                           OnOfficeDate = off.OnOfficeDate,
-                                          OrganizationID = org.OrganID,
+                                          OrganizationID = off.OrganizationID,
                                           CurrentScore = off.CurrentScore,
                                           IdentifyNumber = off.IdentifyCardNumber
                                       };

@@ -12,6 +12,7 @@ using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 
 using iCMS.Common.Component.Tool;
+using System.ServiceModel;
 
 namespace iCMS.Common.Component.Data.Base
 {
@@ -19,6 +20,7 @@ namespace iCMS.Common.Component.Data.Base
     /// <summary>
     /// 请求基类
     /// </summary>
+
     public class BaseRequest
     {
         //private string key = Utilitys.GetAppConfig("Key");

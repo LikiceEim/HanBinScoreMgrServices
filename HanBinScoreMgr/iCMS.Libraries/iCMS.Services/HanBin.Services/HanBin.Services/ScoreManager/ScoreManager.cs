@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using iCMS.Service.Common;
 using HanBin.Common.Commonent.Data.Enum;
+using System.IO;
 
 namespace HanBin.Services.ScoreManager
 {
@@ -1071,5 +1072,19 @@ namespace HanBin.Services.ScoreManager
         }
         #endregion
         #endregion
+
+        #region 文件上传与下载
+        public BaseResponse<bool> UpLoadFile(Stream filestream)
+        {
+            return null;
+        }
+
+        public Stream DownLoadFile(string downfile)
+        {
+            return null;
+        }
+        #endregion
     }
+
+
 }

@@ -4,6 +4,7 @@ using iCMS.Common.Component.Data.Request.HanBin.ScoreManager;
 using iCMS.Common.Component.Data.Response.HanBin.ScoreManager;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,7 +109,7 @@ namespace HanBin.Presentation.Service.ScoreService
             return scoreManager.AreaAverageScore();
         }
 
-        public BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter)
+        public BaseResponse<AgeAverageScoreResult> AgeAverageScore(AgeAverageScoreParameter parameter)
         {
             return scoreManager.AreaAverageScore(parameter);
         }
@@ -116,6 +117,38 @@ namespace HanBin.Presentation.Service.ScoreService
         public BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter)
         {
             return scoreManager.OrganAverageScore(parameter);
+        }
+
+        public UpFileResult UploadFile(UpFile parameter)
+        {
+            UpFileResult result = new UpFileResult();
+
+            string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            byte[] buffer = new byte[parameter.FileSize];
+
+            string filePath = path + parameter.FileName + DateTime.Now.Ticks;
+            FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+
+            int count = 0;
+            while ((count = parameter.FileStream.Read(buffer, 0, buffer.Length)) > 0)
+            {
+                fs.Write(buffer, 0, count);
+            }
+            //清空缓冲区
+            fs.Flush();
+            //关闭流
+            fs.Close();
+
+            result.IsSuccessful = true;
+            result.FilePath = filePath;
+
+            return result;
         }
     }
 }

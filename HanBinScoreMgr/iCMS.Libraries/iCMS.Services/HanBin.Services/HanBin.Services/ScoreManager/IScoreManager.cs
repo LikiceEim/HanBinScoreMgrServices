@@ -50,5 +50,8 @@ namespace HanBin.Services.ScoreManager
         BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter);
 
         BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter);
+
+
+
     }
 }

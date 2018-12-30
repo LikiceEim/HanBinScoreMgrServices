@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Web;
 using iCMS.Common.Component.Data.Response.HanBin.ScoreManager;
+using System.IO;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -127,12 +128,40 @@ namespace HanBin.Presentation.Service.ScoreService
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter);
+        BaseResponse<AgeAverageScoreResult> AgeAverageScore(AgeAverageScoreParameter parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        UpFileResult UploadFile(UpFile parameter);
+    }
+
+
+    public class UpFile
+    {
+
+        public long FileSize { get; set; }
+
+        public string FileName { get; set; }
+
+        public Stream FileStream { get; set; }
+    }
+
+
+    public class UpFileResult
+    {
+
+        public bool IsSuccessful { get; set; }
+
+        public string Reason { get; set; }
+
+        public string FilePath { get; set; }
     }
 }

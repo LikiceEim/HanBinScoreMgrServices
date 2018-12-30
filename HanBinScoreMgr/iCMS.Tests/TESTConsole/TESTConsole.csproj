@@ -54,6 +54,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HanBin.Presentation.Service\HanBin.Presentation.Service\HanBin.Presentation.Service.csproj">
+      <Project>{25c9aeef-a7c4-4e7f-aaa4-ff92ef87e23e}</Project>
+      <Name>HanBin.Presentation.Service</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base\iCMS.Common.Component.Data.Base.csproj">
       <Project>{1922fdfa-b1ff-4e76-b060-9adaf84db519}</Project>
       <Name>iCMS.Common.Component.Data.Base</Name>
