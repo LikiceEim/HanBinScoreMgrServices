@@ -24,7 +24,7 @@ namespace iCMS.Common.Component.Data.Response.HanBin.SystemManager
         public int UserID { get; set; }
         public string UserToken { get; set; }
 
-        //public string PWD { get; set; }
+        public bool UseStatus { get; set; }
 
         public int Gender { get; set; }
 
@@ -36,5 +36,6 @@ namespace iCMS.Common.Component.Data.Response.HanBin.SystemManager
 
         public string RoleName { get; set; }
         public int LastUpdateUserID { get; set; }
+        public DateTime AddDate { get; set; }
     }
 }

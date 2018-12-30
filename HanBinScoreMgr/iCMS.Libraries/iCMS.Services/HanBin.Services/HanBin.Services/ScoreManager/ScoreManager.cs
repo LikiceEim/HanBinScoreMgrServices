@@ -806,5 +806,14 @@ namespace HanBin.Services.ScoreManager
         }
         #endregion
         #endregion
+
+        #region 积分查询统计
+        #region 积分查询
+        public BaseResponse<QuerySocreResult> QuerySocre(QuerySocreParameter parameter)
+        {
+            return null;
+        }
+        #endregion
+        #endregion
     }
 }

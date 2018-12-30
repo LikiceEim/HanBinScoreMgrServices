@@ -19,5 +19,11 @@ namespace HanBin.Services.SystemManager
 
         BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter);
 
+        BaseResponse<GetRoleInfoListResult> GetRoleInfoList();
+
+        BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter);
+
+        BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
+
     }
 }

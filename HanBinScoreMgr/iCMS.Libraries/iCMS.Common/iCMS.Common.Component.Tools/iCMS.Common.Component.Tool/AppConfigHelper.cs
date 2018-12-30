@@ -68,7 +68,7 @@ namespace iCMS.Common.Component.Tool
         /// <param name="value"></param>
         public static string GetConfigValue(string key)
         {
-
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
             var value = string.Empty;
             if (config.AppSettings.Settings[key] != null)
                 value = config.AppSettings.Settings[key].Value;

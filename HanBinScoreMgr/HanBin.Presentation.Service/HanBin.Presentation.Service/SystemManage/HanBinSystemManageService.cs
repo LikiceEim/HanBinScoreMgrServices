@@ -161,5 +161,21 @@ namespace HanBin.Presentation.Service.SystemManage
         {
             return officerManager.GetLevelSummary();
         }
+
+        public BaseResponse<GetRoleInfoListResult> GetRoleInfoList()
+        {
+            var headers = WebOperationContext.Current.IncomingRequest.Headers;
+            return userManager.GetRoleInfoList();
+        }
+
+        public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
+        {
+            return userManager.ChangeUseStatus(parameter);
+        }
+
+        public BaseResponse<bool> DeleteUser(DeleteUserParameter parameter)
+        {
+            return userManager.DeleteUser(parameter);
+        }
     }
 }

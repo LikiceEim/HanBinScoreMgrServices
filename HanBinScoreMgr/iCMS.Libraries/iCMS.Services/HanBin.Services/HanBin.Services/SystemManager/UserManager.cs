@@ -20,6 +20,10 @@ namespace HanBin.Services.SystemManager
     {
         [Dependency]
         public IRepository<HBUser> hbUserReosiory { get; set; }
+        [Dependency]
+        public IRepository<Organization> organRepository { get; set; }
+        [Dependency]
+        public IRepository<HBRole> roleRepoitory { get; set; }
 
         /// <summary>
         /// 登陆后返回Token 和角色ID
@@ -205,6 +209,8 @@ namespace HanBin.Services.SystemManager
                     userInfoList = userInfoList.OrderBy(sortList);
 
                     count = userInfoList.Count();
+
+                    var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
                     if (parameter.Page > -1)
                     {
                         userInfoList = userInfoList
@@ -217,17 +223,19 @@ namespace HanBin.Services.SystemManager
                         .Select(user =>
                         {
                             HBRole roleNameObj = dataContext.HBRoles.FirstOrDefault(role => role.RoleID == user.RoleID);
-
+                            var organ = organArray.Where(t => t.OrganID == user.OrganizationID).FirstOrDefault();
                             return new HBUserInfo
                             {
                                 UserID = user.UserID,
                                 RoleID = user.RoleID,
-                                RoleName = roleNameObj == null ? "" : roleNameObj.RoleName,
+                                RoleName = roleNameObj == null ? string.Empty : roleNameObj.RoleName,
                                 UserToken = user.UserToken,
                                 Gender = user.Gender,
                                 LastUpdateUserID = user.LastUpdateUserID,
                                 OrganizationID = user.OrganizationID,
-                                OrganizationName = string.Empty
+                                OrganizationName = organ == null ? string.Empty : organ.OrganFullName,
+                                UseStatus = user.UseStatus,
+                                AddDate = user.AddDate
                             };
                         })
                         .ToList();
@@ -246,6 +254,98 @@ namespace HanBin.Services.SystemManager
             {
                 response.IsSuccessful = false;
                 response.Code = null;
+                return response;
+            }
+        }
+
+        public BaseResponse<GetRoleInfoListResult> GetRoleInfoList()
+        {
+            BaseResponse<GetRoleInfoListResult> response = new BaseResponse<GetRoleInfoListResult>();
+            GetRoleInfoListResult result = new GetRoleInfoListResult();
+
+            try
+            {
+                var roles = roleRepoitory.GetDatas<HBRole>(t => !t.IsDeleted, true).Select(t => new RoleItem
+                {
+                    RoleID = t.RoleID,
+                    RoleName = t.RoleName
+                });
+
+                result.RoleList.AddRange(roles);
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+
+        public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
+        {
+
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var userInDB = hbUserReosiory.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.UserID, true).FirstOrDefault();
+                if (null == userInDB)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "用户不存在";
+
+                    return response;
+                }
+
+                userInDB.UseStatus = parameter.UseStatus;
+
+                OperationResult operationResult = hbUserReosiory.Update<HBUser>(userInDB);
+                if (operationResult.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("修改用户启用状态发生异常");
+
+                }
+                return response;
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+
+        public BaseResponse<bool> DeleteUser(DeleteUserParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var user = hbUserReosiory.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.UserID, true).FirstOrDefault();
+                if (user == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "待删除的用户不存在";
+                    return response;
+                }
+
+                user.IsDeleted = true;
+                var res = hbUserReosiory.Update<HBUser>(user);
+                if (res.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("删除用户异常");
+                }
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
                 return response;
             }
         }

@@ -62,15 +62,14 @@
     <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoSummaryParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\QuerySocreParameter.cs" />
     <Compile Include="HanBin.ScoreManager\ScorePublicShowParameter.cs" />
+    <Compile Include="HanBin.SystemManage\ChangeUseStatusParameter.cs" />
     <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
     <Compile Include="HanBin.SystemManage\LoginParameter.cs" />
-    <Compile Include="SystemManager\RoleParameter.cs" />
-    <Compile Include="SystemManager\UserLogParameter.cs" />
+    <Compile Include="HanBin.SystemManage\DeleteUserParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SystemManager\JurisdictionOfDevicesParameter.cs" />
-    <Compile Include="SystemManager\UserParameter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\iCMS.Common.Component.Data.Base\iCMS.Common.Component.Data.Base.csproj">

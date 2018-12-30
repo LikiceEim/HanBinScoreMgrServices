@@ -66,9 +66,11 @@
     <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetScoreItemListResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListResult.cs" />
+    <Compile Include="HanBin.ScoreManager\QuerySocreResult.cs" />
     <Compile Include="HanBin.ScoreManager\ScorePublicShowResult.cs" />
     <Compile Include="HanBin.ScoreManager\SystemStatSummaryResult.cs" />
     <Compile Include="HanBin.ScoreManager\WhatsToDoSummaryResult.cs" />
+    <Compile Include="HanBin.SystemManager\GetRoleInfoListResult.cs" />
     <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />
     <Compile Include="HanBin.SystemManager\LoginResult.cs" />
     <Compile Include="HanBinOrganManager\GetOrganDetailInfoResult.cs" />

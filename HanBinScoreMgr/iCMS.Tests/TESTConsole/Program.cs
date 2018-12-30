@@ -26,7 +26,7 @@ namespace TESTConsole
         static void Main(string[] args)
         {
 
-            var psd = MD5Helper.MD5Encrypt64("000000");
+            var psd = MD5Helper.GetMD5("000000");
 
             
             var payload = new Dictionary<string, object>

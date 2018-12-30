@@ -145,6 +145,22 @@ namespace HanBin.Presentation.Service.SystemManage
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetLevelListResult> GetLevelSummary();
 
-     
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetRoleInfoListResult> GetRoleInfoList();
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
     }
 }
