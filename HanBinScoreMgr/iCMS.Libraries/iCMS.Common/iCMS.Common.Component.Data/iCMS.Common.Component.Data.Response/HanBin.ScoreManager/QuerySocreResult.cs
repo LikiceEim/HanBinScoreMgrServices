@@ -27,5 +27,23 @@ namespace iCMS.Common.Component.Data.Response.HanBin.ScoreManager
         public string Name { get; set; }
 
         public int Gender { get; set; }
+
+        public DateTime Birthday { get; set; }
+
+        public int OrganTypeID { get; set; }
+
+        public int OrganID { get; set; }
+
+        public string OrganFullName { get; set; }
+
+        public int PositionID { get; set; }
+
+        public string PositionName { get; set; }
+
+        public int LevelID { get; set; }
+
+        public string LevelName { get; set; }
+
+        public DateTime OnOfficeDate { get; set; }
     }
 }

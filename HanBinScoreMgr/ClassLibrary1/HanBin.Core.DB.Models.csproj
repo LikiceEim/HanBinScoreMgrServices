@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplyFile.cs" />
+    <Compile Include="Area.cs" />
     <Compile Include="HBUser.cs" />
     <Compile Include="HBRole.cs" />
     <Compile Include="Officer.cs" />

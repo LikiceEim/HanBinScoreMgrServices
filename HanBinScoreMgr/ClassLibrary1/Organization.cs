@@ -45,6 +45,8 @@ namespace HanBin.Core.DB.Models
         /// 
         /// </summary>
         public DateTime LastUpdateDate { get; set; }
+
+        public int AreaID { get; set; }
         /// <summary>
         /// 
         /// </summary>

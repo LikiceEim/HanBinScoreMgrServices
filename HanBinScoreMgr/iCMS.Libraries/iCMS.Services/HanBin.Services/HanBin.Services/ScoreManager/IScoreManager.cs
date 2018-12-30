@@ -42,5 +42,13 @@ namespace HanBin.Services.ScoreManager
         BaseResponse<GetScoreChangeHistoryResult> GetScoreChangeHistory(GetScoreChangeHistoryParameter parameter);
 
         BaseResponse<ScorePublicShowResult> ScorePublicShow(ScorePublicShowParameter parameter);
+
+        BaseResponse<QuerySocreResult> QuerySocre(QuerySocreParameter parameter);
+
+        BaseResponse<AreaAverageScoreResult> AreaAverageScore();
+
+        BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter);
+
+        BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter);
     }
 }

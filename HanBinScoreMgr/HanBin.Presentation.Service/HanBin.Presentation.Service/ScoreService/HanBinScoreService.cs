@@ -97,5 +97,25 @@ namespace HanBin.Presentation.Service.ScoreService
         {
             return scoreManager.ScorePublicShow(parameter);
         }
+
+        public BaseResponse<QuerySocreResult> QuerySocre(QuerySocreParameter parameter)
+        {
+            return scoreManager.QuerySocre(parameter);
+        }
+
+        public BaseResponse<AreaAverageScoreResult> AreaAverageScore()
+        {
+            return scoreManager.AreaAverageScore();
+        }
+
+        public BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter)
+        {
+            return scoreManager.AreaAverageScore(parameter);
+        }
+
+        public BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter)
+        {
+            return scoreManager.OrganAverageScore(parameter);
+        }
     }
 }

@@ -42,5 +42,7 @@ namespace iCMS.Frameworks.Core.Repository
         public DbSet<OfficerLevelType> OfficerLevelTypes { get; set; }
 
         public DbSet<OfficerPositionType> OfficerPositionTypes { get; set; }
+
+        public DbSet<Area> Areas { get; set; }
     }
 }

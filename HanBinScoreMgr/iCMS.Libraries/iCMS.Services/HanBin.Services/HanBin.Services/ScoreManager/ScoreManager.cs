@@ -811,7 +811,263 @@ namespace HanBin.Services.ScoreManager
         #region 积分查询
         public BaseResponse<QuerySocreResult> QuerySocre(QuerySocreParameter parameter)
         {
-            return null;
+            BaseResponse<QuerySocreResult> response = new BaseResponse<QuerySocreResult>();
+            QuerySocreResult result = new QuerySocreResult();
+            try
+            {
+                using (iCMSDbContext dbContext = new iCMSDbContext())
+                {
+                    IQueryable<Officer> officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted);
+                    if (parameter.OrganTypeID.HasValue && parameter.OrganTypeID.Value > 0)
+                    {
+                        officerQuerable = from o in officerQuerable
+                                          join ot in dbContext.Organizations
+                                          on o.OrganizationID equals ot.OrganID into group1
+                                          from g1 in group1
+                                          join c in dbContext.OrganTypes on g1.OrganTypeID equals c.OrganTypeID into group2
+
+                                          from g2 in group2
+                                          where g2.OrganTypeID == parameter.OrganTypeID.Value
+
+                                          join p in dbContext.OfficerPositionTypes on o.PositionID equals p.PositionID into group3
+                                          join l in dbContext.OfficerLevelTypes on o.LevelID equals l.LevelID
+                                          select o;
+
+                    }
+
+                    if (parameter.LevelID.HasValue && parameter.LevelID.Value > 0)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.LevelID == parameter.LevelID.Value);
+                    }
+                    if (parameter.BirthdayFrom.HasValue && parameter.BirthdayFrom.Value != DateTime.MaxValue && parameter.BirthdayFrom.Value != DateTime.MinValue)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.Birthday >= parameter.BirthdayFrom.Value);
+                    }
+
+                    if (parameter.BirthdayTo.HasValue && parameter.BirthdayTo.Value != DateTime.MaxValue && parameter.BirthdayTo.Value != DateTime.MinValue)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.Birthday <= parameter.BirthdayTo.Value);
+                    }
+                    if (!string.IsNullOrEmpty(parameter.Keyword))
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.IdentifyCardNumber.Contains(parameter.Keyword) || t.Name.Contains(parameter.Keyword));
+                    }
+
+                    officerQuerable = officerQuerable.OrderByDescending(t => t.CurrentScore);
+
+                    int total = officerQuerable.Count();
+                    officerQuerable = officerQuerable
+                          .Skip((parameter.Page - 1) * parameter.PageSize)
+                          .Take(parameter.PageSize);
+
+                    var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
+                    var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+                    var levelArray = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).ToList();
+
+                    officerQuerable.ToList().ForEach(t =>
+                    {
+                        QueryScoreItem qsItem = new QueryScoreItem();
+                        qsItem.CurrentScore = t.CurrentScore;
+                        qsItem.OfficerID = t.OfficerID;
+                        qsItem.Name = t.Name;
+                        qsItem.Gender = t.Gender;
+                        qsItem.Birthday = t.Birthday;
+                        var organ = organArray.Where(o => o.OrganID == t.OrganizationID).FirstOrDefault();
+                        if (organ != null)
+                        {
+                            qsItem.OrganTypeID = organ.OrganTypeID;
+                            qsItem.OrganFullName = organ.OrganFullName;
+                        }
+
+                        qsItem.PositionID = t.PositionID;
+                        var position = positionArray.Where(p => p.PositionID == t.PositionID).FirstOrDefault();
+                        if (position != null)
+                        {
+                            qsItem.PositionName = position.PositionName;
+                        }
+                        qsItem.LevelID = t.LevelID;
+                        var level = levelArray.Where(l => l.LevelID == t.LevelID).FirstOrDefault();
+                        if (level != null)
+                        {
+                            qsItem.LevelName = level.LevelName;
+                        }
+                        qsItem.OnOfficeDate = t.OnOfficeDate;
+
+                        result.QueryScoreItemList.Add(qsItem);
+                    });
+
+                    result.Total = total;
+                    response.Result = result;
+                    return response;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
+
+        #region 区域平均分
+        public BaseResponse<AreaAverageScoreResult> AreaAverageScore()
+        {
+            BaseResponse<AreaAverageScoreResult> response = new BaseResponse<AreaAverageScoreResult>();
+            AreaAverageScoreResult result = new AreaAverageScoreResult();
+            try
+            {
+                using (iCMSDbContext dbContext = new iCMSDbContext())
+                {
+                    var officers = dbContext.Officers.Where(t => !t.IsDeleted).ToList();
+                    var areas = dbContext.Areas.Where(t => !t.IsDeleted).ToList();
+                    var areaAverageScoreList = dbContext.Organizations.GroupBy(t => t.AreaID).ToArray().Select(t =>
+                    {
+                        //区域ID
+                        int areaID = t.Key;
+                        string areaName = string.Empty;
+                        var area = areas.Where(a => a.AreaID == areaID).FirstOrDefault();
+                        if (area != null)
+                        {
+                            areaName = area.AreaName;
+                        }
+                        //单位ID
+                        var organIDArr = t.ToList().Select(o => o.OrganID).ToList();
+                        var averageScore = officers.Where(of => organIDArr.Contains(of.OrganizationID)).Select(of => of.CurrentScore).Average();
+
+                        return new AreaAverageScoreItem
+                        {
+                            AreaID = areaID,
+                            AreaName = areaName,
+                            AverageScore = averageScore
+                        };
+                    });
+
+                    result.AreaAverageScoreItemList.AddRange(areaAverageScoreList);
+                    response.Result = result;
+                    return response;
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
+        #region 年龄平均分
+        public BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter)
+        {
+            BaseResponse<AgeAverageScoreResult> response = new BaseResponse<AgeAverageScoreResult>();
+            AgeAverageScoreResult result = new AgeAverageScoreResult();
+            try
+            {
+                var officerQuerable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true);
+                if (parameter.BirthdayFrom.HasValue && parameter.BirthdayFrom.Value != DateTime.MaxValue && parameter.BirthdayFrom.Value != DateTime.MinValue)
+                {
+                    officerQuerable = officerQuerable.Where(t => t.Birthday >= parameter.BirthdayFrom.Value);
+                }
+                if (parameter.BirthdayTo.HasValue && parameter.BirthdayTo.Value != DateTime.MaxValue && parameter.BirthdayTo.Value != DateTime.MinValue)
+                {
+                    officerQuerable = officerQuerable.Where(t => t.Birthday <= parameter.BirthdayTo.Value);
+                }
+                if (parameter.WorkYears.HasValue && parameter.WorkYears.Value != 0)
+                {
+                    officerQuerable = officerQuerable.Where(t => (DateTime.Now.Year - t.OnOfficeDate.Year) == parameter.WorkYears.Value);
+                }
+
+                var ageScoreGroup = officerQuerable.GroupBy(t => t.Birthday.Year).ToList().Select(t =>
+                {
+                    int year = t.Key;
+
+                    var ageAverageScore = t.Select(o => o.CurrentScore).Average();
+                    return new AgeAverageScoreItem
+                    {
+                        Year = year,
+                        AverageScore = ageAverageScore
+                    };
+                });
+
+                result.AgeAverageScoreItemList.AddRange(ageScoreGroup);
+
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
+
+        #region 单位平均分
+        public BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter)
+        {
+            BaseResponse<OrganAverageScoreResult> response = new BaseResponse<OrganAverageScoreResult>();
+            OrganAverageScoreResult result = new OrganAverageScoreResult();
+            try
+            {
+                var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
+                var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+                var levelArray = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).ToList();
+
+                var officerQuerable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true);
+                if (parameter.OrganID.HasValue && parameter.OrganID.Value > 0)
+                {
+                    officerQuerable = officerQuerable.Where(t => t.OrganizationID == parameter.OrganID.Value);
+                }
+                if (parameter.LevelID.HasValue && parameter.LevelID.Value > 0)
+                {
+                    officerQuerable = officerQuerable.Where(t => t.LevelID == parameter.LevelID.Value);
+                }
+                if (parameter.WorkYears.HasValue && parameter.WorkYears.Value > 0)
+                {
+                    officerQuerable = officerQuerable.Where(t => (DateTime.Now.Year - t.OnOfficeDate.Year) == parameter.WorkYears.Value);
+                }
+
+                officerQuerable.ToList().ForEach(p =>
+                {
+                    OrganAverageScoreItem item = new OrganAverageScoreItem();
+                    item.CurrentScore = p.CurrentScore;
+                    item.Name = p.Name;
+                    item.Gender = p.Gender;
+
+                    var organ = organArray.Where(t => t.OrganID == p.OrganizationID).FirstOrDefault();
+                    if (organ != null)
+                    {
+                        item.OrganName = organ.OrganFullName;
+                    }
+                    var position = positionArray.Where(pp => pp.PositionID == p.PositionID).FirstOrDefault();
+                    if (position != null)
+                    {
+                        item.PositionName = position.PositionName;
+                    }
+
+                    var level = levelArray.Where(l => l.LevelID == p.LevelID).FirstOrDefault();
+                    if (level != null)
+                    {
+                        item.LevelName = level.LevelName;
+                    }
+
+                    result.OrganAverageScoreItemList.Add(item);
+                });
+
+                response.Result = result;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
         }
         #endregion
         #endregion

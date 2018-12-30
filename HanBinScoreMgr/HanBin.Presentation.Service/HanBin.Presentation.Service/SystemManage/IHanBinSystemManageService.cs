@@ -162,5 +162,7 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
+
+
     }
 }

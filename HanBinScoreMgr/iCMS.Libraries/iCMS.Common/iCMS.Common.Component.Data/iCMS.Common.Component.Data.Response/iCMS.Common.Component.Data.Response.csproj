@@ -60,12 +60,15 @@
     <Compile Include="HanBin.OfficerManager\GetOfficerListResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerScoreDetailInfoResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOrganSummaryResult.cs" />
+    <Compile Include="HanBin.ScoreManager\AgeAverageScoreResult.cs" />
+    <Compile Include="HanBin.ScoreManager\AreaAverageScoreResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackDetailListResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackSummaryResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetHonourBoardResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetScoreItemListResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListResult.cs" />
+    <Compile Include="HanBin.ScoreManager\OrganAverageScoreResult.cs" />
     <Compile Include="HanBin.ScoreManager\QuerySocreResult.cs" />
     <Compile Include="HanBin.ScoreManager\ScorePublicShowResult.cs" />
     <Compile Include="HanBin.ScoreManager\SystemStatSummaryResult.cs" />
