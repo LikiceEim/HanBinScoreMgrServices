@@ -35,6 +35,9 @@ namespace HanBin.Services.OrganManager
         [Dependency]
         public IRepository<OfficerLevelType> officerLevelRepository { get; set; }
 
+        [Dependency]
+        public IRepository<Area> areaRepository { get; set; }
+
         #region 添加单位
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {
@@ -336,6 +339,33 @@ namespace HanBin.Services.OrganManager
 
                     return response;
                 }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
+
+        #region 添加单位时候，获取地区列表
+        public BaseResponse<GetAreaListResult> GetAreaList()
+        {
+            BaseResponse<GetAreaListResult> response = new BaseResponse<GetAreaListResult>();
+            GetAreaListResult result = new GetAreaListResult();
+            try
+            {
+                var areas = areaRepository.GetDatas<Area>(t => !t.IsDeleted, true).Select(t =>
+                    new AreaItem
+                        {
+                            AreaID = t.AreaID,
+                            AreaName = t.AreaName
+                        });
+
+                result.AreaItemList.AddRange(areas);
+                response.Result = result;
+                return response;
             }
             catch (Exception e)
             {

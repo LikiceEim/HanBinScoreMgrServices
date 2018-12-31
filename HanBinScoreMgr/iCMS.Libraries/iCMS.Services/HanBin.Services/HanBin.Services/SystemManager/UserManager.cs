@@ -349,5 +349,39 @@ namespace HanBin.Services.SystemManager
                 return response;
             }
         }
+
+        #region 用户管理
+        #region 密码重置
+        public BaseResponse<bool> ResetPWD(ResetPWDParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var user = hbUserReosiory.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.UserID, true).FirstOrDefault();
+                if (user == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "用户数据异常";
+                    return response;
+                }
+
+                user.PWD = MD5Helper.MD5Encrypt64("000000");
+
+                var operRes = hbUserReosiory.Update<HBUser>(user);
+                if (operRes.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("数据库操作异常");
+                }
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
+        #endregion
     }
 }

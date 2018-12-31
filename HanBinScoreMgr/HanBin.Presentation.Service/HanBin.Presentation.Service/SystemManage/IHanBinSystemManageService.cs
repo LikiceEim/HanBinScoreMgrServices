@@ -163,6 +163,17 @@ namespace HanBin.Presentation.Service.SystemManage
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
 
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> ResetPWD(ResetPWDParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetAreaListResult> GetAreaList();
 
     }
 }

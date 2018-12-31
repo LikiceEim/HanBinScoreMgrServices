@@ -50,6 +50,7 @@
     <Compile Include="HanBin.OrganManage\AddOrganParam.cs" />
     <Compile Include="HanBin.OrganManage\DeleteOrganParameter.cs" />
     <Compile Include="HanBin.OrganManage\EditOrganParameter.cs" />
+    <Compile Include="HanBin.OrganManage\GetAreaListParameter.cs" />
     <Compile Include="HanBin.OrganManage\GetOrganDetailInfoParameter.cs" />
     <Compile Include="HanBin.OrganManage\GetOrganInfoListParameter.cs" />
     <Compile Include="HanBin.ScoreManager\AddScoreApplyParameter.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
     <Compile Include="HanBin.SystemManage\LoginParameter.cs" />
     <Compile Include="HanBin.SystemManage\DeleteUserParameter.cs" />
+    <Compile Include="HanBin.SystemManage\ResetPWDParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

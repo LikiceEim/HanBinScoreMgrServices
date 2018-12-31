@@ -25,5 +25,7 @@ namespace HanBin.Services.SystemManager
 
         BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
 
+        BaseResponse<bool> ResetPWD(ResetPWDParameter parameter);
+
     }
 }

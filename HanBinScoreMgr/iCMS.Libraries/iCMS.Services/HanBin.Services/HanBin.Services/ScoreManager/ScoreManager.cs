@@ -53,9 +53,13 @@ namespace HanBin.Services.ScoreManager
             try
             {
                 var scoreItem = new ScoreItem();
-                scoreItem.ItemID = parameter.ItemScore;
+                scoreItem.ItemScore = parameter.ItemScore;
                 scoreItem.ItemDescription = parameter.ItemDescription;
                 scoreItem.Type = parameter.Type;
+                scoreItem.AddUserID = parameter.AddUserID;
+                scoreItem.LastUpdateUserID = parameter.AddUserID;
+                scoreItem.LastUpdateDate = DateTime.Now;
+
                 var operResult = scoreItemRepository.AddNew<ScoreItem>(scoreItem);
                 if (operResult.ResultType != iCMS.Common.Component.Data.Enum.EnumOperationResultType.Success)
                 {
@@ -992,7 +996,7 @@ namespace HanBin.Services.ScoreManager
                     };
                 });
 
-                result.AgeAverageScoreItemList.AddRange(ageScoreGroup);
+                result.AgeAverageScoreItemList.AddRange(ageScoreGroup.OrderBy(t => t.Year));
 
                 response.Result = result;
 

@@ -177,5 +177,15 @@ namespace HanBin.Presentation.Service.SystemManage
         {
             return userManager.DeleteUser(parameter);
         }
+
+        public BaseResponse<bool> ResetPWD(ResetPWDParameter parameter)
+        {
+            return userManager.ResetPWD(parameter);
+        }
+
+        public BaseResponse<GetAreaListResult> GetAreaList() 
+        {
+            return organManager.GetAreaList();
+        }
     }
 }

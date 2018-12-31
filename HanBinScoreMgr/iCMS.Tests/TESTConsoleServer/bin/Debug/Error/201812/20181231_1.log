@@ -1,0 +1,8 @@
+2018/12/31 11:30:23:891
+异常消息：添加积分条目发生异常
+异常类型：System.Exception
+异常方法：AddScoreItem
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.AddScoreItem(AddScoreItemParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 62
+
+
