@@ -21,7 +21,7 @@ namespace TESTConsole
         static void Main(string[] args)
         {
 
-      string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
+            string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
             string localServer = @"http://127.0.0.1:8829/HanBinScoreService.svc";
             RestClient client = new RestClient(cloudServer);
             GetHonourBoardParameter param = new GetHonourBoardParameter();
