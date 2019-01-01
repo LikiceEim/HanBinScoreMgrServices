@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -51,8 +53,8 @@
     <Compile Include="SystemManage\IHanBinSystemManageService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="HanBinScoreService.svc" />
     <Content Include="HanBinSystemService.svc" />
-    <Content Include="ScoreService.svc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.config" />

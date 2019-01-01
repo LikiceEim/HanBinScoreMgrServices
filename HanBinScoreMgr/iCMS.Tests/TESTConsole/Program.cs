@@ -21,26 +21,9 @@ namespace TESTConsole
         static void Main(string[] args)
         {
 
-            //var psd = MD5Helper.GetMD5("000000");
-
-
-            //var payload = new Dictionary<string, object>
-            //                {
-            //                        { "name", "MrBug" },                
-            //                        {"exp",1000},
-            //                        {"jti","luozhipeng" }
-            //                };
-
-            //var privateKey = "QXM.HanBin";
-
-            //var token = JsonWebToken.Encode(payload, privateKey, JwtHashAlgorithm.HS512);
-
-
-            //var str = JsonWebToken.Decode(token, privateKey);
-
-
-            //string filePath = @"D:\142934.docx";
-            RestClient client = new RestClient("http://127.0.0.1:8829/HanBinScoreService.svc");
+      string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
+            string localServer = @"http://127.0.0.1:8829/HanBinScoreService.svc";
+            RestClient client = new RestClient(cloudServer);
             GetHonourBoardParameter param = new GetHonourBoardParameter();
             param.RankNumber = 5;
             //UpFile upfile = new UpFile();
