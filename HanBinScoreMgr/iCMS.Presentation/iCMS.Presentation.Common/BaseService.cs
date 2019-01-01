@@ -15,10 +15,10 @@ using System;
 
 using Newtonsoft.Json.Linq;
 
-using iCMS.Common.Component.Data.Base;
-using iCMS.Common.Component.Tool;
+using HanBin.Common.Component.Data.Base;
+using HanBin.Common.Component.Tool;
 
-namespace iCMS.Presentation.Common
+namespace HanBin.Presentation.Common
 {
     #region 基类
 

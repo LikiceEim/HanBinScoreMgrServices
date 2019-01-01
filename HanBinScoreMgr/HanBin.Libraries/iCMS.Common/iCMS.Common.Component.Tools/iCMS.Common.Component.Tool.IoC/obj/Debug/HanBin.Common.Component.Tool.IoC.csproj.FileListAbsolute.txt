@@ -1,0 +1,12 @@
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\HanBin.Common.Component.Tool.IoC.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\HanBin.Common.Component.Tool.IoC.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\Microsoft.Practices.Unity.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\HanBin.Common.Component.Tool.IoC.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\HanBin.Common.Component.Tool.IoC.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\Microsoft.Practices.Unity.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.pdb

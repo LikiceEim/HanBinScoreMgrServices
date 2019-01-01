@@ -1,11 +1,11 @@
-﻿using iCMS.Common.Component.Data.Base;
-using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
-using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
-using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
-using iCMS.Common.Component.Data.Response.HanBin.OfficerManager;
-using iCMS.Common.Component.Data.Response.HanBin.ScoreManager;
-using iCMS.Common.Component.Data.Response.HanBin.SystemManager;
-using iCMS.Common.Component.Data.Response.HanBinOrganManager;
+﻿using HanBin.Common.Component.Data.Base;
+using HanBin.Common.Component.Data.Request.HanBin.OfficerManager;
+using HanBin.Common.Component.Data.Request.HanBin.OrganManage;
+using HanBin.Common.Component.Data.Request.HanBin.SystemManage;
+using HanBin.Common.Component.Data.Response.HanBin.OfficerManager;
+using HanBin.Common.Component.Data.Response.HanBin.ScoreManager;
+using HanBin.Common.Component.Data.Response.HanBin.SystemManager;
+using HanBin.Common.Component.Data.Response.HanBinOrganManager;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 

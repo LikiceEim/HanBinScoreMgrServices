@@ -4,23 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Newtonsoft.Json;
-
-using iCMS.Common.Component.Tool;
-using iCMS.Common.Component.Tool.Extensions;
-using iCMS.Common.Component.Data.Request;
-using iCMS.Common.Component.Data.Base;
 
 
-using iCMS.Common.Component.Data.Enum;
 
 
-using iCMS.Common.Component.Data.Request.HanBin.OrganManage;
-using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
-using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 using HanBin.Presentation.Service.ScoreService;
 using System.IO;
-using iCMS.Common.Component.Data.Request.HanBin.ScoreManager;
+using HanBin.Common.Component.Tool;
+using HanBin.Common.Component.Data.Request.HanBin.ScoreManager;
+
 
 namespace TESTConsole
 {

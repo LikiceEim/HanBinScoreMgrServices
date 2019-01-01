@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{23665D79-6512-4D95-8DDD-33AE736AD479}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HanBin.Common.Component.Data.Response</RootNamespace>
+    <AssemblyName>HanBin.Common.Component.Data.Response</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\ResponseResult.cs" />
+    <Compile Include="Common\CommonInfo.cs" />
+    <Compile Include="Common\SelectItemResult.cs" />
+    <Compile Include="HanBin.OfficerManager\GetApplyDetailInfoResult.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoResult.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerListResult.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerScoreDetailInfoResult.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOrganSummaryResult.cs" />
+    <Compile Include="HanBin.ScoreManager\AgeAverageScoreResult.cs" />
+    <Compile Include="HanBin.ScoreManager\AreaAverageScoreResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackDetailListResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackSummaryResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetHonourBoardResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetScoreItemListResult.cs" />
+    <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListResult.cs" />
+    <Compile Include="HanBin.ScoreManager\OrganAverageScoreResult.cs" />
+    <Compile Include="HanBin.ScoreManager\QuerySocreResult.cs" />
+    <Compile Include="HanBin.ScoreManager\ScorePublicShowResult.cs" />
+    <Compile Include="HanBin.ScoreManager\SystemStatSummaryResult.cs" />
+    <Compile Include="HanBin.ScoreManager\WhatsToDoSummaryResult.cs" />
+    <Compile Include="HanBin.SystemManager\GetRoleInfoListResult.cs" />
+    <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />
+    <Compile Include="HanBin.SystemManager\LoginResult.cs" />
+    <Compile Include="HanBinOrganManager\GetAreaListResult.cs" />
+    <Compile Include="HanBinOrganManager\GetOrganDetailInfoResult.cs" />
+    <Compile Include="HanBinOrganManager\GetOrganListResult.cs" />
+    <Compile Include="HanBinOrganManager\GetOrganTypeResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCMS.Common.Component.Data.Base.DB\HanBin.Common.Component.Data.Base.DB.csproj">
+      <Project>{A4A72ACA-3374-4439-BC1C-FCE7B9285002}</Project>
+      <Name>HanBin.Common.Component.Data.Base.DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iCMS.Common.Component.Data.Base\HanBin.Common.Component.Data.Base.csproj">
+      <Project>{1922FDFA-B1FF-4E76-B060-9ADAF84DB519}</Project>
+      <Name>HanBin.Common.Component.Data.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

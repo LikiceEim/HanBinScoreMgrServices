@@ -47,13 +47,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Unity.Configuration">
+      <HintPath>..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Dll\iCMS.Common.Component.Dll.ThirdParty\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -92,20 +91,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\iCMS.Common.Component.Tool.IoC.csproj">
-      <Project>{9858950f-059c-4add-a060-c92a89aefe6e}</Project>
-      <Name>iCMS.Common.Component.Tool.IoC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
-      <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
-      <Name>iCMS.Common.Component.Tool</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Services\iCMS.Service\iCMS.Service.Web.csproj">
-      <Project>{e34f2de1-bdab-4ffe-8831-f49eacc15cc6}</Project>
-      <Name>iCMS.Service.Web</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +109,20 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\HanBin.Common.Component.Tool.Extensions.csproj">
+      <Project>{e45f518e-26e5-443c-ba21-25f36963b920}</Project>
+      <Name>HanBin.Common.Component.Tool.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\HanBin.Common.Component.Tool.IoC.csproj">
+      <Project>{9858950f-059c-4add-a060-c92a89aefe6e}</Project>
+      <Name>HanBin.Common.Component.Tool.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\HanBin.Common.Component.Tool.csproj">
+      <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
+      <Name>HanBin.Common.Component.Tool</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

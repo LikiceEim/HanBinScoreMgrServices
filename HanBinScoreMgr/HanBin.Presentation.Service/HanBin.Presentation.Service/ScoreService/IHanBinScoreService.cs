@@ -1,5 +1,5 @@
-﻿using iCMS.Common.Component.Data.Base;
-using iCMS.Common.Component.Data.Request.HanBin.ScoreManager;
+﻿using HanBin.Common.Component.Data.Base;
+using HanBin.Common.Component.Data.Request.HanBin.ScoreManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Web;
-using iCMS.Common.Component.Data.Response.HanBin.ScoreManager;
+using HanBin.Common.Component.Data.Response.HanBin.ScoreManager;
 using System.IO;
 
 namespace HanBin.Presentation.Service.ScoreService

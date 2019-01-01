@@ -1,4 +1,4 @@
-﻿using iCMS.Common.Component.Tool;
+﻿using HanBin.Common.Component.Tool;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace iCMS.Server.WindowsService
+namespace HanBin.Server.WindowsService
 {
     partial class WCFStartupService : ServiceBase
     {

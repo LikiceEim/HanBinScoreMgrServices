@@ -82,9 +82,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
+    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\HanBin.Common.Component.Tool.csproj">
       <Project>{838EC5E0-955C-4E74-AD45-26477E388E54}</Project>
-      <Name>iCMS.Common.Component.Tool</Name>
+      <Name>HanBin.Common.Component.Tool</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

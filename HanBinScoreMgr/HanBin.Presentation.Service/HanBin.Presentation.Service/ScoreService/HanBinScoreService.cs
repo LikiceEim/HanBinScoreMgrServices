@@ -1,7 +1,7 @@
 ﻿using HanBin.Services.ScoreManager;
-using iCMS.Common.Component.Data.Base;
-using iCMS.Common.Component.Data.Request.HanBin.ScoreManager;
-using iCMS.Common.Component.Data.Response.HanBin.ScoreManager;
+using HanBin.Common.Component.Data.Base;
+using HanBin.Common.Component.Data.Request.HanBin.ScoreManager;
+using HanBin.Common.Component.Data.Response.HanBin.ScoreManager;
 using System;
 using System.Collections.Generic;
 using System.IO;

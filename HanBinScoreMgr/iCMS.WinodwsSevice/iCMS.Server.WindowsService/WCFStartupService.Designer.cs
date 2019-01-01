@@ -1,4 +1,4 @@
-﻿namespace iCMS.Server.WindowsService
+﻿namespace HanBin.Server.WindowsService
 {
     partial class WCFStartupService
     {

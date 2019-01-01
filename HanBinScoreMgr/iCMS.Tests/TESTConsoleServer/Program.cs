@@ -5,10 +5,10 @@ using System.Configuration;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
 
-using iCMS.Common.Component.Tool;
+using HanBin.Common.Component.Tool;
 
-using iCMS.Frameworks.Core.Repository;
-using iCMS.Common.Component.Tool.IoC;
+using HanBin.Frameworks.Core.Repository;
+using HanBin.Common.Component.Tool.IoC;
 using System.ServiceModel;
 
 namespace TESTConsoleServer

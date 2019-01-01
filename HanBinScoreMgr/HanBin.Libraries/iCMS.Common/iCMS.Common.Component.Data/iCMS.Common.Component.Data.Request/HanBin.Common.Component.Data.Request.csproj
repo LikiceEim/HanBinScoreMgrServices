@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9A9EC48E-9724-4081-91F3-BC2CC3087113}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HanBin.Common.Component.Data.Request</RootNamespace>
+    <AssemblyName>HanBin.Common.Component.Data.Request</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HanBin.OfficerManager\AddOfficerParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\ApplyItem.cs" />
+    <Compile Include="HanBin.OfficerManager\CancelScoreApplyParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\DeleteOfficerParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\GetApplyDetailInfoParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerListParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\GetOfficerScoreDetailInfoParameter.cs" />
+    <Compile Include="HanBin.OrganManage\AddOrganParam.cs" />
+    <Compile Include="HanBin.OrganManage\DeleteOrganParameter.cs" />
+    <Compile Include="HanBin.OrganManage\EditOrganParameter.cs" />
+    <Compile Include="HanBin.OrganManage\GetAreaListParameter.cs" />
+    <Compile Include="HanBin.OrganManage\GetOrganDetailInfoParameter.cs" />
+    <Compile Include="HanBin.OrganManage\GetOrganInfoListParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\AddScoreApplyParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\AddScoreItemParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\AgeAverageScoreParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\CheckScoreApplyParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\EditScoreApplyParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackDetailListParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackSummaryParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetHonourBoardParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetScoreChangeHistoryParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\GetWhatsToDoSummaryParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\OrganAverageScoreParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\QuerySocreParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\ScorePublicShowParameter.cs" />
+    <Compile Include="HanBin.SystemManage\ChangeUseStatusParameter.cs" />
+    <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
+    <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
+    <Compile Include="HanBin.SystemManage\LoginParameter.cs" />
+    <Compile Include="HanBin.SystemManage\DeleteUserParameter.cs" />
+    <Compile Include="HanBin.SystemManage\ResetPWDParameter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\iCMS.Common.Component.Data.Base\HanBin.Common.Component.Data.Base.csproj">
+      <Project>{1922FDFA-B1FF-4E76-B060-9ADAF84DB519}</Project>
+      <Name>HanBin.Common.Component.Data.Base</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
