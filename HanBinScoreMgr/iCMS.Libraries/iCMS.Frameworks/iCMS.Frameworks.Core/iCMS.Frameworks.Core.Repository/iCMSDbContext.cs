@@ -9,7 +9,7 @@ namespace iCMS.Frameworks.Core.Repository
     public class iCMSDbContext : DbContext, IDisposable
     {
         public iCMSDbContext()
-            : base(EcanSecurity.Decode(Utilitys.GetAppConfigForExe("iCMS")))// 做手动推送时候，为了使更改的App.Config能够立即生效，故而将
+            : base(EcanSecurity.Decode(Utilitys.GetAppConfig("iCMS")))// 做手动推送时候，为了使更改的App.Config能够立即生效，故而将
         {                                                                   // GetAppConfig => GetAppConfigForExe,若调试出错，请联系QXM, 2017/02/21
             Database.SetInitializer<iCMSDbContext>(null);
         }

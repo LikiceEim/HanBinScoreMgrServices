@@ -1,0 +1,17 @@
+2019/1/1 11:20:52:754
+异常消息：无法连接到远程服务器
+异常类型：System.Net.WebException
+异常方法：GetRequestStream
+异常源：System
+异常堆栈：   在 System.Net.HttpWebRequest.GetRequestStream(TransportContext& context)
+   在 System.Net.HttpWebRequest.GetRequestStream()
+   在 iCMS.Common.Component.Tool.RestClient.Post(String data, String method) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 56
+内部异常：
+　异常消息：由于目标计算机积极拒绝，无法连接。 127.0.0.1:2892
+　异常类型：System.Net.Sockets.SocketException
+　异常方法：DoConnect
+　异常源：System
+　异常堆栈：   在 System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   在 System.Net.ServicePoint.ConnectSocketInternal(Boolean connectFailure, Socket s4, Socket s6, Socket& socket, IPAddress& address, ConnectSocketState state, IAsyncResult asyncResult, Exception& exception)
+
+

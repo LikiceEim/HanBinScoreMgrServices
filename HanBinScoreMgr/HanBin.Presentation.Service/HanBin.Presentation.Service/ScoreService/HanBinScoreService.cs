@@ -13,11 +13,11 @@ namespace HanBin.Presentation.Service.ScoreService
 {
     public class HanBinScoreService : IHanBinScoreService
     {
-        public IScoreManager scoreManager { get; set; }
+        IScoreManager scoreManager = null;
 
-        public HanBinScoreService(IScoreManager scoreManager)
+        public HanBinScoreService()
         {
-            this.scoreManager = scoreManager;
+            this.scoreManager = new ScoreManager();
         }
 
         public BaseResponse<bool> AddScoreItem(AddScoreItemParameter parameter)

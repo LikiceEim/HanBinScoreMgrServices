@@ -26,11 +26,11 @@ namespace HanBin.Presentation.Service.SystemManage
         private IOrganManager organManager;
         private IOfficerManager officerManager;
 
-        public HanBinSystemManageService(IUserManager userManager, IOrganManager organManager, IOfficerManager officerManager)
+        public HanBinSystemManageService()
         {
-            this.userManager = userManager;
-            this.organManager = organManager;
-            this.officerManager = officerManager;
+            this.userManager = new UserManager();
+            this.organManager = new OrganManager();
+            this.officerManager = new OfficerManager();
         }
 
         #region 用户管理
@@ -183,7 +183,7 @@ namespace HanBin.Presentation.Service.SystemManage
             return userManager.ResetPWD(parameter);
         }
 
-        public BaseResponse<GetAreaListResult> GetAreaList() 
+        public BaseResponse<GetAreaListResult> GetAreaList()
         {
             return organManager.GetAreaList();
         }

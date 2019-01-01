@@ -140,7 +140,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.C
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Data.Enum.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Data.Response.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Tool.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Frameworks.Core.DB.Models.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Frameworks.Core.Repository.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\Newtonsoft.Json.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\Microsoft.Practices.Unity.dll
@@ -155,7 +154,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.C
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Data.Enum.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Data.Response.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Tool.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Frameworks.Core.Repository.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Tool.IoC.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\iCMS.Services.Common\bin\Debug\iCMS.Common.Component.Tool.Extensions.pdb

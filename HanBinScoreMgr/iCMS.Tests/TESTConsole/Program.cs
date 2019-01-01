@@ -20,6 +20,7 @@ using iCMS.Common.Component.Data.Request.HanBin.OfficerManager;
 using iCMS.Common.Component.Data.Request.HanBin.SystemManage;
 using HanBin.Presentation.Service.ScoreService;
 using System.IO;
+using iCMS.Common.Component.Data.Request.HanBin.ScoreManager;
 
 namespace TESTConsole
 {
@@ -47,15 +48,18 @@ namespace TESTConsole
 
 
             //string filePath = @"D:\142934.docx";
-            //RestClient client = new RestClient("http://localhost:2892/HanBin/ScoreService");
-
+            RestClient client = new RestClient("http://127.0.0.1:8829/HanBinScoreService.svc");
+            GetHonourBoardParameter param = new GetHonourBoardParameter();
+            param.RankNumber = 5;
             //UpFile upfile = new UpFile();
             //upfile.FileName = "testFile";
             //upfile.FileSize = 100;
 
             //upfile.FileStream = File.Create(filePath);
+            string json = param.ToClientString();
+            var res = client.Post(json, "GetHonourBoard");
 
-            //client.Post(json, "UploadFile");
+            Console.WriteLine(res);
 
             Console.ReadKey();
         }

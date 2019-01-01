@@ -129,7 +129,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\AppFramework.Analysis.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\ICSharpCode.SharpZipLib.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Common.Component.Tool.Extensions.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Frameworks.Core.DB.Models.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\HanBin.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\HanBin.Common.Commonent.Data.Enum.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
@@ -142,7 +141,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Service.Common.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Common.Component.Tool.IoC.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Common.Component.Tool.Extensions.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\obj\Debug\HanBin.Services.csprojResolveAssemblyReference.cache
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\obj\Debug\HanBin.Services.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\obj\Debug\HanBin.Services.pdb

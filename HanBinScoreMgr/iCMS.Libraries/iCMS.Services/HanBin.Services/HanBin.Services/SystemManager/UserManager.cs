@@ -25,6 +25,14 @@ namespace HanBin.Services.SystemManager
         [Dependency]
         public IRepository<HBRole> roleRepoitory { get; set; }
 
+
+        public UserManager()
+        {
+            hbUserReosiory = new Repository<HBUser>();
+            organRepository = new Repository<Organization>();
+            roleRepoitory = new Repository<HBRole>();
+        }
+
         /// <summary>
         /// 登陆后返回Token 和角色ID
         /// </summary>

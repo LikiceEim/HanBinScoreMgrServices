@@ -8,8 +8,8 @@ using Microsoft.Practices.Unity.Configuration;
 using iCMS.Common.Component.Tool;
 
 using iCMS.Frameworks.Core.Repository;
-using iCMS.Frameworks.Core.DB.Models;
 using iCMS.Common.Component.Tool.IoC;
+using System.ServiceModel;
 
 namespace TESTConsoleServer
 {
@@ -19,7 +19,7 @@ namespace TESTConsoleServer
         {
             //#region Start WCF services
 
-          //  AppDomain.CurrentDomain.BaseDirectory + ""
+            //  AppDomain.CurrentDomain.BaseDirectory + ""
 
             //UnityServiceHostGroup.StartAllConfigureService();
 
@@ -35,22 +35,22 @@ namespace TESTConsoleServer
             //#endregion
 
 
-            using (UnityServiceHostCollection hosts = new UnityServiceHostCollection())
+            using (ServiceHostCollection hosts = new ServiceHostCollection())
             {
-                foreach (UnityServiceHost host in hosts)
+                foreach (ServiceHost host in hosts)
                 {
                     host.Opened += (sender, arg) => Console.WriteLine("服务{0}开始监听",
-                       (sender as UnityServiceHost).Description.ServiceType);
+                       (sender as ServiceHost).Description.ServiceType);
                 }
                 hosts.Open();
 
 
                 //Initial
-                UnityContainer container = new UnityContainer();//创建容器
-                UnityConfigurationSection configuration = (UnityConfigurationSection)ConfigurationManager.GetSection(UnityConfigurationSection.SectionName);
-                configuration.Configure(container, "defaultContainer");
+                //UnityContainer container = new UnityContainer();//创建容器
+                //UnityConfigurationSection configuration = (UnityConfigurationSection)ConfigurationManager.GetSection(UnityConfigurationSection.SectionName);
+                //configuration.Configure(container, "defaultContainer");
 
-               
+
 
                 Console.WriteLine("All services have been started!");
                 Console.ReadKey();

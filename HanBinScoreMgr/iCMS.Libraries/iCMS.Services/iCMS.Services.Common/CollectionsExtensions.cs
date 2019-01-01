@@ -26,7 +26,6 @@ namespace iCMS.Service.Common
     /// </summary>
     public static class CollectionsExtensions
     {
-        public static List<RecordAlarmCount> recordAlmCountList = new List<RecordAlarmCount>();
         #region 公共方法
 
         #region IEnumerable的扩展

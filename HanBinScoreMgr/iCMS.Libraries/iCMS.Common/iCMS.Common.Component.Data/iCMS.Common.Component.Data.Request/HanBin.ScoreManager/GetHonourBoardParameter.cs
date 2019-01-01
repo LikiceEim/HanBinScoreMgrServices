@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iCMS.Common.Component.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace iCMS.Common.Component.Data.Request.HanBin.ScoreManager
     /// <summary>
     /// 获取红榜数据请求参数
     /// </summary>
-    public class GetHonourBoardParameter
+    public class GetHonourBoardParameter:BaseRequest
     {
         /// <summary>
         /// 前N名

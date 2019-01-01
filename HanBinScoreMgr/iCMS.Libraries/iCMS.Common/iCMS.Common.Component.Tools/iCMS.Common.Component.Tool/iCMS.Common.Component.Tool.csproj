@@ -102,10 +102,6 @@
     <Compile Include="Utilitys.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
-      <Project>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</Project>
-      <Name>iCMS.Frameworks.Core.DB.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Enum\iCMS.Common.Component.Data.Enum.csproj">
       <Project>{e5ba3139-a5d3-45d4-9185-94f14816958c}</Project>
       <Name>iCMS.Common.Component.Data.Enum</Name>

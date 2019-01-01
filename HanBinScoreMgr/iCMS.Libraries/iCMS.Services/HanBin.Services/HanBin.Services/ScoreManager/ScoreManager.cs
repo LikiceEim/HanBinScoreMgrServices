@@ -41,10 +41,24 @@ namespace HanBin.Services.ScoreManager
 
         [Dependency]
         public IRepository<OfficerPositionType> positionRepository { get; set; }
-        [Dependency]
-        public IRepository<ScoreChangeHistory> schisRepository { get; set; }
+
         [Dependency]
         public IRepository<OfficerLevelType> levelRepository { get; set; }
+
+        public ScoreManager()
+        {
+            scoreItemRepository = new Repository<ScoreItem>();
+            scoreApplyRepository = new Repository<ScoreApply>();
+
+            ufRepository = new Repository<ApplyUploadFile>();
+            officerRepository = new Repository<Officer>();
+            schRepository = new Repository<ScoreChangeHistory>();
+            organRepository = new Repository<Organization>();
+            userRepository = new Repository<HBUser>();
+            positionRepository = new Repository<OfficerPositionType>();
+            levelRepository = new Repository<OfficerLevelType>();
+
+        }
 
         #region 积分条目字典CRUD
         public BaseResponse<bool> AddScoreItem(AddScoreItemParameter parameter)
@@ -704,7 +718,7 @@ namespace HanBin.Services.ScoreManager
 
             try
             {
-                IQueryable<ScoreChangeHistory> scHisQuerable = schisRepository.GetDatas<ScoreChangeHistory>(t => true, true).OrderByDescending(t => t.AddDate);
+                IQueryable<ScoreChangeHistory> scHisQuerable = schRepository.GetDatas<ScoreChangeHistory>(t => true, true).OrderByDescending(t => t.AddDate);
                 if (parameter.RankNumber.HasValue && parameter.RankNumber.Value > 0)
                 {
                     //取前N条

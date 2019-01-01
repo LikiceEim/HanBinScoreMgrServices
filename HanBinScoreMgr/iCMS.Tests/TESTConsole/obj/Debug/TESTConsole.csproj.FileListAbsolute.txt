@@ -216,11 +216,9 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\HanBin.Core
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\EntityFramework.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Service.Common.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Common.Component.Data.Base.DB.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Frameworks.Core.DB.Models.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\HanBin.Presentation.Service.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\HanBin.Services.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Frameworks.Core.Repository.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\HanBin.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Service.Common.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsole\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb

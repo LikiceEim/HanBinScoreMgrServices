@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -71,6 +71,13 @@
       <Project>{0E0C756F-1B15-419A-933A-D6B09FAACE5A}</Project>
       <Name>HanBin.Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HanBinSystemService.svc" />
+    <Content Include="ScoreService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="web.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

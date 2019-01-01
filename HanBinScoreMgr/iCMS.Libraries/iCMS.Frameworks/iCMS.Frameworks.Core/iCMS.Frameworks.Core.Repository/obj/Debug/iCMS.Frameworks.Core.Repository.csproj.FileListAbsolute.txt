@@ -119,7 +119,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Framewor
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Data.Base.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Data.Enum.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Tool.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Frameworks.Core.DB.Models.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\Newtonsoft.Json.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\Microsoft.Practices.Unity.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Tool.IoC.dll
@@ -132,7 +131,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Framewor
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Data.Base.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Data.Enum.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Tool.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Tool.IoC.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\bin\Debug\iCMS.Common.Component.Tool.Extensions.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\obj\Debug\iCMS.Frameworks.Core.Repository.csprojResolveAssemblyReference.cache

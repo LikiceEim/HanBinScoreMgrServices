@@ -107,7 +107,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Compo
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Data.Base.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Data.Enum.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Tool.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Frameworks.Core.DB.Models.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\Microsoft.Practices.Unity.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\Newtonsoft.Json.dll
@@ -115,7 +114,6 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Compo
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\AppFramework.Analysis.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\ICSharpCode.SharpZipLib.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Tool.Extensions.dll
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Frameworks.Core.DB.Models.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Tool.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Data.Base.DB.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\bin\Debug\iCMS.Common.Component.Data.Base.pdb

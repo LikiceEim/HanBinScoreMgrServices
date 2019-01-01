@@ -15,7 +15,7 @@ using System.Linq.Expressions;
 using System.Data.Entity;
 
 using iCMS.Common.Component.Data.Base.DB;
-using iCMS.Frameworks.Core.DB;
+
 using iCMS.Common.Component.Data.Base;
 using iCMS.Common.Component.Data.Enum;
 using iCMS.Common.Component.Tool;

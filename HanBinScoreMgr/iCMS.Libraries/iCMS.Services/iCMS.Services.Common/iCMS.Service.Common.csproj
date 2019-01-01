@@ -48,11 +48,6 @@
   <ItemGroup>
     <Compile Include="CollectionsExtensions.cs" />
     <Compile Include="ExecuteDB.cs" />
-    <Compile Include="IPaging.cs" />
-    <Compile Include="MonitorTreeHelper.cs" />
-    <Compile Include="Paging.cs" />
-    <Compile Include="RecordAlarmCount.cs" />
-    <Compile Include="ServiceDependencyRegistrar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,10 +70,6 @@
     <ProjectReference Include="..\..\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
       <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
       <Name>iCMS.Common.Component.Tool</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
-      <Project>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</Project>
-      <Name>iCMS.Frameworks.Core.DB.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\iCMS.Frameworks.Core.Repository.csproj">
       <Project>{F63E170E-09A3-4298-98FF-9823BC88F99D}</Project>

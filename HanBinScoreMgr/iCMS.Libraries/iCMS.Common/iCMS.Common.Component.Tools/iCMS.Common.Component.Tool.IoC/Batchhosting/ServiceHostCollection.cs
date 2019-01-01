@@ -11,9 +11,9 @@ using iCMS.Common.Component.Tool.IoC;
 
 namespace iCMS.Common.Component.Tool.IoC
 {
-    public class UnityServiceHostCollection : Collection<UnityServiceHost>, IDisposable
+    public class ServiceHostCollection : Collection<ServiceHost>, IDisposable
     {
-        public UnityServiceHostCollection(params Type[] serviceTypes)
+        public ServiceHostCollection(params Type[] serviceTypes)
         {
             BatchingHostingSettings settings = BatchingHostingSettings.GetSection();
             foreach (ServiceTypeElement element in settings.ServiceTypes)
@@ -23,19 +23,19 @@ namespace iCMS.Common.Component.Tool.IoC
 
             if (null != serviceTypes)
             {
-                Array.ForEach<Type>(serviceTypes, serviceType => this.Add(new UnityServiceHost(serviceType, "defaultContainer")));
+                Array.ForEach<Type>(serviceTypes, serviceType => this.Add(new ServiceHost(serviceType)));
             }
         }
         public void Add(params Type[] serviceTypes)
         {
             if (null != serviceTypes)
             {
-                Array.ForEach<Type>(serviceTypes, serviceType => this.Add(new UnityServiceHost(serviceType, "defaultContainer")));
+                Array.ForEach<Type>(serviceTypes, serviceType => this.Add(new ServiceHost(serviceType)));
             }
         }
         public void Open()
         {
-            foreach (UnityServiceHost host in this)
+            foreach (ServiceHost host in this)
             {
                 host.Open();
             }

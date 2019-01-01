@@ -38,6 +38,16 @@ namespace HanBin.Services.OrganManager
         [Dependency]
         public IRepository<Area> areaRepository { get; set; }
 
+        public OrganManager()
+        {
+            organRepository = new Repository<Organization>();
+            officerRepository = new Repository<Officer>();
+            organCategoryRepository = new Repository<OrganCategory>();
+            organTypeRepository = new Repository<OrganType>();
+            officerPositionRepository = new Repository<OfficerPositionType>();
+            officerLevelRepository = new Repository<OfficerLevelType>();
+        }
+
         #region 添加单位
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {

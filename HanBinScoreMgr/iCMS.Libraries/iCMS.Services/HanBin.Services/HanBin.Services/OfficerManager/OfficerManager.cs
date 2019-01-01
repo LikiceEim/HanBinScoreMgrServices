@@ -33,6 +33,41 @@ namespace HanBin.Services.OfficerManager
         public IRepository<OfficerPositionType> positionRepository { get; set; }
         [Dependency]
         public IRepository<OfficerLevelType> levelRepository { get; set; }
+
+        public OfficerManager()
+        {
+            //解决部署IIS 依赖注入的问题
+            if (officerRepository == null)
+            {
+                officerRepository = new Repository<Officer>();
+            }
+            if (scoreApplyRepository == null)
+            {
+                scoreApplyRepository = new Repository<ScoreApply>();
+            }
+            if (scoreItemRepository == null)
+            {
+                scoreItemRepository = new Repository<ScoreItem>();
+            }
+            if (applyUploadFileRepository == null)
+            {
+                applyUploadFileRepository = new Repository<ApplyUploadFile>();
+            }
+            if (organRepository == null)
+            {
+                organRepository = new Repository<Organization>();
+            }
+            if (positionRepository == null)
+            {
+                positionRepository = new Repository<OfficerPositionType>();
+            }
+            if (levelRepository == null)
+            {
+                levelRepository = new Repository<OfficerLevelType>();
+            }
+        }
+
+
         #region 添加干部
         public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
         {

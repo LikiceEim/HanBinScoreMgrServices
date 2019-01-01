@@ -83,10 +83,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
-      <Project>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</Project>
-      <Name>iCMS.Frameworks.Core.DB.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\iCMS.Common.Component.Tool.csproj">
       <Project>{838EC5E0-955C-4E74-AD45-26477E388E54}</Project>
       <Name>iCMS.Common.Component.Tool</Name>

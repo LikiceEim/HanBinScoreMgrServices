@@ -90,10 +90,6 @@
       <Project>{838EC5E0-955C-4E74-AD45-26477E388E54}</Project>
       <Name>iCMS.Common.Component.Tool</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
-      <Project>{65448BED-3BE1-4BF0-9C24-38771ADC1830}</Project>
-      <Name>iCMS.Frameworks.Core.DB.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\iCMS.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\iCMS.Frameworks.Core.Repository.csproj">
       <Project>{f63e170e-09a3-4298-98ff-9823bc88f99d}</Project>
       <Name>iCMS.Frameworks.Core.Repository</Name>

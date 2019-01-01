@@ -72,10 +72,6 @@
       <Project>{838EC5E0-955C-4E74-AD45-26477E388E54}</Project>
       <Name>iCMS.Common.Component.Tool</Name>
     </ProjectReference>
-    <ProjectReference Include="..\iCMS.Frameworks.Core.DB.Models\iCMS.Frameworks.Core.DB.Models.csproj">
-      <Project>{65448bed-3be1-4bf0-9c24-38771adc1830}</Project>
-      <Name>iCMS.Frameworks.Core.DB.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
