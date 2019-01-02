@@ -60,6 +60,10 @@
     <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HanBin.DB.Models\HanBin.Core.DB.Models.csproj">
+      <Project>{80e35aff-6ca0-4959-a78f-3317a5334725}</Project>
+      <Name>HanBin.Core.DB.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base\HanBin.Common.Component.Data.Base.csproj">
       <Project>{1922fdfa-b1ff-4e76-b060-9adaf84db519}</Project>
       <Name>HanBin.Common.Component.Data.Base</Name>
@@ -72,9 +76,33 @@
       <Project>{23665d79-6512-4d95-8ddd-33ae736ad479}</Project>
       <Name>HanBin.Common.Component.Data.Response</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\HanBin.Common.Component.Tool.Extensions.csproj">
+      <Project>{e45f518e-26e5-443c-ba21-25f36963b920}</Project>
+      <Name>HanBin.Common.Component.Tool.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\HanBin.Common.Component.Tool.IoC.csproj">
+      <Project>{9858950f-059c-4add-a060-c92a89aefe6e}</Project>
+      <Name>HanBin.Common.Component.Tool.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\HanBin.Common.Component.Tool.csproj">
+      <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>
+      <Name>HanBin.Common.Component.Tool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\HanBin.Frameworks.Core.Repository.csproj">
+      <Project>{f63e170e-09a3-4298-98ff-9823bc88f99d}</Project>
+      <Name>HanBin.Frameworks.Core.Repository</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\HanBin.Services.csproj">
       <Project>{0e0c756f-1b15-419a-933a-d6b09faace5a}</Project>
       <Name>HanBin.Services %28HanBin.Libraries\HanBin.Services\HanBin.Services%29</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\HanBin.Service.Common.csproj">
+      <Project>{e55f2355-7bcc-45ff-a04a-d23525398257}</Project>
+      <Name>HanBin.Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\iCMS.Presentation\iCMS.Presentation.Common\HanBin.Presentation.Common.csproj">
+      <Project>{0997da55-c092-4d04-8f0e-ae7ba6036d34}</Project>
+      <Name>HanBin.Presentation.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

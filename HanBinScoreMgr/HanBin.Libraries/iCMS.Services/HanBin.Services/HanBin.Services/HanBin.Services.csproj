@@ -64,7 +64,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreManager\IScoreManager.cs" />
     <Compile Include="ScoreManager\ScoreManager.cs" />
+    <Compile Include="SystemManager\ILogManager.cs" />
     <Compile Include="SystemManager\IUserManager.cs" />
+    <Compile Include="SystemManager\LogManager.cs" />
     <Compile Include="SystemManager\UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +93,14 @@
     <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Response\HanBin.Common.Component.Data.Response.csproj">
       <Project>{23665D79-6512-4D95-8DDD-33AE736AD479}</Project>
       <Name>HanBin.Common.Component.Data.Response</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\HanBin.Common.Component.Tool.Extensions.csproj">
+      <Project>{e45f518e-26e5-443c-ba21-25f36963b920}</Project>
+      <Name>HanBin.Common.Component.Tool.Extensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\HanBin.Common.Component.Tool.IoC.csproj">
+      <Project>{9858950f-059c-4add-a060-c92a89aefe6e}</Project>
+      <Name>HanBin.Common.Component.Tool.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\HanBin.Common.Component.Tool.csproj">
       <Project>{838ec5e0-955c-4e74-ad45-26477e388e54}</Project>

@@ -538,6 +538,7 @@ namespace HanBin.Services.ScoreManager
                 var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
                 var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
                 var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
+                var userArray = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true).ToList();
 
                 var scoreItemArray = scoreItemRepository.GetDatas<ScoreItem>(t =>
                     !t.IsDeleted, true).ToList();
@@ -576,6 +577,13 @@ namespace HanBin.Services.ScoreManager
                     if (scoreItem != null)
                     {
                         applyDetail.ItemDescription = scoreItem.ItemDescription;
+                    }
+
+                    applyDetail.ProposeID = t.ProposeID;
+                    var user = userArray.Where(u => u.UserID == applyDetail.ProposeID).FirstOrDefault();
+                    if (user != null)
+                    {
+                        applyDetail.ProposeName = user.UserToken;
                     }
 
                     var files = ufRepository.GetDatas<ApplyUploadFile>(f => !f.IsDeleted && f.ApplyID == t.ApplyID, true).Select(f => f.FilePath).ToList();
@@ -641,7 +649,7 @@ namespace HanBin.Services.ScoreManager
             GetHighLevelFeedBackDetailListResult result = new GetHighLevelFeedBackDetailListResult();
             try
             {
-                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true);
+                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && t.ProcessUserID.HasValue, true);
                 int total = approvedApplyQuerable.Count();
 
                 var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();

@@ -12,6 +12,7 @@ using HanBin.Presentation.Service.ScoreService;
 using System.IO;
 using HanBin.Common.Component.Tool;
 using HanBin.Common.Component.Data.Request.HanBin.ScoreManager;
+using HanBin.Common.Component.Data.Request.HanBin.OfficerManager;
 
 
 namespace TESTConsole
@@ -22,17 +23,21 @@ namespace TESTConsole
         {
 
             string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
-            string localServer = @"http://127.0.0.1:8829/HanBinScoreService.svc";
-            RestClient client = new RestClient(cloudServer);
-            GetHonourBoardParameter param = new GetHonourBoardParameter();
-            param.RankNumber = 5;
+            string localServer = @"http://localhost:2892/HanBin/SystemService";
+            RestClient client = new RestClient(localServer);
+            GetOfficerListParameter param = new GetOfficerListParameter();
+            param.OrganizationID = -1;
+            param.LevelID = -1;
+            param.Keyword = "";
+            param.Page = 1;
+            param.PageSize = 15;
             //UpFile upfile = new UpFile();
             //upfile.FileName = "testFile";
             //upfile.FileSize = 100;
 
             //upfile.FileStream = File.Create(filePath);
             string json = param.ToClientString();
-            var res = client.Post(json, "GetHonourBoard");
+            var res = client.Post(json, "GetOfficerList");
 
             Console.WriteLine(res);
 

@@ -421,7 +421,7 @@ namespace HanBin.Services.OfficerManager
                                       from g1 in group1
                                       join pos in dbContext.OfficerPositionTypes on off.PositionID equals pos.PositionID into group2
                                       from g2 in group2
-                                      join lev in dbContext.OfficerLevelTypes on off.OfficerID equals lev.LevelID into group3
+                                      join lev in dbContext.OfficerLevelTypes on off.LevelID equals lev.LevelID into group3
                                       from g3 in group3
                                       //where org.OrganFullName.ToUpper().Contains(parameter.Keyword.ToUpper()) || org.OrganCode.ToUpper().Contains(parameter.Keyword.ToUpper())
                                       select new OfficerDetailInfo

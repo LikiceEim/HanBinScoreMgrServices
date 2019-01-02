@@ -59,7 +59,8 @@ namespace HanBin.Services.SystemManager
                                     {"exp",1000},
                                     {"role",user.RoleID }
                             };
-                    var privateKey = AppConfigHelper.GetConfigValue("PrivateKey");
+                    var privateKey = Utilitys.GetAppConfig("PrivateKey");
+                    //var privateKey = AppConfigHelper.GetConfigValue("PrivateKey");
 
                     result.Token = JsonWebToken.Encode(payload, privateKey, JwtHashAlgorithm.HS512);
 
@@ -75,6 +76,7 @@ namespace HanBin.Services.SystemManager
             }
             catch (global::System.Exception e)
             {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 return response;
             }
