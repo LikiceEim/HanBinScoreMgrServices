@@ -71,12 +71,14 @@ namespace HanBin.Services.SystemManager
                 else
                 {
                     response.IsSuccessful = false;
+                    response.Reason = "用户名或者密码错误";
                     return response;
                 }
             }
             catch (global::System.Exception e)
             {
                 LogHelper.WriteLog(e);
+                response.Reason = "用户名或者密码错误";
                 response.IsSuccessful = false;
                 return response;
             }

@@ -25,12 +25,14 @@ namespace HanBin.Presentation.Service.SystemManage
         private IUserManager userManager;
         private IOrganManager organManager;
         private IOfficerManager officerManager;
+        private ILogManager logManager;
 
         public HanBinSystemManageService()
         {
             this.userManager = new UserManager();
             this.organManager = new OrganManager();
             this.officerManager = new OfficerManager();
+            this.logManager = new LogManager();
         }
 
         #region 用户管理
@@ -186,6 +188,12 @@ namespace HanBin.Presentation.Service.SystemManage
         public BaseResponse<GetAreaListResult> GetAreaList()
         {
             return organManager.GetAreaList();
+        }
+
+        public BaseResponse<QueryLogResult> QueryLog(QueryLogParameter param)
+        {
+            return logManager.QueryLog(param);
+
         }
     }
 }

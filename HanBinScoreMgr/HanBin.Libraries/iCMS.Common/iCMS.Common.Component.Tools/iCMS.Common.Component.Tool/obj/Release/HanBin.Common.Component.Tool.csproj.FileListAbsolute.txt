@@ -1,0 +1,14 @@
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\HanBin.Common.Component.Tool.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\HanBin.Common.Component.Tool.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\AppFramework.Analysis.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\HanBin.Common.Component.Tool.Extensions.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\HanBin.Common.Component.Tool.IoC.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\Microsoft.Practices.Unity.Configuration.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\Microsoft.Practices.Unity.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\Newtonsoft.Json.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\HanBin.Common.Component.Tool.Extensions.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\bin\Release\HanBin.Common.Component.Tool.IoC.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\obj\Release\HanBin.Common.Component.Tool.csprojResolveAssemblyReference.cache
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\obj\Release\HanBin.Common.Component.Tool.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\obj\Release\HanBin.Common.Component.Tool.pdb

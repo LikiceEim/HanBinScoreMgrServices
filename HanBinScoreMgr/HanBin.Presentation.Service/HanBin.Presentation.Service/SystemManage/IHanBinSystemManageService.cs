@@ -175,5 +175,14 @@ namespace HanBin.Presentation.Service.SystemManage
          ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetAreaListResult> GetAreaList();
 
+
+        #region 日志
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+              Method = "POST",
+              RequestFormat = WebMessageFormat.Json,
+              ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<QueryLogResult> QueryLog(QueryLogParameter param);
+        #endregion
+
     }
 }

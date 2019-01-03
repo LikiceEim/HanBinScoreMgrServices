@@ -695,6 +695,17 @@ namespace HanBin.Services.ScoreManager
                         approvedApply.ItemDescription = scoreItem.ItemDescription;
                     }
 
+
+                    if (t.ProcessUserID.HasValue)
+                    {
+                        approvedApply.ProcessuUserID = t.ProcessUserID.Value;
+                        var user = userRepository.GetDatas<HBUser>(u => u.UserID == t.ProcessUserID, true).FirstOrDefault();
+                        if (user != null)
+                        {
+                            approvedApply.ProcessuUserName = user.UserToken;
+                        }
+                    }
+
                     var files = ufRepository.GetDatas<ApplyUploadFile>(f => !f.IsDeleted && f.ApplyID == t.ApplyID, true).Select(f => f.FilePath).ToList();
                     approvedApply.UploadFileList.AddRange(files);
                     approvedApply.ApproveStatus = t.ApplyStatus;

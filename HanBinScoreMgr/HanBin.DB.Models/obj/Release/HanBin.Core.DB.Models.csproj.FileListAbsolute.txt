@@ -1,0 +1,7 @@
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\bin\Release\HanBin.Core.DB.Models.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\bin\Release\HanBin.Core.DB.Models.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\bin\Release\HanBin.Common.Component.Data.Base.DB.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\bin\Release\HanBin.Common.Component.Data.Base.DB.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\obj\Release\HanBin.Core.DB.Models.csprojResolveAssemblyReference.cache
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\obj\Release\HanBin.Core.DB.Models.dll
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.DB.Models\obj\Release\HanBin.Core.DB.Models.pdb

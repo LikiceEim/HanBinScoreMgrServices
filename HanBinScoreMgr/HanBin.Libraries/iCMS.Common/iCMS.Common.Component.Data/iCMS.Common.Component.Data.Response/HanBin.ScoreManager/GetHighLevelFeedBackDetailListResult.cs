@@ -12,7 +12,7 @@ namespace HanBin.Common.Component.Data.Response.HanBin.ScoreManager
 
         public int Total { get; set; }
 
-        public GetHighLevelFeedBackDetailListResult() 
+        public GetHighLevelFeedBackDetailListResult()
         {
             this.ApplovedApplyDetailList = new List<ApprovedApplyDetail>();
         }
@@ -20,7 +20,6 @@ namespace HanBin.Common.Component.Data.Response.HanBin.ScoreManager
 
     public class ApprovedApplyDetail
     {
-
         public int ApplyID { get; set; }
 
         public string OfficerName { get; set; }
@@ -46,5 +45,14 @@ namespace HanBin.Common.Component.Data.Response.HanBin.ScoreManager
         public int ApproveStatus { get; set; }
 
         public string RejectReason { get; set; }
+
+        public int ProcessuUserID { get; set; }
+
+        public string ProcessuUserName { get; set; }
+
+        public ApprovedApplyDetail()
+        {
+            this.UploadFileList = new List<string>();
+        }
     }
 }

@@ -44,5 +44,7 @@ namespace HanBin.Frameworks.Core.Repository
         public DbSet<OfficerPositionType> OfficerPositionTypes { get; set; }
 
         public DbSet<Area> Areas { get; set; }
+
+        public DbSet<SysLog> SysLogs { get; set; }
     }
 }

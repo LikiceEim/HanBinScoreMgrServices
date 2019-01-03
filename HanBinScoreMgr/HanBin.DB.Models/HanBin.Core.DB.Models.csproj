@@ -60,6 +60,7 @@
     <Compile Include="ScoreApply.cs" />
     <Compile Include="ScoreChangeHistory.cs" />
     <Compile Include="ScoreItem.cs" />
+    <Compile Include="SysLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\HanBin.Common.Component.Data.Base.DB.csproj">
