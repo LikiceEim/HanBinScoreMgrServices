@@ -143,10 +143,8 @@ namespace HanBin.Presentation.Service.ScoreService
         BaseResponse<UpFileResult> UploadFile(UpFile parameter);
     }
 
-
     public class UpFile
     {
-
         public long FileSize { get; set; }
 
         public string FileName { get; set; }
