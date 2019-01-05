@@ -20,7 +20,7 @@ namespace HanBin.Presentation.Service.SystemManage
 {
     [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     [JavascriptCallbackBehavior(UrlParameterName = "jsoncallback")]
-    public class HanBinSystemManageService : IHanBinSystemManageService
+    public class HanBinSystemManageService : BaseService, IHanBinSystemManageService
     {
         private IUserManager userManager;
         private IOrganManager organManager;
@@ -43,51 +43,137 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> AddUser(AddUserParameter parameter)
         {
-            return userManager.AddUser(parameter);
+            if (Validate())
+            {
+                return userManager.AddUser(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Code = "JWT_ERR";
+                response.Reason = "JWT_ERR";
+
+                return response;
+            }
         }
 
         public BaseResponse<bool> EditUser(EditUserParameter parameter)
         {
-            return userManager.EditUser(parameter);
+            if (Validate())
+            {
+                return userManager.EditUser(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+
+                return response;
+            }
         }
 
         public BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter)
         {
-            return userManager.GetUserInfo(parameter);
+            if (Validate())
+            {
+                return userManager.GetUserInfo(parameter);
+            }
+            else
+            {
+                BaseResponse<GetUserInfoResult> response = new BaseResponse<GetUserInfoResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+
+                return response;
+            }
+
         }
         #endregion
 
         #region 单位管理
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {
-            return organManager.AddOrganizationRecord(param);
+            if (Validate())
+            {
+                return organManager.AddOrganizationRecord(param);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+
+                return response;
+            }
         }
 
         #region 获取单位详细信息
         public BaseResponse<GetOrganDetailInfoResult> GetOrganDetailInfo(GetOrganDetailInfoParameter parameter)
         {
-            return organManager.GetOrganDetailInfo(parameter);
+            if (Validate())
+            {
+                return organManager.GetOrganDetailInfo(parameter);
+            }
+            else
+            {
+                BaseResponse<GetOrganDetailInfoResult> response = new BaseResponse<GetOrganDetailInfoResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 编辑单位
         public BaseResponse<bool> EditOrganizationRecord(EditOrganParameter parameter)
         {
-            return organManager.EditOrganizationRecord(parameter);
+            if (Validate())
+            {
+                return organManager.EditOrganizationRecord(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 删除单位
         public BaseResponse<bool> DeleteOrganRecord(DeleteOrganParameter param)
         {
-            return organManager.DeleteOrganRecord(param);
+            if (Validate())
+            {
+                return organManager.DeleteOrganRecord(param);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 获取单位列表
         public BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter)
         {
-            return organManager.GetOrganList(parameter);
+            if (Validate())
+            {
+                return organManager.GetOrganList(parameter);
+            }
+            else
+            {
+                BaseResponse<GetOrganListResult> response = new BaseResponse<GetOrganListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
         #endregion
@@ -96,108 +182,291 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 添加干部
         public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
         {
-            return officerManager.AddOfficerRecord(parameter);
+            if (Validate())
+            {
+                return officerManager.AddOfficerRecord(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 获取干部详细信息（不包含积分）
         public BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
         {
-            return officerManager.GetOfficerDetailInfo(parameter);
+            if (Validate())
+            {
+                return officerManager.GetOfficerDetailInfo(parameter);
+            }
+            else
+            {
+                BaseResponse<GetOfficerDetailInfoResult> response = new BaseResponse<GetOfficerDetailInfoResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 获取干部积分信息
         public BaseResponse<GetOfficerScoreDetailInfoResult> GetOfficerScoreDetailInfo(GetOfficerScoreDetailInfoParameter parameter)
         {
-            return officerManager.GetOfficerScoreDetailInfo(parameter);
+            if (Validate())
+            {
+                return officerManager.GetOfficerScoreDetailInfo(parameter);
+            }
+            else
+            {
+                BaseResponse<GetOfficerScoreDetailInfoResult> response = new BaseResponse<GetOfficerScoreDetailInfoResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 编辑积分申请时候，获取积分申请详细信息
         public BaseResponse<GetApplyDetailInfoResult> GetApplyDetailInfo(GetApplyDetailInfoParameter parameter)
         {
-            return officerManager.GetApplyDetailInfo(parameter);
+            if (Validate())
+            {
+                return officerManager.GetApplyDetailInfo(parameter);
+            }
+            else
+            {
+                BaseResponse<GetApplyDetailInfoResult> response = new BaseResponse<GetApplyDetailInfoResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 撤销积分申请
         public BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter)
         {
-            return officerManager.CancelScoreApply(parameter);
+            if (Validate())
+            {
+                return officerManager.CancelScoreApply(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 删除干部
         public BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter)
         {
-            return officerManager.DeleteOfficerRecord(parameter);
+            if (Validate())
+            {
+                return officerManager.DeleteOfficerRecord(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
         #region 获取单位列表
         public BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter)
         {
-            return officerManager.GetOfficerList(parameter);
+            if (Validate())
+            {
+                return officerManager.GetOfficerList(parameter);
+            }
+            else
+            {
+                BaseResponse<GetOfficerListResult> response = new BaseResponse<GetOfficerListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+
         }
         #endregion
 
         public BaseResponse<GetOrganTypeResult> GetOrganTypeList()
         {
-            return organManager.GetOrganTypeList();
+            if (Validate())
+            {
+                return organManager.GetOrganTypeList();
+            }
+            else
+            {
+                BaseResponse<GetOrganTypeResult> response = new BaseResponse<GetOrganTypeResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         #endregion
 
 
         public BaseResponse<GetOrganSummaryResult> GetOrganSummary()
         {
-            return officerManager.GetOrganSummary();
+            if (Validate())
+            {
+                return officerManager.GetOrganSummary();
+            }
+            else
+            {
+                BaseResponse<GetOrganSummaryResult> response = new BaseResponse<GetOrganSummaryResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetPositionListResult> GetPositionSummary()
         {
-            return officerManager.GetPositionSummary();
+            if (Validate())
+            {
+                return officerManager.GetPositionSummary();
+            }
+            else
+            {
+                BaseResponse<GetPositionListResult> response = new BaseResponse<GetPositionListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetLevelListResult> GetLevelSummary()
         {
-            return officerManager.GetLevelSummary();
+            if (Validate())
+            {
+                return officerManager.GetLevelSummary();
+            }
+            else
+            {
+                BaseResponse<GetLevelListResult> response = new BaseResponse<GetLevelListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetRoleInfoListResult> GetRoleInfoList()
         {
-            var headers = WebOperationContext.Current.IncomingRequest.Headers;
-            return userManager.GetRoleInfoList();
+            if (Validate())
+            {
+                var headers = WebOperationContext.Current.IncomingRequest.Headers;
+                return userManager.GetRoleInfoList();
+            }
+            else
+            {
+                BaseResponse<GetRoleInfoListResult> response = new BaseResponse<GetRoleInfoListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
         {
-            return userManager.ChangeUseStatus(parameter);
+            if (Validate())
+            {
+                return userManager.ChangeUseStatus(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> DeleteUser(DeleteUserParameter parameter)
         {
-            return userManager.DeleteUser(parameter);
+            if (Validate())
+            {
+                return userManager.DeleteUser(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> ResetPWD(ResetPWDParameter parameter)
         {
-            return userManager.ResetPWD(parameter);
+            if (Validate())
+            {
+                return userManager.ResetPWD(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+
         }
 
         public BaseResponse<GetAreaListResult> GetAreaList()
         {
-            return organManager.GetAreaList();
+            if (Validate())
+            {
+                return organManager.GetAreaList();
+            }
+            else
+            {
+                BaseResponse<GetAreaListResult> response = new BaseResponse<GetAreaListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<QueryLogResult> QueryLog(QueryLogParameter param)
         {
-            return logManager.QueryLog(param);
+            if (Validate())
+            {
+                return logManager.QueryLog(param);
+            }
+            else
+            {
+                BaseResponse<QueryLogResult> response = new BaseResponse<QueryLogResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> BackupDB(BackupDBParameter param)
         {
-            return userManager.BackupDB(param);
+            if (Validate())
+            {
+                return userManager.BackupDB(param);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Code = "JWT_ERR";
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
     }
 }

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScoreService\HanBinScoreService.cs" />
     <Compile Include="ScoreService\IHanBinScoreService.cs" />

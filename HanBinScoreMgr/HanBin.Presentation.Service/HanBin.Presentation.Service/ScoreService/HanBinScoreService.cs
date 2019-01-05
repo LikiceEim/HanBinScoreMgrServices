@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
-    public class HanBinScoreService : IHanBinScoreService
+    public class HanBinScoreService : BaseService, IHanBinScoreService
     {
         IScoreManager scoreManager = null;
 
@@ -22,133 +22,341 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> AddScoreItem(AddScoreItemParameter parameter)
         {
-            return scoreManager.AddScoreItem(parameter);
+            if (Validate())
+            {
+                return scoreManager.AddScoreItem(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+
         }
 
         public BaseResponse<bool> EditScoreItem(EditScoreItemParameter parameter)
         {
-            return scoreManager.EditScoreItem(parameter);
+            if (Validate())
+            {
+                return scoreManager.EditScoreItem(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> DeleteScoreItem(DeleteScoreItemParameter parameter)
         {
-            return scoreManager.DeleteScoreItem(parameter);
+            if (Validate())
+            {
+                return scoreManager.DeleteScoreItem(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
         public BaseResponse<GetScoreItemListResult> GetScoreItemList()
         {
-            return scoreManager.GetScoreItemList();
+            if (Validate())
+            {
+                return scoreManager.GetScoreItemList();
+            }
+            else
+            {
+                BaseResponse<GetScoreItemListResult> response = new BaseResponse<GetScoreItemListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+
         }
 
         public BaseResponse<bool> AddScoreApply(AddScoreApplyParameter parameter)
         {
-            return scoreManager.AddScoreApply(parameter);
+            if (Validate())
+            {
+                return scoreManager.AddScoreApply(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> EditScoreApply(EditScoreApplyParameter parameter)
         {
-            return scoreManager.EditScoreApply(parameter);
+            if (Validate())
+            {
+                return scoreManager.EditScoreApply(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<bool> CheckScoreApply(CheckScoreApplyParameter parameter)
         {
-            return scoreManager.CheckScoreApply(parameter);
+            if (Validate())
+            {
+                return scoreManager.CheckScoreApply(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<SystemStatSummaryResult> SystemStatSummary()
         {
-            return scoreManager.SystemStatSummary();
+            if (Validate())
+            {
+                return scoreManager.SystemStatSummary();
+            }
+            else
+            {
+                BaseResponse<SystemStatSummaryResult> response = new BaseResponse<SystemStatSummaryResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter)
         {
-            return scoreManager.GetHonourBoard(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetHonourBoard(parameter);
+            }
+            else
+            {
+                BaseResponse<GetHonourBoardResult> response = new BaseResponse<GetHonourBoardResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetBlackBoardResult> GetBlackBoard(GetBlackBoardParameter parameter)
         {
-            return scoreManager.GetBlackBoard(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetBlackBoard(parameter);
+            }
+            else
+            {
+                BaseResponse<GetBlackBoardResult> response = new BaseResponse<GetBlackBoardResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<WhatsToDoSummaryResult> GetWhatsToDoSummary(GetWhatsToDoSummaryParameter parameter)
         {
-            return scoreManager.GetWhatsToDoSummary(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetWhatsToDoSummary(parameter);
+            }
+            else
+            {
+                BaseResponse<WhatsToDoSummaryResult> response = new BaseResponse<WhatsToDoSummaryResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetWhatsToDoDetailListResult> GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter)
         {
-            return scoreManager.GetWhatsToDoDetailList(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetWhatsToDoDetailList(parameter);
+            }
+            else
+            {
+                BaseResponse<GetWhatsToDoDetailListResult> response = new BaseResponse<GetWhatsToDoDetailListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter)
         {
-            return scoreManager.GetHighLevelFeedBackSummary(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetHighLevelFeedBackSummary(parameter);
+            }
+            else
+            {
+
+                BaseResponse<GetHighLevelFeedBackSummaryResult> response = new BaseResponse<GetHighLevelFeedBackSummaryResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter)
         {
-            return scoreManager.GetHighLevelFeedBackDetailList(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetHighLevelFeedBackDetailList(parameter);
+            }
+            else
+            {
+                BaseResponse<GetHighLevelFeedBackDetailListResult> response = new BaseResponse<GetHighLevelFeedBackDetailListResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<GetScoreChangeHistoryResult> GetScoreChangeHistory(GetScoreChangeHistoryParameter parameter)
         {
-            return scoreManager.GetScoreChangeHistory(parameter);
+            if (Validate())
+            {
+                return scoreManager.GetScoreChangeHistory(parameter);
+            }
+            else
+            {
+                BaseResponse<GetScoreChangeHistoryResult> response = new BaseResponse<GetScoreChangeHistoryResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<ScorePublicShowResult> ScorePublicShow(ScorePublicShowParameter parameter)
         {
-            return scoreManager.ScorePublicShow(parameter);
+            if (Validate())
+            {
+                return scoreManager.ScorePublicShow(parameter);
+            }
+            else
+            {
+                BaseResponse<ScorePublicShowResult> response = new BaseResponse<ScorePublicShowResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<QuerySocreResult> QuerySocre(QuerySocreParameter parameter)
         {
-            return scoreManager.QuerySocre(parameter);
+            if (Validate())
+            {
+                return scoreManager.QuerySocre(parameter);
+            }
+            else
+            {
+                BaseResponse<QuerySocreResult> response = new BaseResponse<QuerySocreResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<AreaAverageScoreResult> AreaAverageScore()
         {
-            return scoreManager.AreaAverageScore();
+            if (Validate())
+            {
+                return scoreManager.AreaAverageScore();
+            }
+            else
+            {
+                BaseResponse<AreaAverageScoreResult> response = new BaseResponse<AreaAverageScoreResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<AgeAverageScoreResult> AgeAverageScore(AgeAverageScoreParameter parameter)
         {
-            return scoreManager.AreaAverageScore(parameter);
+            if (Validate())
+            {
+                return scoreManager.AreaAverageScore(parameter);
+            }
+            else
+            {
+                BaseResponse<AgeAverageScoreResult> response = new BaseResponse<AgeAverageScoreResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
         public BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter)
         {
-            return scoreManager.OrganAverageScore(parameter);
+            if (Validate())
+            {
+                return scoreManager.OrganAverageScore(parameter);
+            }
+            else
+            {
+                BaseResponse<OrganAverageScoreResult> response = new BaseResponse<OrganAverageScoreResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
         }
 
-        public UpFileResult UploadFile(UpFile parameter)
+        public BaseResponse<UpFileResult> UploadFile(UpFile parameter)
         {
+            BaseResponse<UpFileResult> response = new BaseResponse<UpFileResult>();
             UpFileResult result = new UpFileResult();
 
-            string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
-
-            if (!Directory.Exists(path))
+            if (Validate())
             {
-                Directory.CreateDirectory(path);
+                string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                byte[] buffer = new byte[parameter.FileSize];
+
+                string filePath = path + parameter.FileName + DateTime.Now.Ticks;
+                FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+
+                int count = 0;
+                while ((count = parameter.FileStream.Read(buffer, 0, buffer.Length)) > 0)
+                {
+                    fs.Write(buffer, 0, count);
+                }
+                //清空缓冲区
+                fs.Flush();
+                //关闭流
+                fs.Close();
+                result.FilePath = filePath;
+                response.Result = result;
+                return response;
             }
-
-            byte[] buffer = new byte[parameter.FileSize];
-
-            string filePath = path + parameter.FileName + DateTime.Now.Ticks;
-            FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
-
-            int count = 0;
-            while ((count = parameter.FileStream.Read(buffer, 0, buffer.Length)) > 0)
-            {
-                fs.Write(buffer, 0, count);
-            }
-            //清空缓冲区
-            fs.Flush();
-            //关闭流
-            fs.Close();
-
-            result.IsSuccessful = true;
-            result.FilePath = filePath;
-
-            return result;
+            response.IsSuccessful = false;
+            response.Reason = "JWT_ERR";
+            return response;
         }
     }
 }

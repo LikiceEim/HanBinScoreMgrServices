@@ -137,10 +137,10 @@ namespace HanBin.Presentation.Service.ScoreService
         BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
-         Method = "POST",
-         RequestFormat = WebMessageFormat.Json,
-         ResponseFormat = WebMessageFormat.Json)]
-        UpFileResult UploadFile(UpFile parameter);
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<UpFileResult> UploadFile(UpFile parameter);
     }
 
 
@@ -157,11 +157,6 @@ namespace HanBin.Presentation.Service.ScoreService
 
     public class UpFileResult
     {
-
-        public bool IsSuccessful { get; set; }
-
-        public string Reason { get; set; }
-
         public string FilePath { get; set; }
     }
 }
