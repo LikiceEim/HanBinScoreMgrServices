@@ -193,7 +193,11 @@ namespace HanBin.Presentation.Service.SystemManage
         public BaseResponse<QueryLogResult> QueryLog(QueryLogParameter param)
         {
             return logManager.QueryLog(param);
+        }
 
+        public BaseResponse<bool> BackupDB(BackupDBParameter param)
+        {
+            return userManager.BackupDB(param);
         }
     }
 }

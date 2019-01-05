@@ -13,6 +13,9 @@ using HanBin.Frameworks.Core.Repository;
 using Microsoft.Practices.Unity;
 using HanBin.Service.Common;
 using HanBin.Common.Commonent.Data.Enum;
+using System.IO;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace HanBin.Services.SystemManager
 {
@@ -394,6 +397,44 @@ namespace HanBin.Services.SystemManager
             }
         }
         #endregion
+        #endregion
+
+        #region 数据库备份
+        public BaseResponse<bool> BackupDB(BackupDBParameter param)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                using (SqlCommand cmdBakRst = new SqlCommand())
+                {
+                    SqlConnection conn = new SqlConnection(EcanSecurity.Decode(Utilitys.GetAppConfig("iCMS")));
+                    //备份文件路径
+                    var dir = Utilitys.GetAppConfig("BackupPath");
+                    if (!Directory.Exists(dir))
+                    {
+                        Directory.CreateDirectory(dir);
+                    }
+                    //生成备份文件名
+                    var fileName = DateTime.Now.ToString("yyyyMMddHHmmss") + ".bak";
+                    var abPath = Path.Combine(dir, fileName);
+
+                    var cmdText = string.Format(@"backup database  HanBinDB to disk='{0}'", abPath);
+
+                    conn.Open();
+                    cmdBakRst.Connection = conn;
+                    cmdBakRst.CommandType = CommandType.Text;
+                    cmdBakRst.CommandText = cmdText;
+                    cmdBakRst.ExecuteNonQuery();
+                }
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+            }
+            return response;
+        }
         #endregion
     }
 }

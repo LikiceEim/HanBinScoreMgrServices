@@ -27,5 +27,6 @@ namespace HanBin.Services.SystemManager
 
         BaseResponse<bool> ResetPWD(ResetPWDParameter parameter);
 
+        BaseResponse<bool> BackupDB(BackupDBParameter param);
     }
 }

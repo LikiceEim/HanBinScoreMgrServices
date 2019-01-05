@@ -70,6 +70,7 @@
     <Compile Include="HanBin.ScoreManager\OrganAverageScoreParameter.cs" />
     <Compile Include="HanBin.ScoreManager\QuerySocreParameter.cs" />
     <Compile Include="HanBin.ScoreManager\ScorePublicShowParameter.cs" />
+    <Compile Include="HanBin.SystemManage\BackupDBParameter.cs" />
     <Compile Include="HanBin.SystemManage\ChangeUseStatusParameter.cs" />
     <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />

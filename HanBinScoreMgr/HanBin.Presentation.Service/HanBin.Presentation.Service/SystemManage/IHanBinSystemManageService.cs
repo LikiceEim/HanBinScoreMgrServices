@@ -184,5 +184,13 @@ namespace HanBin.Presentation.Service.SystemManage
         BaseResponse<QueryLogResult> QueryLog(QueryLogParameter param);
         #endregion
 
+        #region 数据库备份
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> BackupDB(BackupDBParameter param);
+        #endregion
+
     }
 }
