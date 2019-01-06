@@ -80,7 +80,7 @@ namespace HanBin.Presentation.Service.SystemManage
          Method = "POST",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetOrganTypeResult> GetOrganTypeList();
+        BaseResponse<GetOrganTypeResult> GetOrganTypeList(BaseRequest param);
         #endregion
 
         #region 干部管理
@@ -131,25 +131,25 @@ namespace HanBin.Presentation.Service.SystemManage
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetOrganSummaryResult> GetOrganSummary();
+        BaseResponse<GetOrganSummaryResult> GetOrganSummary(BaseRequest parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetPositionListResult> GetPositionSummary();
+        BaseResponse<GetPositionListResult> GetPositionSummary(BaseRequest param);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetLevelListResult> GetLevelSummary();
+        BaseResponse<GetLevelListResult> GetLevelSummary(BaseRequest parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetRoleInfoListResult> GetRoleInfoList();
+        BaseResponse<GetRoleInfoListResult> GetRoleInfoList(BaseRequest param);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
@@ -173,7 +173,7 @@ namespace HanBin.Presentation.Service.SystemManage
          Method = "POST",
          RequestFormat = WebMessageFormat.Json,
          ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetAreaListResult> GetAreaList();
+        BaseResponse<GetAreaListResult> GetAreaList(BaseRequest param);
 
 
         #region 日志
@@ -189,7 +189,19 @@ namespace HanBin.Presentation.Service.SystemManage
              Method = "POST",
              RequestFormat = WebMessageFormat.Json,
              ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<bool> BackupDB(BackupDBParameter param);
+        BaseResponse<bool> BackupDB(BaseRequest param);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+          Method = "POST",
+          RequestFormat = WebMessageFormat.Json,
+          ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetBackupLogResult> GetBackupLogList(GetBackupLogParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> DeleteBackup(DeleteBackupParameter parameter);
         #endregion
 
     }

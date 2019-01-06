@@ -37,7 +37,7 @@ namespace HanBin.Presentation.Service.ScoreService
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetScoreItemListResult> GetScoreItemList();
+        BaseResponse<GetScoreItemListResult> GetScoreItemList(BaseRequest param);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
@@ -61,7 +61,7 @@ namespace HanBin.Presentation.Service.ScoreService
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<SystemStatSummaryResult> SystemStatSummary();
+        BaseResponse<SystemStatSummaryResult> SystemStatSummary(BaseRequest param);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
              Method = "POST",
@@ -122,7 +122,7 @@ namespace HanBin.Presentation.Service.ScoreService
              Method = "POST",
              RequestFormat = WebMessageFormat.Json,
              ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<AreaAverageScoreResult> AreaAverageScore();
+        BaseResponse<AreaAverageScoreResult> AreaAverageScore(BaseRequest param);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
@@ -143,13 +143,14 @@ namespace HanBin.Presentation.Service.ScoreService
         BaseResponse<UpFileResult> UploadFile(UpFile parameter);
     }
 
-    public class UpFile
+    public class UpFile : BaseRequest
     {
         public long FileSize { get; set; }
 
         public string FileName { get; set; }
 
         public Stream FileStream { get; set; }
+
     }
 
 

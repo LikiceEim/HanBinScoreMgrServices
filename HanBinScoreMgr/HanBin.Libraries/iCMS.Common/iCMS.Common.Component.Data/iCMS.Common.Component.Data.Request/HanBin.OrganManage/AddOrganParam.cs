@@ -34,5 +34,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
         /// 单位所在地区
         /// </summary>
         public int AreaID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

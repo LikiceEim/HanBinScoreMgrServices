@@ -14,18 +14,19 @@ namespace HanBin.Presentation.Service
         /// Token校验
         /// </summary>
         /// <returns></returns>
-        public bool Validate()
+        public bool Validate(string tokenParam)
         {
             return true;
 
-            var privateKey = Utilitys.GetAppConfig("PrivateKey");
-            var headers = WebOperationContext.Current.IncomingRequest.Headers;
-
-            string token = "";
-
-            token = headers["token"];
-
-            return JsonWebToken.Verify(token, privateKey, true);
+            if (!string.IsNullOrEmpty(tokenParam))
+            {
+                var privateKey = Utilitys.GetAppConfig("PrivateKey");
+                return JsonWebToken.Verify(tokenParam, privateKey, true);
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

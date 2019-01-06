@@ -76,6 +76,7 @@
     <Compile Include="HanBin.ScoreManager\ScorePublicShowResult.cs" />
     <Compile Include="HanBin.ScoreManager\SystemStatSummaryResult.cs" />
     <Compile Include="HanBin.ScoreManager\WhatsToDoSummaryResult.cs" />
+    <Compile Include="HanBin.SystemManager\GetBackupLogResult.cs" />
     <Compile Include="HanBin.SystemManager\GetRoleInfoListResult.cs" />
     <Compile Include="HanBin.SystemManager\GetUserInfoResult.cs" />
     <Compile Include="HanBin.SystemManager\LoginResult.cs" />

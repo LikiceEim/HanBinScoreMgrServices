@@ -10,7 +10,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
     /// <summary>
     /// 获取红榜数据请求参数
     /// </summary>
-    public class GetHonourBoardParameter:BaseRequest
+    public class GetHonourBoardParameter : BaseRequest
     {
         /// <summary>
         /// 前N名
@@ -18,7 +18,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
         public int RankNumber { get; set; }
     }
 
-    public class GetBlackBoardParameter 
+    public class GetBlackBoardParameter : BaseRequest
     {
         public int RankNumber { get; set; }
     }

@@ -101,6 +101,10 @@ namespace HanBin.Services.OfficerManager
                         throw new Exception("数据库操作异常");
                     }
 
+                    #region 操作日志
+                    new LogManager().AddOperationLog(parameter.AddUserID, "添加干部");
+                    #endregion
+
                     int extraScore = 0;
                     if (parameter.ApplyItemList.Any())
                     {
@@ -194,6 +198,10 @@ namespace HanBin.Services.OfficerManager
                 result.AddUserID = officer.AddUserID;
                 result.AddDate = officer.AddDate;
 
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部详细信息");
+                #endregion
+
                 response.Result = result;
                 return response;
             }
@@ -272,6 +280,10 @@ namespace HanBin.Services.OfficerManager
                     });
                 }
 
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部积分信息");
+                #endregion
+
                 response.Result = result;
                 return response;
             }
@@ -315,6 +327,10 @@ namespace HanBin.Services.OfficerManager
                 var apyFiles = applyUploadFileRepository.GetDatas<ApplyUploadFile>(t => !t.IsDeleted && t.ApplyID == result.ApplyID, true).Select(t => t.FilePath).ToList();
                 result.UploadFileList.AddRange(apyFiles);
 
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息");
+                #endregion
+
                 response.Result = result;
                 return response;
             }
@@ -344,6 +360,10 @@ namespace HanBin.Services.OfficerManager
                 {
                     throw new Exception("撤销积分申请时，数据库操作发生异常");
                 }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息");
+                #endregion
 
                 return response;
             }
@@ -375,6 +395,10 @@ namespace HanBin.Services.OfficerManager
                 {
                     throw new Exception("删除干部时，数据库操作发生异常");
                 }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "删除干部");
+                #endregion
 
                 return response;
             }
@@ -465,6 +489,10 @@ namespace HanBin.Services.OfficerManager
                     result.OfficerInfoList.AddRange(officerLinq.ToList());
                     result.Total = count;
                     response.Result = result;
+
+                    #region 操作日志
+                    new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息");
+                    #endregion
 
                     return response;
                 }
@@ -557,8 +585,5 @@ namespace HanBin.Services.OfficerManager
             }
         }
         #endregion
-
-
-
     }
 }

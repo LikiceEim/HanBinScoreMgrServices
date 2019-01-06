@@ -28,12 +28,16 @@ namespace HanBin.Services.SystemManager
         [Dependency]
         public IRepository<HBRole> roleRepoitory { get; set; }
 
+        [Dependency]
+        public IRepository<BackupLog> backlogRepository { get; set; }
+
 
         public UserManager()
         {
             hbUserReosiory = new Repository<HBUser>();
             organRepository = new Repository<Organization>();
             roleRepoitory = new Repository<HBRole>();
+            backlogRepository = new Repository<BackupLog>();
         }
 
         /// <summary>
@@ -100,6 +104,7 @@ namespace HanBin.Services.SystemManager
                 user.AddUserID = parameter.AddUserID;
                 user.LastUpdateDate = DateTime.Now;
                 user.LastUpdateUserID = parameter.AddUserID;
+                user.UseStatus = true;
 
                 OperationResult operationResult = hbUserReosiory.AddNew<HBUser>(user);
                 if (operationResult.ResultType != EnumOperationResultType.Success)
@@ -219,6 +224,11 @@ namespace HanBin.Services.SystemManager
                             userInfoList.Where(t => t.RoleID == 3);
 
                             break;
+                    }
+
+                    if (parameter.OrganizationID.HasValue && parameter.OrganizationID.Value > 0)
+                    {
+                        userInfoList = userInfoList.Where(t => t.OrganizationID == parameter.OrganizationID.Value);
                     }
 
                     userInfoList = userInfoList.OrderBy(sortList);
@@ -400,7 +410,7 @@ namespace HanBin.Services.SystemManager
         #endregion
 
         #region 数据库备份
-        public BaseResponse<bool> BackupDB(BackupDBParameter param)
+        public BaseResponse<bool> BackupDB()
         {
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
@@ -425,6 +435,18 @@ namespace HanBin.Services.SystemManager
                     cmdBakRst.CommandType = CommandType.Text;
                     cmdBakRst.CommandText = cmdText;
                     cmdBakRst.ExecuteNonQuery();
+
+                    FileInfo fileInfo = new FileInfo(abPath);
+                    var fileSize = fileInfo.Length;
+
+                    #region 插入备份日志
+                    BackupLog backupLog = new BackupLog();
+                    backupLog.BackupDate = DateTime.Now;
+                    backupLog.BackupPath = abPath;
+
+                    backupLog.BackupSize = fileSize;
+                    backlogRepository.AddNew<BackupLog>(backupLog);
+                    #endregion
                 }
             }
             catch (Exception e)
@@ -434,6 +456,81 @@ namespace HanBin.Services.SystemManager
                 response.Reason = e.Message;
             }
             return response;
+        }
+
+        public BaseResponse<GetBackupLogResult> GetBackupLogList(GetBackupLogParameter parameter)
+        {
+            BaseResponse<GetBackupLogResult> response = new BaseResponse<GetBackupLogResult>();
+            GetBackupLogResult result = new GetBackupLogResult();
+            try
+            {
+                var backuplogs = backlogRepository.GetDatas<BackupLog>(t => !t.IsDeleted, true);
+
+                int total = backuplogs.Count();
+                if (parameter.Page > 0)
+                {
+                    backuplogs = backuplogs
+                           .Skip((parameter.Page - 1) * parameter.PageSize)
+                           .Take(parameter.PageSize);
+                }
+
+                backuplogs.ToList().ForEach(t =>
+                {
+                    BackupInfo bi = new BackupInfo();
+                    bi.BackupDate = t.BackupDate;
+                    bi.BackupID = t.ID;
+                    bi.BackupPath = t.BackupPath;
+                    bi.BackupSize = t.BackupSize;
+
+                    result.BackupList.Add(bi);
+                });
+
+                result.Total = total;
+                response.Result = result;
+
+                return response;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
+        }
+
+        public BaseResponse<bool> DeleteBackup(DeleteBackupParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var backlog = backlogRepository.GetDatas<BackupLog>(t => !t.IsDeleted, true).FirstOrDefault();
+                if (backlog == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "待删除的数据库备份不存在";
+                    return response;
+                }
+                backlog.IsDeleted = true;
+                var operRes = backlogRepository.Update<BackupLog>(backlog);
+                if (operRes.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("删除备份日志发生异常");
+                }
+
+                //删除备份文件
+                if (File.Exists(backlog.BackupPath))
+                {
+                    File.Delete(backlog.BackupPath);
+                }
+
+                response.IsSuccessful = true;
+                response.Result = true;
+                return response;
+            }
+            catch (Exception e)
+            {
+
+                throw;
+            }
         }
         #endregion
     }

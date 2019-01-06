@@ -49,7 +49,6 @@ namespace HanBin.Services.ScoreManager
         {
             scoreItemRepository = new Repository<ScoreItem>();
             scoreApplyRepository = new Repository<ScoreApply>();
-
             ufRepository = new Repository<ApplyUploadFile>();
             officerRepository = new Repository<Officer>();
             schRepository = new Repository<ScoreChangeHistory>();
@@ -57,7 +56,6 @@ namespace HanBin.Services.ScoreManager
             userRepository = new Repository<HBUser>();
             positionRepository = new Repository<OfficerPositionType>();
             levelRepository = new Repository<OfficerLevelType>();
-
         }
 
         #region 积分条目字典CRUD
@@ -66,6 +64,19 @@ namespace HanBin.Services.ScoreManager
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
+                if (parameter.Type == 1 && parameter.ItemScore <= 0)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "正向积分分数必须大于零";
+                    return response;
+                }
+                if (parameter.Type == 2 && parameter.ItemScore >= 0)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "负向积分分数必须小于零";
+                    return response;
+                }
+
                 var scoreItem = new ScoreItem();
                 scoreItem.ItemScore = parameter.ItemScore;
                 scoreItem.ItemDescription = parameter.ItemDescription;
@@ -79,6 +90,11 @@ namespace HanBin.Services.ScoreManager
                 {
                     throw new Exception("添加积分条目发生异常");
                 }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目");
+                #endregion
+
                 return response;
             }
             catch (Exception e)
@@ -97,6 +113,20 @@ namespace HanBin.Services.ScoreManager
             try
             {
                 var scoreItemIndb = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && t.ItemID == parameter.ItemID, true).FirstOrDefault();
+
+                if (scoreItemIndb.Type == 1 && parameter.ItemScore <= 0)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "正向积分分数必须大于零";
+                    return response;
+                }
+                if (scoreItemIndb.Type == 2 && parameter.ItemScore >= 0)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "负向积分分数必须小于零";
+                    return response;
+                }
+
                 if (scoreItemIndb == null)
                 {
                     response.IsSuccessful = false;
@@ -110,6 +140,11 @@ namespace HanBin.Services.ScoreManager
                 {
                     throw new Exception("编辑积分条目发生异常");
                 }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目");
+                #endregion
+
                 return response;
             }
             catch (Exception e)
@@ -134,6 +169,15 @@ namespace HanBin.Services.ScoreManager
                     response.Reason = "将要删除积分条目不存在";
                     return response;
                 }
+
+                var isUsed = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ItemID == parameter.ItemID, true).Any();
+                if (isUsed)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "已使用的积分条目不能删除";
+                    return response;
+                }
+
                 scoreItemIndb.IsDeleted = true;
 
                 var operResult = scoreItemRepository.Update<ScoreItem>(scoreItemIndb);
@@ -141,6 +185,11 @@ namespace HanBin.Services.ScoreManager
                 {
                     throw new Exception("删除积分条目发生异常");
                 }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "删除积分条目");
+                #endregion
+
                 return response;
             }
             catch (Exception e)
@@ -196,11 +245,17 @@ namespace HanBin.Services.ScoreManager
                     ScoreApply scApply = new ScoreApply();
                     scApply.OfficerID = parameter.OfficerID;
                     scApply.ItemID = parameter.ScoreItemID;
-                    scApply.ItemScore = 0;
+
+                    var scoreItem = dbContext.ScoreItems.Where(t => t.ItemID == parameter.ScoreItemID).FirstOrDefault();
+                    if (scoreItem == null)
+                    {
+                        throw new Exception("添加积分申请数据异常");
+                    }
+                    scApply.ItemScore = scoreItem.ItemScore;
                     scApply.ApplyStatus = (int)EnumApproveStatus.Approving;
                     scApply.ProposeID = parameter.ProposeID;
-                    scApply.AddUserID = parameter.ProposeID;
-                    scApply.LastUpdateUserID = parameter.ProposeID;
+                    scApply.AddUserID = parameter.CurrentUserID;
+                    scApply.LastUpdateUserID = parameter.CurrentUserID;
                     scApply.LastUpdateDate = DateTime.Now;
 
                     scApply.ApplySummary = parameter.ApplySummary;
@@ -226,8 +281,12 @@ namespace HanBin.Services.ScoreManager
                     }
 
                 });
-                return response;
 
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分申请");
+                #endregion
+
+                return response;
             }
             catch (Exception e)
             {
@@ -267,8 +326,31 @@ namespace HanBin.Services.ScoreManager
                 }
 
                 //编辑文件路径列表：先删除， 后添加，后续 优化
-                ///TODO:
-                ///
+                var originFiles = ufRepository.GetDatas<ApplyUploadFile>(t => !t.IsDeleted && t.ApplyID == parameter.ApplyID, true).ToList();
+                if (originFiles != null && originFiles.Any())
+                {
+                    originFiles.ForEach(f =>
+                    {
+                        f.IsDeleted = true;
+                    });
+
+                    operRes = ufRepository.Update<ApplyUploadFile>(originFiles.AsEnumerable());
+                    if (parameter.UploadFileList.Any())
+                    {
+                        parameter.UploadFileList.ForEach(f =>
+                        {
+                            ApplyUploadFile uf = new ApplyUploadFile();
+                            uf.ApplyID = parameter.ApplyID;
+                            uf.FilePath = f;
+                            ufRepository.AddNew<ApplyUploadFile>(uf);
+                        });
+                    }
+                }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "编辑积分申请");
+                #endregion
+
                 return response;
             }
             catch (Exception e)
@@ -350,8 +432,12 @@ namespace HanBin.Services.ScoreManager
                     }
 
                     schRepository.AddNew<ScoreChangeHistory>(hist);
-
                 }
+
+                string approveRes = parameter.ApplyStatus == (int)EnumApproveStatus.Pass ? "通过" : "驳回";
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, string.Format("{0}积分申请", approveRes));
+                #endregion
 
                 return response;
             }
@@ -361,7 +447,6 @@ namespace HanBin.Services.ScoreManager
 
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
-
                 return response;
             }
         }
@@ -971,7 +1056,14 @@ namespace HanBin.Services.ScoreManager
                         }
                         //单位ID
                         var organIDArr = t.ToList().Select(o => o.OrganID).ToList();
-                        var averageScore = officers.Where(of => organIDArr.Contains(of.OrganizationID)).Select(of => of.CurrentScore).Average();
+
+                        double averageScore = 0;
+                        var tempOfficers = officers.Where(of => organIDArr.Contains(of.OrganizationID));
+                        if (tempOfficers != null && tempOfficers.Any())
+                        {
+                            averageScore = tempOfficers.Select(tt => tt.CurrentScore).Average();
+
+                        }
 
                         return new AreaAverageScoreItem
                         {
@@ -1122,6 +1214,4 @@ namespace HanBin.Services.ScoreManager
         }
         #endregion
     }
-
-
 }

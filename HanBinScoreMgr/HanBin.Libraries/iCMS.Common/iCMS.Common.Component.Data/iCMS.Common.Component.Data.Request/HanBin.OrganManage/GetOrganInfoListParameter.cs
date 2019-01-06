@@ -37,6 +37,6 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
         /// </summary>
         public int PageSize { get; set; }
 
-
+        public int CurrentUserID { get; set; }
     }
 }

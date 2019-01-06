@@ -73,6 +73,7 @@
     <Compile Include="HanBin.SystemManage\BackupDBParameter.cs" />
     <Compile Include="HanBin.SystemManage\ChangeUseStatusParameter.cs" />
     <Compile Include="HanBin.SystemManage\EditUserParameter.cs" />
+    <Compile Include="HanBin.SystemManage\GetBackupLogParameter.cs" />
     <Compile Include="HanBin.SystemManage\GetUserInfoParameter.cs" />
     <Compile Include="HanBin.SystemManage\LoginParameter.cs" />
     <Compile Include="HanBin.SystemManage\DeleteUserParameter.cs" />

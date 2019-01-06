@@ -10,5 +10,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
     public class DeleteOrganParameter : BaseRequest
     {
         public int OrganID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

@@ -13,5 +13,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
         /// 干部ID
         /// </summary>
         public int OfficerID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

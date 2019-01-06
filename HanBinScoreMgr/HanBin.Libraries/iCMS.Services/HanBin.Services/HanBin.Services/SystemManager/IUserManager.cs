@@ -27,6 +27,10 @@ namespace HanBin.Services.SystemManager
 
         BaseResponse<bool> ResetPWD(ResetPWDParameter parameter);
 
-        BaseResponse<bool> BackupDB(BackupDBParameter param);
+        BaseResponse<bool> BackupDB();
+
+        BaseResponse<GetBackupLogResult> GetBackupLogList(GetBackupLogParameter parameter);
+
+        BaseResponse<bool> DeleteBackup(DeleteBackupParameter parameter);
     }
 }

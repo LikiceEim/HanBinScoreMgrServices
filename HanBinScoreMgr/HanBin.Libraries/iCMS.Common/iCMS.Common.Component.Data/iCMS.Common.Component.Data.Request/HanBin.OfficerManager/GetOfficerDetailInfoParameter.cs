@@ -10,5 +10,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
     public class GetOfficerDetailInfoParameter : BaseRequest
     {
         public int OfficerID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

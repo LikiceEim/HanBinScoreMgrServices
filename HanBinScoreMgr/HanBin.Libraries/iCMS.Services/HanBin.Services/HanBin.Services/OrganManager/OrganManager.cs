@@ -47,6 +47,7 @@ namespace HanBin.Services.OrganManager
             organTypeRepository = new Repository<OrganType>();
             officerPositionRepository = new Repository<OfficerPositionType>();
             officerLevelRepository = new Repository<OfficerLevelType>();
+            areaRepository = new Repository<Area>();
         }
 
         #region 添加单位
@@ -73,6 +74,11 @@ namespace HanBin.Services.OrganManager
                 }
                 response.IsSuccessful = true;
                 response.Result = true;
+
+                #region 操作日志
+                new LogManager().AddOperationLog(param.CurrentUserID, "添加部门");
+                #endregion
+
                 return response;
 
             }
@@ -139,6 +145,11 @@ namespace HanBin.Services.OrganManager
 
                 result.OfficerList.AddRange(officerInfo);
                 response.Result = result;
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取单位详细信息");
+                #endregion
+
                 return response;
             }
             catch (Exception e)
@@ -181,6 +192,11 @@ namespace HanBin.Services.OrganManager
                 }
                 response.IsSuccessful = true;
                 response.Result = true;
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "编辑部门");
+                #endregion
+
                 return response;
             }
             catch (Exception e)
@@ -216,6 +232,10 @@ namespace HanBin.Services.OrganManager
                 }
                 response.IsSuccessful = true;
                 response.Result = true;
+
+                #region 操作日志
+                new LogManager().AddOperationLog(param.CurrentUserID, "删除部门");
+                #endregion
                 return response;
             }
             catch (Exception e)
@@ -328,7 +348,8 @@ namespace HanBin.Services.OrganManager
                                             OrganCategoryID = g2.CategoryID,
                                             OrganCategoryName = g2.CategoryName,
                                             OfficerQuanlity = g3.Count(),
-                                            AddDate = organ.AddDate
+                                            AddDate = organ.AddDate,
+                                            AreaID = organ.AreaID
                                         };
 
                     ListSortDirection sortOrder = parameter.Order.ToLower().Equals("asc") ? ListSortDirection.Ascending : ListSortDirection.Descending;
@@ -351,6 +372,10 @@ namespace HanBin.Services.OrganManager
                     result.OrganInfoList.AddRange(organListLinq.ToList());
                     result.Total = count;
                     response.Result = result;
+
+                    #region 操作日志
+                    new LogManager().AddOperationLog(parameter.CurrentUserID, "获取部门列表");
+                    #endregion
 
                     return response;
                 }
@@ -390,6 +415,5 @@ namespace HanBin.Services.OrganManager
             }
         }
         #endregion
-
     }
 }

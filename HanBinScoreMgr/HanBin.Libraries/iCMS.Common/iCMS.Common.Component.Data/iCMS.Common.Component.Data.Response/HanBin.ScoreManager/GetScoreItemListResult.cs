@@ -24,6 +24,9 @@ namespace HanBin.Common.Component.Data.Response.HanBin.ScoreManager
 
         public string ItemDescription { get; set; }
 
+        /// <summary>
+        /// 1 加分规则； 2 减分规则
+        /// </summary>
         public int Type { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HanBin.Common.Component.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
 {
-    public class CheckScoreApplyParameter
+    public class CheckScoreApplyParameter : BaseRequest
     {
         public int ProcessUserID { get; set; }
 
@@ -15,5 +16,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
         public int ApplyStatus { get; set; }
 
         public string RejectReason { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

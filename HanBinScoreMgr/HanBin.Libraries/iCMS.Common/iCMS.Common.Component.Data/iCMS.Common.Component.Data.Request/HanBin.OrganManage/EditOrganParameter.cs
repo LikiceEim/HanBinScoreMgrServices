@@ -22,5 +22,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
         public int UpdateUserID { get; set; }
 
         public int AreaID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

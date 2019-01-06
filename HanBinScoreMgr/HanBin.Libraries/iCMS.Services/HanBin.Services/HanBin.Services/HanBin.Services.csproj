@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="LogManager.cs" />
     <Compile Include="OfficerManager\IOfficerManager.cs" />
     <Compile Include="OfficerManager\OfficerManager.cs" />
     <Compile Include="OrganManager\IOrganManager.cs" />

@@ -22,6 +22,8 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
         public int Page { get; set; }
 
         public int PageSize { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 
 }

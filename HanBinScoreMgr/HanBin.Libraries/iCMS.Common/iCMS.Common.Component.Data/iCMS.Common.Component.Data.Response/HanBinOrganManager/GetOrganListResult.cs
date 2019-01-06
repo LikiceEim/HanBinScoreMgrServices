@@ -39,5 +39,7 @@ namespace HanBin.Common.Component.Data.Response.HanBinOrganManager
         public int OfficerQuanlity { get; set; }
 
         public DateTime AddDate { get; set; }
+
+        public int AreaID { get; set; }
     }
 }

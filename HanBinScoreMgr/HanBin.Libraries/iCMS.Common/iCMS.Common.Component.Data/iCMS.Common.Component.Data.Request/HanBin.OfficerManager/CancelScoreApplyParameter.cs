@@ -10,5 +10,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
     public class CancelScoreApplyParameter : BaseRequest
     {
         public int ApplyID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }
