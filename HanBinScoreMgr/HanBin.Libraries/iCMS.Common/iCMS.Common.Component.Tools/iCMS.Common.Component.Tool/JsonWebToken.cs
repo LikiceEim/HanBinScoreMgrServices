@@ -111,6 +111,16 @@ namespace HanBin.Common.Component.Tool
                 var keyBytes = Encoding.UTF8.GetBytes(key);
                 var algorithm = (string)headerData["alg"];
 
+                #region 验证过期时间
+                //var tokenDate = (DateTime)payloadData["date"];
+                //var expireDate = (long)payloadData["exp"];
+
+                //if ((DateTime.Now - tokenDate).TotalMilliseconds > expireDate)
+                //{
+                //    return false;//Token 过期
+                //}
+                #endregion
+
                 var signature = HashAlgorithms[GetHashAlgorithm(algorithm)](keyBytes, bytesToSign);
                 var decodedCrypto = Convert.ToBase64String(crypto);
                 var decodedSignature = Convert.ToBase64String(signature);

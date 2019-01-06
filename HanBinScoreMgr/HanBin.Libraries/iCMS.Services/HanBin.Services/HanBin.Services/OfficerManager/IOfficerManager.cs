@@ -13,6 +13,8 @@ namespace HanBin.Services.OfficerManager
     {
         BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter);
 
+        BaseResponse<bool> EditOfficerRecord(EditOfficerParameter parameter);
+
         BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter);
 
         BaseResponse<GetOfficerScoreDetailInfoResult> GetOfficerScoreDetailInfo(GetOfficerScoreDetailInfoParameter parameter);

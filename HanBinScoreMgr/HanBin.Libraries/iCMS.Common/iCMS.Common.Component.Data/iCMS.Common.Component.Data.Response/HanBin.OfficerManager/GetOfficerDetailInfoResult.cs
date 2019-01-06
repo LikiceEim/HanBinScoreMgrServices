@@ -59,5 +59,17 @@ namespace HanBin.Common.Component.Data.Response.HanBin.OfficerManager
         /// 
         /// </summary>
         public DateTime AddDate { get; set; }
+
+        public string OrganFullName { get; set; }
+
+        public string OrganShortName { get; set; }
+
+        public int OrganTypeID { get; set; }
+
+        public string OrganTypeName { get; set; }
+
+        public string PositionName { get; set; }
+
+        public string LevelName { get; set; }
     }
 }

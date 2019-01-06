@@ -31,7 +31,6 @@ namespace HanBin.Services.SystemManager
         [Dependency]
         public IRepository<BackupLog> backlogRepository { get; set; }
 
-
         public UserManager()
         {
             hbUserReosiory = new Repository<HBUser>();
@@ -59,12 +58,14 @@ namespace HanBin.Services.SystemManager
                 {
                     result.RoleID = user.RoleID;
                     result.UserID = user.UserID;
+                    result.UserToken = user.UserToken;
 
                     var payload = new Dictionary<string, object>
                             {
-                                    {"name", user.UserToken },                
-                                    {"exp",1000},
-                                    {"role",user.RoleID }
+                                   {"name", user.UserToken },                
+                                   {"exp",1000*60*30},
+                                   {"role",user.RoleID }
+                                   //{"date",DateTime.Now }                                  
                             };
                     var privateKey = Utilitys.GetAppConfig("PrivateKey");
                     //var privateKey = AppConfigHelper.GetConfigValue("PrivateKey");
@@ -354,6 +355,13 @@ namespace HanBin.Services.SystemManager
                 {
                     response.IsSuccessful = false;
                     response.Reason = "待删除的用户不存在";
+                    return response;
+                }
+
+                if (user.UserID == parameter.CurrentUserID)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "不能删除自己";
                     return response;
                 }
 

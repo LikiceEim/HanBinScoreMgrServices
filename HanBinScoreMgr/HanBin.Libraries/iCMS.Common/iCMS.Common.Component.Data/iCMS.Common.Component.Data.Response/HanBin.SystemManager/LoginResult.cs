@@ -15,6 +15,11 @@ namespace HanBin.Common.Component.Data.Response.HanBin.SystemManager
         /// 用户ID
         /// </summary>
         public int UserID { get; set; }
+
+        /// <summary>
+        /// 用户Token
+        /// </summary>
+        public string UserToken { get; set; }
         /// <summary>
         /// 角色ID
         /// </summary>

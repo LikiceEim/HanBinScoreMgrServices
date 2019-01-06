@@ -6,4 +6,3 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Com
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\bin\Debug\HanBin.Common.Component.Data.Base.DB.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\HanBin.Common.Component.Data.Base.DB.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\HanBin.Common.Component.Data.Base.DB.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\iCMS.Common.Component.Data.Base.DB\obj\Debug\HanBin.Common.Component.Data.Base.DB.csprojResolveAssemblyReference.cache

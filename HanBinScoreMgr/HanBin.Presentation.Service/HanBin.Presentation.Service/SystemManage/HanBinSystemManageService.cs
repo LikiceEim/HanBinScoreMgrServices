@@ -196,6 +196,23 @@ namespace HanBin.Presentation.Service.SystemManage
         }
         #endregion
 
+        #region 编辑干部
+        public BaseResponse<bool> EditOfficerRecord(EditOfficerParameter parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return officerManager.EditOfficerRecord(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+        #endregion
+
         #region 获取干部详细信息（不包含积分）
         public BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
         {

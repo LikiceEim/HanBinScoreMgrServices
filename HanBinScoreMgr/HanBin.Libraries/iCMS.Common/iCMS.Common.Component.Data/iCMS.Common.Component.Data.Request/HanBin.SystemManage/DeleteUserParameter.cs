@@ -10,5 +10,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.SystemManage
     public class DeleteUserParameter : BaseRequest
     {
         public int UserID { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

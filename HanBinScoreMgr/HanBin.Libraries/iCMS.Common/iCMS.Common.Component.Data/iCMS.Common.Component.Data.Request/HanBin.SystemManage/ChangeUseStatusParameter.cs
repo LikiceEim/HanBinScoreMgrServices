@@ -10,6 +10,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.SystemManage
     public class ChangeUseStatusParameter : BaseRequest
     {
         public int UserID { get; set; }
+
         public bool UseStatus { get; set; }
     }
 }

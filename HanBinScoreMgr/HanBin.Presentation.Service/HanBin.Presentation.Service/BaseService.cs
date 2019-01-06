@@ -16,7 +16,7 @@ namespace HanBin.Presentation.Service
         /// <returns></returns>
         public bool Validate(string tokenParam)
         {
-            return true;
+            //return true;
 
             if (!string.IsNullOrEmpty(tokenParam))
             {

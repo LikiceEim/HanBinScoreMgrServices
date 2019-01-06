@@ -34,6 +34,9 @@ namespace HanBin.Services.OfficerManager
         [Dependency]
         public IRepository<OfficerLevelType> levelRepository { get; set; }
 
+        [Dependency]
+        public IRepository<OrganType> organTypeRepository { get; set; }
+
         public OfficerManager()
         {
             //解决部署IIS 依赖注入的问题
@@ -65,6 +68,8 @@ namespace HanBin.Services.OfficerManager
             {
                 levelRepository = new Repository<OfficerLevelType>();
             }
+
+            organTypeRepository = new Repository<OrganType>();
         }
 
 
@@ -105,6 +110,8 @@ namespace HanBin.Services.OfficerManager
                     new LogManager().AddOperationLog(parameter.AddUserID, "添加干部");
                     #endregion
 
+                    var scoreItemArray = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted, true).ToList();
+
                     int extraScore = 0;
                     if (parameter.ApplyItemList.Any())
                     {
@@ -113,7 +120,12 @@ namespace HanBin.Services.OfficerManager
                             ScoreApply scApply = new ScoreApply();
                             scApply.OfficerID = officer.OfficerID;
                             scApply.ItemID = t.ItemID;
-                            scApply.ItemScore = t.ItemScore;
+                            var tempscoreItem = scoreItemArray.Where(s => s.ItemID == t.ItemID).FirstOrDefault();
+                            if (tempscoreItem != null)
+                            {
+                                scApply.ItemScore = tempscoreItem.ItemScore;
+                            }
+
                             scApply.ApplyStatus = 1;//自动设置为审批通过
                             scApply.ProposeID = officer.AddUserID;
                             scApply.AddUserID = officer.AddUserID;
@@ -171,6 +183,47 @@ namespace HanBin.Services.OfficerManager
         }
         #endregion
 
+        #region 编辑干部
+        public BaseResponse<bool> EditOfficerRecord(EditOfficerParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var offIndb = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OfficerID == parameter.OfficerID, true).FirstOrDefault();
+                if (offIndb == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "编辑干部数据异常";
+                    return response;
+                }
+                offIndb.Name = parameter.Name;
+                offIndb.Gender = parameter.Gender;
+                offIndb.IdentifyCardNumber = parameter.IdentifyNumber;
+                offIndb.Birthday = parameter.Birthday;
+                offIndb.OrganizationID = parameter.OrganizationID;
+                offIndb.PositionID = parameter.PositionID;
+                offIndb.LevelID = parameter.LevelID;
+                offIndb.OnOfficeDate = parameter.OnOfficeDate;
+                offIndb.Duty = parameter.Duty;
+                offIndb.InitialScore = parameter.InitialScore;
+
+                var res = officerRepository.Update<Officer>(offIndb);
+                if (res.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("编辑干部发生异常");
+                }
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
+
         #region 获取干部基础信息（不包含积分信息）
         public BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
         {
@@ -197,6 +250,31 @@ namespace HanBin.Services.OfficerManager
                 result.Duty = officer.Duty;
                 result.AddUserID = officer.AddUserID;
                 result.AddDate = officer.AddDate;
+
+                var organ = organRepository.GetDatas<Organization>(t => !t.IsDeleted && t.OrganID == result.OrganizationID, true).FirstOrDefault();
+                if (organ == null)
+                {
+                    throw new Exception();
+                }
+                result.OrganFullName = organ.OrganFullName;
+                result.OrganShortName = organ.OrganShortName;
+                result.OrganTypeID = organ.OrganTypeID;
+                var organType = organTypeRepository.GetDatas<OrganType>(t => !t.IsDeleted && t.OrganTypeID == result.OrganTypeID, true).FirstOrDefault();
+                if (organType == null)
+                {
+                    throw new Exception();
+                }
+                result.OrganTypeName = organType.OrganTypeName;
+                var position = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted && t.PositionID == result.PositionID, true).FirstOrDefault();
+                if (position != null)
+                {
+                    result.PositionName = position.PositionName;
+                }
+                var level = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted && t.LevelID == result.LevelID, true).FirstOrDefault();
+                if (level != null)
+                {
+                    result.LevelName = level.LevelName;
+                }
 
                 #region 操作日志
                 new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部详细信息");
@@ -238,7 +316,7 @@ namespace HanBin.Services.OfficerManager
                 result.CurrentScore = officer.CurrentScore;
 
                 //获取此干部 已通过审批（审批通过或者驳回）的积分申请项
-                var applovedScoreApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.OfficerID == parameter.OfficerID && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true).ToList();
+                var applovedScoreApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.OfficerID == parameter.OfficerID && t.ApplyStatus == (int)EnumApproveStatus.Pass, true).ToList();
                 if (applovedScoreApplyList != null && applovedScoreApplyList.Any())
                 {
                     applovedScoreApplyList.ForEach(t =>
