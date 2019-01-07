@@ -87,6 +87,23 @@ namespace HanBin.Services.OfficerManager
             {
                 ExecuteDB.ExecuteTrans((dbContext) =>
                 {
+                    #region 输入验证
+                    if (string.IsNullOrEmpty(parameter.Name))
+                    {
+                        throw new Exception("请输入用户名");
+                    }
+                    if (string.IsNullOrEmpty(parameter.IdentifyNumber))
+                    {
+                        throw new Exception("请输入身份证号码");
+                    }
+
+                    var isExisted = dbContext.Officers.Where(t => !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
+                    if (isExisted)
+                    {
+                        throw new Exception("干部名称已重复");
+                    }
+                    #endregion
+
                     Officer officer = new Officer();
                     officer.Name = parameter.Name;
                     officer.Gender = parameter.Gender;
@@ -189,6 +206,28 @@ namespace HanBin.Services.OfficerManager
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
+                #region 输入验证
+                if (string.IsNullOrEmpty(parameter.Name))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "干部名称不能为空";
+                }
+                if (string.IsNullOrEmpty(parameter.IdentifyNumber))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "身份证号不能为空";
+                    return response;
+                }
+
+                var isExisted = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.OfficerID != parameter.OfficerID && t.Name.Equals(parameter.Name), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "干部名称已存在";
+                    return response;
+                }
+                #endregion
+
                 var offIndb = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OfficerID == parameter.OfficerID, true).FirstOrDefault();
                 if (offIndb == null)
                 {

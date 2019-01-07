@@ -42,14 +42,16 @@ namespace HanBin.Common.Component.Data.Response.HanBinOrganManager
 
         public int PositionID { get; set; }
 
-        public string PositonName { get; set; }
+        public string PositionName { get; set; }
 
         public int LevelID { get; set; }
 
-        public string IevelName { get; set; }
+        public string LevelName { get; set; }
 
         public DateTime OnOfficeDate { get; set; }
 
         public int CurrentScore { get; set; }
+
+        public int Gender { get; set; }
     }
 }

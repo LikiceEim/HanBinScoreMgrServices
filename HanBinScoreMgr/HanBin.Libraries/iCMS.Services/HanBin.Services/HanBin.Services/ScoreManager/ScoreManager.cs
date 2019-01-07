@@ -630,12 +630,27 @@ namespace HanBin.Services.ScoreManager
 
                 var Linq = applyQuerable
                             .Skip((parameter.Page - 1) * parameter.PageSize)
-                            .Take(parameter.PageSize).ToList();
+                            .Take(parameter.PageSize);
+                if (Linq == null || !Linq.Any())
+                {
+                    LogHelper.WriteLog("获取待我审批无数据");
+                    response.IsSuccessful = true;
+                    return response;
+                }
 
-                Linq.ForEach(t =>
+                var temp = Linq.ToList();
+                if (temp == null || !temp.Any())
+                {
+                    LogHelper.WriteLog("获取待我审批无数据");
+                    response.IsSuccessful = true;
+                    return response;
+                }
+
+                Linq.ToList().ForEach(t =>
                 {
                     ApplyDetail applyDetail = new ApplyDetail();
                     applyDetail.ApplyID = t.ApplyID;
+                    applyDetail.AddDate = t.AddDate;
                     var officer = officerArray.Where(o => o.OfficerID == t.OfficerID).FirstOrDefault();
                     if (officer != null)
                     {
@@ -648,14 +663,16 @@ namespace HanBin.Services.ScoreManager
                         {
                             applyDetail.OrganFullName = organ.OrganFullName;
                         }
+
+                        applyDetail.PositionID = officer.PositionID;
+                        var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
+                        if (position != null)
+                        {
+                            applyDetail.PositionName = position.PositionName;
+                        }
+
                     }
 
-                    applyDetail.PositionID = officer.PositionID;
-                    var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
-                    if (position != null)
-                    {
-                        applyDetail.PositionName = position.PositionName;
-                    }
                     applyDetail.ItemScore = t.ItemScore;
 
                     var scoreItem = scoreItemArray.Where(s => s.ItemID == t.ItemID).FirstOrDefault();
@@ -683,6 +700,8 @@ namespace HanBin.Services.ScoreManager
             }
             catch (Exception e)
             {
+                LogHelper.WriteLog(e);
+
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
 
@@ -746,11 +765,18 @@ namespace HanBin.Services.ScoreManager
 
                 var Linq = approvedApplyQuerable
                             .Skip((parameter.Page - 1) * parameter.PageSize)
-                            .Take(parameter.PageSize).ToList();
+                            .Take(parameter.PageSize);
+                if (Linq == null || !Linq.Any())
+                {
+                    response.IsSuccessful = true;
+                    return response;
+                }
 
-                Linq.ForEach(t =>
+
+                Linq.ToList().ForEach(t =>
                 {
                     ApprovedApplyDetail approvedApply = new ApprovedApplyDetail();
+                    approvedApply.AddDate = t.AddDate;
                     approvedApply.ApplyID = t.ApplyID;
                     var officer = officerArray.Where(o => o.OfficerID == t.OfficerID).FirstOrDefault();
                     if (officer != null)
@@ -764,14 +790,15 @@ namespace HanBin.Services.ScoreManager
                         {
                             approvedApply.OrganFullName = organ.OrganFullName;
                         }
+
+                        approvedApply.PositionID = officer.PositionID;
+                        var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
+                        if (position != null)
+                        {
+                            approvedApply.PositionName = position.PositionName;
+                        }
                     }
 
-                    approvedApply.PositionID = officer.PositionID;
-                    var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
-                    if (position != null)
-                    {
-                        approvedApply.PositionName = position.PositionName;
-                    }
                     approvedApply.ItemScore = t.ItemScore;
 
                     var scoreItem = scoreItemArray.Where(s => s.ItemID == t.ItemID).FirstOrDefault();
@@ -956,6 +983,11 @@ namespace HanBin.Services.ScoreManager
                                           join l in dbContext.OfficerLevelTypes on o.LevelID equals l.LevelID
                                           select o;
 
+                    }
+
+                    if (parameter.Gender.HasValue && parameter.Gender.Value > 0)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.Gender == parameter.Gender.Value);
                     }
 
                     if (parameter.LevelID.HasValue && parameter.LevelID.Value > 0)

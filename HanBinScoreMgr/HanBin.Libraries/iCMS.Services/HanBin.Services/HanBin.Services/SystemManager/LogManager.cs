@@ -7,9 +7,11 @@ using HanBin.Frameworks.Core.Repository;
 using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HanBin.Service.Common;
 
 namespace HanBin.Services.SystemManager
 {
@@ -48,6 +50,14 @@ namespace HanBin.Services.SystemManager
                 }
 
                 int total = logQuerable.Count();
+
+                ListSortDirection sortOrder = param.Order.ToLower().Equals("asc") ? ListSortDirection.Ascending : ListSortDirection.Descending;
+                PropertySortCondition[] sortList = new PropertySortCondition[]
+                    {
+                        new PropertySortCondition(param.Sort, sortOrder),
+                        new PropertySortCondition("ID", sortOrder),
+                    };
+                logQuerable.OrderBy(sortList);
                 if (param.Page > 0)
                 {
                     logQuerable = logQuerable

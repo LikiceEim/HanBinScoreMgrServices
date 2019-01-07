@@ -1,0 +1,30 @@
+2019/1/8 1:54:07:009
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWhatsToDoDetailList>b__2c
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.<>c__DisplayClass34.<GetWhatsToDoDetailList>b__2c(ScoreApply t) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 659
+   在 System.Collections.Generic.List`1.ForEach(Action`1 action)
+   在 HanBin.Services.ScoreManager.ScoreManager.GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 641
+
+
+2019/1/8 1:54:39:629
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWhatsToDoDetailList>b__2c
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.<>c__DisplayClass34.<GetWhatsToDoDetailList>b__2c(ScoreApply t) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 659
+   在 System.Collections.Generic.List`1.ForEach(Action`1 action)
+   在 HanBin.Services.ScoreManager.ScoreManager.GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 641
+
+
+2019/1/8 1:59:58:101
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：<GetWhatsToDoDetailList>b__2c
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.<>c__DisplayClass34.<GetWhatsToDoDetailList>b__2c(ScoreApply t) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 667
+   在 System.Collections.Generic.List`1.ForEach(Action`1 action)
+   在 HanBin.Services.ScoreManager.ScoreManager.GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 649
+
+

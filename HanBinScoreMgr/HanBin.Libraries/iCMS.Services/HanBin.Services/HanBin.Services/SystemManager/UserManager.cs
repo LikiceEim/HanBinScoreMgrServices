@@ -97,6 +97,36 @@ namespace HanBin.Services.SystemManager
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
+                #region 输入合法性验证
+                if (string.IsNullOrEmpty(parameter.UserToken))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "账户ID不能为空";
+                    return response;
+                }
+
+                if (string.IsNullOrEmpty(parameter.PWD))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "账户密码不能为空";
+                    return response;
+                }
+                if (parameter.PWD.Length < 6)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "密码长度至少是6位";
+                    return response;
+                }
+
+                var isExisted = hbUserReosiory.GetDatas<HBUser>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.UserToken) && t.UserToken.Equals(parameter.UserToken), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "账户已存在";
+                    return response;
+                }
+                #endregion
+
                 HBUser user = new HBUser();
                 user.UserToken = parameter.UserToken;
                 user.PWD = MD5Helper.MD5Encrypt64(parameter.PWD);//密码MD5加密
@@ -127,6 +157,23 @@ namespace HanBin.Services.SystemManager
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
+                #region 输入合法性验证
+                if (string.IsNullOrEmpty(parameter.UserToken))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "账户ID不能为空";
+                    return response;
+                }
+
+                var isExisted = hbUserReosiory.GetDatas<HBUser>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.UserToken) && t.UserID != parameter.UserID && t.UserToken.Equals(parameter.UserToken), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "账户已存在，请重新输入账户";
+                    return response;
+                }
+                #endregion
+
                 var userInDB = hbUserReosiory.GetByKey(parameter.UserID);
                 if (null == userInDB)
                 {
@@ -152,7 +199,7 @@ namespace HanBin.Services.SystemManager
             {
                 LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
-                response.Reason = "修改用户发生异常";
+                response.Reason = e.Message;
                 return response;
             }
         }
@@ -181,8 +228,8 @@ namespace HanBin.Services.SystemManager
 
                 switch (parameter.Sort)
                 {
-                    case "RoleName":
-                        parameter.Sort = "RoleID";
+                    case "RoleID":
+                        parameter.Sort = "RoleName";
                         break;
                 }
 
@@ -232,17 +279,17 @@ namespace HanBin.Services.SystemManager
                         userInfoList = userInfoList.Where(t => t.OrganizationID == parameter.OrganizationID.Value);
                     }
 
-                    userInfoList = userInfoList.OrderBy(sortList);
+                    //userInfoList = userInfoList.OrderBy(sortList);
 
                     count = userInfoList.Count();
 
                     var organArray = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).ToList();
-                    if (parameter.Page > -1)
-                    {
-                        userInfoList = userInfoList
-                            .Skip((parameter.Page - 1) * parameter.PageSize)
-                            .Take(parameter.PageSize);
-                    }
+                    //if (parameter.Page > -1)
+                    //{
+                    //    userInfoList = userInfoList
+                    //        .Skip((parameter.Page - 1) * parameter.PageSize)
+                    //        .Take(parameter.PageSize);
+                    //}
 
                     var tempUserInfoList = userInfoList
                         .ToArray()
@@ -263,12 +310,21 @@ namespace HanBin.Services.SystemManager
                                 UseStatus = user.UseStatus,
                                 AddDate = user.AddDate
                             };
-                        })
-                        .ToList();
+                        }).AsQueryable();
+
+                    tempUserInfoList = tempUserInfoList.OrderBy(sortList);
+
+                    if (parameter.Page > -1)
+                    {
+                        tempUserInfoList = tempUserInfoList
+                            .Skip((parameter.Page - 1) * parameter.PageSize)
+                            .Take(parameter.PageSize);
+                    }
+
                     response.Result = new GetUserInfoResult
                     {
                         Total = count,
-                        UserInfoList = tempUserInfoList
+                        UserInfoList = tempUserInfoList.ToList()
                     };
 
                     response.IsSuccessful = true;
@@ -313,7 +369,6 @@ namespace HanBin.Services.SystemManager
 
         public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
         {
-
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
@@ -322,6 +377,14 @@ namespace HanBin.Services.SystemManager
                 {
                     response.IsSuccessful = false;
                     response.Reason = "用户不存在";
+
+                    return response;
+                }
+
+                if (userInDB.UserToken.Equals("admin") && !parameter.UseStatus)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "admin用户不能禁用";
 
                     return response;
                 }
@@ -355,6 +418,13 @@ namespace HanBin.Services.SystemManager
                 {
                     response.IsSuccessful = false;
                     response.Reason = "待删除的用户不存在";
+                    return response;
+                }
+
+                if (user.UserToken.Equals("admin"))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "admin用户无法删除";
                     return response;
                 }
 

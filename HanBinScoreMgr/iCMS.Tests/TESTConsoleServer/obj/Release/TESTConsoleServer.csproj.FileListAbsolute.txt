@@ -1,5 +1,5 @@
-E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Release\TESTConsoleServer.exe.config
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Release\Resource\ErrorCode.json
+E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Release\TESTConsoleServer.exe.config
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Release\TESTConsoleServer.exe
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Release\TESTConsoleServer.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Release\EntityFramework.dll

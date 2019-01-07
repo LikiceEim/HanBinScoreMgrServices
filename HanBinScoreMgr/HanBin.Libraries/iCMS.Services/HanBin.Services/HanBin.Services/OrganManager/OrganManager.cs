@@ -56,6 +56,51 @@ namespace HanBin.Services.OrganManager
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
+                #region 输入验证
+                if (string.IsNullOrEmpty(param.OrganCode))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位编码不能为空";
+                    return response;
+                }
+                if (string.IsNullOrEmpty(param.OrganFullName))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位全称不能为空";
+                    return response;
+                }
+                if (string.IsNullOrEmpty(param.OrganShortName))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位简称不能为空";
+                    return response;
+                }
+
+                var isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganCode) && t.OrganCode.Equals(param.OrganCode), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位编码已存在";
+                    return response;
+                }
+
+                isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganFullName) && t.OrganFullName.Equals(param.OrganFullName), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位全称已存在";
+                    return response;
+                }
+
+                isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganShortName) && t.OrganShortName.Equals(param.OrganShortName), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位简称已存在";
+                    return response;
+                }
+                #endregion
+
                 Organization organ = new Organization();
                 organ.OrganCode = param.OrganCode;
                 organ.OrganFullName = param.OrganFullName;
@@ -126,7 +171,7 @@ namespace HanBin.Services.OrganManager
                 var officerInfo = officerRepository.GetDatas<Officer>(t => t.OrganizationID == organ.OrganID && !t.IsDeleted, true).ToArray().Select(t =>
                 {
                     var level = officerLevelRepository.GetDatas<OfficerLevelType>(l => !l.IsDeleted && l.LevelID == t.LevelID, true).FirstOrDefault();
-                    var position = officerPositionRepository.GetDatas<OfficerPositionType>(p => p.IsDeleted && p.PositionID == t.PositionID, true).FirstOrDefault();
+                    var position = officerPositionRepository.GetDatas<OfficerPositionType>(p => !p.IsDeleted && p.PositionID == t.PositionID, true).FirstOrDefault();
                     string levelName = level == null ? string.Empty : level.LevelName;
                     string positionName = position == null ? string.Empty : position.PositionName;
                     return new OfficerInfo
@@ -135,11 +180,12 @@ namespace HanBin.Services.OrganManager
                         Name = t.Name,
                         Birthday = t.Birthday,
                         PositionID = t.PositionID,
-                        PositonName = positionName,
+                        PositionName = positionName,
                         LevelID = t.LevelID,
-                        IevelName = levelName,
+                        LevelName = levelName,
                         OnOfficeDate = t.OnOfficeDate,
-                        CurrentScore = t.CurrentScore
+                        CurrentScore = t.CurrentScore,
+                        Gender = t.Gender
                     };
                 });
 
@@ -167,6 +213,51 @@ namespace HanBin.Services.OrganManager
             BaseResponse<bool> response = new BaseResponse<bool>();
             try
             {
+                #region 输入验证
+                if (string.IsNullOrEmpty(parameter.OrganCode))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位编码不能为空";
+                    return response;
+                }
+                if (string.IsNullOrEmpty(parameter.OrganFullName))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位全称不能为空";
+                    return response;
+                }
+                if (string.IsNullOrEmpty(parameter.OrganShortName))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位简称不能为空";
+                    return response;
+                }
+
+                var isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganCode) && t.OrganCode.Equals(parameter.OrganCode) && t.OrganID != parameter.OrganID, true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位编码已存在";
+                    return response;
+                }
+
+                isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganFullName) && t.OrganFullName.Equals(parameter.OrganFullName) && t.OrganID != parameter.OrganID, true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位全称已存在";
+                    return response;
+                }
+
+                isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganShortName) && t.OrganShortName.Equals(parameter.OrganShortName) && t.OrganID != parameter.OrganID, true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位简称已存在";
+                    return response;
+                }
+                #endregion
+
                 //var organInDB = organRepository.GetByKey(parameter.OrganID);
                 var organInDB = organRepository.GetDatas<Organization>(t => t.OrganID == parameter.OrganID && !t.IsDeleted, true).FirstOrDefault();
                 if (organInDB == null)
