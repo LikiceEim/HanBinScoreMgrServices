@@ -1,0 +1,18 @@
+2019/1/9 21:00:24:010
+异常消息：远程服务器返回错误: (404) 未找到。
+异常类型：System.Net.WebException
+异常方法：GetResponse
+异常源：System
+异常堆栈：   在 System.Net.HttpWebRequest.GetResponse()
+   在 HanBin.Common.Component.Tool.RestClient.Post(String data, String method) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 61
+
+
+2019/1/9 21:01:00:011
+异常消息：远程服务器返回错误: (404) 未找到。
+异常类型：System.Net.WebException
+异常方法：GetResponse
+异常源：System
+异常堆栈：   在 System.Net.HttpWebRequest.GetResponse()
+   在 HanBin.Common.Component.Tool.RestClient.Post(String data, String method) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool\RestClient.cs:行号 61
+
+

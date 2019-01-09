@@ -141,6 +141,9 @@ namespace HanBin.Presentation.Service.ScoreService
              RequestFormat = WebMessageFormat.Json,
              ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<UpFileResult> UploadFile(UpFile parameter);
+
+        //[WebGet(UriTemplate = "Download/{id}")]
+        //Stream DownLoadFile(int id);
     }
 
     public class UpFile : BaseRequest
@@ -153,6 +156,11 @@ namespace HanBin.Presentation.Service.ScoreService
 
     }
 
+
+    public class DownLoadFileParameter : BaseRequest
+    {
+        public string FilePath { get; set; }
+    }
 
     public class UpFileResult
     {

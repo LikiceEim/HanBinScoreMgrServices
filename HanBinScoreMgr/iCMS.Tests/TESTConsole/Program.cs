@@ -24,20 +24,18 @@ namespace TESTConsole
     {
         static void Main(string[] args)
         {
-
-           
             string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
-            string localServer = @"http://localhost:2892/HanBin/SystemService";
+            string localServer = @"http://localhost:2892/HanBin/ScoreService";
             RestClient client = new RestClient(localServer);
-            BackupDBParameter param = new BackupDBParameter();
-           
+            DownLoadFileParameter param = new DownLoadFileParameter();
+            param.FilePath = @"D:\Backup\Test.txt";
             //UpFile upfile = new UpFile();
             //upfile.FileName = "testFile";
             //upfile.FileSize = 100;
 
             //upfile.FileStream = File.Create(filePath);
             string json = param.ToClientString();
-            var res = client.Post(json, "BackupDB");
+            var res = client.Post(json, "DownLoadFile");
 
             Console.WriteLine(res);
 

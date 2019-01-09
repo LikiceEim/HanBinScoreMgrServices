@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ServiceModel.Web;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -297,7 +298,7 @@ namespace HanBin.Presentation.Service.ScoreService
         {
             if (Validate(parameter.Token))
             {
-                return scoreManager.AreaAverageScore(parameter);
+                return scoreManager.AgeAverageScore(parameter);
             }
             else
             {
@@ -328,7 +329,7 @@ namespace HanBin.Presentation.Service.ScoreService
             BaseResponse<UpFileResult> response = new BaseResponse<UpFileResult>();
             UpFileResult result = new UpFileResult();
 
-            if (Validate(parameter.Token))
+            if (true || Validate(parameter.Token))
             {
                 string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
 
@@ -358,6 +359,42 @@ namespace HanBin.Presentation.Service.ScoreService
             response.IsSuccessful = false;
             response.Reason = "JWT_ERR";
             return response;
+        }
+
+        public Stream DownLoadFile(DownLoadFileParameter parameter)
+        {
+            string path = parameter.FilePath;
+            if (!File.Exists(path))
+            {
+                return null;
+            }
+
+
+            WebOperationContext.Current.OutgoingResponse.ContentType = "application/txt";
+            FileStream f = new FileStream(parameter.FilePath, FileMode.Open);
+            int length = (int)f.Length;
+            WebOperationContext.Current.OutgoingResponse.ContentLength = length;
+            byte[] buffer = new byte[length];
+            int sum = 0;
+            int count;
+            while ((count = f.Read(buffer, sum, length - sum)) > 0)
+            {
+                sum += count;
+            }
+            f.Close();
+            return new MemoryStream(buffer);
+
+
+            //try
+            //{
+            //    FileStream myStream = new FileStream(path, FileMode.Open);
+
+            //    return myStream;
+            //}
+            //catch (Exception e)
+            //{
+            //    return null;
+            //}
         }
     }
 }

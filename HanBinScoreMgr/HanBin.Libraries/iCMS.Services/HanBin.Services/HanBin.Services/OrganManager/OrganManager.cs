@@ -411,22 +411,24 @@ namespace HanBin.Services.OrganManager
                     }
                     if (!string.IsNullOrEmpty(parameter.Keyword))
                     {
-                        organQuerable = organQuerable.Where(t => t.OrganCode.ToUpper().Equals(parameter.Keyword.ToUpper()) || t.OrganFullName.ToUpper().Equals(parameter.Keyword.ToUpper()));
+                        string matchedWord = parameter.Keyword.ToUpper();
+                        organQuerable = organQuerable.Where(t => t.OrganCode.ToUpper().Contains(matchedWord) || t.OrganFullName.ToUpper().Contains(matchedWord) || t.OrganShortName.ToUpper().Contains(matchedWord));
                     }
 
-
                     var organListLinq = from organ in organQuerable
-                                        join organType in dbContext.OrganTypes on organ.OrganTypeID equals organType.OrganTypeID
+                                        join organType in dbContext.OrganTypes.Where(t => !t.IsDeleted) on organ.OrganTypeID equals organType.OrganTypeID
                                         into group1
                                         from g1 in group1
-                                        join category in dbContext.OrganCategories on g1.CategoryID equals category.CategoryID
+                                        join category in dbContext.OrganCategories.Where(t => !t.IsDeleted) on g1.CategoryID equals category.CategoryID
                                         into group2
                                         from g2 in group2
 
 
-                                        join item in dbContext.Officers.GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
+                                        join item in dbContext.Officers.Where(t => !t.IsDeleted).GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
+
                                         into group3
                                         from g3 in group3.DefaultIfEmpty()
+
 
                                         select new OrganInfo
                                         {

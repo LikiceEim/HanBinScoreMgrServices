@@ -582,7 +582,7 @@ namespace HanBin.Services.ScoreManager
 
             try
             {
-                var applySummaryList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyStatus == (int)EnumApproveStatus.Approving, true).ToArray().Select(t =>
+                var applySummaryList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyStatus == (int)EnumApproveStatus.Approving, true).OrderByDescending(t => t.AddDate).ToArray().Select(t =>
                 {
                     int proposeUserID = t.ProposeID;
 
@@ -617,7 +617,7 @@ namespace HanBin.Services.ScoreManager
             GetWhatsToDoDetailListResult result = new GetWhatsToDoDetailListResult();
             try
             {
-                var applyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyStatus == (int)EnumApproveStatus.Approving, true);
+                var applyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyStatus == (int)EnumApproveStatus.Approving, true).OrderByDescending(t => t.AddDate);
                 int total = applyQuerable.Count();
 
                 var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
@@ -718,7 +718,7 @@ namespace HanBin.Services.ScoreManager
 
             try
             {
-                var approvedApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true).ToArray().Select(t =>
+                var approvedApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true).OrderByDescending(t => t.LastUpdateDate).ToArray().Select(t =>
                 {
                     int proposeUserID = t.ProposeID;
 
@@ -753,7 +753,7 @@ namespace HanBin.Services.ScoreManager
             GetHighLevelFeedBackDetailListResult result = new GetHighLevelFeedBackDetailListResult();
             try
             {
-                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && t.ProcessUserID.HasValue, true);
+                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && t.ProcessUserID.HasValue, true).OrderByDescending(t => t.LastUpdateDate);
                 int total = approvedApplyQuerable.Count();
 
                 var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
@@ -1121,7 +1121,7 @@ namespace HanBin.Services.ScoreManager
         #endregion
 
         #region 年龄平均分
-        public BaseResponse<AgeAverageScoreResult> AreaAverageScore(AgeAverageScoreParameter parameter)
+        public BaseResponse<AgeAverageScoreResult> AgeAverageScore(AgeAverageScoreParameter parameter)
         {
             BaseResponse<AgeAverageScoreResult> response = new BaseResponse<AgeAverageScoreResult>();
             AgeAverageScoreResult result = new AgeAverageScoreResult();
