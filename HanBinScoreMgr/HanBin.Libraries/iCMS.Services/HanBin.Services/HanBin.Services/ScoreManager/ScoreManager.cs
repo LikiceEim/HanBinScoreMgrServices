@@ -397,6 +397,10 @@ namespace HanBin.Services.ScoreManager
                 apply.RejectReason = parameter.RejectReason;
                 apply.ProcessUserID = parameter.ProcessUserID;
 
+                //更新时间排序需要此字段
+                apply.LastUpdateDate = DateTime.Now;
+                apply.LastUpdateUserID = parameter.ProcessUserID;
+
                 scoreApplyRepository.Update<ScoreApply>(apply);
 
 
@@ -651,6 +655,7 @@ namespace HanBin.Services.ScoreManager
                     ApplyDetail applyDetail = new ApplyDetail();
                     applyDetail.ApplyID = t.ApplyID;
                     applyDetail.AddDate = t.AddDate;
+
                     var officer = officerArray.Where(o => o.OfficerID == t.OfficerID).FirstOrDefault();
                     if (officer != null)
                     {
@@ -776,6 +781,7 @@ namespace HanBin.Services.ScoreManager
                 Linq.ToList().ForEach(t =>
                 {
                     ApprovedApplyDetail approvedApply = new ApprovedApplyDetail();
+                    approvedApply.LastUpdateDate = t.LastUpdateDate;
                     approvedApply.AddDate = t.AddDate;
                     approvedApply.ApplyID = t.ApplyID;
                     var officer = officerArray.Where(o => o.OfficerID == t.OfficerID).FirstOrDefault();

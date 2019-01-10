@@ -10,8 +10,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
-
-
+using System;
 using System.ServiceModel;
 
 namespace HanBin.Common.Component.Data.Base
@@ -20,7 +19,7 @@ namespace HanBin.Common.Component.Data.Base
     /// <summary>
     /// 请求基类
     /// </summary>
-
+    [Serializable]
     public class BaseRequest
     {
 

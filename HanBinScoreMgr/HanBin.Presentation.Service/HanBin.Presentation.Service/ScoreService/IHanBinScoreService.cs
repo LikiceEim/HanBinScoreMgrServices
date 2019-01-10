@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.ServiceModel.Web;
 using HanBin.Common.Component.Data.Response.HanBin.ScoreManager;
 using System.IO;
+using System.Runtime.Serialization;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -136,22 +137,29 @@ namespace HanBin.Presentation.Service.ScoreService
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter);
 
-        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
-             Method = "POST",
-             RequestFormat = WebMessageFormat.Json,
-             ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<UpFileResult> UploadFile(UpFile parameter);
+        //[WebInvoke(Method = "POST", UriTemplate = "UpLoad/{fileName}",
+        //ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        //[System.ComponentModel.Description("上传文件")]
+        //bool UpLoad(System.IO.Stream stream, string fileName);
+
+
+        [WebInvoke(UriTemplate = "UploadFile/{filename}", Method = "POST", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
+        BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream);
 
         //[WebGet(UriTemplate = "Download/{id}")]
         //Stream DownLoadFile(int id);
     }
 
+    [DataContract]
     public class UpFile : BaseRequest
     {
+        [DataMember]
         public long FileSize { get; set; }
 
+        [DataMember]
         public string FileName { get; set; }
 
+        [DataMember]
         public Stream FileStream { get; set; }
 
     }

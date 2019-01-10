@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Web;
+using System.ComponentModel;
+using System.ServiceModel;
+using HanBin.Common.Component.Tool;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -324,41 +327,70 @@ namespace HanBin.Presentation.Service.ScoreService
             }
         }
 
-        public BaseResponse<UpFileResult> UploadFile(UpFile parameter)
+        public BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream)
         {
-            BaseResponse<UpFileResult> response = new BaseResponse<UpFileResult>();
             UpFileResult result = new UpFileResult();
+            BaseResponse<UpFileResult> response = new BaseResponse<UpFileResult>();
 
-            if (true || Validate(parameter.Token))
+            try
             {
-                string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+                #region 获取文件名
+                var fName = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.RequestUri.ToString();
+                int len = fName.Length;
+                int pos = fName.LastIndexOf('/');
+                var realName = fName.Substring(pos + 1, (len - pos - 1));
+                var extention = Path.GetExtension(realName).TrimStart('.');
+                var oldName = realName.Substring(0, realName.LastIndexOf('.'));
+                var saveFileName = oldName + DateTime.Now.Ticks + "." + extention;
 
-                if (!Directory.Exists(path))
+                #endregion
+
+                //获取文件大小
+                long fileLength = WebOperationContext.Current.IncomingRequest.ContentLength;
+
+                //UpFile parameter = new UpFile();
+
+                if (true)
                 {
-                    Directory.CreateDirectory(path);
+                    string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+
+                    byte[] buffer = new byte[fileLength];
+
+                    string filePath = Path.Combine(path, saveFileName);
+                    FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
+
+                    int count = 0;
+                    while ((count = FileStream.Read(buffer, 0, buffer.Length)) > 0)
+                    {
+                        fs.Write(buffer, 0, count);
+                    }
+                    //清空缓冲区
+                    fs.Flush();
+                    //关闭流
+                    fs.Close();
+                    result.FilePath = filePath;
+                    response.Result = result;
+                    return response;
                 }
-
-                byte[] buffer = new byte[parameter.FileSize];
-
-                string filePath = path + parameter.FileName + DateTime.Now.Ticks;
-                FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write);
-
-                int count = 0;
-                while ((count = parameter.FileStream.Read(buffer, 0, buffer.Length)) > 0)
+                else
                 {
-                    fs.Write(buffer, 0, count);
+                    response.IsSuccessful = false;
+                    response.Reason = "JWT_ERR";
+                    return response;
                 }
-                //清空缓冲区
-                fs.Flush();
-                //关闭流
-                fs.Close();
-                result.FilePath = filePath;
-                response.Result = result;
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
                 return response;
             }
-            response.IsSuccessful = false;
-            response.Reason = "JWT_ERR";
-            return response;
         }
 
         public Stream DownLoadFile(DownLoadFileParameter parameter)

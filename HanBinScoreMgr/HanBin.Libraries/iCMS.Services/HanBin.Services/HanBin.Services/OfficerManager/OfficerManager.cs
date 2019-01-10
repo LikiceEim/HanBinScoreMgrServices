@@ -97,10 +97,16 @@ namespace HanBin.Services.OfficerManager
                         throw new Exception("请输入身份证号码");
                     }
 
-                    var isExisted = dbContext.Officers.Where(t => !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
+                    var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
                     if (isExisted)
                     {
                         throw new Exception("干部名称已重复");
+                    }
+
+                    isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
+                    if (isExisted)
+                    {
+                        throw new Exception("身份证号码重复");
                     }
                     #endregion
 
@@ -226,6 +232,13 @@ namespace HanBin.Services.OfficerManager
                     response.Reason = "干部名称已存在";
                     return response;
                 }
+
+                isExisted = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber) && t.OfficerID != parameter.OfficerID, true).Any();
+                if (isExisted)
+                {
+                    throw new Exception("身份证号码重复");
+                }
+
                 #endregion
 
                 var offIndb = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OfficerID == parameter.OfficerID, true).FirstOrDefault();

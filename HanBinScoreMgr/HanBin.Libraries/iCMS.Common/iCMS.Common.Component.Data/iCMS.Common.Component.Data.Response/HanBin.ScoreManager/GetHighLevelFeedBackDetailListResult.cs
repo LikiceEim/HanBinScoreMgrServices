@@ -42,6 +42,8 @@ namespace HanBin.Common.Component.Data.Response.HanBin.ScoreManager
 
         public DateTime AddDate { get; set; }
 
+        public DateTime LastUpdateDate { get; set; }
+
         public int ApproveStatus { get; set; }
 
         public string RejectReason { get; set; }
