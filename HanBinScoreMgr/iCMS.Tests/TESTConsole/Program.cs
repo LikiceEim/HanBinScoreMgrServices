@@ -27,15 +27,22 @@ namespace TESTConsole
             string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
             string localServer = @"http://localhost:2892/HanBin/ScoreService";
             RestClient client = new RestClient(localServer);
-            DownLoadFileParameter param = new DownLoadFileParameter();
-            param.FilePath = @"D:\Backup\Test.txt";
+            AddOfficerParameter param = new AddOfficerParameter();
+            param.Name = "剪刀手爱德华";
+            param.Gender = 1;
+            param.IdentifyNumber = "111";
+            param.Birthday = DateTime.Now;
+            param.OrganizationID = 62;
+
+
+
             //UpFile upfile = new UpFile();
             //upfile.FileName = "testFile";
             //upfile.FileSize = 100;
 
             //upfile.FileStream = File.Create(filePath);
             string json = param.ToClientString();
-            var res = client.Post(json, "DownLoadFile");
+            var res = client.Post(json, "AddOfficerRecord");
 
             Console.WriteLine(res);
 

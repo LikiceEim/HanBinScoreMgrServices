@@ -177,13 +177,21 @@ namespace HanBin.Services.OfficerManager
                             var scoreItem = dbContext.ScoreItems.Where(x => x.ItemID == his.ItemID).FirstOrDefault();
                             if (scoreItem != null)
                             {
-                                his.Content = string.Format("{0}  {1} {2}", his.ItemScore, his.AddDate, scoreItem.ItemDescription);
-                            }
 
-                            operResult = dbContext.ScoreChangeHistories.AddNew<ScoreChangeHistory>(dbContext, his);
-                            if (operResult.ResultType != EnumOperationResultType.Success)
-                            {
-                                throw new Exception("数据库操作异常");
+                                var off = dbContext.Officers.Where(o => !o.IsDeleted && o.OfficerID == his.OfficerID).FirstOrDefault();
+                                if (off != null)
+                                {
+                                    var organ = dbContext.Organizations.Where(or => !or.IsDeleted && or.OrganID == off.OrganizationID).FirstOrDefault();
+                                    if (organ != null)
+                                    {
+                                        his.Content = string.Format("{0}  {1} {2}", organ.OrganFullName, off.Name, scoreItem.ItemDescription);
+                                        operResult = dbContext.ScoreChangeHistories.AddNew<ScoreChangeHistory>(dbContext, his);
+                                        if (operResult.ResultType != EnumOperationResultType.Success)
+                                        {
+                                            throw new Exception("数据库操作异常");
+                                        }
+                                    }
+                                }
                             }
                         });
                     }
@@ -198,6 +206,7 @@ namespace HanBin.Services.OfficerManager
             }
             catch (Exception e)
             {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = "添加干部发生异常！";
             }
