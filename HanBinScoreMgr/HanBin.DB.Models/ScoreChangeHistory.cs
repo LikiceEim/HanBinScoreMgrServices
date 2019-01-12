@@ -30,5 +30,7 @@ namespace HanBin.Core.DB.Models
         public string Content { get; set; }
 
         public int AddUserID { get; set; }
+
+        public bool IsDeleted { get; set; }
     }
 }

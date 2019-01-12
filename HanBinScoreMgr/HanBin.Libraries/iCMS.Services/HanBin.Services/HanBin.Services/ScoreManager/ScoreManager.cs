@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using HanBin.Service.Common;
 using HanBin.Common.Commonent.Data.Enum;
 using System.IO;
+using System.ComponentModel;
 
 namespace HanBin.Services.ScoreManager
 {
@@ -675,7 +676,6 @@ namespace HanBin.Services.ScoreManager
                         {
                             applyDetail.PositionName = position.PositionName;
                         }
-
                     }
 
                     applyDetail.ItemScore = t.ItemScore;
@@ -910,7 +910,17 @@ namespace HanBin.Services.ScoreManager
                 var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
                 var levelArray = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).ToList();
 
-                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore);
+                // var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore);
+                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true);
+                ListSortDirection sortOrder = ListSortDirection.Ascending;
+                PropertySortCondition[] sortList = new PropertySortCondition[]
+                    {
+                        new PropertySortCondition("CurrentScore", sortOrder),
+                        new PropertySortCondition("OfficerID", sortOrder),
+                    };
+
+                officers = officers.OrderBy(sortList);
+
                 int total = officers.Count();
 
                 officers = officers
@@ -954,6 +964,7 @@ namespace HanBin.Services.ScoreManager
             }
             catch (Exception e)
             {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
 
@@ -1064,6 +1075,7 @@ namespace HanBin.Services.ScoreManager
             }
             catch (Exception e)
             {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
                 return response;
@@ -1118,6 +1130,7 @@ namespace HanBin.Services.ScoreManager
             }
             catch (Exception e)
             {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
 

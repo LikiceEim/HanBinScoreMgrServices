@@ -313,6 +313,12 @@ namespace HanBin.Services.OrganManager
                 {
                     throw new Exception("删除单位时候，数据异常！");
                 }
+
+                var hasOfficers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OrganizationID == organ.OrganID, true).Any();
+                if (hasOfficers)
+                {
+                    throw new Exception("单位下有干部，不能删除");
+                }
                 //逻辑删除
                 organ.IsDeleted = true;
 

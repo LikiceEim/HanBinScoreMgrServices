@@ -13,6 +13,8 @@ using HanBin.Common.Component.Data.Response.HanBin.OfficerManager;
 using HanBin.Common.Component.Tool;
 using HanBin.Common.Commonent.Data.Enum;
 using System.ComponentModel;
+using HanBin.Common.Component.Data.Base.DB;
+using System.Data.Entity;
 
 namespace HanBin.Services.OfficerManager
 {
@@ -36,6 +38,9 @@ namespace HanBin.Services.OfficerManager
 
         [Dependency]
         public IRepository<OrganType> organTypeRepository { get; set; }
+
+        [Dependency]
+        public IRepository<ScoreChangeHistory> schRepository { get; set; }
 
         public OfficerManager()
         {
@@ -70,10 +75,53 @@ namespace HanBin.Services.OfficerManager
             }
 
             organTypeRepository = new Repository<OrganType>();
+            schRepository = new Repository<ScoreChangeHistory>();
         }
 
 
         #region 添加干部
+        private void ValidateAddOfficer(iCMSDbContext dbContext, AddOfficerParameter parameter)
+        {
+            #region 输入验证
+            if (string.IsNullOrEmpty(parameter.Name))
+            {
+                throw new Exception("请输入用户名");
+            }
+            if (string.IsNullOrEmpty(parameter.IdentifyNumber))
+            {
+                throw new Exception("请输入身份证号码");
+            }
+
+            var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
+            if (isExisted)
+            {
+                throw new Exception("干部名称已重复");
+            }
+
+            if (!Utilitys.CheckIDCard(parameter.IdentifyNumber))
+            {
+                throw new Exception("请输入合法的身份证号码");
+            }
+
+            DateTime birth = DateTime.MinValue;
+            var birthdayStr = Utilitys.GetBrithdayFromIdCard(parameter.IdentifyNumber);
+            if (DateTime.TryParse(birthdayStr, out birth))
+            {
+                if (birth != parameter.Birthday)
+                {
+                    throw new Exception("身份证号码与出生日期不相符合");
+                }
+            }
+
+            isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
+            if (isExisted)
+            {
+                throw new Exception("身份证号码重复");
+            }
+            #endregion
+        }
+
+
         public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
         {
             //1. 添加干部基础信息
@@ -87,28 +135,7 @@ namespace HanBin.Services.OfficerManager
             {
                 ExecuteDB.ExecuteTrans((dbContext) =>
                 {
-                    #region 输入验证
-                    if (string.IsNullOrEmpty(parameter.Name))
-                    {
-                        throw new Exception("请输入用户名");
-                    }
-                    if (string.IsNullOrEmpty(parameter.IdentifyNumber))
-                    {
-                        throw new Exception("请输入身份证号码");
-                    }
-
-                    var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
-                    if (isExisted)
-                    {
-                        throw new Exception("干部名称已重复");
-                    }
-
-                    isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
-                    if (isExisted)
-                    {
-                        throw new Exception("身份证号码重复");
-                    }
-                    #endregion
+                    ValidateAddOfficer(dbContext, parameter);
 
                     Officer officer = new Officer();
                     officer.Name = parameter.Name;
@@ -535,6 +562,30 @@ namespace HanBin.Services.OfficerManager
                     throw new Exception("删除干部时，数据库操作发生异常");
                 }
 
+                Dictionary<EntityBase, EntityState> opers = new Dictionary<EntityBase, EntityState>();
+
+                #region 删除干部时候，同时删除此干部的积分申请信息（包含审批过与未审批过的） 以及积分变更记录
+                var relatedScoreApplies = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.OfficerID == officer.OfficerID, true).ToList();
+                relatedScoreApplies.ForEach(p =>
+                {
+                    p.IsDeleted = true;
+                    opers.Add(p, EntityState.Modified);
+                });
+
+                var schList = schRepository.GetDatas<ScoreChangeHistory>(t => !t.IsDeleted && t.OfficerID == officer.OfficerID, true).ToList();
+                schList.ForEach(t =>
+                {
+                    t.IsDeleted = true;
+                    opers.Add(t, EntityState.Modified);
+                });
+
+                operResult = officerRepository.TranMethod(opers);
+                if (operResult.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("删除干部相关数据发生异常");
+                }
+                #endregion
+
                 #region 操作日志
                 new LogManager().AddOperationLog(parameter.CurrentUserID, "删除干部");
                 #endregion
@@ -582,9 +633,9 @@ namespace HanBin.Services.OfficerManager
                                       on off.OrganizationID equals org.OrganID
                                       into group1
                                       from g1 in group1
-                                      join pos in dbContext.OfficerPositionTypes on off.PositionID equals pos.PositionID into group2
+                                      join pos in dbContext.OfficerPositionTypes.Where(t => !t.IsDeleted) on off.PositionID equals pos.PositionID into group2
                                       from g2 in group2
-                                      join lev in dbContext.OfficerLevelTypes on off.LevelID equals lev.LevelID into group3
+                                      join lev in dbContext.OfficerLevelTypes.Where(t => !t.IsDeleted) on off.LevelID equals lev.LevelID into group3
                                       from g3 in group3
                                       //where org.OrganFullName.ToUpper().Contains(parameter.Keyword.ToUpper()) || org.OrganCode.ToUpper().Contains(parameter.Keyword.ToUpper())
                                       select new OfficerDetailInfo
@@ -607,7 +658,7 @@ namespace HanBin.Services.OfficerManager
 
                     if (!string.IsNullOrEmpty(parameter.Keyword))
                     {
-                        officerLinq = officerLinq.Where(t => t.Name.Contains(parameter.Keyword) || t.IdentifyNumber.Contains(parameter.Keyword));
+                        officerLinq = officerLinq.Where(t => t.Name.Contains(parameter.Keyword) || t.IdentifyNumber.Contains(parameter.Keyword) || t.OrganizationName.Contains(parameter.Keyword));
                     }
                     ListSortDirection sortOrder = parameter.Order.ToLower().Equals("asc") ? ListSortDirection.Ascending : ListSortDirection.Descending;
                     PropertySortCondition[] sortList = new PropertySortCondition[]
