@@ -12,6 +12,7 @@ using System.ServiceModel.Web;
 using System.ComponentModel;
 using System.ServiceModel;
 using HanBin.Common.Component.Tool;
+using System.Web;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -393,40 +394,29 @@ namespace HanBin.Presentation.Service.ScoreService
             }
         }
 
-        public Stream DownLoadFile(DownLoadFileParameter parameter)
+        public Stream DownLoadFile(string fileName)
         {
-            string path = parameter.FilePath;
-            if (!File.Exists(path))
+            try
+            {
+                string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+                var FullFileName = Path.Combine(path, fileName);
+                if (File.Exists(FullFileName))
+                {
+                    FileInfo DownloadFile = new FileInfo(FullFileName);
+                    //WebOperationContext.Current.OutgoingResponse.ContentType = "application/pdf";
+                    var contentType = MimeMapping.GetMimeMapping(FullFileName);
+                    WebOperationContext.Current.OutgoingResponse.ContentType = contentType;
+
+                    WebOperationContext.Current.OutgoingResponse.Headers.Add("Content-Disposition", "attachment;inline;filename=111");
+                    Stream stream = File.OpenRead(FullFileName);
+                    return stream;
+                }
+                return null;
+            }
+            catch (Exception ex)
             {
                 return null;
             }
-
-
-            WebOperationContext.Current.OutgoingResponse.ContentType = "application/txt";
-            FileStream f = new FileStream(parameter.FilePath, FileMode.Open);
-            int length = (int)f.Length;
-            WebOperationContext.Current.OutgoingResponse.ContentLength = length;
-            byte[] buffer = new byte[length];
-            int sum = 0;
-            int count;
-            while ((count = f.Read(buffer, sum, length - sum)) > 0)
-            {
-                sum += count;
-            }
-            f.Close();
-            return new MemoryStream(buffer);
-
-
-            //try
-            //{
-            //    FileStream myStream = new FileStream(path, FileMode.Open);
-
-            //    return myStream;
-            //}
-            //catch (Exception e)
-            //{
-            //    return null;
-            //}
         }
     }
 }

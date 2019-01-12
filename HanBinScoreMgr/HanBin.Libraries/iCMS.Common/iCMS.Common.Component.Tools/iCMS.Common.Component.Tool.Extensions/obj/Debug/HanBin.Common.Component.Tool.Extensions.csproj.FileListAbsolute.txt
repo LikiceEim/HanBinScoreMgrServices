@@ -8,4 +8,3 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Com
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\bin\Debug\Newtonsoft.Json.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\HanBin.Common.Component.Tool.Extensions.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\HanBin.Common.Component.Tool.Extensions.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.Extensions\obj\Debug\HanBin.Common.Component.Tool.Extensions.csprojResolveAssemblyReference.cache

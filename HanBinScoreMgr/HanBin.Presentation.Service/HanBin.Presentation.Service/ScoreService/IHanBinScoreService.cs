@@ -146,8 +146,8 @@ namespace HanBin.Presentation.Service.ScoreService
         [WebInvoke(UriTemplate = "UploadFile/{filename}", Method = "POST", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream);
 
-        //[WebGet(UriTemplate = "Download/{id}")]
-        //Stream DownLoadFile(int id);
+        [WebGet(UriTemplate = "DownloadFile/{fileName}")]
+        Stream DownLoadFile(string fileName);
     }
 
     [DataContract]

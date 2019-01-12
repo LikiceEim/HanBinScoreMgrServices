@@ -25,7 +25,7 @@ namespace TESTConsole
         static void Main(string[] args)
         {
             string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
-            string localServer = @"http://localhost:2892/HanBin/ScoreService";
+            string localServer = @"http://localhost:2892/HanBin/SystemService";
             RestClient client = new RestClient(localServer);
             AddOfficerParameter param = new AddOfficerParameter();
             param.Name = "剪刀手爱德华";
