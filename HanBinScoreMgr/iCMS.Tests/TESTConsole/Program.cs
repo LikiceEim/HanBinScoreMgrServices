@@ -24,6 +24,10 @@ namespace TESTConsole
     {
         static void Main(string[] args)
         {
+            var str = "5Lul5ZCO5ZGo5LiJ5YGa55qE";
+
+            var res2 = DecodeBase64("UTF-8", str);
+
             string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
             string localServer = @"http://192.168.0.105:2892/HanBin/SystemService";
             RestClient client = new RestClient(localServer);
@@ -47,6 +51,21 @@ namespace TESTConsole
             Console.WriteLine(res);
 
             Console.ReadKey();
+        }
+
+        public static string DecodeBase64(string code_type, string code)
+        {
+            string decode = "";
+            byte[] bytes = Convert.FromBase64String(code);
+            try
+            {
+                decode = Encoding.GetEncoding(code_type).GetString(bytes);
+            }
+            catch
+            {
+                decode = code;
+            }
+            return decode;
         }
 
         static void RestoreDB(string dataBaseName, string path)

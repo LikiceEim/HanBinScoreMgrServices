@@ -80,5 +80,12 @@ namespace HanBin.Core.DB.Models
         /// 是否在职
         /// </summary>
         public bool IsOnService { get; set; }
+
+        public Officer()
+            : base()
+        {
+            //干部添加时候，默认为“在职”
+            this.IsOnService = true;
+        }
     }
 }

@@ -121,6 +121,12 @@ namespace HanBin.Presentation.Service.SystemManage
         BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> SetOfficerOffService(SetOfficerOffService parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]

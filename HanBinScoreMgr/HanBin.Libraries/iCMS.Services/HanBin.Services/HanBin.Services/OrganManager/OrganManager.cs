@@ -69,10 +69,23 @@ namespace HanBin.Services.OrganManager
                     response.Reason = "单位全称不能为空";
                     return response;
                 }
+
+                if (param.OrganFullName.Length > 20)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位全称不能超过20个字符";
+                    return response;
+                }
                 if (string.IsNullOrEmpty(param.OrganShortName))
                 {
                     response.IsSuccessful = false;
                     response.Reason = "单位简称不能为空";
+                    return response;
+                }
+                if (param.OrganShortName.Length > 10)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位简称不能超过10个字符";
                     return response;
                 }
 
@@ -226,10 +239,25 @@ namespace HanBin.Services.OrganManager
                     response.Reason = "单位全称不能为空";
                     return response;
                 }
+
+                if (parameter.OrganFullName.Length > 20)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位全称不能超过20个字符";
+                    return response;
+                }
+
                 if (string.IsNullOrEmpty(parameter.OrganShortName))
                 {
                     response.IsSuccessful = false;
                     response.Reason = "单位简称不能为空";
+                    return response;
+                }
+
+                if (parameter.OrganFullName.Length > 10)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "单位简称不能超过10个字符";
                     return response;
                 }
 

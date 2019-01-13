@@ -50,7 +50,8 @@ namespace HanBin.Services.SystemManager
             LoginResult result = new LoginResult();
             try
             {
-                var encodePWD = MD5Helper.MD5Encrypt64(parameter.PWD);
+                //密码Base64解密
+                var encodePWD = MD5Helper.MD5Encrypt64(Utilitys.DecodeBase64("UTF-8", parameter.PWD));
                 var user = hbUserReosiory.GetDatas<HBUser>(t => t.UserToken.Equals(parameter.UserName)
                 && t.PWD.Equals(encodePWD)
                 && t.UseStatus && !t.IsDeleted, true).FirstOrDefault();
@@ -129,7 +130,7 @@ namespace HanBin.Services.SystemManager
 
                 HBUser user = new HBUser();
                 user.UserToken = parameter.UserToken;
-                user.PWD = MD5Helper.MD5Encrypt64(parameter.PWD);//密码MD5加密
+                user.PWD = MD5Helper.MD5Encrypt64(Utilitys.DecodeBase64("UTF-8", parameter.PWD));//密码MD5加密
                 user.RoleID = parameter.RoleID;
                 user.OrganizationID = parameter.OrganizationID;
                 user.AddUserID = parameter.AddUserID;
@@ -251,7 +252,6 @@ namespace HanBin.Services.SystemManager
                     var currentUser = dataContext.HBUsers.Where(t => t.UserID == parameter.CurrentUserID).FirstOrDefault();
                     if (currentUser == null)
                     {
-
                         response.IsSuccessful = false;
                         return response;
                     }
@@ -262,15 +262,15 @@ namespace HanBin.Services.SystemManager
                     {
                         case 1:
                             //超级管理员
-                            userInfoList.Where(t => true);
-                            break;
-                        case 2:
-                            //一级管理员
-                            userInfoList.Where(t => t.RoleID == 2 || t.RoleID == 3);
+                            userInfoList = userInfoList.Where(t => true);
                             break;
                         case 3:
-                            userInfoList.Where(t => t.RoleID == 3);
-
+                            //一级管理员
+                            userInfoList = userInfoList.Where(t => t.RoleID == 3 || t.RoleID == 4);
+                            break;
+                        case 4:
+                            //二级管理员
+                            userInfoList = userInfoList.Where(t => t.RoleID == 4);
                             break;
                     }
 

@@ -78,7 +78,6 @@ namespace HanBin.Services.OfficerManager
             schRepository = new Repository<ScoreChangeHistory>();
         }
 
-
         #region 添加干部
         private void ValidateAddOfficer(iCMSDbContext dbContext, AddOfficerParameter parameter)
         {
@@ -103,24 +102,41 @@ namespace HanBin.Services.OfficerManager
                 throw new Exception("请输入合法的身份证号码");
             }
 
-            DateTime birth = DateTime.MinValue;
-            var birthdayStr = Utilitys.GetBrithdayFromIdCard(parameter.IdentifyNumber);
-            if (DateTime.TryParse(birthdayStr, out birth))
-            {
-                if (birth != parameter.Birthday)
-                {
-                    throw new Exception("身份证号码与出生日期不相符合");
-                }
-            }
+            //DateTime birth = DateTime.MinValue;
+            //var birthdayStr = Utilitys.GetBrithdayFromIdCard(parameter.IdentifyNumber);
+            //if (DateTime.TryParse(birthdayStr, out birth))
+            //{
+            //    if (birth != parameter.Birthday)
+            //    {
+            //        throw new Exception("身份证号码与出生日期不相符合");
+            //    }
+            //}
 
             isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
             if (isExisted)
             {
                 throw new Exception("身份证号码重复");
             }
+
+            var addUser = dbContext.HBUsers.Where(t => !t.IsDeleted && t.UserID == parameter.AddUserID).FirstOrDefault();
+            if (addUser == null)
+            {
+                throw new Exception("数据异常");
+            }
+
+            var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == addUser.OrganizationID).FirstOrDefault();
+            if (organ == null)
+            {
+                throw new Exception("数据异常");
+            }
+
+            if (addUser.OrganizationID != parameter.OrganizationID)
+            {
+                string msg = string.Format("只能添加本单位({0})的干部", organ.OrganFullName);
+                throw new Exception(msg);
+            }
             #endregion
         }
-
 
         public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
         {
@@ -235,7 +251,7 @@ namespace HanBin.Services.OfficerManager
             {
                 LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
-                response.Reason = "添加干部发生异常！";
+                response.Reason = e.Message;
             }
 
             return response;
@@ -274,6 +290,33 @@ namespace HanBin.Services.OfficerManager
                 {
                     throw new Exception("身份证号码重复");
                 }
+
+                if (!Utilitys.CheckIDCard(parameter.IdentifyNumber))
+                {
+                    throw new Exception("请输入合法的身份证号码");
+                }
+                using (iCMSDbContext dbContext = new iCMSDbContext())
+                {
+                    var updateUser = dbContext.HBUsers.Where(t => !t.IsDeleted && t.UserID == parameter.UpdateUserID).FirstOrDefault();
+                    if (updateUser == null)
+                    {
+                        throw new Exception("数据异常");
+                    }
+
+                    var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == updateUser.OrganizationID).FirstOrDefault();
+                    if (organ == null)
+                    {
+                        throw new Exception("数据异常");
+                    }
+
+                    if (updateUser.OrganizationID != parameter.OrganizationID)
+                    {
+                        string msg = string.Format("只能修改本单位({0})的干部", organ.OrganFullName);
+                        throw new Exception(msg);
+                    }
+                }
+
+
 
                 #endregion
 
@@ -603,6 +646,41 @@ namespace HanBin.Services.OfficerManager
         }
         #endregion
 
+        #region 设置干部退休
+        public BaseResponse<bool> SetOfficerOffService(SetOfficerOffService parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var officer = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OfficerID == parameter.OfficerID, true).FirstOrDefault();
+                if (officer == null)
+                {
+                    throw new Exception("数据异常");
+                }
+                officer.IsOnService = false;
+                var operResult = officerRepository.Update<Officer>(officer);
+                if (operResult.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("设置干部退休时，数据库操作发生异常");
+                }
+
+                #region 操作日志
+                new LogManager().AddOperationLog(parameter.CurrentUserID, string.Format("设置干部:{0}退休", officer.Name));
+                #endregion
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+
+                return response;
+            }
+        }
+        #endregion
+
         #region 获取干部列表
         public BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter)
         {
@@ -617,7 +695,17 @@ namespace HanBin.Services.OfficerManager
             {
                 using (iCMSDbContext dbContext = new iCMSDbContext())
                 {
-                    var officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted);
+                    var officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService);
+                    var currentUser = dbContext.HBUsers.Where(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID).FirstOrDefault();
+                    if (currentUser == null)
+                    {
+                        throw new Exception("数据异常");
+                    }
+                    if (currentUser.RoleID == 4)//如果是二级管理员，则只返回本单位的干部
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.OrganizationID == currentUser.OrganizationID);
+                    }
+
                     if (parameter.OrganizationID.HasValue && parameter.OrganizationID.Value > 0)
                     {
                         officerQuerable = officerQuerable.Where(t => t.OrganizationID == parameter.OrganizationID);

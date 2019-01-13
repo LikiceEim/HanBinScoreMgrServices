@@ -298,6 +298,24 @@ namespace HanBin.Presentation.Service.SystemManage
         }
         #endregion
 
+        #region 设置干部退休
+        public BaseResponse<bool> SetOfficerOffService(SetOfficerOffService parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return officerManager.SetOfficerOffService(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+
+        #endregion
+
         #region 获取单位列表
         public BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter)
         {

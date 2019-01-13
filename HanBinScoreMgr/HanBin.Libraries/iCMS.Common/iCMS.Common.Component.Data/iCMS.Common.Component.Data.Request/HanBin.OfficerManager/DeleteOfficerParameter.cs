@@ -13,4 +13,11 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public int CurrentUserID { get; set; }
     }
+
+    public class SetOfficerOffService : BaseRequest
+    {
+        public int OfficerID { get; set; }
+
+        public int CurrentUserID { get; set; }
+    }
 }

@@ -62,5 +62,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
         public string Duty { get; set; }
       
         public int InitialScore { get; set; }
+
+        public int UpdateUserID { get; set; }
     }
 }

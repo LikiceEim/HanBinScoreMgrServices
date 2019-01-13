@@ -25,6 +25,8 @@ namespace HanBin.Services.OfficerManager
 
         BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter);
 
+        BaseResponse<bool> SetOfficerOffService(SetOfficerOffService parameter);
+
         BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter);
 
         BaseResponse<GetOrganSummaryResult> GetOrganSummary();

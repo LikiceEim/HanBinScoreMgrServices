@@ -249,5 +249,20 @@ namespace HanBin.Common.Component.Tool
             }
             return rtn;
         }
+
+        public static string DecodeBase64(string code_type, string code)
+        {
+            string decode = "";
+            byte[] bytes = Convert.FromBase64String(code);
+            try
+            {
+                decode = Encoding.GetEncoding(code_type).GetString(bytes);
+            }
+            catch
+            {
+                decode = code;
+            }
+            return decode;
+        }
     }
 }

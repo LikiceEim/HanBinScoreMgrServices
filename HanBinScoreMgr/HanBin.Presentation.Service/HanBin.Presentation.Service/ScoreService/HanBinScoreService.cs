@@ -332,6 +332,8 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream)
         {
+            return null;
+
             UpFileResult result = new UpFileResult();
             BaseResponse<UpFileResult> response = new BaseResponse<UpFileResult>();
 
@@ -400,19 +402,19 @@ namespace HanBin.Presentation.Service.ScoreService
         {
             try
             {
-                string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
-                var FullFileName = Path.Combine(path, fileName);
-                if (File.Exists(FullFileName))
-                {
-                    FileInfo DownloadFile = new FileInfo(FullFileName);
-                    //WebOperationContext.Current.OutgoingResponse.ContentType = "application/pdf";
-                    var contentType = MimeMapping.GetMimeMapping(FullFileName);
-                    WebOperationContext.Current.OutgoingResponse.ContentType = contentType;
+                //string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+                //var FullFileName = Path.Combine(path, fileName);
+                //if (File.Exists(FullFileName))
+                //{
+                //    FileInfo DownloadFile = new FileInfo(FullFileName);
+                //    //WebOperationContext.Current.OutgoingResponse.ContentType = "application/pdf";
+                //    var contentType = MimeMapping.GetMimeMapping(FullFileName);
+                //    WebOperationContext.Current.OutgoingResponse.ContentType = contentType;
 
-                    WebOperationContext.Current.OutgoingResponse.Headers.Add("Content-Disposition", "attachment;inline;filename=111");
-                    Stream stream = File.OpenRead(FullFileName);
-                    return stream;
-                }
+                //    WebOperationContext.Current.OutgoingResponse.Headers.Add("Content-Disposition", "attachment;inline;filename=111");
+                //    Stream stream = File.OpenRead(FullFileName);
+                //    return stream;
+                //}
                 return null;
             }
             catch (Exception ex)

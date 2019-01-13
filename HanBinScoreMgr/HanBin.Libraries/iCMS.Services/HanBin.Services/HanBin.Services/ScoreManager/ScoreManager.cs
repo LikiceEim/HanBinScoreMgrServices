@@ -78,6 +78,14 @@ namespace HanBin.Services.ScoreManager
                     return response;
                 }
 
+                var isExisted = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.ItemDescription) && t.ItemDescription.Trim().Equals(parameter.ItemDescription.Trim()), true).Any();
+                if (isExisted)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "已存在相同的积分条目";
+                    return response;
+                }
+
                 var scoreItem = new ScoreItem();
                 scoreItem.ItemScore = parameter.ItemScore;
                 scoreItem.ItemDescription = parameter.ItemDescription;
@@ -114,6 +122,12 @@ namespace HanBin.Services.ScoreManager
             try
             {
                 var scoreItemIndb = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && t.ItemID == parameter.ItemID, true).FirstOrDefault();
+                if (scoreItemIndb == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "所编辑积分条目不存在";
+                    return response;
+                }
 
                 if (scoreItemIndb.Type == 1 && parameter.ItemScore <= 0)
                 {
@@ -128,12 +142,14 @@ namespace HanBin.Services.ScoreManager
                     return response;
                 }
 
-                if (scoreItemIndb == null)
+                var isExisted = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && t.ItemID != parameter.ItemID && !string.IsNullOrEmpty(t.ItemDescription) && t.ItemDescription.Trim().Equals(parameter.ItemDescription.Trim()), true).Any();
+                if (isExisted)
                 {
                     response.IsSuccessful = false;
-                    response.Reason = "所编辑积分条目不存在";
+                    response.Reason = "已存在相同的积分条目";
                     return response;
                 }
+
                 scoreItemIndb.ItemScore = parameter.ItemScore;
                 scoreItemIndb.ItemDescription = parameter.ItemDescription;
                 var operResult = scoreItemRepository.Update<ScoreItem>(scoreItemIndb);
@@ -911,7 +927,7 @@ namespace HanBin.Services.ScoreManager
                 var levelArray = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).ToList();
 
                 // var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore);
-                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true);
+                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
                 ListSortDirection sortOrder = ListSortDirection.Ascending;
                 PropertySortCondition[] sortList = new PropertySortCondition[]
                     {
@@ -984,7 +1000,7 @@ namespace HanBin.Services.ScoreManager
             {
                 using (iCMSDbContext dbContext = new iCMSDbContext())
                 {
-                    IQueryable<Officer> officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted);
+                    IQueryable<Officer> officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService);
                     if (parameter.OrganTypeID.HasValue && parameter.OrganTypeID.Value > 0)
                     {
                         officerQuerable = from o in officerQuerable
@@ -1092,7 +1108,7 @@ namespace HanBin.Services.ScoreManager
             {
                 using (iCMSDbContext dbContext = new iCMSDbContext())
                 {
-                    var officers = dbContext.Officers.Where(t => !t.IsDeleted).ToList();
+                    var officers = dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService).ToList();
                     var areas = dbContext.Areas.Where(t => !t.IsDeleted).ToList();
                     var areaAverageScoreList = dbContext.Organizations.GroupBy(t => t.AreaID).ToArray().Select(t =>
                     {
@@ -1146,7 +1162,7 @@ namespace HanBin.Services.ScoreManager
             AgeAverageScoreResult result = new AgeAverageScoreResult();
             try
             {
-                var officerQuerable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true);
+                var officerQuerable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
                 if (parameter.BirthdayFrom.HasValue && parameter.BirthdayFrom.Value != DateTime.MaxValue && parameter.BirthdayFrom.Value != DateTime.MinValue)
                 {
                     officerQuerable = officerQuerable.Where(t => t.Birthday >= parameter.BirthdayFrom.Value);
@@ -1198,7 +1214,7 @@ namespace HanBin.Services.ScoreManager
                 var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
                 var levelArray = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted, true).ToList();
 
-                var officerQuerable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true);
+                var officerQuerable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
                 if (parameter.OrganID.HasValue && parameter.OrganID.Value > 0)
                 {
                     officerQuerable = officerQuerable.Where(t => t.OrganizationID == parameter.OrganID.Value);
@@ -1251,6 +1267,7 @@ namespace HanBin.Services.ScoreManager
             }
         }
         #endregion
+
         #endregion
 
         #region 文件上传与下载
