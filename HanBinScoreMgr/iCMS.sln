@@ -35,6 +35,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HB.Tests", "HB.Tests", "{741F9B00-7FDC-4D2D-9873-E78A6AF7E04D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCMS.WinodwsSevice", "iCMS.WinodwsSevice", "{79F2080C-FC3F-4BA7-8E76-0571F232BAFA}"
+	ProjectSection(SolutionItems) = preProject
+		iCMS.Tests\TESTConsoleServer\Program.cs = iCMS.Tests\TESTConsoleServer\Program.cs
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TESTConsole", "iCMS.Tests\TESTConsole\TESTConsole.csproj", "{5DA9E0E2-B541-42C1-9225-4FED50D0657A}"
 EndProject

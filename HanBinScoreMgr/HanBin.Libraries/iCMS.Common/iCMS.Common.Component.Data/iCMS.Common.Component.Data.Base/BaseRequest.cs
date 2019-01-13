@@ -19,10 +19,8 @@ namespace HanBin.Common.Component.Data.Base
     /// <summary>
     /// 请求基类
     /// </summary>
-    [Serializable]
     public class BaseRequest
     {
-
         public string Token { get; set; }
         //private string key = Utilitys.GetAppConfig("Key");
         //private string secret = Utilitys.GetAppConfig("Secret");

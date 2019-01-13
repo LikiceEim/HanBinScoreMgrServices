@@ -75,5 +75,10 @@ namespace HanBin.Core.DB.Models
         /// 
         /// </summary>
         public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// 是否在职
+        /// </summary>
+        public bool IsOnService { get; set; }
     }
 }

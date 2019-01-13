@@ -1,0 +1,213 @@
+2019/1/13 12:39:41:520
+异常消息：The 'IsOnService' property on 'Officer' could not be set to a 'null' value. You must set this property to a non-null value of type 'System.Boolean'. 
+异常类型：System.Data.ConstraintException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetPropertyValueWithErrorHandling[TProperty](Int32 ordinal, String propertyName, String typeName)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 HanBin.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 84
+   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 914
+
+
+2019/1/13 12:39:48:471
+异常消息：The 'IsOnService' property on 'Officer' could not be set to a 'null' value. You must set this property to a non-null value of type 'System.Boolean'. 
+异常类型：System.Data.ConstraintException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetPropertyValueWithErrorHandling[TProperty](Int32 ordinal, String propertyName, String typeName)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 HanBin.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 84
+   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 914
+
+
+2019/1/13 12:39:52:010
+异常消息：The 'IsOnService' property on 'Officer' could not be set to a 'null' value. You must set this property to a non-null value of type 'System.Boolean'. 
+异常类型：System.Data.ConstraintException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetPropertyValueWithErrorHandling[TProperty](Int32 ordinal, String propertyName, String typeName)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 HanBin.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 84
+   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 914
+
+
+2019/1/13 12:39:55:437
+异常消息：The 'IsOnService' property on 'Officer' could not be set to a 'null' value. You must set this property to a non-null value of type 'System.Boolean'. 
+异常类型：System.Data.ConstraintException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetPropertyValueWithErrorHandling[TProperty](Int32 ordinal, String propertyName, String typeName)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 HanBin.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 84
+   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 914
+
+
+2019/1/13 12:40:17:777
+异常消息：The 'IsOnService' property on 'Officer' could not be set to a 'null' value. You must set this property to a non-null value of type 'System.Boolean'. 
+异常类型：System.Data.ConstraintException
+异常方法：GetValue
+异常源：EntityFramework
+异常堆栈：   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.ErrorHandlingValueReader`1.GetValue(DbDataReader reader, Int32 ordinal)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.GetPropertyValueWithErrorHandling[TProperty](Int32 ordinal, String propertyName, String typeName)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper.HandleEntityAppendOnly[TEntity](Func`2 constructEntityDelegate, EntityKey entityKey, EntitySet entitySet)
+   在 lambda_method(Closure , Shaper )
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Coordinator`1.ReadNextElement(Shaper shaper)
+   在 System.Data.Entity.Core.Common.Internal.Materialization.Shaper`1.SimpleEnumerator.MoveNext()
+   在 System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   在 System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   在 System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   在 HanBin.Frameworks.Core.Repository.Repository`1.GetDatas[TEntity](Expression`1 predicate, Boolean isTracking) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Frameworks\iCMS.Frameworks.Core\iCMS.Frameworks.Core.Repository\Repository.cs:行号 84
+   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 914
+
+
+2019/1/13 13:09:42:022
+异常消息：未能找到路径“E:\HanBinScoreMgrGit\HanBinScoreMgr\iCMS.Tests\TESTConsoleServer\bin\Debug\UploadFiles\”的一部分。
+异常类型：System.IO.DirectoryNotFoundException
+异常方法：WinIOError
+异常源：mscorlib
+异常堆栈：   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   在 System.IO.FileStream..ctor(String path, FileMode mode)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 55
+
+
+2019/1/13 13:15:29:395
+异常消息：读取流时引发异常。
+异常类型：System.IO.IOException
+异常方法：Read
+异常源：System.ServiceModel
+异常堆栈：   在 System.ServiceModel.Dispatcher.StreamFormatter.MessageBodyStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.IO.StreamReader.ReadBuffer()
+   在 System.IO.StreamReader.ReadToEnd()
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 53
+内部异常：
+　异常消息：函数不正确。
+　异常类型：System.ServiceModel.CommunicationException
+　异常方法：Read
+　异常源：System.ServiceModel
+　异常堆栈：   在 System.ServiceModel.Channels.HttpRequestContext.ListenerHttpContext.ListenerContextHttpInput.ListenerContextInputStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.ServiceModel.Channels.MaxMessageSizeStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+   在 System.ServiceModel.Channels.XmlStreamedByteStreamReader.ReadContentAsBase64(Byte[] buffer, Int32 index, Int32 count)
+   在 System.ServiceModel.Dispatcher.StreamFormatter.MessageBodyStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+　内部异常：
+　　异常消息：函数不正确。
+　　异常类型：System.Net.HttpListenerException
+　　异常方法：Read
+　　异常源：System
+　　异常堆栈：   在 System.Net.HttpRequestStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   在 System.ServiceModel.Channels.HttpRequestContext.ListenerHttpContext.ListenerContextHttpInput.ListenerContextInputStream.Read(Byte[] buffer, Int32 offset, Int32 count)
+
+
+2019/1/13 14:03:04:323
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:03:30:065
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:05:30:123
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:05:55:553
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:06:51:158
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:07:44:617
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:08:18:209
+异常消息：长度不能小于 0。
+参数名: length
+异常类型：System.ArgumentOutOfRangeException
+异常方法：Substring
+异常源：mscorlib
+异常堆栈：   在 System.String.Substring(Int32 startIndex, Int32 length)
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 31
+
+
+2019/1/13 14:46:51:013
+异常消息：不支持所指定的方法。
+异常类型：System.NotSupportedException
+异常方法：get_Length
+异常源：System.ServiceModel
+异常堆栈：   在 System.ServiceModel.Dispatcher.StreamFormatter.MessageBodyStream.get_Length()
+   在 HanBin.Presentation.Service.FileService.FileService.UploadFile(String filename, Stream FileStream) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Presentation.Service\HanBin.Presentation.Service\FileService\FileService.cs:行号 38
+
+

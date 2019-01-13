@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="DownloadService\DownLoadFile.cs" />
+    <Compile Include="DownloadService\IDownLoadFile.cs" />
     <Compile Include="FileService\FileService.cs" />
     <Compile Include="FileService\IFileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,6 +63,7 @@
     <Content Include="HanBinScoreService.svc" />
     <Content Include="HanBinSystemService.svc" />
     <Content Include="HanBinFileService.svc" />
+    <Content Include="DownloadService.svc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="web.config" />

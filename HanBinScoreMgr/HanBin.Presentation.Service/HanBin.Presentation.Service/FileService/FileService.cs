@@ -12,6 +12,7 @@ using System.Web;
 
 namespace HanBin.Presentation.Service.FileService
 {
+
     public class FileService : IFileService
     {
         public BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream)
@@ -34,7 +35,7 @@ namespace HanBin.Presentation.Service.FileService
 
                 //获取文件大小
                 long fileLength = WebOperationContext.Current.IncomingRequest.ContentLength;
-
+                //fileLength = FileStream.Length;
                 //UpFile parameter = new UpFile();
 
                 if (true)
@@ -60,7 +61,7 @@ namespace HanBin.Presentation.Service.FileService
                     fs.Flush();
                     //关闭流
                     fs.Close();
-                    result.FilePath = filePath;
+                    result.FilePath = saveFileName;
                     response.Result = result;
                     return response;
                 }

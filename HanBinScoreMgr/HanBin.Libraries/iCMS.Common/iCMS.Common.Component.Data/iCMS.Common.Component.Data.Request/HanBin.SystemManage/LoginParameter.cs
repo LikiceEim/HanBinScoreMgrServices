@@ -27,9 +27,5 @@ namespace HanBin.Common.Component.Data.Request.HanBin.SystemManage
         public int RoleID { get; set; }
 
         public int AddUserID { get; set; }
-
-
     }
-
-
 }

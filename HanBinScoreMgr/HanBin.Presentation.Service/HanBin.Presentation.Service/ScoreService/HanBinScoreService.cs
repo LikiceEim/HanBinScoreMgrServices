@@ -16,6 +16,8 @@ using System.Web;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
+
+    [JavascriptCallbackBehavior(UrlParameterName = "jsoncallback")]
     public class HanBinScoreService : BaseService, IHanBinScoreService
     {
         IScoreManager scoreManager = null;
