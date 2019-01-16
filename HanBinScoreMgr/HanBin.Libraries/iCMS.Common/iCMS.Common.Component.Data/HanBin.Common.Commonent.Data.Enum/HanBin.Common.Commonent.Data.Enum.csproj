@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="EnumApproveStatus.cs" />
     <Compile Include="EnumOperationResultType.cs" />
+    <Compile Include="EnumRoleType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

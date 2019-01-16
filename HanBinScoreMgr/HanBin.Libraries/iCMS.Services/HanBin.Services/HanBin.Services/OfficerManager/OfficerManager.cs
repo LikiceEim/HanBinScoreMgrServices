@@ -129,12 +129,26 @@ namespace HanBin.Services.OfficerManager
             {
                 throw new Exception("数据异常");
             }
-
-            if (addUser.OrganizationID != parameter.OrganizationID)
+            int roleID = addUser.RoleID;
+            switch (roleID)
             {
-                string msg = string.Format("只能添加本单位({0})的干部", organ.OrganFullName);
-                throw new Exception(msg);
+                case (int)EnumRoleType.SuperAdmin:
+                    //超级管理员可以任意单位的干部
+                    break;
+                case (int)EnumRoleType.FirstLevelAdmin:
+                    //一级管理员不能够添加干部
+                    throw new Exception("请使用二级管理员登陆，然后添加干部");
+                    break;
+                case (int)EnumRoleType.SecondLevelAdmin:
+                    //二级管理员只能够添加本单位的干部
+                    if (addUser.OrganizationID != parameter.OrganizationID)
+                    {
+                        string msg = string.Format("只能添加本单位({0})的干部", organ.OrganFullName);
+                        throw new Exception(msg);
+                    }
+                    break;
             }
+
             #endregion
         }
 
@@ -309,14 +323,32 @@ namespace HanBin.Services.OfficerManager
                         throw new Exception("数据异常");
                     }
 
-                    if (updateUser.OrganizationID != parameter.OrganizationID)
+                    int roleID = updateUser.RoleID;
+                    switch (roleID)
                     {
-                        string msg = string.Format("只能修改本单位({0})的干部", organ.OrganFullName);
-                        throw new Exception(msg);
+                        case (int)EnumRoleType.SuperAdmin:
+                            //超级管理员可以编辑任意单位的干部
+                            break;
+                        case (int)EnumRoleType.FirstLevelAdmin:
+                            //一级管理员不能够编辑干部
+                            throw new Exception("请使用二级管理员登陆，然后编辑干部");
+                            break;
+                        case (int)EnumRoleType.SecondLevelAdmin:
+                            //二级管理员只能够添加本单位的干部
+                            if (updateUser.OrganizationID != parameter.OrganizationID)
+                            {
+                                string msg = string.Format("只能修改本单位({0})的干部", organ.OrganFullName);
+                                throw new Exception(msg);
+                            }
+                            break;
                     }
+
+                    //if (updateUser.OrganizationID != parameter.OrganizationID)
+                    //{
+                    //    string msg = string.Format("只能修改本单位({0})的干部", organ.OrganFullName);
+                    //    throw new Exception(msg);
+                    //}
                 }
-
-
 
                 #endregion
 

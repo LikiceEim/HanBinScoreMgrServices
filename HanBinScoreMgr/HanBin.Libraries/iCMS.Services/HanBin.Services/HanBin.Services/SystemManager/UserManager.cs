@@ -31,12 +31,16 @@ namespace HanBin.Services.SystemManager
         [Dependency]
         public IRepository<BackupLog> backlogRepository { get; set; }
 
+        [Dependency]
+        public IRepository<OrganType> organTypeRepository { get; set; }
+
         public UserManager()
         {
             hbUserReosiory = new Repository<HBUser>();
             organRepository = new Repository<Organization>();
             roleRepoitory = new Repository<HBRole>();
             backlogRepository = new Repository<BackupLog>();
+            organTypeRepository = new Repository<OrganType>();
         }
 
         /// <summary>
@@ -60,6 +64,18 @@ namespace HanBin.Services.SystemManager
                     result.RoleID = user.RoleID;
                     result.UserID = user.UserID;
                     result.UserToken = user.UserToken;
+                    result.OrganID = user.OrganizationID;
+
+                    var organ = organRepository.GetDatas<Organization>(t => !t.IsDeleted && t.OrganID == result.OrganID, true).FirstOrDefault();
+                    if (organ != null)
+                    {
+                        result.OrganTypeID = organ.OrganTypeID;
+                        var organType = organTypeRepository.GetDatas<OrganType>(t => !t.IsDeleted && t.OrganTypeID == result.OrganTypeID, true).FirstOrDefault();
+                        if (organType != null)
+                        {
+                            result.OrganCategoryID = organType.CategoryID;
+                        }
+                    }
 
                     var payload = new Dictionary<string, object>
                             {

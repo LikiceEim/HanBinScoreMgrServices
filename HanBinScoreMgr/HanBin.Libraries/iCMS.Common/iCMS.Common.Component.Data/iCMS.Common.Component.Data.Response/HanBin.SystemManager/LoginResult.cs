@@ -28,5 +28,14 @@ namespace HanBin.Common.Component.Data.Response.HanBin.SystemManager
         /// JWT Token
         /// </summary>
         public string Token { get; set; }
+
+        /// <summary>
+        /// 单位ID
+        /// </summary>
+        public int OrganID { get; set; }
+
+        public int OrganTypeID { get; set; }
+
+        public int OrganCategoryID { get; set; }
     }
 }
