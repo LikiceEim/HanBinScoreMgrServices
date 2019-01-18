@@ -12,5 +12,10 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
         public int Page { get; set; }
 
         public int PageSize { get; set; }
+
+        /// <summary>
+        /// 当前登陆用户ID,二级管理员ID
+        /// </summary>
+        public int CurrentUserID { get; set; }
     }
 }

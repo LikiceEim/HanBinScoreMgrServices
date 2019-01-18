@@ -501,6 +501,46 @@ namespace HanBin.Services.SystemManager
             }
         }
         #endregion
+
+        #region 修改密码
+        public BaseResponse<bool> UpdatePWD(UpdatePWDParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var curUser = hbUserReosiory.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (curUser == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "当前用户数据异常";
+                    return response;
+                }
+
+                if (curUser.PWD != MD5Helper.MD5Encrypt64(Utilitys.DecodeBase64("UTF-8", parameter.OriginPWD)))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "原密码不正确";
+                    return response;
+                }
+
+                curUser.PWD = MD5Helper.MD5Encrypt64(Utilitys.DecodeBase64("UTF-8", parameter.NewPWD));
+
+                var operRes = hbUserReosiory.Update<HBUser>(curUser);
+                if (operRes.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("修改密码时，数据库操作异常");
+                }
+                return response;
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
         #endregion
 
         #region 数据库备份

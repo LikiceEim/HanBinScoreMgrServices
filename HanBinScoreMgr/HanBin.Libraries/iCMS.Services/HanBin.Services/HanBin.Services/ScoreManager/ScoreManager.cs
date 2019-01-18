@@ -739,7 +739,21 @@ namespace HanBin.Services.ScoreManager
 
             try
             {
-                var approvedApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true).OrderByDescending(t => t.LastUpdateDate).ToArray().Select(t =>
+                //二级管理员只能浏览本单位干部的积分申请，及反馈信息
+                var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (currentUser.RoleID != (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "只有二级管理员具有此权限";
+                    return response;
+                }
+                //获取单位ID
+                int organID = currentUser.OrganizationID;
+                //获取本单位的干部ID
+                var officerIDList = GetOfficersByOrganID(organID);
+
+                //只获取本单位干部的反馈信息
+                var approvedApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && officerIDList.Contains(t.OfficerID), true).OrderByDescending(t => t.LastUpdateDate).Take(parameter.RankNumber).ToArray().Select(t =>
                 {
                     int proposeUserID = t.ProposeID;
 
@@ -767,6 +781,12 @@ namespace HanBin.Services.ScoreManager
         }
         #endregion
 
+        private List<int> GetOfficersByOrganID(int organID)
+        {
+            var officerIDList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService && t.OrganizationID == organID, true).Select(t => t.OfficerID).ToList();
+            return officerIDList;
+        }
+
         #region 上级反馈【详细信息】
         public BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter)
         {
@@ -774,7 +794,18 @@ namespace HanBin.Services.ScoreManager
             GetHighLevelFeedBackDetailListResult result = new GetHighLevelFeedBackDetailListResult();
             try
             {
-                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && t.ProcessUserID.HasValue, true).OrderByDescending(t => t.LastUpdateDate);
+                //获取当前登陆用户
+                var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (currentUser.RoleID != (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "只有二级管理员具有此权限";
+                    return response;
+                }
+
+                var officerIDList = GetOfficersByOrganID(currentUser.OrganizationID);
+
+                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && t.ProcessUserID.HasValue && officerIDList.Contains(t.OfficerID), true).OrderByDescending(t => t.LastUpdateDate);
                 int total = approvedApplyQuerable.Count();
 
                 var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
@@ -871,7 +902,25 @@ namespace HanBin.Services.ScoreManager
 
             try
             {
+
                 IQueryable<ScoreChangeHistory> scHisQuerable = schRepository.GetDatas<ScoreChangeHistory>(t => true, true).OrderByDescending(t => t.AddDate);
+
+                //超级管理员，一级管理员获取全部的积分公示信息，二级管理员只能获取本单位干部的积分公示
+                var currentUser = userRepository.GetDatas<HBUser>(t => t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (currentUser == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "登陆用户数据异常";
+                    return response;
+                }
+
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    //二级管理员只能看到本单位干部的积分变更
+                    var offIDList = GetOfficersByOrganID(currentUser.OrganizationID);
+                    scHisQuerable = scHisQuerable.Where(t => offIDList.Contains(t.OfficerID)).OrderByDescending(t => t.AddDate);
+                }
+
                 if (parameter.RankNumber.HasValue && parameter.RankNumber.Value > 0)
                 {
                     //取前N条
@@ -928,6 +977,15 @@ namespace HanBin.Services.ScoreManager
 
                 // var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore);
                 var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
+
+                //超级管理员，一级管理员查看全部干部，二级管理员只能够看到本单位的干部
+                var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    var offIDList = GetOfficersByOrganID(currentUser.OrganizationID);
+                    officers = officers.Where(t => offIDList.Contains(t.OfficerID));
+                }
+
                 ListSortDirection sortOrder = ListSortDirection.Ascending;
                 PropertySortCondition[] sortList = new PropertySortCondition[]
                     {

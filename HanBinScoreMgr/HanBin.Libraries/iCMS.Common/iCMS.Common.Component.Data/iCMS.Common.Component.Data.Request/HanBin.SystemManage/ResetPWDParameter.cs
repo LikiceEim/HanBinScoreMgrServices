@@ -11,4 +11,13 @@ namespace HanBin.Common.Component.Data.Request.HanBin.SystemManage
     {
         public int UserID { get; set; }
     }
+
+    public class UpdatePWDParameter : BaseRequest
+    {
+        public int CurrentUserID { get; set; }
+
+        public string OriginPWD { get; set; }
+
+        public string NewPWD { get; set; }
+    }
 }

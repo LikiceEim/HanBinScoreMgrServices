@@ -90,6 +90,69 @@ namespace HanBin.Presentation.Service.SystemManage
             }
 
         }
+
+
+        public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return userManager.ChangeUseStatus(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+
+        public BaseResponse<bool> DeleteUser(DeleteUserParameter parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return userManager.DeleteUser(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+
+        public BaseResponse<bool> ResetPWD(ResetPWDParameter parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return userManager.ResetPWD(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+
+        public BaseResponse<bool> UpdatePWD(UpdatePWDParameter parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return userManager.UpdatePWD(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+
+                return response;
+            }
+
+        }
         #endregion
 
         #region 单位管理
@@ -404,51 +467,6 @@ namespace HanBin.Presentation.Service.SystemManage
             else
             {
                 BaseResponse<GetRoleInfoListResult> response = new BaseResponse<GetRoleInfoListResult>();
-                response.IsSuccessful = false;
-                response.Reason = "JWT_ERR";
-                return response;
-            }
-        }
-
-        public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
-        {
-            if (Validate(parameter.Token))
-            {
-                return userManager.ChangeUseStatus(parameter);
-            }
-            else
-            {
-                BaseResponse<bool> response = new BaseResponse<bool>();
-                response.IsSuccessful = false;
-                response.Reason = "JWT_ERR";
-                return response;
-            }
-        }
-
-        public BaseResponse<bool> DeleteUser(DeleteUserParameter parameter)
-        {
-            if (Validate(parameter.Token))
-            {
-                return userManager.DeleteUser(parameter);
-            }
-            else
-            {
-                BaseResponse<bool> response = new BaseResponse<bool>();
-                response.IsSuccessful = false;
-                response.Reason = "JWT_ERR";
-                return response;
-            }
-        }
-
-        public BaseResponse<bool> ResetPWD(ResetPWDParameter parameter)
-        {
-            if (Validate(parameter.Token))
-            {
-                return userManager.ResetPWD(parameter);
-            }
-            else
-            {
-                BaseResponse<bool> response = new BaseResponse<bool>();
                 response.IsSuccessful = false;
                 response.Reason = "JWT_ERR";
                 return response;

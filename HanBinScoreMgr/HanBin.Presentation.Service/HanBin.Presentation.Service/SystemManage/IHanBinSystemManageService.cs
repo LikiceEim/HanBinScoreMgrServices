@@ -43,6 +43,31 @@ namespace HanBin.Presentation.Service.SystemManage
             RequestFormat = WebMessageFormat.Json,
             ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter);
+
+        [WebInvoke(UriTemplate = "GetUserInfo",
+           BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> UpdatePWD(UpdatePWDParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+          Method = "POST",
+          RequestFormat = WebMessageFormat.Json,
+          ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+           Method = "POST",
+           RequestFormat = WebMessageFormat.Json,
+           ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+         Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> ResetPWD(ResetPWDParameter parameter);
         #endregion
 
         #region 单位管理
@@ -162,24 +187,6 @@ namespace HanBin.Presentation.Service.SystemManage
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetRoleInfoListResult> GetRoleInfoList(BaseRequest param);
-
-        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
-           Method = "POST",
-           RequestFormat = WebMessageFormat.Json,
-           ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter);
-
-        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
-           Method = "POST",
-           RequestFormat = WebMessageFormat.Json,
-           ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<bool> DeleteUser(DeleteUserParameter parameter);
-
-        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
-         Method = "POST",
-         RequestFormat = WebMessageFormat.Json,
-         ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<bool> ResetPWD(ResetPWDParameter parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
          Method = "POST",
