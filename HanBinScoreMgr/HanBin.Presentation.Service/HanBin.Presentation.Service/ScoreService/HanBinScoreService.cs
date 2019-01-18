@@ -422,5 +422,20 @@ namespace HanBin.Presentation.Service.ScoreService
                 return null;
             }
         }
+
+        public BaseResponse<bool> DeleteFile(DeleteFileParameter parameter)
+        {
+            if (Validate(parameter.Token))
+            {
+                return scoreManager.DeleteFile(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
     }
 }

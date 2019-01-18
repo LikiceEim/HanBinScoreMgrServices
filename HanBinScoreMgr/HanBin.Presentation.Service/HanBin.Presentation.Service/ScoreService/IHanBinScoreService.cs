@@ -142,6 +142,11 @@ namespace HanBin.Presentation.Service.ScoreService
         //[System.ComponentModel.Description("上传文件")]
         //bool UpLoad(System.IO.Stream stream, string fileName);
 
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+             Method = "POST",
+             RequestFormat = WebMessageFormat.Json,
+             ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> DeleteFile(DeleteFileParameter parameter);
 
         [WebInvoke(UriTemplate = "UploadFile/{filename}", Method = "POST", ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream);

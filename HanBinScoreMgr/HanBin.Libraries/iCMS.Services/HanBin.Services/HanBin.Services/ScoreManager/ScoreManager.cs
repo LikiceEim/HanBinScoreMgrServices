@@ -1339,5 +1339,47 @@ namespace HanBin.Services.ScoreManager
             return null;
         }
         #endregion
+
+        #region 删除文件
+        public BaseResponse<bool> DeleteFile(DeleteFileParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+            try
+            {
+                var file = ufRepository.GetDatas<ApplyUploadFile>(t => !t.IsDeleted && t.FilePath.Trim().Equals(parameter.FileName.Trim()), true).FirstOrDefault();
+                if (file == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "删除文件数据异常";
+                    return response;
+                }
+
+                var operRes = ufRepository.Delete<ApplyUploadFile>(file);
+                if (operRes.ResultType != EnumOperationResultType.Success)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "删除文件异常";
+                    return response;
+                }
+
+                string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+                var fileName = Path.Combine(path, parameter.FileName);
+                if (File.Exists(fileName))
+                {
+                    File.Delete(fileName);
+                }
+
+                return response;
+            }
+
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
     }
 }

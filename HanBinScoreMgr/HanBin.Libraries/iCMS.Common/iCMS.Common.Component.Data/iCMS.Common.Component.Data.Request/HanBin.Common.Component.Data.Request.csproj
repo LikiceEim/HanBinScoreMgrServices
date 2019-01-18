@@ -60,6 +60,7 @@
     <Compile Include="HanBin.ScoreManager\AddScoreItemParameter.cs" />
     <Compile Include="HanBin.ScoreManager\AgeAverageScoreParameter.cs" />
     <Compile Include="HanBin.ScoreManager\CheckScoreApplyParameter.cs" />
+    <Compile Include="HanBin.ScoreManager\DeleteFileParameter.cs" />
     <Compile Include="HanBin.ScoreManager\EditScoreApplyParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackDetailListParameter.cs" />
     <Compile Include="HanBin.ScoreManager\GetHighLevelFeedBackSummaryParameter.cs" />
