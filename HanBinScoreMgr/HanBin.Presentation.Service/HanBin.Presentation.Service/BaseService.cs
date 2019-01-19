@@ -1,4 +1,5 @@
-﻿using HanBin.Common.Component.Tool;
+﻿using HanBin.Common.Component.Data.Base;
+using HanBin.Common.Component.Tool;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,15 @@ namespace HanBin.Presentation.Service
         /// Token校验
         /// </summary>
         /// <returns></returns>
-        public bool Validate(string tokenParam)
+        public bool Validate(BaseRequest param)
         {
+            var request = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.BaseUri.Host;
             //return true;
 
-            if (!string.IsNullOrEmpty(tokenParam))
+            if (!string.IsNullOrEmpty(param.Token))
             {
                 var privateKey = Utilitys.GetAppConfig("PrivateKey");
-                return JsonWebToken.Verify(tokenParam, privateKey, true);
+                return JsonWebToken.Verify(param.Token, privateKey, true);
             }
             else
             {

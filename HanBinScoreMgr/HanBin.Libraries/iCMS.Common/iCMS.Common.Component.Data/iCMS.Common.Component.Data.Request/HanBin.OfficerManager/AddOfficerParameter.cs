@@ -15,7 +15,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public string IdentifyNumber { get; set; }
 
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
 
         public int OrganizationID { get; set; }
 
@@ -23,7 +23,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public int LevelID { get; set; }
 
-        public DateTime OnOfficeDate { get; set; }
+        public string OnOfficeDate { get; set; }
 
         public string Duty { get; set; }
 
@@ -49,7 +49,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public string IdentifyNumber { get; set; }
 
-        public DateTime Birthday { get; set; }
+        public string Birthday { get; set; }
 
         public int OrganizationID { get; set; }
 
@@ -57,10 +57,10 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public int LevelID { get; set; }
 
-        public DateTime OnOfficeDate { get; set; }
+        public string OnOfficeDate { get; set; }
 
         public string Duty { get; set; }
-      
+
         public int InitialScore { get; set; }
 
         public int UpdateUserID { get; set; }

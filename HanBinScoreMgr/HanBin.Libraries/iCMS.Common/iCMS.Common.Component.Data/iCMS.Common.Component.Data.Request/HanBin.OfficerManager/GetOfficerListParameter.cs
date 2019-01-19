@@ -26,4 +26,8 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
         public int CurrentUserID { get; set; }
     }
 
+    public class GetOrganSummaryParameter : BaseRequest
+    {
+        public int? OrganTypeID { get; set; }
+    }
 }

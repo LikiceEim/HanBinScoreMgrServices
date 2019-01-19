@@ -43,7 +43,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> AddUser(AddUserParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.AddUser(parameter);
             }
@@ -60,7 +60,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> EditUser(EditUserParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.EditUser(parameter);
             }
@@ -76,7 +76,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.GetUserInfo(parameter);
             }
@@ -88,13 +88,11 @@ namespace HanBin.Presentation.Service.SystemManage
 
                 return response;
             }
-
         }
-
 
         public BaseResponse<bool> ChangeUseStatus(ChangeUseStatusParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.ChangeUseStatus(parameter);
             }
@@ -109,7 +107,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> DeleteUser(DeleteUserParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.DeleteUser(parameter);
             }
@@ -124,7 +122,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> ResetPWD(ResetPWDParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.ResetPWD(parameter);
             }
@@ -139,7 +137,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> UpdatePWD(UpdatePWDParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.UpdatePWD(parameter);
             }
@@ -158,7 +156,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 单位管理
         public BaseResponse<bool> AddOrganizationRecord(AddOrganParameter param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return organManager.AddOrganizationRecord(param);
             }
@@ -175,7 +173,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 获取单位详细信息
         public BaseResponse<GetOrganDetailInfoResult> GetOrganDetailInfo(GetOrganDetailInfoParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return organManager.GetOrganDetailInfo(parameter);
             }
@@ -192,7 +190,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 编辑单位
         public BaseResponse<bool> EditOrganizationRecord(EditOrganParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return organManager.EditOrganizationRecord(parameter);
             }
@@ -209,7 +207,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 删除单位
         public BaseResponse<bool> DeleteOrganRecord(DeleteOrganParameter param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return organManager.DeleteOrganRecord(param);
             }
@@ -226,7 +224,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 获取单位列表
         public BaseResponse<GetOrganListResult> GetOrganList(GetOrganInfoListParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return organManager.GetOrganList(parameter);
             }
@@ -245,7 +243,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 添加干部
         public BaseResponse<bool> AddOfficerRecord(AddOfficerParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.AddOfficerRecord(parameter);
             }
@@ -262,7 +260,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 编辑干部
         public BaseResponse<bool> EditOfficerRecord(EditOfficerParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.EditOfficerRecord(parameter);
             }
@@ -279,7 +277,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 获取干部详细信息（不包含积分）
         public BaseResponse<GetOfficerDetailInfoResult> GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.GetOfficerDetailInfo(parameter);
             }
@@ -296,7 +294,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 获取干部积分信息
         public BaseResponse<GetOfficerScoreDetailInfoResult> GetOfficerScoreDetailInfo(GetOfficerScoreDetailInfoParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.GetOfficerScoreDetailInfo(parameter);
             }
@@ -313,7 +311,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 编辑积分申请时候，获取积分申请详细信息
         public BaseResponse<GetApplyDetailInfoResult> GetApplyDetailInfo(GetApplyDetailInfoParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.GetApplyDetailInfo(parameter);
             }
@@ -330,7 +328,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 撤销积分申请
         public BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.CancelScoreApply(parameter);
             }
@@ -347,7 +345,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 删除干部
         public BaseResponse<bool> DeleteOfficerRecord(DeleteOfficerParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.DeleteOfficerRecord(parameter);
             }
@@ -364,7 +362,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 设置干部退休
         public BaseResponse<bool> SetOfficerOffService(SetOfficerOffService parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.SetOfficerOffService(parameter);
             }
@@ -382,7 +380,7 @@ namespace HanBin.Presentation.Service.SystemManage
         #region 获取单位列表
         public BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return officerManager.GetOfficerList(parameter);
             }
@@ -398,7 +396,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetOrganTypeResult> GetOrganTypeList(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return organManager.GetOrganTypeList();
             }
@@ -412,11 +410,11 @@ namespace HanBin.Presentation.Service.SystemManage
         }
         #endregion
 
-        public BaseResponse<GetOrganSummaryResult> GetOrganSummary(BaseRequest param)
+        public BaseResponse<GetOrganSummaryResult> GetOrganSummary(GetOrganSummaryParameter parameter)
         {
-            if (Validate(param.Token))
+            if (Validate(parameter))
             {
-                return officerManager.GetOrganSummary();
+                return officerManager.GetOrganSummary(parameter);
             }
             else
             {
@@ -429,7 +427,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetPositionListResult> GetPositionSummary(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return officerManager.GetPositionSummary();
             }
@@ -444,7 +442,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetLevelListResult> GetLevelSummary(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return officerManager.GetLevelSummary();
             }
@@ -459,7 +457,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetRoleInfoListResult> GetRoleInfoList(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 var headers = WebOperationContext.Current.IncomingRequest.Headers;
                 return userManager.GetRoleInfoList();
@@ -475,7 +473,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetAreaListResult> GetAreaList(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return organManager.GetAreaList();
             }
@@ -490,7 +488,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<QueryLogResult> QueryLog(QueryLogParameter param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return logManager.QueryLog(param);
             }
@@ -505,7 +503,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> BackupDB(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return userManager.BackupDB();
             }
@@ -521,7 +519,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<GetBackupLogResult> GetBackupLogList(GetBackupLogParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.GetBackupLogList(parameter);
             }
@@ -537,7 +535,7 @@ namespace HanBin.Presentation.Service.SystemManage
 
         public BaseResponse<bool> DeleteBackup(DeleteBackupParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return userManager.DeleteBackup(parameter);
             }

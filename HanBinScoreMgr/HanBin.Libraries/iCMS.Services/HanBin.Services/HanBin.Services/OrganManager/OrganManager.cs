@@ -134,7 +134,7 @@ namespace HanBin.Services.OrganManager
                 response.Result = true;
 
                 #region 操作日志
-                new LogManager().AddOperationLog(param.CurrentUserID, "添加部门");
+                new LogManager().AddOperationLog(param.CurrentUserID, "添加部门", param.RequestIP);
                 #endregion
 
                 return response;
@@ -206,7 +206,7 @@ namespace HanBin.Services.OrganManager
                 response.Result = result;
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取单位详细信息");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取单位详细信息", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -313,7 +313,7 @@ namespace HanBin.Services.OrganManager
                 response.Result = true;
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "编辑部门");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "编辑部门", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -359,7 +359,7 @@ namespace HanBin.Services.OrganManager
                 response.Result = true;
 
                 #region 操作日志
-                new LogManager().AddOperationLog(param.CurrentUserID, "删除部门");
+                new LogManager().AddOperationLog(param.CurrentUserID, "删除部门", param.RequestIP);
                 #endregion
                 return response;
             }
@@ -501,7 +501,7 @@ namespace HanBin.Services.OrganManager
                     response.Result = result;
 
                     #region 操作日志
-                    new LogManager().AddOperationLog(parameter.CurrentUserID, "获取部门列表");
+                    new LogManager().AddOperationLog(parameter.CurrentUserID, "获取部门列表", parameter.RequestIP);
                     #endregion
 
                     return response;

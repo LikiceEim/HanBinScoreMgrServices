@@ -20,6 +20,61 @@ namespace HanBin.Presentation.Service.FileService
             UpFileResult result = new UpFileResult();
             BaseResponse<UpFileResult> response = new BaseResponse<UpFileResult>();
 
+            //#region 新上传
+            //try
+            //{
+            //    #region 获取文件名
+            //    var fName = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.RequestUri.ToString();
+            //    int len = fName.Length;
+            //    int pos = fName.LastIndexOf('/');
+            //    var realName = fName.Substring(pos + 1, (len - pos - 1));
+            //    var extention = Path.GetExtension(realName).TrimStart('.');
+            //    var oldName = realName.Substring(0, realName.LastIndexOf('.'));
+            //    var saveFileName = oldName + DateTime.Now.Ticks + "." + extention;
+
+            //    #endregion
+
+
+            //    using (StreamReader sr = new StreamReader(FileStream))
+            //    {
+            //        string pathNew = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
+
+            //        if (!Directory.Exists(pathNew))
+            //        {
+            //            Directory.CreateDirectory(pathNew);
+            //        }
+
+            //        //var extention = Path.GetExtension(filename).TrimStart('.');
+            //        //var oldName = filename.Substring(0, filename.LastIndexOf('.'));
+            //        //var saveFileName = oldName + DateTime.Now.Ticks + "." + extention;
+
+
+            //        string str = sr.ReadToEnd();
+
+            //        var savePathNew = Path.Combine(pathNew, saveFileName);
+            //        byte[] buffer = System.Text.Encoding.UTF8.GetBytes(str);
+            //        using (FileStream fs = new FileStream(savePathNew, FileMode.OpenOrCreate))
+            //        {
+            //            fs.Write(buffer, 0, buffer.Length);
+            //        }
+
+            //        response.IsSuccessful = true;
+            //        result.FilePath = saveFileName;
+            //        response.Result = result;
+
+            //        return response;
+            //    }
+            //}
+            //catch (Exception e)
+            //{
+            //    LogHelper.WriteLog(e);
+            //    response.IsSuccessful = false;
+            //    response.Reason = e.Message;
+            //    return response;
+            //}
+
+            //#endregion
+
             try
             {
                 #region 获取文件名

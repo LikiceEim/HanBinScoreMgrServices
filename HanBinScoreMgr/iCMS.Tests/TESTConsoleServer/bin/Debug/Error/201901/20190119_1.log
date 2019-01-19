@@ -1,0 +1,191 @@
+2019/1/19 12:11:13:427
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:11:47:399
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:14:37:570
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:15:07:199
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:23:51:912
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:24:30:354
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:54:34:478
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:54:45:251
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 12:55:41:452
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 13:15:11:174
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 13:31:21:703
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 13:32:25:652
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 13:32:32:789
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 13:33:26:437
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 13:33:56:128
+异常消息：未将对象引用设置到对象的实例。
+异常类型：System.NullReferenceException
+异常方法：ScorePublicShow
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.ScoreManager.ScoreManager.ScorePublicShow(ScorePublicShowParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\ScoreManager\ScoreManager.cs:行号 1014
+
+
+2019/1/19 15:00:10:894
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+
+2019/1/19 15:01:42:022
+异常消息：干部名称已重复
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+
+2019/1/19 15:01:54:736
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+
+2019/1/19 15:04:31:410
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+
+2019/1/19 15:05:36:999
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+
+2019/1/19 15:26:08:882
+异常消息：数据异常
+异常类型：System.Exception
+异常方法：CancelScoreApply
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.CancelScoreApply(CancelScoreApplyParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 622
+
+
+2019/1/19 16:03:55:725
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+
+2019/1/19 16:13:46:041
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 166
+
+

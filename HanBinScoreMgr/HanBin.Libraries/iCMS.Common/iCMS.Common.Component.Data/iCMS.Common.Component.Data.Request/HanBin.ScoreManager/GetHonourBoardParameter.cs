@@ -16,10 +16,14 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
         /// 前N名
         /// </summary>
         public int RankNumber { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 
     public class GetBlackBoardParameter : BaseRequest
     {
         public int RankNumber { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

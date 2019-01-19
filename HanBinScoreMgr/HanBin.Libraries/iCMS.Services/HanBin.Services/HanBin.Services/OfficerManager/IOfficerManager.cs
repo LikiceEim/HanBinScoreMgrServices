@@ -29,7 +29,7 @@ namespace HanBin.Services.OfficerManager
 
         BaseResponse<GetOfficerListResult> GetOfficerList(GetOfficerListParameter parameter);
 
-        BaseResponse<GetOrganSummaryResult> GetOrganSummary();
+        BaseResponse<GetOrganSummaryResult> GetOrganSummary(GetOrganSummaryParameter parameter);
 
         BaseResponse<GetPositionListResult> GetPositionSummary();
 

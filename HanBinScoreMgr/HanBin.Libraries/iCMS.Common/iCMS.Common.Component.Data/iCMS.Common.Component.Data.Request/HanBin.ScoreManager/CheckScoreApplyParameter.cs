@@ -19,4 +19,11 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
 
         public int CurrentUserID { get; set; }
     }
+
+    public class CancelScoreApplyParameter : BaseRequest
+    {
+        public int ApplyID { get; set; }
+
+        public int CurrentUserID { get; set; }
+    }
 }

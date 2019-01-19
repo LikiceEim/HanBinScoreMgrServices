@@ -59,6 +59,12 @@ namespace HanBin.Presentation.Service.ScoreService
         BaseResponse<bool> CheckScoreApply(CheckScoreApplyParameter parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+          Method = "POST",
+          RequestFormat = WebMessageFormat.Json,
+          ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]

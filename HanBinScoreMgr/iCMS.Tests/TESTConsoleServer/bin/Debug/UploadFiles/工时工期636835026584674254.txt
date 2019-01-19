@@ -1,0 +1,6 @@
+﻿------WebKitFormBoundaryy4xJJzzAuw9A7JUZ
+Content-Disposition: form-data; name="FileStream"; filename="工时工期.txt"
+Content-Type: text/plain
+
+�������  ����Ƿ����ַ �� http://111.231.200.224:2892/HanBin/SystemService/XXX, XXX�Ƿ����� �����Ͱ�����ӿ����� ����ʾ���ȥ�� �����������ôɶ����
+------WebKitFormBoundaryy4xJJzzAuw9A7JUZ--

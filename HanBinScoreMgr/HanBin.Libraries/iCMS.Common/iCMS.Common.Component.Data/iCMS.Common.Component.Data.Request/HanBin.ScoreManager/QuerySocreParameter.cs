@@ -27,5 +27,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.ScoreManager
         public int Page { get; set; }
 
         public int PageSize { get; set; }
+
+        public int CurrentUserID { get; set; }
     }
 }

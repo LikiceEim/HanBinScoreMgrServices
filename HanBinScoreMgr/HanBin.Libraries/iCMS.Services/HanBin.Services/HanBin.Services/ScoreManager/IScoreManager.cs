@@ -25,6 +25,8 @@ namespace HanBin.Services.ScoreManager
 
         BaseResponse<bool> CheckScoreApply(CheckScoreApplyParameter parameter);
 
+        BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter);
+
         BaseResponse<SystemStatSummaryResult> SystemStatSummary();
 
         BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter);

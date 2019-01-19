@@ -176,6 +176,7 @@ namespace HanBin.Common.Component.Tool
             Math.DivRem(sum, 11, out y);
             if (arrVarifyCode[y] != Id.Substring(17, 1).ToLower())
             {
+                return true;//移除校验码校验，过于严格
                 return false;//校验码验证
             }
             return true;//符合GB11643-1999标准

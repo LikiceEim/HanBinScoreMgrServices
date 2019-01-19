@@ -29,7 +29,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> AddScoreItem(AddScoreItemParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.AddScoreItem(parameter);
             }
@@ -45,7 +45,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> EditScoreItem(EditScoreItemParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.EditScoreItem(parameter);
             }
@@ -60,7 +60,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> DeleteScoreItem(DeleteScoreItemParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.DeleteScoreItem(parameter);
             }
@@ -75,7 +75,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetScoreItemListResult> GetScoreItemList(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return scoreManager.GetScoreItemList();
             }
@@ -86,12 +86,11 @@ namespace HanBin.Presentation.Service.ScoreService
                 response.Reason = "JWT_ERR";
                 return response;
             }
-
         }
 
         public BaseResponse<bool> AddScoreApply(AddScoreApplyParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.AddScoreApply(parameter);
             }
@@ -106,7 +105,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> EditScoreApply(EditScoreApplyParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.EditScoreApply(parameter);
             }
@@ -121,7 +120,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> CheckScoreApply(CheckScoreApplyParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.CheckScoreApply(parameter);
             }
@@ -134,9 +133,24 @@ namespace HanBin.Presentation.Service.ScoreService
             }
         }
 
+        public BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter)
+        {
+            if (Validate(parameter))
+            {
+                return scoreManager.CancelScoreApply(parameter);
+            }
+            else
+            {
+                BaseResponse<bool> response = new BaseResponse<bool>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+
         public BaseResponse<SystemStatSummaryResult> SystemStatSummary(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return scoreManager.SystemStatSummary();
             }
@@ -151,7 +165,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetHonourBoard(parameter);
             }
@@ -166,7 +180,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetBlackBoardResult> GetBlackBoard(GetBlackBoardParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetBlackBoard(parameter);
             }
@@ -181,7 +195,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<WhatsToDoSummaryResult> GetWhatsToDoSummary(GetWhatsToDoSummaryParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetWhatsToDoSummary(parameter);
             }
@@ -196,7 +210,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetWhatsToDoDetailListResult> GetWhatsToDoDetailList(GetWhatsToDoDetailListParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetWhatsToDoDetailList(parameter);
             }
@@ -211,7 +225,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetHighLevelFeedBackSummaryResult> GetHighLevelFeedBackSummary(GetHighLevelFeedBackSummaryParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetHighLevelFeedBackSummary(parameter);
             }
@@ -227,7 +241,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetHighLevelFeedBackDetailListResult> GetHighLevelFeedBackDetailList(GetHighLevelFeedBackDetailListParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetHighLevelFeedBackDetailList(parameter);
             }
@@ -242,7 +256,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<GetScoreChangeHistoryResult> GetScoreChangeHistory(GetScoreChangeHistoryParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.GetScoreChangeHistory(parameter);
             }
@@ -257,7 +271,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<ScorePublicShowResult> ScorePublicShow(ScorePublicShowParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.ScorePublicShow(parameter);
             }
@@ -272,7 +286,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<QuerySocreResult> QuerySocre(QuerySocreParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.QuerySocre(parameter);
             }
@@ -287,7 +301,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<AreaAverageScoreResult> AreaAverageScore(BaseRequest param)
         {
-            if (Validate(param.Token))
+            if (Validate(param))
             {
                 return scoreManager.AreaAverageScore();
             }
@@ -302,7 +316,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<AgeAverageScoreResult> AgeAverageScore(AgeAverageScoreParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.AgeAverageScore(parameter);
             }
@@ -317,7 +331,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.OrganAverageScore(parameter);
             }
@@ -425,7 +439,7 @@ namespace HanBin.Presentation.Service.ScoreService
 
         public BaseResponse<bool> DeleteFile(DeleteFileParameter parameter)
         {
-            if (Validate(parameter.Token))
+            if (Validate(parameter))
             {
                 return scoreManager.DeleteFile(parameter);
             }

@@ -171,15 +171,28 @@ namespace HanBin.Services.OfficerManager
                     officer.Name = parameter.Name;
                     officer.Gender = parameter.Gender;
                     officer.IdentifyCardNumber = parameter.IdentifyNumber;
-                    officer.Birthday = parameter.Birthday;
+                    var birth = DateTime.MinValue;
+                    var birthdayStr = Utilitys.GetBrithdayFromIdCard(parameter.IdentifyNumber);
+                    if (DateTime.TryParse(birthdayStr, out birth))
+                    {
+                        officer.Birthday = birth;
+                    }
+
                     officer.OrganizationID = parameter.OrganizationID;
                     officer.PositionID = parameter.PositionID;
                     officer.LevelID = parameter.LevelID;
-                    officer.OnOfficeDate = parameter.OnOfficeDate;
+
+                    DateTime onOfficerDate = DateTime.MinValue;
+                    if (DateTime.TryParse(parameter.OnOfficeDate, out onOfficerDate))
+                    {
+                        officer.OnOfficeDate = onOfficerDate;
+                    }
                     officer.InitialScore = parameter.InitialScore;
                     officer.CurrentScore = officer.InitialScore;
                     officer.LastUpdateDate = DateTime.Now;
                     officer.LastUpdateUserID = parameter.AddUserID;
+                    officer.AddUserID = parameter.AddUserID;
+
                     operResult = dbContext.Officers.AddNew<Officer>(dbContext, officer);
                     if (operResult.ResultType != EnumOperationResultType.Success)
                     {
@@ -187,7 +200,7 @@ namespace HanBin.Services.OfficerManager
                     }
 
                     #region 操作日志
-                    new LogManager().AddOperationLog(parameter.AddUserID, "添加干部");
+                    new LogManager().AddOperationLog(parameter.AddUserID, "添加干部", parameter.RequestIP);
                     #endregion
 
                     var scoreItemArray = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted, true).ToList();
@@ -362,11 +375,24 @@ namespace HanBin.Services.OfficerManager
                 offIndb.Name = parameter.Name;
                 offIndb.Gender = parameter.Gender;
                 offIndb.IdentifyCardNumber = parameter.IdentifyNumber;
-                offIndb.Birthday = parameter.Birthday;
+
+                var birth = Utilitys.GetBrithdayFromIdCard(parameter.IdentifyNumber);
+                var birthDay = DateTime.MinValue;
+                if (DateTime.TryParse(birth, out birthDay))
+                {
+                    offIndb.Birthday = birthDay;
+                }
+
                 offIndb.OrganizationID = parameter.OrganizationID;
                 offIndb.PositionID = parameter.PositionID;
                 offIndb.LevelID = parameter.LevelID;
-                offIndb.OnOfficeDate = parameter.OnOfficeDate;
+
+                var onOfficeDate = DateTime.MinValue;
+                if (DateTime.TryParse(parameter.OnOfficeDate, out onOfficeDate))
+                {
+                    offIndb.OnOfficeDate = onOfficeDate;
+                }
+
                 offIndb.Duty = parameter.Duty;
                 offIndb.InitialScore = parameter.InitialScore;
 
@@ -440,7 +466,7 @@ namespace HanBin.Services.OfficerManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部详细信息");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部详细信息", parameter.RequestIP);
                 #endregion
 
                 response.Result = result;
@@ -522,7 +548,7 @@ namespace HanBin.Services.OfficerManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部积分信息");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取干部积分信息", parameter.RequestIP);
                 #endregion
 
                 response.Result = result;
@@ -569,7 +595,7 @@ namespace HanBin.Services.OfficerManager
                 result.UploadFileList.AddRange(apyFiles);
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息", parameter.RequestIP);
                 #endregion
 
                 response.Result = result;
@@ -603,7 +629,7 @@ namespace HanBin.Services.OfficerManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -662,7 +688,7 @@ namespace HanBin.Services.OfficerManager
                 #endregion
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "删除干部");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "删除干部", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -697,7 +723,7 @@ namespace HanBin.Services.OfficerManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, string.Format("设置干部:{0}退休", officer.Name));
+                new LogManager().AddOperationLog(parameter.CurrentUserID, string.Format("设置干部:{0}退休", officer.Name), parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -801,7 +827,7 @@ namespace HanBin.Services.OfficerManager
                     response.Result = result;
 
                     #region 操作日志
-                    new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息");
+                    new LogManager().AddOperationLog(parameter.CurrentUserID, "获取积分申请详细信息", parameter.RequestIP);
                     #endregion
 
                     return response;
@@ -818,13 +844,19 @@ namespace HanBin.Services.OfficerManager
         #endregion
 
         #region 添加干部时候，获取单位信息
-        public BaseResponse<GetOrganSummaryResult> GetOrganSummary()
+        public BaseResponse<GetOrganSummaryResult> GetOrganSummary(GetOrganSummaryParameter parameter)
         {
             BaseResponse<GetOrganSummaryResult> response = new BaseResponse<GetOrganSummaryResult>();
             GetOrganSummaryResult result = new GetOrganSummaryResult();
             try
             {
-                var organList = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).Select(t => new OrganSummaryInfo
+                var organQuerable = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true);
+                if (parameter.OrganTypeID.HasValue && parameter.OrganTypeID.Value > 0)
+                {
+                    organQuerable = organQuerable.Where(t => t.OrganTypeID == parameter.OrganTypeID.Value);
+                }
+
+                var organList = organQuerable.Select(t => new OrganSummaryInfo
                 {
                     OrganID = t.OrganID,
                     OrganFullName = t.OrganFullName,

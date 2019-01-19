@@ -22,6 +22,8 @@ namespace HanBin.Common.Component.Data.Base
     public class BaseRequest
     {
         public string Token { get; set; }
+
+        public string RequestIP { get; set; }
         //private string key = Utilitys.GetAppConfig("Key");
         //private string secret = Utilitys.GetAppConfig("Secret");
 

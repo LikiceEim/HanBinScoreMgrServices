@@ -44,7 +44,7 @@ namespace HanBin.Presentation.Service.SystemManage
             ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<GetUserInfoResult> GetUserInfo(GetUserInfoParameter parameter);
 
-        [WebInvoke(UriTemplate = "GetUserInfo",
+        [WebInvoke(UriTemplate = "UpdatePWD",
            BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
@@ -168,7 +168,7 @@ namespace HanBin.Presentation.Service.SystemManage
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<GetOrganSummaryResult> GetOrganSummary(BaseRequest parameter);
+        BaseResponse<GetOrganSummaryResult> GetOrganSummary(GetOrganSummaryParameter parameter);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
            Method = "POST",

@@ -78,13 +78,13 @@ namespace HanBin.Services.ScoreManager
                     return response;
                 }
 
-                var isExisted = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.ItemDescription) && t.ItemDescription.Trim().Equals(parameter.ItemDescription.Trim()), true).Any();
-                if (isExisted)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "已存在相同的积分条目";
-                    return response;
-                }
+                //var isExisted = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.ItemDescription) && t.ItemDescription.Trim().Equals(parameter.ItemDescription.Trim()), true).Any();
+                //if (isExisted)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "已存在相同的积分条目";
+                //    return response;
+                //}
 
                 var scoreItem = new ScoreItem();
                 scoreItem.ItemScore = parameter.ItemScore;
@@ -101,7 +101,7 @@ namespace HanBin.Services.ScoreManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -142,13 +142,13 @@ namespace HanBin.Services.ScoreManager
                     return response;
                 }
 
-                var isExisted = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && t.ItemID != parameter.ItemID && !string.IsNullOrEmpty(t.ItemDescription) && t.ItemDescription.Trim().Equals(parameter.ItemDescription.Trim()), true).Any();
-                if (isExisted)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "已存在相同的积分条目";
-                    return response;
-                }
+                //var isExisted = scoreItemRepository.GetDatas<ScoreItem>(t => !t.IsDeleted && t.ItemID != parameter.ItemID && !string.IsNullOrEmpty(t.ItemDescription) && t.ItemDescription.Trim().Equals(parameter.ItemDescription.Trim()), true).Any();
+                //if (isExisted)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "已存在相同的积分条目";
+                //    return response;
+                //}
 
                 scoreItemIndb.ItemScore = parameter.ItemScore;
                 scoreItemIndb.ItemDescription = parameter.ItemDescription;
@@ -159,7 +159,7 @@ namespace HanBin.Services.ScoreManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -204,7 +204,7 @@ namespace HanBin.Services.ScoreManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "删除积分条目");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "删除积分条目", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -300,7 +300,7 @@ namespace HanBin.Services.ScoreManager
                 });
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分申请");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分申请", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -365,7 +365,7 @@ namespace HanBin.Services.ScoreManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "编辑积分申请");
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "编辑积分申请", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -457,7 +457,7 @@ namespace HanBin.Services.ScoreManager
 
                 string approveRes = parameter.ApplyStatus == (int)EnumApproveStatus.Pass ? "通过" : "驳回";
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, string.Format("{0}积分申请", approveRes));
+                new LogManager().AddOperationLog(parameter.CurrentUserID, string.Format("{0}积分申请", approveRes), parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -466,6 +466,51 @@ namespace HanBin.Services.ScoreManager
             {
                 LogHelper.WriteLog(e);
 
+                response.IsSuccessful = false;
+                response.Reason = e.Message;
+                return response;
+            }
+        }
+        #endregion
+
+        #region 撤销积分申请
+        public BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter)
+        {
+            BaseResponse<bool> response = new BaseResponse<bool>();
+
+            try
+            {
+                var apply = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && t.ApplyID == parameter.ApplyID, true).FirstOrDefault();
+                if (apply == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "撤销积分申请时候，数据异常";
+                    return response;
+                }
+                if (apply.ApplyStatus != (int)EnumApproveStatus.Approving)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "此积分申请已经被审批过，或者已撤销";
+                    return response;
+                }
+
+                apply.ApplyStatus = (int)EnumApproveStatus.Revoke;
+
+                //更新时间排序需要此字段
+                apply.LastUpdateDate = DateTime.Now;
+                apply.LastUpdateUserID = parameter.CurrentUserID;
+
+                var operRes = scoreApplyRepository.Update<ScoreApply>(apply);
+                if (operRes.ResultType != EnumOperationResultType.Success)
+                {
+                    throw new Exception("数据库操作异常");
+                }
+
+                return response;
+            }
+            catch (Exception e)
+            {
+                LogHelper.WriteLog(e);
                 response.IsSuccessful = false;
                 response.Reason = e.Message;
                 return response;
@@ -515,7 +560,23 @@ namespace HanBin.Services.ScoreManager
 
                 var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
 
-                var scoreRankList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderByDescending(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
+                //二级管理员只能获取本单位数据
+                var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (currentUser == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "登陆信息异常";
+                    return response;
+                }
+
+                IQueryable<Officer> officerQurable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    //如果是二级管理员，则只获取本单位的干部
+                    officerQurable = officerQurable.Where(t => t.OrganizationID == currentUser.OrganizationID);
+                }
+
+                var scoreRankList = officerQurable.OrderByDescending(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
                 {
                     int positionID = t.PositionID;
                     var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
@@ -562,8 +623,24 @@ namespace HanBin.Services.ScoreManager
 
                 var positionArray = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted, true).ToList();
 
+                //二级管理员只能获取本单位数据
+                var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                if (currentUser == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "登陆信息异常";
+                    return response;
+                }
+
+                IQueryable<Officer> officerQurable = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    //如果是二级管理员，则只获取本单位的干部
+                    officerQurable = officerQurable.Where(t => t.OrganizationID == currentUser.OrganizationID);
+                }
+
                 //按照分数升序排列
-                var scoreRankList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).OrderBy(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
+                var scoreRankList = officerQurable.OrderBy(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
                 {
                     int positionID = t.PositionID;
                     var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
@@ -576,7 +653,6 @@ namespace HanBin.Services.ScoreManager
                         CurrentScore = t.CurrentScore,
                         Gender = t.Gender,
                         PositionName = positionName
-
                     };
                 });
 
@@ -741,19 +817,25 @@ namespace HanBin.Services.ScoreManager
             {
                 //二级管理员只能浏览本单位干部的积分申请，及反馈信息
                 var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
-                if (currentUser.RoleID != (int)EnumRoleType.SecondLevelAdmin)
+                if (currentUser.RoleID == (int)EnumRoleType.FirstLevelAdmin)
                 {
                     response.IsSuccessful = false;
-                    response.Reason = "只有二级管理员具有此权限";
+                    response.Reason = "一级管理员无此权限";
                     return response;
                 }
-                //获取单位ID
-                int organID = currentUser.OrganizationID;
-                //获取本单位的干部ID
-                var officerIDList = GetOfficersByOrganID(organID);
+
+                var scoreApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true);
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    //获取单位ID
+                    int organID = currentUser.OrganizationID;
+                    //获取本单位的干部ID
+                    var officerIDList = GetOfficersByOrganID(organID);
+                    scoreApplyQuerable = scoreApplyQuerable.Where(t => officerIDList.Contains(t.OfficerID));
+                }
 
                 //只获取本单位干部的反馈信息
-                var approvedApplyList = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && officerIDList.Contains(t.OfficerID), true).OrderByDescending(t => t.LastUpdateDate).Take(parameter.RankNumber).ToArray().Select(t =>
+                var approvedApplyList = scoreApplyQuerable.OrderByDescending(t => t.LastUpdateDate).Take(parameter.RankNumber).ToArray().Select(t =>
                 {
                     int proposeUserID = t.ProposeID;
 
@@ -796,16 +878,21 @@ namespace HanBin.Services.ScoreManager
             {
                 //获取当前登陆用户
                 var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
-                if (currentUser.RoleID != (int)EnumRoleType.SecondLevelAdmin)
+                if (currentUser.RoleID == (int)EnumRoleType.FirstLevelAdmin)
                 {
                     response.IsSuccessful = false;
-                    response.Reason = "只有二级管理员具有此权限";
+                    response.Reason = "一级管理员无此权限";
                     return response;
                 }
 
-                var officerIDList = GetOfficersByOrganID(currentUser.OrganizationID);
+                var scoreApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject), true);
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    var officerIDList = GetOfficersByOrganID(currentUser.OrganizationID);
+                    scoreApplyQuerable = scoreApplyQuerable.Where(t => officerIDList.Contains(t.OfficerID));
+                }
 
-                var approvedApplyQuerable = scoreApplyRepository.GetDatas<ScoreApply>(t => !t.IsDeleted && (t.ApplyStatus == (int)EnumApproveStatus.Pass || t.ApplyStatus == (int)EnumApproveStatus.Reject) && t.ProcessUserID.HasValue && officerIDList.Contains(t.OfficerID), true).OrderByDescending(t => t.LastUpdateDate);
+                var approvedApplyQuerable = scoreApplyQuerable.OrderByDescending(t => t.LastUpdateDate);
                 int total = approvedApplyQuerable.Count();
 
                 var officerArray = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).ToList();
@@ -860,7 +947,6 @@ namespace HanBin.Services.ScoreManager
                         approvedApply.ItemDescription = scoreItem.ItemDescription;
                     }
 
-
                     if (t.ProcessUserID.HasValue)
                     {
                         approvedApply.ProcessuUserID = t.ProcessUserID.Value;
@@ -869,6 +955,11 @@ namespace HanBin.Services.ScoreManager
                         {
                             approvedApply.ProcessuUserName = user.UserToken;
                         }
+                    }
+                    else
+                    {
+                        approvedApply.ProcessuUserID = 0;
+                        approvedApply.ProcessuUserName = "系统";
                     }
 
                     var files = ufRepository.GetDatas<ApplyUploadFile>(f => !f.IsDeleted && f.ApplyID == t.ApplyID, true).Select(f => f.FilePath).ToList();
@@ -1059,6 +1150,19 @@ namespace HanBin.Services.ScoreManager
                 using (iCMSDbContext dbContext = new iCMSDbContext())
                 {
                     IQueryable<Officer> officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService);
+
+                    var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
+                    if (currentUser == null)
+                    {
+                        response.IsSuccessful = false;
+                        response.Reason = "登陆用户信息异常";
+                        return response;
+                    }
+
+                    if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                    {
+                        officerQuerable = officerQuerable.Where(t => t.OrganizationID == currentUser.OrganizationID);
+                    }
                     if (parameter.OrganTypeID.HasValue && parameter.OrganTypeID.Value > 0)
                     {
                         officerQuerable = from o in officerQuerable

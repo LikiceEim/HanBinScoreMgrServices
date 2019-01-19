@@ -35,7 +35,7 @@ namespace TESTConsole
             param.Name = "剪刀手爱德华";
             param.Gender = 1;
             param.IdentifyNumber = "111";
-            param.Birthday = DateTime.Now;
+            param.Birthday = DateTime.Now.ToString();
             param.OrganizationID = 62;
 
 
