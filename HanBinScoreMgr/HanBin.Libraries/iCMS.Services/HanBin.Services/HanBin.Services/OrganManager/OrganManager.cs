@@ -38,6 +38,8 @@ namespace HanBin.Services.OrganManager
 
         [Dependency]
         public IRepository<Area> areaRepository { get; set; }
+        [Dependency]
+        public IRepository<HBUser> userRepository { get; set; }
 
         public OrganManager()
         {
@@ -48,6 +50,7 @@ namespace HanBin.Services.OrganManager
             officerPositionRepository = new Repository<OfficerPositionType>();
             officerLevelRepository = new Repository<OfficerLevelType>();
             areaRepository = new Repository<Area>();
+            userRepository = new Repository<HBUser>();
         }
 
         #region 添加单位
@@ -346,6 +349,12 @@ namespace HanBin.Services.OrganManager
                 if (hasOfficers)
                 {
                     throw new Exception("单位下有干部，不能删除");
+                }
+
+                var hasUsers = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.OrganizationID == organ.OrganID, true).Any();
+                if (hasUsers)
+                {
+                    throw new Exception("单位下有用户，不能删除");
                 }
                 //逻辑删除
                 organ.IsDeleted = true;

@@ -37,5 +37,7 @@ namespace HanBin.Common.Component.Data.Response.HanBin.SystemManager
         public string RoleName { get; set; }
         public int LastUpdateUserID { get; set; }
         public DateTime AddDate { get; set; }
+
+        public int OrganTypeID { get; set; }
     }
 }

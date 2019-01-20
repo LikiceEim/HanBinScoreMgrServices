@@ -324,7 +324,8 @@ namespace HanBin.Services.SystemManager
                                 OrganizationID = user.OrganizationID,
                                 OrganizationName = organ == null ? string.Empty : organ.OrganFullName,
                                 UseStatus = user.UseStatus,
-                                AddDate = user.AddDate
+                                AddDate = user.AddDate,
+                                OrganTypeID = organ == null ? 0 : organ.OrganTypeID
                             };
                         }).AsQueryable();
 

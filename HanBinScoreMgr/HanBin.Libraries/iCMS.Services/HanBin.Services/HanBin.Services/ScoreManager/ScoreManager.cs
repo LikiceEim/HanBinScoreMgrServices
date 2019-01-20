@@ -819,7 +819,7 @@ namespace HanBin.Services.ScoreManager
                 var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
                 if (currentUser.RoleID == (int)EnumRoleType.FirstLevelAdmin)
                 {
-                    response.IsSuccessful = false;
+                    response.IsSuccessful = true;
                     response.Reason = "一级管理员无此权限";
                     return response;
                 }
@@ -880,7 +880,7 @@ namespace HanBin.Services.ScoreManager
                 var currentUser = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID, true).FirstOrDefault();
                 if (currentUser.RoleID == (int)EnumRoleType.FirstLevelAdmin)
                 {
-                    response.IsSuccessful = false;
+                    response.IsSuccessful = true;
                     response.Reason = "一级管理员无此权限";
                     return response;
                 }
@@ -1451,19 +1451,16 @@ namespace HanBin.Services.ScoreManager
             try
             {
                 var file = ufRepository.GetDatas<ApplyUploadFile>(t => !t.IsDeleted && t.FilePath.Trim().Equals(parameter.FileName.Trim()), true).FirstOrDefault();
-                if (file == null)
+                if (file != null)
                 {
-                    response.IsSuccessful = false;
-                    response.Reason = "删除文件数据异常";
-                    return response;
-                }
-
-                var operRes = ufRepository.Delete<ApplyUploadFile>(file);
-                if (operRes.ResultType != EnumOperationResultType.Success)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "删除文件异常";
-                    return response;
+                    file.IsDeleted = true;
+                    var operRes = ufRepository.Update<ApplyUploadFile>(file);
+                    if (operRes.ResultType != EnumOperationResultType.Success)
+                    {
+                        response.IsSuccessful = false;
+                        response.Reason = "删除文件异常";
+                        return response;
+                    }
                 }
 
                 string path = System.AppDomain.CurrentDomain.BaseDirectory + @"\UploadFiles\";
