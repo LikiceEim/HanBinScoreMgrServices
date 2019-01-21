@@ -152,6 +152,8 @@ namespace HanBin.Services.ScoreManager
 
                 scoreItemIndb.ItemScore = parameter.ItemScore;
                 scoreItemIndb.ItemDescription = parameter.ItemDescription;
+                scoreItemIndb.LastUpdateDate = DateTime.Now;
+                scoreItemIndb.LastUpdateUserID = parameter.EditUserID;
                 var operResult = scoreItemRepository.Update<ScoreItem>(scoreItemIndb);
                 if (operResult.ResultType != EnumOperationResultType.Success)
                 {
@@ -159,7 +161,7 @@ namespace HanBin.Services.ScoreManager
                 }
 
                 #region 操作日志
-                new LogManager().AddOperationLog(parameter.CurrentUserID, "添加积分条目", parameter.RequestIP);
+                new LogManager().AddOperationLog(parameter.CurrentUserID, "修改积分条目", parameter.RequestIP);
                 #endregion
 
                 return response;
@@ -994,7 +996,7 @@ namespace HanBin.Services.ScoreManager
             try
             {
 
-                IQueryable<ScoreChangeHistory> scHisQuerable = schRepository.GetDatas<ScoreChangeHistory>(t => true, true).OrderByDescending(t => t.AddDate);
+                IQueryable<ScoreChangeHistory> scHisQuerable = schRepository.GetDatas<ScoreChangeHistory>(t => !t.IsDeleted, true).OrderByDescending(t => t.AddDate);
 
                 //超级管理员，一级管理员获取全部的积分公示信息，二级管理员只能获取本单位干部的积分公示
                 var currentUser = userRepository.GetDatas<HBUser>(t => t.UserID == parameter.CurrentUserID, true).FirstOrDefault();

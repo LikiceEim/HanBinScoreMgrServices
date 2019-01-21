@@ -90,6 +90,15 @@ namespace HanBin.Services.OfficerManager
             {
                 throw new Exception("请输入身份证号码");
             }
+            if (string.IsNullOrEmpty(parameter.OnOfficeDate))
+            {
+                throw new Exception("请输入入职时间");
+            }
+
+            if (parameter.OrganizationID < 1)
+            {
+                throw new Exception("请选择单位");
+            }
 
             var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
             if (isExisted)
@@ -101,16 +110,6 @@ namespace HanBin.Services.OfficerManager
             {
                 throw new Exception("请输入合法的身份证号码");
             }
-
-            //DateTime birth = DateTime.MinValue;
-            //var birthdayStr = Utilitys.GetBrithdayFromIdCard(parameter.IdentifyNumber);
-            //if (DateTime.TryParse(birthdayStr, out birth))
-            //{
-            //    if (birth != parameter.Birthday)
-            //    {
-            //        throw new Exception("身份证号码与出生日期不相符合");
-            //    }
-            //}
 
             isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
             if (isExisted)
@@ -127,7 +126,7 @@ namespace HanBin.Services.OfficerManager
             var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == addUser.OrganizationID).FirstOrDefault();
             if (organ == null)
             {
-                throw new Exception("数据异常");
+                throw new Exception("请选择干部所在单位");
             }
             int roleID = addUser.RoleID;
             switch (roleID)
@@ -214,10 +213,12 @@ namespace HanBin.Services.OfficerManager
                             scApply.OfficerID = officer.OfficerID;
                             scApply.ItemID = t.ItemID;
                             var tempscoreItem = scoreItemArray.Where(s => s.ItemID == t.ItemID).FirstOrDefault();
-                            if (tempscoreItem != null)
+                            if (tempscoreItem == null)
                             {
-                                scApply.ItemScore = tempscoreItem.ItemScore;
+                                throw new Exception("积分条目已被删除");
                             }
+
+                            scApply.ItemScore = tempscoreItem.ItemScore;
 
                             scApply.ApplyStatus = 1;//自动设置为审批通过
                             scApply.ProposeID = officer.AddUserID;
@@ -296,11 +297,25 @@ namespace HanBin.Services.OfficerManager
                 {
                     response.IsSuccessful = false;
                     response.Reason = "干部名称不能为空";
+                    return response;
                 }
                 if (string.IsNullOrEmpty(parameter.IdentifyNumber))
                 {
                     response.IsSuccessful = false;
                     response.Reason = "身份证号不能为空";
+                    return response;
+                }
+                if (string.IsNullOrEmpty(parameter.OnOfficeDate))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "请输入入职时间";
+                    return response;
+                }
+
+                if (parameter.OrganizationID < 1)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "请选择单位";
                     return response;
                 }
 
@@ -394,7 +409,7 @@ namespace HanBin.Services.OfficerManager
                 }
 
                 offIndb.Duty = parameter.Duty;
-                offIndb.InitialScore = parameter.InitialScore;
+                //offIndb.InitialScore = parameter.InitialScore;
 
                 var res = officerRepository.Update<Officer>(offIndb);
                 if (res.ResultType != EnumOperationResultType.Success)

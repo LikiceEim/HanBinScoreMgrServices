@@ -257,7 +257,7 @@ namespace HanBin.Services.OrganManager
                     return response;
                 }
 
-                if (parameter.OrganFullName.Length > 10)
+                if (parameter.OrganShortName.Length > 10)
                 {
                     response.IsSuccessful = false;
                     response.Reason = "单位简称不能超过10个字符";
@@ -354,7 +354,7 @@ namespace HanBin.Services.OrganManager
                 var hasUsers = userRepository.GetDatas<HBUser>(t => !t.IsDeleted && t.OrganizationID == organ.OrganID, true).Any();
                 if (hasUsers)
                 {
-                    throw new Exception("单位下有用户，不能删除");
+                    throw new Exception("单位下有管理员，不能删除");
                 }
                 //逻辑删除
                 organ.IsDeleted = true;

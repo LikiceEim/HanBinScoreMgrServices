@@ -112,13 +112,20 @@ namespace HanBin.Common.Component.Tool
                 var algorithm = (string)headerData["alg"];
 
                 #region 验证过期时间
-                //var tokenDate = (DateTime)payloadData["date"];
-                //var expireDate = (long)payloadData["exp"];
+                string tokenDateStr = payloadData["date"].ToString();
 
-                //if ((DateTime.Now - tokenDate).TotalMilliseconds > expireDate)
-                //{
-                //    return false;//Token 过期
-                //}
+                //签发时间
+                var datetime = DateTime.MinValue;
+                if (DateTime.TryParse(tokenDateStr, out datetime))
+                {
+                    var expireDate = (long)payloadData["exp"];
+
+                    if ((DateTime.Now - datetime).TotalMilliseconds > expireDate)
+                    {
+                        return false;//Token 过期
+                    }
+                }
+
                 #endregion
 
                 var signature = HashAlgorithms[GetHashAlgorithm(algorithm)](keyBytes, bytesToSign);

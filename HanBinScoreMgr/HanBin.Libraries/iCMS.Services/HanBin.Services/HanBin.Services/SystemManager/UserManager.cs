@@ -81,7 +81,8 @@ namespace HanBin.Services.SystemManager
                             {
                                    {"name", user.UserToken },                
                                    {"exp",1000*60*30},
-                                   {"role",user.RoleID }
+                                   {"role",user.RoleID },
+                                   {"date",DateTime.Now.ToString()}
                                    //{"date",DateTime.Now }                                  
                             };
                     var privateKey = Utilitys.GetAppConfig("PrivateKey");
@@ -517,14 +518,43 @@ namespace HanBin.Services.SystemManager
                     return response;
                 }
 
-                if (curUser.PWD != MD5Helper.MD5Encrypt64(Utilitys.DecodeBase64("UTF-8", parameter.OriginPWD)))
+                if (string.IsNullOrEmpty(parameter.OriginPWD))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "请输入原密码";
+                    return response;
+                }
+
+                var pwd = Utilitys.DecodeBase64("UTF-8", parameter.OriginPWD);
+
+                if (curUser.PWD != MD5Helper.MD5Encrypt64(pwd))
                 {
                     response.IsSuccessful = false;
                     response.Reason = "原密码不正确";
                     return response;
                 }
+                if (string.IsNullOrEmpty(parameter.NewPWD))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "请输入新密码";
+                    return response;
+                }
 
-                curUser.PWD = MD5Helper.MD5Encrypt64(Utilitys.DecodeBase64("UTF-8", parameter.NewPWD));
+                var newPWD = Utilitys.DecodeBase64("UTF-8", parameter.NewPWD);
+                if (string.IsNullOrEmpty(newPWD))
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "请输入新密码";
+                    return response;
+                }
+                if (newPWD.Length < 6)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "新密码位数至少是6位";
+                    return response;
+                }
+
+                curUser.PWD = MD5Helper.MD5Encrypt64(newPWD);
 
                 var operRes = hbUserReosiory.Update<HBUser>(curUser);
                 if (operRes.ResultType != EnumOperationResultType.Success)
