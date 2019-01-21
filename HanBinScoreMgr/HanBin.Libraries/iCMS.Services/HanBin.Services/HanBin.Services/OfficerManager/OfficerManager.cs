@@ -100,18 +100,18 @@ namespace HanBin.Services.OfficerManager
                 throw new Exception("请选择单位");
             }
 
-            var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
-            if (isExisted)
-            {
-                throw new Exception("干部名称已重复");
-            }
+            //var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.Name.Equals(parameter.Name)).Any();
+            //if (isExisted)
+            //{
+            //    throw new Exception("干部名称已重复");
+            //}
 
             if (!Utilitys.CheckIDCard(parameter.IdentifyNumber))
             {
                 throw new Exception("请输入合法的身份证号码");
             }
 
-            isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
+            var isExisted = dbContext.Officers.Where(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber)).Any();
             if (isExisted)
             {
                 throw new Exception("身份证号码重复");
@@ -319,15 +319,15 @@ namespace HanBin.Services.OfficerManager
                     return response;
                 }
 
-                var isExisted = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.OfficerID != parameter.OfficerID && t.Name.Equals(parameter.Name), true).Any();
-                if (isExisted)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "干部名称已存在";
-                    return response;
-                }
+                //var isExisted = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.Name) && t.OfficerID != parameter.OfficerID && t.Name.Equals(parameter.Name), true).Any();
+                //if (isExisted)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "干部名称已存在";
+                //    return response;
+                //}
 
-                isExisted = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber) && t.OfficerID != parameter.OfficerID, true).Any();
+                var isExisted = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.IdentifyCardNumber) && t.IdentifyCardNumber.Equals(parameter.IdentifyNumber) && t.OfficerID != parameter.OfficerID, true).Any();
                 if (isExisted)
                 {
                     throw new Exception("身份证号码重复");
@@ -533,7 +533,7 @@ namespace HanBin.Services.OfficerManager
                         if (scoreItem != null)
                         {
                             applyItenInfo.ItemID = scoreItem.ItemID;
-                            applyItenInfo.ItemScore = scoreItem.ItemScore;
+                            applyItenInfo.ItemScore = t.ItemScore;//scoreItem.ItemScore;
                             applyItenInfo.ItemDescription = scoreItem.ItemDescription;
                         }
 

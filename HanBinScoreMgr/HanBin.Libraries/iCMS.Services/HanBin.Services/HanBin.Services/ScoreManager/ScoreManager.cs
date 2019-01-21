@@ -867,7 +867,7 @@ namespace HanBin.Services.ScoreManager
 
         private List<int> GetOfficersByOrganID(int organID)
         {
-            var officerIDList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService && t.OrganizationID == organID, true).Select(t => t.OfficerID).ToList();
+            var officerIDList = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OrganizationID == organID, true).Select(t => t.OfficerID).ToList();
             return officerIDList;
         }
 
