@@ -529,10 +529,10 @@ namespace HanBin.Services.ScoreManager
             try
             {
                 result.OrganizatonCount = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).Count();
-                result.OfficerCount = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).Count();
+                result.OfficerCount = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Count();
                 result.UserCount = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true).Count();
 
-                result.AvarageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted, true).Select(t => t.CurrentScore).Average();
+                result.AvarageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Select(t => t.CurrentScore).Average();
 
                 respose.Result = result;
                 return respose;

@@ -80,7 +80,7 @@ namespace HanBin.Services.SystemManager
                     var payload = new Dictionary<string, object>
                             {
                                    {"name", user.UserToken },                
-                                   {"exp",1000*60*30},
+                                   {"exp",1000*60*240},//超时时间 4个小时
                                    {"role",user.RoleID },
                                    {"date",DateTime.Now.ToString()}
                                    //{"date",DateTime.Now }                                  

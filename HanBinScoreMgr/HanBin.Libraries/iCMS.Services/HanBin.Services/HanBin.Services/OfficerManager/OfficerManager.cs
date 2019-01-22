@@ -92,7 +92,7 @@ namespace HanBin.Services.OfficerManager
             }
             if (string.IsNullOrEmpty(parameter.OnOfficeDate))
             {
-                throw new Exception("请输入入职时间");
+                throw new Exception("请输入任职时间");
             }
 
             if (parameter.OrganizationID < 1)
@@ -308,7 +308,7 @@ namespace HanBin.Services.OfficerManager
                 if (string.IsNullOrEmpty(parameter.OnOfficeDate))
                 {
                     response.IsSuccessful = false;
-                    response.Reason = "请输入入职时间";
+                    response.Reason = "请输入任职时间";
                     return response;
                 }
 
@@ -554,7 +554,7 @@ namespace HanBin.Services.OfficerManager
                         if (scoreItem != null)
                         {
                             applyItenInfo.ItemID = scoreItem.ItemID;
-                            applyItenInfo.ItemScore = scoreItem.ItemScore;
+                            applyItenInfo.ItemScore = t.ItemScore; //scoreItem.ItemScore;
                             applyItenInfo.ItemDescription = scoreItem.ItemDescription;
                         }
 

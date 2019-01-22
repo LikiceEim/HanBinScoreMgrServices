@@ -18,6 +18,8 @@ namespace HanBin.Presentation.Service
         public bool Validate(BaseRequest param)
         {
             var request = WebOperationContext.Current.IncomingRequest.UriTemplateMatch.BaseUri.Host;
+            param.RequestIP = request;
+
             //return true;
 
             if (!string.IsNullOrEmpty(param.Token))

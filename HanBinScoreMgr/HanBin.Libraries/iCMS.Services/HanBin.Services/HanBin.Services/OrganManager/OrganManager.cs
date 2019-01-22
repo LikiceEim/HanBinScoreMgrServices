@@ -184,7 +184,7 @@ namespace HanBin.Services.OrganManager
                 }
 
                 //获取单位下的干部
-                var officerInfo = officerRepository.GetDatas<Officer>(t => t.OrganizationID == organ.OrganID && !t.IsDeleted, true).ToArray().Select(t =>
+                var officerInfo = officerRepository.GetDatas<Officer>(t => t.OrganizationID == organ.OrganID && !t.IsDeleted && t.IsOnService, true).ToArray().Select(t =>
                 {
                     var level = officerLevelRepository.GetDatas<OfficerLevelType>(l => !l.IsDeleted && l.LevelID == t.LevelID, true).FirstOrDefault();
                     var position = officerPositionRepository.GetDatas<OfficerPositionType>(p => !p.IsDeleted && p.PositionID == t.PositionID, true).FirstOrDefault();
@@ -203,7 +203,7 @@ namespace HanBin.Services.OrganManager
                         CurrentScore = t.CurrentScore,
                         Gender = t.Gender
                     };
-                });
+                }).OrderByDescending(t => t.CurrentScore);
 
                 result.OfficerList.AddRange(officerInfo);
                 response.Result = result;
@@ -230,7 +230,7 @@ namespace HanBin.Services.OrganManager
             try
             {
                 #region 输入验证
-                if (string.IsNullOrEmpty(parameter.OrganCode))
+                if (string.IsNullOrEmpty(parameter.OrganCode) || string.IsNullOrEmpty(parameter.OrganCode.Trim()))
                 {
                     response.IsSuccessful = false;
                     response.Reason = "单位编码不能为空";
@@ -345,7 +345,7 @@ namespace HanBin.Services.OrganManager
                     throw new Exception("删除单位时候，数据异常！");
                 }
 
-                var hasOfficers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.OrganizationID == organ.OrganID, true).Any();
+                var hasOfficers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService && t.OrganizationID == organ.OrganID, true).Any();
                 if (hasOfficers)
                 {
                     throw new Exception("单位下有干部，不能删除");
@@ -467,7 +467,7 @@ namespace HanBin.Services.OrganManager
                                         from g2 in group2
 
 
-                                        join item in dbContext.Officers.Where(t => !t.IsDeleted).GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
+                                        join item in dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService).GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
 
                                         into group3
                                         from g3 in group3.DefaultIfEmpty()
