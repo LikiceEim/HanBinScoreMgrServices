@@ -123,11 +123,7 @@ namespace HanBin.Services.OfficerManager
                 throw new Exception("数据异常");
             }
 
-            var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == addUser.OrganizationID).FirstOrDefault();
-            if (organ == null)
-            {
-                throw new Exception("请选择干部所在单位");
-            }
+
             int roleID = addUser.RoleID;
             switch (roleID)
             {
@@ -139,6 +135,12 @@ namespace HanBin.Services.OfficerManager
                     throw new Exception("请使用二级管理员登陆，然后添加干部");
                     break;
                 case (int)EnumRoleType.SecondLevelAdmin:
+
+                    var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == addUser.OrganizationID).FirstOrDefault();
+                    if (organ == null)
+                    {
+                        throw new Exception("请选择干部所在单位");
+                    }
                     //二级管理员只能够添加本单位的干部
                     if (addUser.OrganizationID != parameter.OrganizationID)
                     {
@@ -345,11 +347,7 @@ namespace HanBin.Services.OfficerManager
                         throw new Exception("数据异常");
                     }
 
-                    var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == updateUser.OrganizationID).FirstOrDefault();
-                    if (organ == null)
-                    {
-                        throw new Exception("数据异常");
-                    }
+
 
                     int roleID = updateUser.RoleID;
                     switch (roleID)
@@ -362,6 +360,12 @@ namespace HanBin.Services.OfficerManager
                             throw new Exception("请使用二级管理员登陆，然后编辑干部");
                             break;
                         case (int)EnumRoleType.SecondLevelAdmin:
+                            var organ = dbContext.Organizations.Where(t => !t.IsDeleted && t.OrganID == updateUser.OrganizationID).FirstOrDefault();
+                            if (organ == null)
+                            {
+                                throw new Exception("数据异常");
+                            }
+
                             //二级管理员只能够添加本单位的干部
                             if (updateUser.OrganizationID != parameter.OrganizationID)
                             {

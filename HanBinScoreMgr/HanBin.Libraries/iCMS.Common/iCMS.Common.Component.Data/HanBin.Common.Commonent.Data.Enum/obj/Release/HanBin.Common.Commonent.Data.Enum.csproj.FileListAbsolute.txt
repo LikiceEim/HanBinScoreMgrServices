@@ -2,4 +2,3 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Com
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\bin\Release\HanBin.Common.Commonent.Data.Enum.pdb
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\obj\Release\HanBin.Common.Commonent.Data.Enum.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\obj\Release\HanBin.Common.Commonent.Data.Enum.pdb
-E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Data\HanBin.Common.Commonent.Data.Enum\obj\Release\HanBin.Common.Commonent.Data.Enum.csprojResolveAssemblyReference.cache

@@ -66,7 +66,9 @@
     <Content Include="DownloadService.svc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="web.config" />
+    <None Include="web.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\HanBin.DB.Models\HanBin.Core.DB.Models.csproj">

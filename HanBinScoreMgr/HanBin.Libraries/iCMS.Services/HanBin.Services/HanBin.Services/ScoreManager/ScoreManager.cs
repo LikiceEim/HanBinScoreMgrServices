@@ -528,11 +528,24 @@ namespace HanBin.Services.ScoreManager
             SystemStatSummaryResult result = new SystemStatSummaryResult();
             try
             {
-                result.OrganizatonCount = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).Count();
-                result.OfficerCount = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Count();
-                result.UserCount = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true).Count();
 
-                result.AvarageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Select(t => t.CurrentScore).Average();
+                var organs = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true);
+                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
+                var users = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true);
+
+                if (organs != null && organs.Any())
+                {
+                    result.OrganizatonCount = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true).Count();
+                }
+                if (officers != null && officers.Any())
+                {
+                    result.OfficerCount = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Count();
+                    result.AvarageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Select(t => t.CurrentScore).Average();
+                }
+                if (users != null && users.Any())
+                {
+                    result.UserCount = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true).Count();
+                }
 
                 respose.Result = result;
                 return respose;

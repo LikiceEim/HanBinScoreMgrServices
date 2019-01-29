@@ -29,10 +29,10 @@ namespace TESTConsole
             var res2 = DecodeBase64("UTF-8", str);
 
             string cloudServer = @"http://111.231.200.224:8842/HanBinScoreService.svc";
-            string localServer = @"http://192.168.0.105:2892/HanBin/SystemService";
+            string localServer = @"http://192.168.0.105:8842/HanBinSystemService.svc";
             RestClient client = new RestClient(localServer);
             AddOfficerParameter param = new AddOfficerParameter();
-            param.Name = "剪刀手爱德华";
+            param.Name = "剪刀手爱德华29";
             param.Gender = 1;
             param.IdentifyNumber = "111";
             param.Birthday = DateTime.Now.ToString();
