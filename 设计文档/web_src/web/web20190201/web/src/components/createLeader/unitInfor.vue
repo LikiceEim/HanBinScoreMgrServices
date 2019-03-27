@@ -49,10 +49,13 @@
           <span class="personalspantwo" style="margin-right:60px;margin-top:0;">现任职务</span>
           <!-- <Input  class="input" v-model="duties" /> -->
           <div style="text-align:left ">
-            <Select v-model="PositionValue" style="width:300px;">
-              <!--@on-change="selectBtn"-->
+            <!-- <Select v-model="PositionValue" style="width:300px;">
+              
               <Option v-for="item in positionList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-            </Select>
+            </Select> -->
+              <Input  class="input"  v-model="PositionValue" />
+             
+            
           </div>
         </div>
         <div class="personalName">
@@ -70,7 +73,7 @@
           <span class="personalspanone" style="margin-right:60px;">任职时间</span>
           <Row style="margin-top:15px;">
             <!-- <DatePicker class="yearsYear" type="year" placeholder="Select year" style="width: 200px"></DatePicker> -->
-            <DatePicker type="date"  placeholder="请选择" style="width: 300px" v-model="time"></DatePicker>
+            <DatePicker type="month"  placeholder="请选择" style="width: 300px" v-model="time"></DatePicker>
           </Row>
         </div>
         <!--分管工作文本域-->
@@ -107,9 +110,10 @@
             chargeWork:'',// 分管工作
             time: '',// 任职时间
             level: '',// 级别
-            duties:'',// 现任职务
+            duties:'',// 职务
             unit: '',// 所在单位
             part: '',// 单位信息
+            //positionStr:''//职务， added by QXM, 2019/03/27
           }
       },
       created() {

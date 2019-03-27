@@ -11,7 +11,7 @@
             <Select v-model="UnitValue" style="width:180px"  >
               <Option  v-for="item in cityList" :value="item.value" :key="item.value">{{ item.label }}</Option>
             </Select>
-            <span class="unitLIstspans">职位级别 </span>
+            <span class="unitLIstspans">级别 </span>
             <Select v-model="PositionValue" style="width:180px" >
               <!--@on-change="selectBtn"-->
               <Option v-for="item in positionList" :value="item.value" :key="item.value">{{ item.label }}</Option>
@@ -26,7 +26,7 @@
          </div>
 
         </div>
-        <!--单位明细列表-->
+        <!--干部明细列表-->
         <div>
           <Table  border :columns="columns7" :data="data6" @on-sort-change='changeSort'></Table>
         </div>
@@ -434,6 +434,10 @@ import Cookies from 'js-cookie';
 
                 var time1 = row[i].Birthday;
                 time1 = time1.split(' ')[0];
+
+                console.log(time1);
+
+                var yyMM= time1.substr(0,7);
                 tempObj.birth = time1;// 出生年月
 
                 // tempObj.birth = row[i].Birthday;// 出生年月
@@ -443,7 +447,9 @@ import Cookies from 'js-cookie';
 
                 var time = row[i].OnOfficeDate;
                 time = time.split(' ')[0];
-                tempObj.time = time;// 任职时间
+
+                var yyMM = time.substr(0, 7);
+                tempObj.time = yyMM;// 任职时间
                 // tempObj.time = row[i].OnOfficeDate;// 任职时间
                 tempObj.integral = row[i].CurrentScore;// 积分
                 tempObj.IdentifyNumber = row[i].IdentifyNumber;// 身份证号

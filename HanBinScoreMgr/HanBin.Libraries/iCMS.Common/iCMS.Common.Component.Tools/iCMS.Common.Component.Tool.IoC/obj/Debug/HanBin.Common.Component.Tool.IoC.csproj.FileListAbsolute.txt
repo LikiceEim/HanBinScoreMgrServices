@@ -10,3 +10,4 @@ E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Com
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\bin\Debug\Microsoft.Practices.Unity.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.dll
 E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.pdb
+E:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Common\iCMS.Common.Component.Tools\iCMS.Common.Component.Tool.IoC\obj\Debug\HanBin.Common.Component.Tool.IoC.csprojResolveAssemblyReference.cache

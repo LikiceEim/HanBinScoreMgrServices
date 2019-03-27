@@ -38,7 +38,7 @@ namespace HanBin.Core.DB.Models
         /// <summary>
         /// 职位
         /// </summary>
-        public int PositionID { get; set; }
+        public string PositionStr { get; set; }
         /// <summary>
         /// 级别
         /// </summary>

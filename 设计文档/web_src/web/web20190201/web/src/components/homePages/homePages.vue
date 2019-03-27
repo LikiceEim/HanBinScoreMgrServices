@@ -64,7 +64,7 @@
         <div class="list-red" ref="listRed"></div>
       </div>
       <div class="list-half" style="margin-left:50px;">
-        <span style="display:inline-block;margin-left:20px;color:#000;font-size:15px;">黑榜</span>
+        <span style="display:inline-block;margin-left:20px;color:#000;font-size:15px;">黄榜</span>
         <div class="list-black" ref="listBlack"></div>
       </div>
     </div>

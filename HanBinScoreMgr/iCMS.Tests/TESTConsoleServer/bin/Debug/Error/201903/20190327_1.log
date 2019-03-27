@@ -1,0 +1,69 @@
+2019/3/27 22:28:11:447
+异常消息：身份证号码重复
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 167
+
+
+2019/3/27 22:28:39:317
+异常消息：身份证号码重复
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 167
+
+
+2019/3/27 22:29:20:377
+异常消息：An error occurred while updating the entries. See the inner exception for details.
+异常类型：System.Data.Entity.Infrastructure.DbUpdateException
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 167
+内部异常：
+　异常消息：An error occurred while updating the entries. See the inner exception for details.
+　异常类型：System.Data.Entity.Core.UpdateException
+　异常方法：Update
+　异常源：EntityFramework
+　异常堆栈：   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction, Boolean throwOnClosedConnection)
+   在 System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update(Boolean throwOnClosedConnection)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__33()
+   在 System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy)
+   在 System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass28.<SaveChanges>b__25()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   在 System.Data.Entity.Internal.InternalContext.SaveChanges()
+　内部异常：
+　　异常消息：不能将值 NULL 插入列 'PositionStr'，表 'HanBinDB.dbo.SYS_OFFICER'；列不允许有 Null 值。INSERT 失败。
+语句已终止。
+　　异常类型：System.Data.SqlClient.SqlException
+　　异常方法：OnError
+　　异常源：.Net SqlClient Data Provider
+　　异常堆栈：   在 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   在 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   在 System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   在 System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   在 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   在 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   在 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   在 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<>c__DisplayClassb.<Reader>b__8()
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TInterceptionContext,TResult](Func`1 operation, TInterceptionContext interceptionContext, Action`1 executing, Action`1 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   在 System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   在 System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   在 System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+
+

@@ -180,7 +180,7 @@ namespace HanBin.Services.OfficerManager
                     }
 
                     officer.OrganizationID = parameter.OrganizationID;
-                    officer.PositionID = parameter.PositionID;
+                    officer.PositionStr = parameter.PositionStr;
                     officer.LevelID = parameter.LevelID;
 
                     DateTime onOfficerDate = DateTime.MinValue;
@@ -403,7 +403,7 @@ namespace HanBin.Services.OfficerManager
                 }
 
                 offIndb.OrganizationID = parameter.OrganizationID;
-                offIndb.PositionID = parameter.PositionID;
+                offIndb.PositionStr = parameter.PositionStr;
                 offIndb.LevelID = parameter.LevelID;
 
                 var onOfficeDate = DateTime.MinValue;
@@ -452,7 +452,7 @@ namespace HanBin.Services.OfficerManager
                 result.IdentifyNumber = officer.IdentifyCardNumber;
                 result.Birthday = officer.Birthday;
                 result.OrganizationID = officer.OrganizationID;
-                result.PositionID = officer.PositionID;
+                result.PositionID = 0;//officer.PositionStr;
                 result.LevelID = officer.LevelID;
                 result.OnOfficeDate = officer.OnOfficeDate;
                 result.Duty = officer.Duty;
@@ -473,11 +473,12 @@ namespace HanBin.Services.OfficerManager
                     throw new Exception();
                 }
                 result.OrganTypeName = organType.OrganTypeName;
-                var position = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted && t.PositionID == result.PositionID, true).FirstOrDefault();
-                if (position != null)
-                {
-                    result.PositionName = position.PositionName;
-                }
+                //var position = positionRepository.GetDatas<OfficerPositionType>(t => !t.IsDeleted && t.PositionID == result.PositionID, true).FirstOrDefault();
+                //if (position != null)
+                //{
+                //    result.PositionName = position.PositionName;
+                //}
+                result.PositionName = officer.PositionStr;
                 var level = levelRepository.GetDatas<OfficerLevelType>(t => !t.IsDeleted && t.LevelID == result.LevelID, true).FirstOrDefault();
                 if (level != null)
                 {
@@ -798,8 +799,8 @@ namespace HanBin.Services.OfficerManager
                                       on off.OrganizationID equals org.OrganID
                                       into group1
                                       from g1 in group1
-                                      join pos in dbContext.OfficerPositionTypes.Where(t => !t.IsDeleted) on off.PositionID equals pos.PositionID into group2
-                                      from g2 in group2
+                                      //join pos in dbContext.OfficerPositionTypes.Where(t => !t.IsDeleted) on off.PositionStr equals pos.PositionID into group2
+                                      //from g2 in group2
                                       join lev in dbContext.OfficerLevelTypes.Where(t => !t.IsDeleted) on off.LevelID equals lev.LevelID into group3
                                       from g3 in group3
                                       //where org.OrganFullName.ToUpper().Contains(parameter.Keyword.ToUpper()) || org.OrganCode.ToUpper().Contains(parameter.Keyword.ToUpper())
@@ -810,8 +811,8 @@ namespace HanBin.Services.OfficerManager
                                           Gender = off.Gender,
                                           Birthday = off.Birthday,
                                           OrganizationName = g1.OrganFullName,
-                                          PositionID = g2.PositionID,
-                                          PositionName = g2.PositionName,
+                                          PositionID = 0,//g2.PositionID,
+                                          PositionName = off.PositionStr,
                                           LevelID = g3.LevelID,
                                           LevelName = g3.LevelName,
                                           OnOfficeDate = off.OnOfficeDate,

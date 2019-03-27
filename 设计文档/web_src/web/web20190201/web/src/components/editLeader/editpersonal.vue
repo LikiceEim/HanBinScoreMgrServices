@@ -176,7 +176,7 @@
               var IdentifyNumber = personData.idCard;
               var Birthday = personData.birthday;
               var OrganizationID = unitData.unit;
-              var PositionID = unitData.duties;
+              var PositionStr = unitData.duties;
               var LevelID = unitData.level;
               var OnOfficeDate = unitData.time;
               var Duty = unitData.chargeWork;
@@ -189,7 +189,7 @@
                 IdentifyNumber,
                 Birthday,
                 OrganizationID,
-                PositionID,
+                PositionStr,
                 LevelID,
                 OnOfficeDate,
                 Duty,

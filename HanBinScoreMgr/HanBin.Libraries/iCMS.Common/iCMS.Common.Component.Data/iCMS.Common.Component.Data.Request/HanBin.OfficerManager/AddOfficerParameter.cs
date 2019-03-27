@@ -19,7 +19,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public int OrganizationID { get; set; }
 
-        public int PositionID { get; set; }
+        public string PositionStr { get; set; }
 
         public int LevelID { get; set; }
 
@@ -53,7 +53,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OfficerManager
 
         public int OrganizationID { get; set; }
 
-        public int PositionID { get; set; }
+        public string PositionStr { get; set; }
 
         public int LevelID { get; set; }
 

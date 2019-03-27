@@ -187,16 +187,16 @@ namespace HanBin.Services.OrganManager
                 var officerInfo = officerRepository.GetDatas<Officer>(t => t.OrganizationID == organ.OrganID && !t.IsDeleted && t.IsOnService, true).ToArray().Select(t =>
                 {
                     var level = officerLevelRepository.GetDatas<OfficerLevelType>(l => !l.IsDeleted && l.LevelID == t.LevelID, true).FirstOrDefault();
-                    var position = officerPositionRepository.GetDatas<OfficerPositionType>(p => !p.IsDeleted && p.PositionID == t.PositionID, true).FirstOrDefault();
+                    //var position = officerPositionRepository.GetDatas<OfficerPositionType>(p => !p.IsDeleted && p.PositionID == t.PositionID, true).FirstOrDefault();
                     string levelName = level == null ? string.Empty : level.LevelName;
-                    string positionName = position == null ? string.Empty : position.PositionName;
+                    //string positionName = position == null ? string.Empty : position.PositionName;
                     return new OfficerInfo
                     {
                         OfficerID = t.OfficerID,
                         Name = t.Name,
                         Birthday = t.Birthday,
-                        PositionID = t.PositionID,
-                        PositionName = positionName,
+                        //PositionID = t.PositionID,
+                        PositionName = t.PositionStr,
                         LevelID = t.LevelID,
                         LevelName = levelName,
                         OnOfficeDate = t.OnOfficeDate,

@@ -83,7 +83,7 @@
                   <td>{{item.PositionName}}</td>
                   <td><span>{{item.ItemDescription}}</span><span>{{item.ItemScore}}</span></td>
                   <td>
-                    <span v-if="item.ApproveStatus==1">已同意</span>
+                    <span v-if="item.ApproveStatus==1" style="color:green">已同意</span>
                     <span v-else-if="item.ApproveStatus==2" style="color:red;">已驳回</span>
                     <i-button v-if="item.UploadFileList.length>=1" type="primary" :UploadFileList="item.jsonList" :approvalid="item.ApplyID" @click="handleDownloadFile">下载</i-button>
                   </td>

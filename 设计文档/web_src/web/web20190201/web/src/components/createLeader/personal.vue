@@ -105,7 +105,7 @@
               // var a = this.$moment(Birthday).format("YYYY-MM-DD HH:mm:ss")
 
               var OrganizationID = unitData.unit;
-              var PositionID = unitData.duties;
+              var PositionStr = unitData.duties;//职务，更改为文本框输入
               var LevelID = unitData.level;
               var OnOfficeDate = unitData.time;
               var Duty = unitData.chargeWork;
@@ -118,7 +118,7 @@
                 IdentifyNumber,
                 Birthday,
                 OrganizationID,
-                PositionID,
+                PositionStr,
                 LevelID,
                 OnOfficeDate,
                 Duty,

@@ -65,12 +65,12 @@
         </div>
         <div class="personalName">
           <span class="personalspantwo" style="margin-right:60px;margin-top:0;">现任职务</span>
-          <!-- <Input  class="input" v-model="duties" /> -->
+          <Input  class="input" v-model="PositionValue" />
           <div style="text-align:left ">
-            <Select v-model="PositionValue" style="width:300px;">
-              <!--@on-change="selectBtn"-->
+            <!-- <Select v-model="PositionValue" style="width:300px;">
+            
               <Option v-for="item in positionList" :value="item.value" :key="item.value">{{ item.label }}</Option>
-            </Select>
+            </Select> -->
           </div>
         </div>
         <div class="personalName">
@@ -88,7 +88,7 @@
           <span class="personalspanone" style="margin-right:60px;">任职时间</span>
           <Row style="margin-top:15px;">
             <!-- <DatePicker class="yearsYear" type="year" placeholder="Select year" style="width: 200px"></DatePicker> -->
-            <DatePicker type="date"  placeholder="请选择" style="width: 300px" v-model="time"></DatePicker>
+            <DatePicker type="month"  placeholder="请选择" style="width: 300px" v-model="time"></DatePicker>
           </Row>
         </div>
         <!--分管工作文本域-->
@@ -285,7 +285,7 @@
           var data = this.Unit;
           this.part = data.OrganTypeID;
           this.UnitClassification =data.OrganizationID;
-          this.PositionValue = data.PositionID;
+          this.PositionValue = data.PositionName;
           this.levelValue = data.LevelID;
           this.time = data.OnOfficeDate;
           this.chargeWork = data.Duty;

@@ -405,10 +405,10 @@ namespace HanBin.Services.ScoreManager
                     response.Reason = "此积分申请已经被审批过，或者已撤销";
                     return response;
                 }
-                if (parameter.ApplyStatus == (int)EnumApproveStatus.Reject && string.IsNullOrEmpty(parameter.RejectReason))
+                if (string.IsNullOrEmpty(parameter.RejectReason))
                 {
                     response.IsSuccessful = false;
-                    response.Reason = "请输入驳回原因";
+                    response.Reason = "请输入同意理由/驳回原因";
                     return response;
                 }
 
@@ -421,7 +421,6 @@ namespace HanBin.Services.ScoreManager
                 apply.LastUpdateUserID = parameter.ProcessUserID;
 
                 scoreApplyRepository.Update<ScoreApply>(apply);
-
 
                 if (parameter.ApplyStatus == (int)EnumApproveStatus.Pass)
                 {
@@ -593,9 +592,9 @@ namespace HanBin.Services.ScoreManager
 
                 var scoreRankList = officerQurable.OrderByDescending(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
                 {
-                    int positionID = t.PositionID;
-                    var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
-                    var positionName = position == null ? string.Empty : position.PositionName;
+                    //int positionID = t.PositionStr;
+                    //var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
+                    //var positionName = position == null ? string.Empty : position.PositionName;
 
                     return new ScoreRankInfo
                     {
@@ -603,7 +602,7 @@ namespace HanBin.Services.ScoreManager
                         OfficerName = t.Name,
                         CurrentScore = t.CurrentScore,
                         Gender = t.Gender,
-                        PositionName = positionName
+                        PositionName = t.PositionStr
 
                     };
                 });
@@ -657,9 +656,9 @@ namespace HanBin.Services.ScoreManager
                 //按照分数升序排列
                 var scoreRankList = officerQurable.OrderBy(t => t.CurrentScore).Take(rank).ToArray().Select(t =>
                 {
-                    int positionID = t.PositionID;
-                    var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
-                    var positionName = position == null ? string.Empty : position.PositionName;
+                    //int positionID = t.PositionStr;
+                    //var position = positionArray.Where(p => p.PositionID == positionID).FirstOrDefault();
+                    //var positionName = position == null ? string.Empty : position.PositionName;
 
                     return new ScoreRankInfo
                     {
@@ -667,7 +666,7 @@ namespace HanBin.Services.ScoreManager
                         OfficerName = t.Name,
                         CurrentScore = t.CurrentScore,
                         Gender = t.Gender,
-                        PositionName = positionName
+                        PositionName = t.PositionStr
                     };
                 });
 
@@ -777,12 +776,13 @@ namespace HanBin.Services.ScoreManager
                             applyDetail.OrganFullName = organ.OrganFullName;
                         }
 
-                        applyDetail.PositionID = officer.PositionID;
-                        var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
-                        if (position != null)
-                        {
-                            applyDetail.PositionName = position.PositionName;
-                        }
+                        applyDetail.PositionID = 0; //officer.PositionStr;
+                        //var position = positionArray.Where(p => p.PositionID == officer.PositionStr).FirstOrDefault();
+                        //if (position != null)
+                        //{
+                        //    applyDetail.PositionName = position.PositionName;
+                        //}
+                        applyDetail.PositionName = officer.PositionStr;
                     }
 
                     applyDetail.ItemScore = t.ItemScore;
@@ -946,12 +946,13 @@ namespace HanBin.Services.ScoreManager
                             approvedApply.OrganFullName = organ.OrganFullName;
                         }
 
-                        approvedApply.PositionID = officer.PositionID;
-                        var position = positionArray.Where(p => p.PositionID == officer.PositionID).FirstOrDefault();
-                        if (position != null)
-                        {
-                            approvedApply.PositionName = position.PositionName;
-                        }
+                        approvedApply.PositionID = 0;// officer.PositionStr;
+                        //var position = positionArray.Where(p => p.PositionID == officer.PositionStr).FirstOrDefault();
+                        //if (position != null)
+                        //{
+                        //    approvedApply.PositionName = position.PositionName;
+                        //}
+                        approvedApply.PositionName = officer.PositionStr;
                     }
 
                     approvedApply.ItemScore = t.ItemScore;
@@ -1122,11 +1123,12 @@ namespace HanBin.Services.ScoreManager
                                offPubShow.OrganFullName = organ.OrganFullName;
                            }
 
-                           var position = positionArray.Where(p => p.PositionID == t.PositionID).FirstOrDefault();
-                           if (position != null)
-                           {
-                               offPubShow.PositionName = position.PositionName;
-                           }
+                           //var position = positionArray.Where(p => p.PositionID == t.PositionStr).FirstOrDefault();
+                           //if (position != null)
+                           //{
+                           //    offPubShow.PositionName = position.PositionName;
+                           //}
+                           offPubShow.PositionName = t.PositionStr;
                            var level = levelArray.Where(l => l.LevelID == t.LevelID).FirstOrDefault();
                            if (level != null)
                            {
@@ -1189,7 +1191,7 @@ namespace HanBin.Services.ScoreManager
                                           from g2 in group2
                                           where g2.OrganTypeID == parameter.OrganTypeID.Value
 
-                                          join p in dbContext.OfficerPositionTypes on o.PositionID equals p.PositionID into group3
+                                          //join p in dbContext.OfficerPositionTypes on o.PositionStr equals p.PositionID into group3
                                           join l in dbContext.OfficerLevelTypes on o.LevelID equals l.LevelID
                                           select o;
 
@@ -1244,12 +1246,14 @@ namespace HanBin.Services.ScoreManager
                             qsItem.OrganFullName = organ.OrganFullName;
                         }
 
-                        qsItem.PositionID = t.PositionID;
-                        var position = positionArray.Where(p => p.PositionID == t.PositionID).FirstOrDefault();
-                        if (position != null)
-                        {
-                            qsItem.PositionName = position.PositionName;
-                        }
+                        qsItem.PositionID = 0; //t.PositionStr;
+                        //var position = positionArray.Where(p => p.PositionID == t.PositionStr).FirstOrDefault();
+                        //if (position != null)
+                        //{
+                        //    qsItem.PositionName = position.PositionName;
+                        //}
+
+                        qsItem.PositionName = t.PositionStr;
                         qsItem.LevelID = t.LevelID;
                         var level = levelArray.Where(l => l.LevelID == t.LevelID).FirstOrDefault();
                         if (level != null)
@@ -1417,12 +1421,12 @@ namespace HanBin.Services.ScoreManager
                     {
                         item.OrganName = organ.OrganFullName;
                     }
-                    var position = positionArray.Where(pp => pp.PositionID == p.PositionID).FirstOrDefault();
-                    if (position != null)
-                    {
-                        item.PositionName = position.PositionName;
-                    }
-
+                    //var position = positionArray.Where(pp => pp.PositionID == p.PositionStr).FirstOrDefault();
+                    //if (position != null)
+                    //{
+                    //    item.PositionName = position.PositionName;
+                    //}
+                    item.PositionName = p.PositionStr;
                     var level = levelArray.Where(l => l.LevelID == p.LevelID).FirstOrDefault();
                     if (level != null)
                     {
