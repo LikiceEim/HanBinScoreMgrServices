@@ -22,14 +22,14 @@
                 <p>单位的全称，最长不能超过20个字</p>
               </div>
             </div>
-            <div class="inputas">
+            <div class="inputas" v-if="isUnitShortNameShow">
               <span>单位简称</span>
               <div class="inputasrig">
                 <Input class="inputs" style="width:420px" v-model="value3" @on-blur="btn3" placeholder="请输入..." />
                 <p>单位的简称，最多不能超过10个字</p>
               </div>
             </div>
-            <div class="inputas">
+            <div class="inputas" v-if="isUnitAreaShow">
               <span>地区选择</span>
               <div class="inputasrig">
                 <Select v-model="areaID" style="width:420px;">
@@ -202,7 +202,9 @@ import {quertLeaderList} from '@/api/leaderList'
           orgCategory:null,
           areaID:null,
           areaList: [],
-          areaName: null
+          areaName: null,
+          isUnitShortNameShow:false,
+          isUnitAreaShow:false
         }
       },
       created() {

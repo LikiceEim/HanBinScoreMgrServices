@@ -20,7 +20,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
         /// <summary>
         /// 单位简称
         /// </summary>
-        public string OrganShortName { get; set; }
+        //public string OrganShortName { get; set; }
         /// <summary>
         /// 单位类型
         /// </summary>
@@ -33,7 +33,7 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
         /// <summary>
         /// 单位所在地区
         /// </summary>
-        public int AreaID { get; set; }
+        //public int AreaID { get; set; }
 
         public int CurrentUserID { get; set; }
     }

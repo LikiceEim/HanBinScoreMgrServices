@@ -79,18 +79,18 @@ namespace HanBin.Services.OrganManager
                     response.Reason = "单位全称不能超过20个字符";
                     return response;
                 }
-                if (string.IsNullOrEmpty(param.OrganShortName))
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "单位简称不能为空";
-                    return response;
-                }
-                if (param.OrganShortName.Length > 10)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "单位简称不能超过10个字符";
-                    return response;
-                }
+                //if (string.IsNullOrEmpty(param.OrganShortName))
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "单位简称不能为空";
+                //    return response;
+                //}
+                //if (param.OrganShortName.Length > 10)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "单位简称不能超过10个字符";
+                //    return response;
+                //}
 
                 var isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganCode) && t.OrganCode.Equals(param.OrganCode), true).Any();
                 if (isExisted)
@@ -108,22 +108,22 @@ namespace HanBin.Services.OrganManager
                     return response;
                 }
 
-                isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganShortName) && t.OrganShortName.Equals(param.OrganShortName), true).Any();
-                if (isExisted)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "单位简称已存在";
-                    return response;
-                }
+                //isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganShortName) && t.OrganShortName.Equals(param.OrganShortName), true).Any();
+                //if (isExisted)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "单位简称已存在";
+                //    return response;
+                //}
                 #endregion
 
                 Organization organ = new Organization();
                 organ.OrganCode = param.OrganCode;
                 organ.OrganFullName = param.OrganFullName;
-                organ.OrganShortName = param.OrganShortName;
+                //organ.OrganShortName = param.OrganShortName;
                 organ.OrganTypeID = param.OrganTypeID;
 
-                organ.AreaID = param.AreaID;
+                //organ.AreaID = param.AreaID;
                 organ.AddUserID = param.AddUserID;
                 organ.LastUpdateDate = DateTime.Now;
                 organ.LastUpdateUserID = param.AddUserID;
@@ -250,19 +250,19 @@ namespace HanBin.Services.OrganManager
                     return response;
                 }
 
-                if (string.IsNullOrEmpty(parameter.OrganShortName))
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "单位简称不能为空";
-                    return response;
-                }
+                //if (string.IsNullOrEmpty(parameter.OrganShortName))
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "单位简称不能为空";
+                //    return response;
+                //}
 
-                if (parameter.OrganShortName.Length > 10)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "单位简称不能超过10个字符";
-                    return response;
-                }
+                //if (parameter.OrganShortName.Length > 10)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "单位简称不能超过10个字符";
+                //    return response;
+                //}
 
                 var isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganCode) && t.OrganCode.Equals(parameter.OrganCode) && t.OrganID != parameter.OrganID, true).Any();
                 if (isExisted)
@@ -280,13 +280,13 @@ namespace HanBin.Services.OrganManager
                     return response;
                 }
 
-                isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganShortName) && t.OrganShortName.Equals(parameter.OrganShortName) && t.OrganID != parameter.OrganID, true).Any();
-                if (isExisted)
-                {
-                    response.IsSuccessful = false;
-                    response.Reason = "单位简称已存在";
-                    return response;
-                }
+                //isExisted = organRepository.GetDatas<Organization>(t => !t.IsDeleted && !string.IsNullOrEmpty(t.OrganShortName) && t.OrganShortName.Equals(parameter.OrganShortName) && t.OrganID != parameter.OrganID, true).Any();
+                //if (isExisted)
+                //{
+                //    response.IsSuccessful = false;
+                //    response.Reason = "单位简称已存在";
+                //    return response;
+                //}
                 #endregion
 
                 //var organInDB = organRepository.GetByKey(parameter.OrganID);
@@ -300,10 +300,10 @@ namespace HanBin.Services.OrganManager
 
                 organInDB.OrganCode = parameter.OrganCode;
                 organInDB.OrganFullName = parameter.OrganFullName;
-                organInDB.OrganShortName = parameter.OrganShortName;
+                //organInDB.OrganShortName = parameter.OrganShortName;
                 organInDB.OrganTypeID = parameter.OrganTypeID;
 
-                organInDB.AreaID = parameter.AreaID;
+                //organInDB.AreaID = parameter.AreaID;
                 organInDB.LastUpdateUserID = parameter.UpdateUserID;
                 organInDB.LastUpdateDate = DateTime.Now;
 

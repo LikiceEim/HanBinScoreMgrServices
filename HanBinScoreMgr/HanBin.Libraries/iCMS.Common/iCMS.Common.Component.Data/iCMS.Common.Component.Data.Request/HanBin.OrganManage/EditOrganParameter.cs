@@ -15,13 +15,13 @@ namespace HanBin.Common.Component.Data.Request.HanBin.OrganManage
 
         public string OrganFullName { get; set; }
 
-        public string OrganShortName { get; set; }
+        //public string OrganShortName { get; set; }
 
         public int OrganTypeID { get; set; }
 
         public int UpdateUserID { get; set; }
 
-        public int AreaID { get; set; }
+        //public int AreaID { get; set; }
 
         public int CurrentUserID { get; set; }
     }

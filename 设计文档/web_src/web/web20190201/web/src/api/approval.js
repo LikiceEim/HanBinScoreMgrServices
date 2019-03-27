@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryToDoListDetail(data){
   return request({
-    url: 'HanBinScoreService.svc/GetWhatsToDoDetailList',
-    // url: 'HanBin/ScoreService/GetWhatsToDoDetailList',
+    //url: 'HanBinScoreService.svc/GetWhatsToDoDetailList',
+     url: 'HanBin/ScoreService/GetWhatsToDoDetailList',
     method: 'post',
     data
   })
@@ -23,8 +23,8 @@ export function queryToDoListDetail(data){
  */
 export function querySuperiorFeedbackDetail(data){
   return request({
-    url: 'HanBinScoreService.svc/GetHighLevelFeedBackDetailList',
-    // url: 'HanBin/ScoreService/GetHighLevelFeedBackDetailList',
+    //url: 'HanBinScoreService.svc/GetHighLevelFeedBackDetailList',
+     url: 'HanBin/ScoreService/GetHighLevelFeedBackDetailList',
     method: 'post',
     data
   })
@@ -35,8 +35,8 @@ export function querySuperiorFeedbackDetail(data){
  */
 export function doCheckScoreApply(data){
   return request({
-    url: 'HanBinScoreService.svc/CheckScoreApply',
-    // url: 'HanBin/ScoreService/CheckScoreApply',
+    //url: 'HanBinScoreService.svc/CheckScoreApply',
+     url: 'HanBin/ScoreService/CheckScoreApply',
     method: 'post',
     data
   })
@@ -47,8 +47,8 @@ export function doCheckScoreApply(data){
  */
 export function downLoadfile(data){
   return request({
-    url: 'HanBinDownloadService.svc/downloadFile/'+data,
-    // url: 'HanBin/DownloadService/downloadFile/'+data,
+    //url: 'HanBinDownloadService.svc/downloadFile/'+data,
+     url: 'HanBin/DownloadService/downloadFile/'+data,
     method:'get'
   })
 }
