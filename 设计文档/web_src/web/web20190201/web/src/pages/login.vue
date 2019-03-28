@@ -143,7 +143,7 @@
     width: 100%;
     height: 100%;
     /* background: url(../assets/image/timg.jpg) no-repeat 0 0; */
-    background: url(/static/image/bg_new_3.jpg) no-repeat 0 0;
+    background: url(/static/image/bg_new.png) no-repeat 0 0;
     background-size: 100% 100%;
     position: relative;
     display: flex;
