@@ -55,5 +55,7 @@ namespace HanBin.Services.ScoreManager
 
         BaseResponse<bool> DeleteFile(DeleteFileParameter parameter);
 
+        BaseResponse<OrganCategoryAverageScoreResult> OrganCategoryAverageScore();
+
     }
 }

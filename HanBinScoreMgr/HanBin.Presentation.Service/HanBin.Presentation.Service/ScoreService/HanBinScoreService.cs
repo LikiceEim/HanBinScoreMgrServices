@@ -344,6 +344,22 @@ namespace HanBin.Presentation.Service.ScoreService
             }
         }
 
+        public BaseResponse<OrganCategoryAverageScoreResult> OrganCategoryAverageScore(BaseRequest parameter)
+        {
+            if (Validate(parameter))
+            {
+                return scoreManager.OrganCategoryAverageScore();
+            }
+            else
+            {
+                BaseResponse<OrganCategoryAverageScoreResult> response = new BaseResponse<OrganCategoryAverageScoreResult>();
+                response.IsSuccessful = false;
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
+
+
         public BaseResponse<UpFileResult> UploadFile(string filename, Stream FileStream)
         {
             return null;

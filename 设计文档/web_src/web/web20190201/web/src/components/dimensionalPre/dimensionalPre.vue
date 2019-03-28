@@ -19,7 +19,7 @@
           <Radio label="街道、镇"></Radio>
           <Radio label="乡"></Radio>
         </RadioGroup> -->
-        <span>乡镇</span>
+        <span>单位类型平均分</span>
       </div>
       <div ref="areAverage" class="area-chart"></div>
     </div>
@@ -67,7 +67,7 @@
  </template>
  
  <script>
- import {queryAreaAverageScore, queryAgeAverageScore, queryOrganAverageScore} from '@/api/dimensionalPre';
+ import {queryAreaAverageScore, queryAgeAverageScore, queryOrganAverageScore,queryOrganCategoryAverageScore} from '@/api/dimensionalPre';
  import {queryUnitName} from '@/api/usersManage';
   import {queryCarreLevel} from '@/api/leaderList';
  export default {
@@ -103,7 +103,10 @@
       // 工龄
       workingAge: null,
       // 工龄list
-      workingAgeArr: []
+      workingAgeArr: [],
+
+      //单位类型平均分数据， added by QXM
+      organCategoryAverageData:{}
      }
    },
    props:['echartsInfo'],
@@ -308,15 +311,17 @@
      // 画图
      Draw() {
        debugger;
-       queryAreaAverageScore().then(res => {
+
+       /* 绘制单位大类平均分， added by QXM  */
+       queryOrganCategoryAverageScore().then(res => {
           debugger;
           // 绘制区域平均分图
           // #00c9dd
           if(res.IsSuccessful == true) {
-            var data = res.Result.AreaAverageScoreItemList;
+            var data = res.Result.OrganCategoryAverageScoreItemList;
             var xData = [],yData = [];
             for(let i = 0; i < data.length; i++){
-              xData.push(data[i].AreaName);
+              xData.push(data[i].OrganCategoryName);
               var tempObj = {
                 value: data[i].AverageScore,
                 itemStyle:{

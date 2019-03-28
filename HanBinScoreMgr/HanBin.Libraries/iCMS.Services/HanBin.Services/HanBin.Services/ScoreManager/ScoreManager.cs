@@ -46,6 +46,12 @@ namespace HanBin.Services.ScoreManager
         [Dependency]
         public IRepository<OfficerLevelType> levelRepository { get; set; }
 
+        [Dependency]
+        public IRepository<OrganCategory> organCategoryRepository { get; set; }
+
+        [Dependency]
+        public IRepository<OrganType> organTypeRepository { get; set; }
+
         public ScoreManager()
         {
             scoreItemRepository = new Repository<ScoreItem>();
@@ -57,6 +63,8 @@ namespace HanBin.Services.ScoreManager
             userRepository = new Repository<HBUser>();
             positionRepository = new Repository<OfficerPositionType>();
             levelRepository = new Repository<OfficerLevelType>();
+            organCategoryRepository = new Repository<OrganCategory>();
+            organTypeRepository = new Repository<OrganType>();
         }
 
         #region 积分条目字典CRUD
@@ -1446,6 +1454,43 @@ namespace HanBin.Services.ScoreManager
 
                 return response;
             }
+        }
+        #endregion
+
+        #region 按单位大类统计平均分
+        public BaseResponse<OrganCategoryAverageScoreResult> OrganCategoryAverageScore()
+        {
+            BaseResponse<OrganCategoryAverageScoreResult> response = new BaseResponse<OrganCategoryAverageScoreResult>();
+            OrganCategoryAverageScoreResult result = new OrganCategoryAverageScoreResult();
+
+            try
+            {
+                var categpries = organCategoryRepository.GetDatas<OrganCategory>(t => !t.IsDeleted, true).ToList();
+                if (categpries.Any())
+                {
+                    foreach (var category in categpries)
+                    {
+                        //找到单位小类
+                        var organTypeIDList = organTypeRepository.GetDatas<OrganType>(t => !t.IsDeleted && t.CategoryID == category.CategoryID, true).Select(t => t.OrganTypeID).ToList();
+                        //找到单位
+                        var organIDList = organRepository.GetDatas<Organization>(t => !t.IsDeleted && organTypeIDList.Contains(t.OrganTypeID), true).Select(t => t.OrganID).ToList();
+                        //找到单位干部 并求平均分
+                        var averageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && organIDList.Contains(t.OrganizationID), true).Select(t => t.CurrentScore).Average();
+
+                        averageScore = Math.Floor(averageScore);
+                        result.OrganCategoryAverageScoreItemList.Add(new OrganCategoryAverageScoreItem { OrganCategoryID = category.CategoryID, OrganCategoryName = category.CategoryName, AverageScore = averageScore });
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = "获取单位类型平均分发生异常";
+                return response;
+            }
+
+            response.Result = result;
+            return response;
         }
         #endregion
 

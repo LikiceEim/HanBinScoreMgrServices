@@ -143,6 +143,12 @@ namespace HanBin.Presentation.Service.ScoreService
            ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<OrganAverageScoreResult> OrganAverageScore(OrganAverageScoreParameter parameter);
 
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+          Method = "POST",
+          RequestFormat = WebMessageFormat.Json,
+          ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<OrganCategoryAverageScoreResult> OrganCategoryAverageScore(BaseRequest parameter);
+
         //[WebInvoke(Method = "POST", UriTemplate = "UpLoad/{fileName}",
         //ResponseFormat = WebMessageFormat.Json, BodyStyle = WebMessageBodyStyle.Bare)]
         //[System.ComponentModel.Description("上传文件")]

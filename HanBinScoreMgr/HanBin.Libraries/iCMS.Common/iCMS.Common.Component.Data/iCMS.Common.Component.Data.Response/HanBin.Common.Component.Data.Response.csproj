@@ -72,6 +72,7 @@
     <Compile Include="HanBin.ScoreManager\GetScoreItemListResult.cs" />
     <Compile Include="HanBin.ScoreManager\GetWhatsToDoDetailListResult.cs" />
     <Compile Include="HanBin.ScoreManager\OrganAverageScoreResult.cs" />
+    <Compile Include="HanBin.ScoreManager\OrganCategoryAverageScoreResult.cs" />
     <Compile Include="HanBin.ScoreManager\QuerySocreResult.cs" />
     <Compile Include="HanBin.ScoreManager\ScorePublicShowResult.cs" />
     <Compile Include="HanBin.ScoreManager\SystemStatSummaryResult.cs" />
