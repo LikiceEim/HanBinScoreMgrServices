@@ -23,6 +23,7 @@ import approval from '@/pages/approval'
 import preIndex from '@/pages/preindex'
 
 import EditLeader from '@/pages/editLeader'
+import LeaderGraphic from '@/pages/leaderGraphic'
 
 Vue.use(Router)
 
@@ -47,6 +48,13 @@ export default new Router({
           component: Login
         }
       ]
+    },
+    {
+      path: '/LeaPerInfor',
+      name: 'LeaPerInfor',
+      component: LeaPerInfor,
+      redirect: '/Mains/LeaPerInfor',
+    
     },
     {
       path: '/',
@@ -97,6 +105,12 @@ export default new Router({
           path:'LeaderList',
           name:'LeaderList',
           component:LeaderList,
+          // hidden: (roleID!=1&&roleID!=4)?true:false
+        },
+        {
+          path:'LeaderGraphic',
+          name:'LeaderGraphic',
+          component:LeaderGraphic,
           // hidden: (roleID!=1&&roleID!=4)?true:false
         },{
           path:'LeaPerInfor',

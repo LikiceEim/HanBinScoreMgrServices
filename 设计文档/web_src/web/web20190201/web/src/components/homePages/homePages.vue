@@ -547,7 +547,10 @@ export default {
 
                 var data = {};
                 data.OfficerID = officerID;
-                that.$router.push({ path: "LeaPerInfor", query: data }); //路由跳转至干部详情页
+
+                debugger;
+
+                  that.$router.push({ path: "LeaPerInfor", query: data }); //路由跳转至干部详情页
               }
             }
 
@@ -628,7 +631,9 @@ export default {
 
               var data = {};
               data.OfficerID = officerID;
-              that.$router.push({ path: "LeaPerInfor", query: data }); //路由跳转至干部详情页
+
+              that.$router.push({ path: "Mains/LeaPerInfor", query: data }); //路由跳转至干部详情页
+              return;
             }
           }
 

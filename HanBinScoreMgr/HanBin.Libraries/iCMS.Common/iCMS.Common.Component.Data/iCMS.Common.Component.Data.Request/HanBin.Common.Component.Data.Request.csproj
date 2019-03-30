@@ -46,6 +46,7 @@
     <Compile Include="HanBin.OfficerManager\ApplyItem.cs" />
     <Compile Include="HanBin.OfficerManager\CancelScoreApplyParameter.cs" />
     <Compile Include="HanBin.OfficerManager\DeleteOfficerParameter.cs" />
+    <Compile Include="HanBin.OfficerManager\GetAllOfficerListPerSecondAdminParameter.cs" />
     <Compile Include="HanBin.OfficerManager\GetApplyDetailInfoParameter.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoParameter.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerListParameter.cs" />

@@ -223,5 +223,10 @@ namespace HanBin.Presentation.Service.SystemManage
         BaseResponse<bool> DeleteBackup(DeleteBackupParameter parameter);
         #endregion
 
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+      Method = "POST",
+      RequestFormat = WebMessageFormat.Json,
+      ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<AllOfficerListPerSecondAdminReult> GetAllOfficerListPerSecondAdmin(GetAllOfficerListPerSecondAdminParameter parameter);
     }
 }

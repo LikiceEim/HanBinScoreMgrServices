@@ -548,5 +548,21 @@ namespace HanBin.Presentation.Service.SystemManage
                 return response;
             }
         }
+
+        public BaseResponse<AllOfficerListPerSecondAdminReult> GetAllOfficerListPerSecondAdmin(GetAllOfficerListPerSecondAdminParameter parameter)
+        {
+            if (Validate(parameter))
+            {
+                return officerManager.GetAllOfficerListPerSecondAdmin(parameter);
+            }
+            else
+            {
+                BaseResponse<AllOfficerListPerSecondAdminReult> response = new BaseResponse<AllOfficerListPerSecondAdminReult>();
+                response.IsSuccessful = false;
+                response.Code = "JWT_ERR";
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
     }
 }

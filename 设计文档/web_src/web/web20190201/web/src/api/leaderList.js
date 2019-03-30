@@ -146,3 +146,15 @@ export function deleteFile(data){
         data
     })
 }
+
+/**
+ * 二级管理员获取本单位员工
+ */
+export function secondLevelGetLeaderList(data){
+    return request({
+        //url: 'HanBinScoreService.svc/DeleteFile',
+         url: 'HanBin/SystemService/GetAllOfficerListPerSecondAdmin',
+        method: 'post',
+        data
+    })
+}

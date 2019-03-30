@@ -34,5 +34,7 @@ namespace HanBin.Services.OfficerManager
         BaseResponse<GetPositionListResult> GetPositionSummary();
 
         BaseResponse<GetLevelListResult> GetLevelSummary();
+
+        BaseResponse<AllOfficerListPerSecondAdminReult> GetAllOfficerListPerSecondAdmin(GetAllOfficerListPerSecondAdminParameter parameter);
     }
 }

@@ -58,6 +58,7 @@
     <Compile Include="Common\ResponseResult.cs" />
     <Compile Include="Common\CommonInfo.cs" />
     <Compile Include="Common\SelectItemResult.cs" />
+    <Compile Include="HanBin.OfficerManager\AllOfficerListPerSecondAdminReult.cs" />
     <Compile Include="HanBin.OfficerManager\GetApplyDetailInfoResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerDetailInfoResult.cs" />
     <Compile Include="HanBin.OfficerManager\GetOfficerListResult.cs" />

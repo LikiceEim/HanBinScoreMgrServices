@@ -2,7 +2,7 @@
     <div>
       <div class="craeteTop">
         干部列表
-      </div>
+      </div><span>切换图形显示</span>
       <div class="unltlistBot">
         <!--所属分类-->
         <div class="unitLIstFl">
@@ -30,6 +30,8 @@
         <div>
           <Table  border :columns="columns7" :data="data6" @on-sort-change='changeSort'></Table>
         </div>
+
+      
         <!--分页器-->
           <div class="unltlistfyq">
             <Page :total="total" :current="current" :page-size="pageSize" @on-change="handleChangePage" show-total />

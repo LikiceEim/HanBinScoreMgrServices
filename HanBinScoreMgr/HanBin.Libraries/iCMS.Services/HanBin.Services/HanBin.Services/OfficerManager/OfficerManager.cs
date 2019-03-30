@@ -42,6 +42,9 @@ namespace HanBin.Services.OfficerManager
         [Dependency]
         public IRepository<ScoreChangeHistory> schRepository { get; set; }
 
+        [Dependency]
+        public IRepository<HBUser> userRepository { get; set; }
+
         public OfficerManager()
         {
             //解决部署IIS 依赖注入的问题
@@ -76,6 +79,7 @@ namespace HanBin.Services.OfficerManager
 
             organTypeRepository = new Repository<OrganType>();
             schRepository = new Repository<ScoreChangeHistory>();
+            userRepository = new Repository<HBUser>();
         }
 
         #region 添加干部
@@ -944,6 +948,47 @@ namespace HanBin.Services.OfficerManager
             {
 
                 throw;
+            }
+        }
+        #endregion
+
+        #region 根据二级管理员的ID，获取本单位的干部
+        public BaseResponse<AllOfficerListPerSecondAdminReult> GetAllOfficerListPerSecondAdmin(GetAllOfficerListPerSecondAdminParameter parameter)
+        {
+            BaseResponse<AllOfficerListPerSecondAdminReult> response = new BaseResponse<AllOfficerListPerSecondAdminReult>();
+            AllOfficerListPerSecondAdminReult result = new AllOfficerListPerSecondAdminReult();
+
+            try
+            {
+                var currentUser = userRepository.GetByKey(parameter.CurrentUserID);
+                if (currentUser == null)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "用户数据异常";
+                    return response;
+                }
+                if (currentUser.RoleID != (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "二级管理员才具有此权限";
+                    return response;
+                }
+
+                var curOrganID = currentUser.OrganizationID;
+                var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService && t.OrganizationID == curOrganID, true).Select(t => new OfficerInfoItem
+                {
+                    OfficerID = t.OfficerID,
+                    OfficerName = t.Name,
+                    CurrentScore = t.CurrentScore
+                }).ToList();
+                result.OfficerInfoItemList.AddRange(officers);
+                response.Result = result;
+                return response;
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                return response;
             }
         }
         #endregion

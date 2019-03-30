@@ -27,6 +27,7 @@
               </template>
               <!--<MenuItem name="3-1" to="/Mains/CreateLeader" >创建干部</MenuItem>-->
               <MenuItem name="3-2" to="/Mains/LeaderList">干部列表</MenuItem>
+              <MenuItem name="3-4" to="/Mains/LeaderGraphic" v-if="roleID==4">图形显示</MenuItem>
             </Submenu>
 
             <Submenu name="4">
