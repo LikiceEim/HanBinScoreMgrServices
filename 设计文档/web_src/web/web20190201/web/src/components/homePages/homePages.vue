@@ -550,7 +550,7 @@ export default {
 
                 debugger;
 
-                  that.$router.push({ path: "LeaPerInfor", query: data }); //路由跳转至干部详情页
+                that.$router.push({ path: "LeaPerInfor", query: data }); //路由跳转至干部详情页
               }
             }
 

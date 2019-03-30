@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryLog(data){
   return request({
-    url: 'HanBinSystemService.svc/QueryLog',
-    // url: 'HanBin/SystemService/QueryLog',
+    //url: 'HanBinSystemService.svc/QueryLog',
+     url: 'HanBin/SystemService/QueryLog',
     method: 'post',
     data:data
   })
