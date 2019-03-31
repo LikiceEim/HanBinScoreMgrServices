@@ -64,7 +64,7 @@
           </div>
         </div>
         <div class="personalName">
-          <span class="personalspantwo" style="margin-right:60px;margin-top:0;">现任职务</span>
+          <span class="personalspantwo" style="margin-right:60px;">现任职务</span>
           <Input  class="input" v-model="PositionValue" />
           <div style="text-align:left ">
             <!-- <Select v-model="PositionValue" style="width:300px;">

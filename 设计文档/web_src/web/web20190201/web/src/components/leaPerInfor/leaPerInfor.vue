@@ -46,18 +46,20 @@
               <span>{{fullName}}</span>
             </div>
             <div class="letLiBox">
-              <h3>单位简介</h3>
-              <span>{{organSimple}}</span>
-            </div>
-         </div>
-         <div class="letLi">
-            <div class="letLiBox">
               <h3>单位类型</h3>
               <span>{{organType}}</span>
             </div>
+         </div>
+         <div class="letLi">
+            
             <div class="letLiBox">
               <h3>任职职位</h3>
               <span>{{rank}}</span>
+            </div>
+
+             <div class="letLiBox">
+              <h3>职位级别</h3>
+              <span>{{level}}</span>
             </div>
          </div>
          <div class="letLi">
@@ -65,10 +67,7 @@
               <h3>任职时间</h3>
               <span>{{officeDate}}</span>
             </div>
-            <div class="letLiBox">
-              <h3>职位级别</h3>
-              <span>{{level}}</span>
-            </div>
+           
          </div>
          <div class="letLi">
             <div class="letLiBox">
