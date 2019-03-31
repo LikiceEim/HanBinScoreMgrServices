@@ -51,9 +51,9 @@
         <Select v-model="unitType" style="width:200px">
           <Option v-for="item in unitTypeArr" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
-        <span>职位分类</span>
+        <span>职位级别</span>
         <Select v-model="positionType" style="width:200px">
-          <Option v-for="item in positionTypeArr" :value="item.value" :key="item.value">{{ item.label }}</Option>
+          <Option v-for="item in LevelTypeArr" :value="item.value" :key="item.value">{{ item.label }}</Option>
         </Select>
         <span>工龄</span>
         <Select v-model="workingAge" style="width:200px">
@@ -69,7 +69,7 @@
  <script>
  import {queryAreaAverageScore, queryAgeAverageScore, queryOrganAverageScore,queryOrganCategoryAverageScore} from '@/api/dimensionalPre';
  import {queryUnitName} from '@/api/usersManage';
-  import {queryCarreLevel} from '@/api/leaderList';
+  import {queryLevelList} from '@/api/leaderList';
  export default {
    name: 'dimensionalPre',
    data() {
@@ -99,7 +99,7 @@
       // 职位分类
       positionType: null,
       // 职位分类list
-      positionTypeArr: [],
+      LevelTypeArr: [],
       // 工龄
       workingAge: null,
       // 工龄list
@@ -158,11 +158,11 @@
         }
       });
       // 获取职位
-      queryCarreLevel().then(res => {
+      queryLevelList().then(res => {
         debugger;
         if(res.IsSuccessful == true) {
-          this.positionTypeArr = [];
-          var row = res.Result.PositionList;
+          this.LevelTypeArr = [];
+          var row = res.Result.LevelList;
           var list = [];
           list.push({
              label: '全部',
@@ -170,11 +170,11 @@
           })
           for(let i = 0; i < row.length; i++) {
             var tempObj = {};
-            tempObj.label = row[i].PositionName;
-            tempObj.value = row[i].PositionID;
+            tempObj.label = row[i].LevelName;
+            tempObj.value = row[i].LevelID;
             list.push(tempObj);
           }
-          this.positionTypeArr = list;
+          this.LevelTypeArr = list;
         }else{
           this.$Message.error(res.Reason);
         }

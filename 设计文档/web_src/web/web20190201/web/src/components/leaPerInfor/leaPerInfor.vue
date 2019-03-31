@@ -233,7 +233,7 @@
               this.rank = data.PositionName;// 任职职位
               var date2 = data.OnOfficeDate;
               date2 = date2.split(' ')[0];
-              this.officeDate = date2;// 任职时间
+              this.officeDate = date2.substr(0,7);// 任职时间
               this.level = data.LevelName;
               this.duty = data.Duty;
             }else{
