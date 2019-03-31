@@ -2,7 +2,7 @@
     <div>
       <div class="craeteTop">
         干部列表
-      </div><span>切换图形显示</span>
+      </div>
       <div class="unltlistBot">
         <!--所属分类-->
         <div class="unitLIstFl">

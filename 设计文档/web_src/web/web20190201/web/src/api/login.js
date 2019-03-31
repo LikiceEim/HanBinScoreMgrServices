@@ -9,8 +9,8 @@ import request from '@/utils/request'
 export function loginFun(query) {
   debugger;
   return request({
-    //url: 'HanBinSystemService.svc/Login',
-    url: 'HanBin/SystemService/Login',
+    url: 'HanBinSystemService.svc/Login',
+    //url: 'HanBin/SystemService/Login',
     method: 'post',
     data: query
   })

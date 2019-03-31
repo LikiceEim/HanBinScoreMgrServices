@@ -19,8 +19,8 @@ export function fetchList(query) {
  */
 export function queryAllPageList(){
   return request({
-    //url: 'HanBinScoreService.svc/SystemStatSummary',
-     url: 'HanBin/ScoreService/SystemStatSummary',
+    url: 'HanBinScoreService.svc/SystemStatSummary',
+     //url: 'HanBin/ScoreService/SystemStatSummary',
     method: 'post'
   })
 }
@@ -30,8 +30,8 @@ export function queryAllPageList(){
  */
 export function queryRedBoardData(data){
   return request({
-    //url: 'HanBinScoreService.svc/GetHonourBoard',
-     url: 'HanBin/ScoreService/GetHonourBoard',
+    url: 'HanBinScoreService.svc/GetHonourBoard',
+     //url: 'HanBin/ScoreService/GetHonourBoard',
     method: 'post',
     data
   })
@@ -42,8 +42,8 @@ export function queryRedBoardData(data){
  */
 export function queryBlackBoardData(data){
   return request({
-    //url: 'HanBinScoreService.svc/GetBlackBoard',
-    url: 'HanBin/ScoreService/GetBlackBoard',
+    url: 'HanBinScoreService.svc/GetBlackBoard',
+    //url: 'HanBin/ScoreService/GetBlackBoard',
     method: 'post',
     data
   })
@@ -54,8 +54,8 @@ export function queryBlackBoardData(data){
  */
 export function queryToDoList(data){
   return request({
-    //url: 'HanBinScoreService.svc/GetWhatsToDoSummary',
-     url: 'HanBin/ScoreService/GetWhatsToDoSummary',
+    url: 'HanBinScoreService.svc/GetWhatsToDoSummary',
+    // url: 'HanBin/ScoreService/GetWhatsToDoSummary',
     method: 'post',
     data
   })
@@ -66,8 +66,8 @@ export function queryToDoList(data){
  */
 export function querySuperiorFeedbackList(data) {
   return request({
-    //url: 'HanBinScoreService.svc/GetHighLevelFeedBackSummary',
-     url: 'HanBin/ScoreService/GetHighLevelFeedBackSummary',
+    url: 'HanBinScoreService.svc/GetHighLevelFeedBackSummary',
+    // url: 'HanBin/ScoreService/GetHighLevelFeedBackSummary',
     method: 'post',
     data
   })
@@ -78,8 +78,8 @@ export function querySuperiorFeedbackList(data) {
  */
 export function queryScoreChangeHistory(data) {
   return request({
-    //url: 'HanBinScoreService.svc/GetScoreChangeHistory',
-    url: 'HanBin/ScoreService/GetScoreChangeHistory',
+    url: 'HanBinScoreService.svc/GetScoreChangeHistory',
+    //url: 'HanBin/ScoreService/GetScoreChangeHistory',
     method: 'post',
     data
   })
@@ -90,8 +90,8 @@ export function queryScoreChangeHistory(data) {
  */
 export function queryScorePublicShow(data){
   return request({
-    //url: 'HanBinScoreService.svc/ScorePublicShow',
-    url: 'HanBin/ScoreService/ScorePublicShow',
+    url: 'HanBinScoreService.svc/ScorePublicShow',
+    //url: 'HanBin/ScoreService/ScorePublicShow',
     method: 'post',
     data
   })

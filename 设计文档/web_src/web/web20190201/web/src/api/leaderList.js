@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryUnitType(){
     return request({
-        //url: 'HanBinSystemService.svc/GetOrganSummary',
-         url: 'HanBin/SystemService/GetOrganSummary',
+        url: 'HanBinSystemService.svc/GetOrganSummary',
+         //url: 'HanBin/SystemService/GetOrganSummary',
         method: 'post'
     })
 }
@@ -22,8 +22,8 @@ export function queryUnitType(){
  */
 export function queryCarreLevel() {
     return request({
-        //url: 'HanBinSystemService.svc/GetPositionSummary',
-         url: 'HanBin/SystemService/GetPositionSummary',
+        url: 'HanBinSystemService.svc/GetPositionSummary',
+        // url: 'HanBin/SystemService/GetPositionSummary',
         method: 'post'
     })
 }
@@ -33,8 +33,8 @@ export function queryCarreLevel() {
  */
 export function quertLeaderList(data) {
     return request({
-        //url: 'HanBinSystemService.svc/GetOfficerList',
-         url: 'HanBin/SystemService/GetOfficerList',
+        url: 'HanBinSystemService.svc/GetOfficerList',
+        // url: 'HanBin/SystemService/GetOfficerList',
         method: 'post',
         data
     })
@@ -45,8 +45,8 @@ export function quertLeaderList(data) {
  */
 export function queryLevelList() {
     return request({
-        //url: 'HanBinSystemService.svc/GetLevelSummary',
-         url: 'HanBin/SystemService/GetLevelSummary',
+        url: 'HanBinSystemService.svc/GetLevelSummary',
+         //url: 'HanBin/SystemService/GetLevelSummary',
         method: 'post'
     })
 }
@@ -56,8 +56,8 @@ export function queryLevelList() {
  */
 export function addLeaderInfo(data) {
     return request({
-        //url: 'HanBinSystemService.svc/AddOfficerRecord',
-         url: 'HanBin/SystemService/AddOfficerRecord',    
+        url: 'HanBinSystemService.svc/AddOfficerRecord',
+        // url: 'HanBin/SystemService/AddOfficerRecord',    
         method: 'post',
         data
     })
@@ -68,8 +68,8 @@ export function addLeaderInfo(data) {
  */
 export function editLeaderInfo(data){
     return request({
-        //url: 'HanBinSystemService.svc/EditOfficerRecord',
-        url: 'HanBin/SystemService/EditOfficerRecord', 
+        url: 'HanBinSystemService.svc/EditOfficerRecord',
+        //url: 'HanBin/SystemService/EditOfficerRecord', 
         method: 'post',
         data
     })
@@ -80,8 +80,8 @@ export function editLeaderInfo(data){
  */
 export function getLeaderInfoDetiel(data){
     return request({
-        //url: 'HanBinSystemService.svc/GetOfficerDetailInfo',
-         url: 'HanBin/SystemService/GetOfficerDetailInfo',
+        url: 'HanBinSystemService.svc/GetOfficerDetailInfo',
+        // url: 'HanBin/SystemService/GetOfficerDetailInfo',
         method: 'post',
         data
     })
@@ -92,8 +92,8 @@ export function getLeaderInfoDetiel(data){
  */
 export function getLeaderInfoScore(data){
     return request({
-        //url: 'HanBinSystemService.svc/GetOfficerScoreDetailInfo',
-         url: 'HanBin/SystemService/GetOfficerScoreDetailInfo',
+        url: 'HanBinSystemService.svc/GetOfficerScoreDetailInfo',
+         //url: 'HanBin/SystemService/GetOfficerScoreDetailInfo',
         method:'post',
         data
     })
@@ -104,8 +104,8 @@ export function getLeaderInfoScore(data){
  */
 export function deleteLeaderInfo(data){
     return request({
-        //url: 'HanBinSystemService.svc/DeleteOfficerRecord',
-         url: 'HanBin/SystemService/DeleteOfficerRecord',
+        url: 'HanBinSystemService.svc/DeleteOfficerRecord',
+        // url: 'HanBin/SystemService/DeleteOfficerRecord',
         method: 'post',
         data
     })
@@ -116,8 +116,8 @@ export function deleteLeaderInfo(data){
  */
 export function retireLeaderInfo(data){
     return request({
-        //url: 'HanBinSystemService.svc/SetOfficerOffService',
-         url: 'HanBin/SystemService/SetOfficerOffService',
+        url: 'HanBinSystemService.svc/SetOfficerOffService',
+         //url: 'HanBin/SystemService/SetOfficerOffService',
         method: 'post',
         data
     })
@@ -128,8 +128,8 @@ export function retireLeaderInfo(data){
  */
 export function undoInitInfo(data){
     return request({
-        //url: 'HanBinSystemService.svc/CancelScoreApply',
-         url: 'HanBin/SystemService/CancelScoreApply',
+        url: 'HanBinSystemService.svc/CancelScoreApply',
+        // url: 'HanBin/SystemService/CancelScoreApply',
         method: 'post',
         data
     })
@@ -140,8 +140,8 @@ export function undoInitInfo(data){
  */
 export function deleteFile(data){
     return request({
-        //url: 'HanBinScoreService.svc/DeleteFile',
-         url: 'HanBin/ScoreService/DeleteFile',
+        url: 'HanBinScoreService.svc/DeleteFile',
+         //url: 'HanBin/ScoreService/DeleteFile',
         method: 'post',
         data
     })
@@ -152,8 +152,8 @@ export function deleteFile(data){
  */
 export function secondLevelGetLeaderList(data){
     return request({
-        //url: 'HanBinScoreService.svc/DeleteFile',
-         url: 'HanBin/SystemService/GetAllOfficerListPerSecondAdmin',
+        url: 'HanBinSystemService.svc/GetAllOfficerListPerSecondAdmin',
+        // url: 'HanBin/SystemService/GetAllOfficerListPerSecondAdmin',
         method: 'post',
         data
     })

@@ -1,6 +1,6 @@
 <template>
-  <div class="list-half">
-    <span style="display:inline-block;margin-left:20px;color:#000;font-size:15px;">干部积分排名</span>
+  <div class="craeteTop">
+    <span style="display:inline-block;margin-left:10px;color:#000;font-size:23px;">干部积分排名</span>
     <div class="list-red" ref="listRed"></div>
   </div>
 </template>
@@ -124,3 +124,18 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .craeteTop{
+    width:100%;
+    height:65px;
+    font-size: 24px;
+    font-weight: 600;
+    background: #cdd0d4;
+    line-height: 65px;
+    padding-left: 60px;
+    color: #323232;
+    font-size: 25px;
+  }
+
+</style>

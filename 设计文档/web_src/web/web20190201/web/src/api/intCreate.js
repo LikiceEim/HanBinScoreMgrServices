@@ -13,8 +13,8 @@ export function uploadFile(data,name){
     console.log(data);
     debugger;
     return request({
-        //url: 'HanBinFileService.svc/UploadFile/' + name,
-        url: 'HanBin/FileService/UploadFile/' + name,
+        url: 'HanBinFileService.svc/UploadFile/' + name,
+        //url: 'HanBin/FileService/UploadFile/' + name,
         method: 'post',
         headers: {
             post: {
@@ -30,8 +30,8 @@ export function uploadFile(data,name){
  */
 export function submitApply(data){
     return request({
-        //url: 'HanBinScoreService.svc/AddScoreApply',
-        url: 'HanBin/ScoreService/AddScoreApply',
+        url: 'HanBinScoreService.svc/AddScoreApply',
+        //url: 'HanBin/ScoreService/AddScoreApply',
         method: 'post',
         data
     })

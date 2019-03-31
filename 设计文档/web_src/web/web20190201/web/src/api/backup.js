@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryBackupList(data){
 return request({
-    //url: 'HanBinSystemService.svc/GetBackupLogList',
-     url: 'HanBin/SystemService/GetBackupLogList',
+     url: 'HanBinSystemService.svc/GetBackupLogList',
+     //url: 'HanBin/SystemService/GetBackupLogList',
     method: 'post',
     data
 })
@@ -23,8 +23,8 @@ return request({
  */
 export function doBackup(){
     return request({
-      //url: 'HanBinSystemService.svc/BackupDB',
-        url: 'HanBin/SystemService/BackupDB',
+       url: 'HanBinSystemService.svc/BackupDB',
+        //url: 'HanBin/SystemService/BackupDB',
         method: 'post'
     })
 }
@@ -34,8 +34,8 @@ export function doBackup(){
  */
 export function deleteBackUp(data){
     return request({
-        //url: 'HanBinSystemService.svc/DeleteBackup',
-         url: 'HanBin/SystemService/DeleteBackup',
+        url: 'HanBinSystemService.svc/DeleteBackup',
+        // url: 'HanBin/SystemService/DeleteBackup',
         method: 'post',
         data
     })

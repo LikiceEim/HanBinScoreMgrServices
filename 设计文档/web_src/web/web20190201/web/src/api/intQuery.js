@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryIntScoreList(data){
     return request({
-        //url: 'HanBinScoreService.svc/QuerySocre',
-        url: 'HanBin/ScoreService/QuerySocre',
+        url: 'HanBinScoreService.svc/QuerySocre',
+        //url: 'HanBin/ScoreService/QuerySocre',
         method: 'post',
         data
     })

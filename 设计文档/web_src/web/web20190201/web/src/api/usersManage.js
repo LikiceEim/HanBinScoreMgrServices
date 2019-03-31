@@ -12,8 +12,8 @@ import request from '@/utils/request'
 export function queryUsersList(query) {
   debugger;
   return request({
-    //url: 'HanBinSystemService.svc/GetUserInfo',
-     url: 'HanBin/SystemService/GetUserInfo',
+    url: 'HanBinSystemService.svc/GetUserInfo',
+    // url: 'HanBin/SystemService/GetUserInfo',
     method: 'post',
     data: query
   })
@@ -25,8 +25,8 @@ export function queryUsersList(query) {
  */
 export function addUserList(data) {
   return request({
-    //url: 'HanBinSystemService.svc/AddUser',
-     url: 'HanBin/SystemService/AddUser',
+    url: 'HanBinSystemService.svc/AddUser',
+     //url: 'HanBin/SystemService/AddUser',
     method: 'post',
     data: data
   })
@@ -37,8 +37,8 @@ export function addUserList(data) {
  */
 export function editUserInfo(data) {
   return request({
-    //url: 'HanBinSystemService.svc/EditUser',
-     url: 'HanBin/SystemService/EditUser',
+    url: 'HanBinSystemService.svc/EditUser',
+    // url: 'HanBin/SystemService/EditUser',
     method: 'post',
     data
   })
@@ -49,8 +49,8 @@ export function editUserInfo(data) {
  */
 export function deleteUserInfo(id) {
   return request({
-    //url: 'HanBinSystemService.svc/DeleteUser',
-     url: 'HanBin/SystemService/DeleteUser',
+    url: 'HanBinSystemService.svc/DeleteUser',
+    // url: 'HanBin/SystemService/DeleteUser',
     method: 'post',
     data: id
   })
@@ -61,8 +61,8 @@ export function deleteUserInfo(id) {
  */
 export function forbiddenUser(data) {
   return request({
-    //url: 'HanBinSystemService.svc/ChangeUseStatus',
-     url: 'HanBin/SystemService/ChangeUseStatus',
+    url: 'HanBinSystemService.svc/ChangeUseStatus',
+    // url: 'HanBin/SystemService/ChangeUseStatus',
     method:'post',
     data
   })
@@ -73,8 +73,8 @@ export function forbiddenUser(data) {
  */
 export function queryUnitName() {
   return request({
-    //url: 'HanBinSystemService.svc/GetOrganSummary',
-     url: 'HanBin/SystemService/GetOrganSummary',
+    url: 'HanBinSystemService.svc/GetOrganSummary',
+     //url: 'HanBin/SystemService/GetOrganSummary',
     method: 'post'
   })
 }
@@ -84,8 +84,8 @@ export function queryUnitName() {
  */
 export function queryRoleList(){
   return request({
-    //url: 'HanBinSystemService.svc/GetRoleInfoList',
-     url: 'HanBin/SystemService/GetRoleInfoList',
+    url: 'HanBinSystemService.svc/GetRoleInfoList',
+    // url: 'HanBin/SystemService/GetRoleInfoList',
     method: 'post'
   })
 }
@@ -95,8 +95,8 @@ export function queryRoleList(){
  */
 export function resetPWD(data){
   return request({
-    //url: 'HanBinSystemService.svc/ResetPWD',
-     url: 'HanBin/SystemService/ResetPWD',
+    url: 'HanBinSystemService.svc/ResetPWD',
+     //url: 'HanBin/SystemService/ResetPWD',
     method: 'post',
     data
   })
@@ -107,8 +107,8 @@ export function resetPWD(data){
  */
 export function UpdatePWD(data){
   return request({
-    //url: 'HanBinSystemService.svc/UpdatePWD',
-    url: 'HanBin/SystemService/UpdatePWD',
+    url: 'HanBinSystemService.svc/UpdatePWD',
+    //url: 'HanBin/SystemService/UpdatePWD',
     method: 'post',
     data
   })

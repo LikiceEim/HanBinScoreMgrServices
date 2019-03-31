@@ -21,7 +21,7 @@ export default {
 .list-red {
   width: 100%;
   justify-content: space-between;
-  height: 300px;
+  height: 600px;
   background-color: #fff;
 }
 </style>

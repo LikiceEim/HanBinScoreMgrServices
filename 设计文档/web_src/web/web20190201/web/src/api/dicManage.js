@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryScoreList(){
     return request({
-        //url: 'HanBinScoreService.svc/GetScoreItemList',
-        url: 'HanBin/ScoreService/GetScoreItemList',
+        url: 'HanBinScoreService.svc/GetScoreItemList',
+        //url: 'HanBin/ScoreService/GetScoreItemList',
         method: 'post'
     })
 }
@@ -22,8 +22,8 @@ export function queryScoreList(){
  */
 export function addScoreInfo(data) {
     return request({
-        //url: 'HanBinScoreService.svc/AddScoreItem',
-        url: 'HanBin/ScoreService/AddScoreItem',
+        url: 'HanBinScoreService.svc/AddScoreItem',
+        //url: 'HanBin/ScoreService/AddScoreItem',
         method: 'post',
         data
     })
@@ -34,8 +34,8 @@ export function addScoreInfo(data) {
  */
 export function editScoreInfo(data){
     return request({
-        //url: 'HanBinScoreService.svc/EditScoreItem',
-        url: 'HanBin/ScoreService/EditScoreItem',
+        url: 'HanBinScoreService.svc/EditScoreItem',
+        //url: 'HanBin/ScoreService/EditScoreItem',
         method: 'post',
         data
     })
@@ -46,8 +46,8 @@ export function editScoreInfo(data){
  */
 export function deleteScoreInfo(data){
     return request({
-        //url: 'HanBinScoreService.svc/DeleteScoreItem',
-        url: 'HanBin/ScoreService/DeleteScoreItem',
+        url: 'HanBinScoreService.svc/DeleteScoreItem',
+        //url: 'HanBin/ScoreService/DeleteScoreItem',
         method: 'post',
         data
     })

@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function addUnit(data){
   return request({
-    //url: 'HanBinSystemService.svc/AddOrganizationRecord',
-     url: 'HanBin/SystemService/AddOrganizationRecord',
+    url: 'HanBinSystemService.svc/AddOrganizationRecord',
+     //url: 'HanBin/SystemService/AddOrganizationRecord',
     method: 'post',
     data:data
   })
@@ -23,16 +23,16 @@ export function addUnit(data){
  */
 export function queryUnitType() {
   return request({
-    //url: 'HanBinSystemService.svc/GetOrganTypeList',
-     url: 'HanBin/SystemService/GetOrganTypeList',
+    url: 'HanBinSystemService.svc/GetOrganTypeList',
+     //url: 'HanBin/SystemService/GetOrganTypeList',
     method: 'post'
   })
 }
 
 export function queryUnitData(data) {
   return request({
-    //url: 'HanBinSystemService.svc/GetOrganList',
-     url: 'HanBin/SystemService/GetOrganList',
+    url: 'HanBinSystemService.svc/GetOrganList',
+    // url: 'HanBin/SystemService/GetOrganList',
     method: 'post',
     data
   })
@@ -43,8 +43,8 @@ export function queryUnitData(data) {
  */
 export function GetAreaList(){
   return request({
-    //url: 'HanBinSystemService.svc/GetAreaList',
-     url: 'HanBin/SystemService/GetAreaList',
+    url: 'HanBinSystemService.svc/GetAreaList',
+     //url: 'HanBin/SystemService/GetAreaList',
     method: 'post'
   })
 }
@@ -54,8 +54,8 @@ export function GetAreaList(){
  */
 export function updateUnitInfo(data){
   return request({
-    //url: 'HanBinSystemService.svc/EditOrganizationRecord',
-     url:'HanBin/SystemService/EditOrganizationRecord',
+    url: 'HanBinSystemService.svc/EditOrganizationRecord',
+    // url:'HanBin/SystemService/EditOrganizationRecord',
     method: 'post',
     data
   })
@@ -66,8 +66,8 @@ export function updateUnitInfo(data){
  */
 export function deleteUnitInfo(data){
   return request({
-    //url: 'HanBinSystemService.svc/DeleteOrganRecord',
-     url:'HanBin/SystemService/DeleteOrganRecord',
+    url: 'HanBinSystemService.svc/DeleteOrganRecord',
+     //url:'HanBin/SystemService/DeleteOrganRecord',
     method: 'post',
     data
   })
@@ -78,8 +78,8 @@ export function deleteUnitInfo(data){
  */
 export function quertDetailUnitInfo(data){
   return request({
-    //url: 'HanBinSystemService.svc/GetOrganDetailInfo',
-     url: 'HanBin/SystemService/GetOrganDetailInfo',
+    url: 'HanBinSystemService.svc/GetOrganDetailInfo',
+    // url: 'HanBin/SystemService/GetOrganDetailInfo',
     method: 'post',
     data
   })

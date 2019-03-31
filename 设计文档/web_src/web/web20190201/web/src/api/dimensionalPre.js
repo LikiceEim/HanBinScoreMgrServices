@@ -11,8 +11,8 @@ import request from '@/utils/request'
  */
 export function queryAreaAverageScore(){
     return request({
-        //url: 'HanBinScoreService.svc/AreaAverageScore',
-        url: 'HanBin/ScoreService/AreaAverageScore',
+        url: 'HanBinScoreService.svc/AreaAverageScore',
+        //url: 'HanBin/ScoreService/AreaAverageScore',
         method: 'post'
     })
 }
@@ -22,8 +22,8 @@ export function queryAreaAverageScore(){
  */
 export function queryAgeAverageScore(data){
     return request({
-        //url: 'HanBinScoreService.svc/AgeAverageScore',
-        url: 'HanBin/ScoreService/AgeAverageScore',
+        url: 'HanBinScoreService.svc/AgeAverageScore',
+        //url: 'HanBin/ScoreService/AgeAverageScore',
         method: 'post',
         data
     })
@@ -34,8 +34,8 @@ export function queryAgeAverageScore(data){
  */
 export function queryOrganAverageScore(data) {
     return request({
-        //url: 'HanBinScoreService.svc/OrganAverageScore',
-        url: 'HanBin/ScoreService/OrganAverageScore',
+        url: 'HanBinScoreService.svc/OrganAverageScore',
+        //url: 'HanBin/ScoreService/OrganAverageScore',
         method: 'post',
         data
     })
@@ -43,8 +43,8 @@ export function queryOrganAverageScore(data) {
 
 export function queryOrganCategoryAverageScore(data){
     return request({
-        //url: 'HanBinScoreService.svc/OrganCategoryAverageScore',
-        url: 'HanBin/ScoreService/OrganCategoryAverageScore',
+        url: 'HanBinScoreService.svc/OrganCategoryAverageScore',
+        //url: 'HanBin/ScoreService/OrganCategoryAverageScore',
         method: 'post',
         data
     })
