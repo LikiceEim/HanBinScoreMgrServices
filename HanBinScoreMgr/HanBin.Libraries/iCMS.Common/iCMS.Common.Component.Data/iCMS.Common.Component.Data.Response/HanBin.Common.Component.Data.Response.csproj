@@ -84,6 +84,7 @@
     <Compile Include="HanBin.SystemManager\LoginResult.cs" />
     <Compile Include="HanBin.SystemManager\QueryLogResult.cs" />
     <Compile Include="HanBinOrganManager\GetAreaListResult.cs" />
+    <Compile Include="HanBinOrganManager\GetMainOrganTypeResult.cs" />
     <Compile Include="HanBinOrganManager\GetOrganDetailInfoResult.cs" />
     <Compile Include="HanBinOrganManager\GetOrganListResult.cs" />
     <Compile Include="HanBinOrganManager\GetOrganTypeResult.cs" />

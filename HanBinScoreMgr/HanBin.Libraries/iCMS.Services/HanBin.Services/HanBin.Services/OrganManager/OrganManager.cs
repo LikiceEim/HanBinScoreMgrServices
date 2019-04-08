@@ -41,6 +41,9 @@ namespace HanBin.Services.OrganManager
         [Dependency]
         public IRepository<HBUser> userRepository { get; set; }
 
+        [Dependency]
+        public IRepository<MainOrganType> mainOrganTypeRepository { get; set; }
+
         public OrganManager()
         {
             organRepository = new Repository<Organization>();
@@ -51,6 +54,7 @@ namespace HanBin.Services.OrganManager
             officerLevelRepository = new Repository<OfficerLevelType>();
             areaRepository = new Repository<Area>();
             userRepository = new Repository<HBUser>();
+            mainOrganTypeRepository = new Repository<MainOrganType>();
         }
 
         #region 添加单位
@@ -77,6 +81,13 @@ namespace HanBin.Services.OrganManager
                 {
                     response.IsSuccessful = false;
                     response.Reason = "单位全称不能超过20个字符";
+                    return response;
+                }
+
+                if (param.OrganTypeID < 1)
+                {
+                    response.IsSuccessful = false;
+                    response.Reason = "请选择单位类型";
                     return response;
                 }
                 //if (string.IsNullOrEmpty(param.OrganShortName))
@@ -459,12 +470,12 @@ namespace HanBin.Services.OrganManager
                     }
 
                     var organListLinq = from organ in organQuerable
-                                        join organType in dbContext.OrganTypes.Where(t => !t.IsDeleted) on organ.OrganTypeID equals organType.OrganTypeID
+                                        join organType in dbContext.MainOrganTypes.Where(t => !t.IsDeleted) on organ.OrganTypeID equals organType.OrganTypeID
                                         into group1
                                         from g1 in group1
-                                        join category in dbContext.OrganCategories.Where(t => !t.IsDeleted) on g1.CategoryID equals category.CategoryID
-                                        into group2
-                                        from g2 in group2
+                                        //join category in dbContext.OrganCategories.Where(t => !t.IsDeleted) on g1.CategoryID equals category.CategoryID
+                                        //into group2
+                                        //from g2 in group2
 
 
                                         join item in dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService).GroupBy(t => t.OrganizationID) on organ.OrganID equals item.Key
@@ -481,8 +492,8 @@ namespace HanBin.Services.OrganManager
                                             OrganShortName = organ.OrganShortName,
                                             OrganTypeID = organ.OrganTypeID,
                                             OrganTypeName = g1.OrganTypeName,
-                                            OrganCategoryID = g2.CategoryID,
-                                            OrganCategoryName = g2.CategoryName,
+                                            //OrganCategoryID = g2.CategoryID,
+                                            //OrganCategoryName = g2.CategoryName,
                                             OfficerQuanlity = g3.Count(),
                                             AddDate = organ.AddDate,
                                             AreaID = organ.AreaID
@@ -549,6 +560,28 @@ namespace HanBin.Services.OrganManager
                 response.Reason = e.Message;
                 return response;
             }
+        }
+        #endregion
+
+        #region 获取单位类型列表
+        public BaseResponse<GetMainOrganTypeResult> GetMainOrganType()
+        {
+            BaseResponse<GetMainOrganTypeResult> response = new BaseResponse<GetMainOrganTypeResult>();
+            GetMainOrganTypeResult result = new GetMainOrganTypeResult();
+
+            try
+            {
+                var mainOrganTypeList = mainOrganTypeRepository.GetDatas<MainOrganType>(t => !t.IsDeleted, true).Select(t => new MainOrganTypeItem { OrganTypeID = t.OrganTypeID, OrganTypeName = t.OrganTypeName }).ToList();
+                result.MainOrganTypeItemList.AddRange(mainOrganTypeList);
+            }
+            catch (Exception e)
+            {
+                response.IsSuccessful = false;
+                response.Reason = "获取单位类型发生异常";
+            }
+
+            response.Result = result;
+            return response;
         }
         #endregion
     }

@@ -51,6 +51,7 @@
     <Compile Include="BackupLog.cs" />
     <Compile Include="HBUser.cs" />
     <Compile Include="HBRole.cs" />
+    <Compile Include="MainOrganType.cs" />
     <Compile Include="Officer.cs" />
     <Compile Include="OfficerLevelType.cs" />
     <Compile Include="OfficerPositionType.cs" />

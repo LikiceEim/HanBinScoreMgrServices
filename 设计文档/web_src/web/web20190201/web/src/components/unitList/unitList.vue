@@ -63,26 +63,22 @@
               </div>
               <!--镇办 区政府-->
               <div class="createZb">
-                <Tabs :animated="false">
+                <!--单位分类， added by QXM-->
+                <RadioGroup v-model="part">
+                  <template v-for="(organType, organTypeIndex) in OrganTypeList">
+                    <!-- <Radio :key="cellIndex" :label="cell.OrganTypeName"></Radio> -->
+                    <Radio
+                      :key="organTypeIndex"
+                      :label="organType.OrganTypeID"
+                      :value="organType.OrganTypeID"
+                    >
+                      <span>{{organType.OrganTypeName}}</span>
+                    </Radio>
+                  </template>
+                </RadioGroup>
+
+                <Tabs :animated="false" v-if="false">
                   <template v-for="(item,index) in TownToDo">
-                    <!-- <TabPane label="镇办" name="镇办" >
-                      <div>
-                        <RadioGroup  v-model="part">
-                          <template v-for="(item, index) in TownToDo">
-                            <Radio :key="index" :label="item.OrganTypeName"></Radio>
-                          </template>
-                        </RadioGroup>
-                      </div>
-                    </TabPane>
-                    <TabPane label="区级部门" name="区级部门" >
-                      <div>
-                        <RadioGroup v-model="part">
-                          <template v-for="(item, index) in Department">
-                            <Radio :key="index" :label="item.OrganTypeName"></Radio>
-                          </template>
-                        </RadioGroup>
-                      </div>
-                    </TabPane>-->
                     <TabPane :key="index" :label="item.CategoryName" :name="item.CategoryName">
                       <div>
                         <RadioGroup v-model="part">
@@ -148,7 +144,8 @@ import {
   queryUnitType,
   queryUnitData,
   GetAreaList,
-  deleteUnitInfo
+  deleteUnitInfo,
+  quertMainOrganType
 } from "@/api/unitList";
 import Cookies from "js-cookie";
 export default {
@@ -330,7 +327,13 @@ export default {
       modal_loading: false,
 
       isUnitShortNameShow: false,
-      isUnitAreaShow: false
+      isUnitAreaShow: false,
+      OrganTypeList: [
+        { OrganTypeID: 1, OrganTypeName: "党群部门" },
+        { OrganTypeID: 2, OrganTypeName: "政府部门" },
+        { OrganTypeID: 3, OrganTypeName: "镇办部门" }
+      ],
+      part:''
       // rules:{
       //   unitFull: [
       //     { type: 'string', max: 20, message: '长度不能超过20位', trigger: 'blur' }
@@ -340,44 +343,61 @@ export default {
   },
   created() {
     // 查询单位所属分类
-    queryUnitType().then(res => {
+    // queryUnitType().then(res => {
+    //   debugger;
+    //   this.cityList = [];
+    //   if (res.IsSuccessful == true) {
+    //     var row = res.Result.CategoryList;
+    //     var selectData = [];
+    //     selectData.push({
+    //       label: "全部",
+    //       value: null
+    //     });
+    //     for (let i = 0; i < row.length; i++) {
+    //       for (let j = 0; j < row[i].OrganTypeList.length; j++) {
+    //         var tempObj = {};
+    //         tempObj.label = row[i].OrganTypeList[j].OrganTypeName;
+    //         tempObj.value = row[i].OrganTypeList[j].OrganTypeID;
+    //         selectData.push(tempObj);
+    //         //备份首选项
+    //         if (i == 0 && j == 0) {
+    //           this.partBackUp = tempObj.label =
+    //             row[i].OrganTypeList[j].OrganTypeName;
+    //           this.part = this.partBackUp;
+    //         }
+    //       }
+    //     }
+    //     this.cityList = selectData;
+        
+    //     debugger;
+    //     this.TownToDo = row;
+    //     var a = this.TownToDo;
+    //     debugger;
+    //     this.part = this.TownToDo.OrganTypeList[0].OrganTypeName;
+    //   } else {
+    //     this.$Message.error(res.Reason);
+    //   }
+    // });
+
+    quertMainOrganType().then(res => {
       debugger;
-      this.cityList = [];
-      if (res.IsSuccessful == true) {
-        var row = res.Result.CategoryList;
+      if (res.IsSuccessful) {
         var selectData = [];
-        selectData.push({
-          label: "全部",
-          value: null
-        });
-        for (let i = 0; i < row.length; i++) {
-          for (let j = 0; j < row[i].OrganTypeList.length; j++) {
-            var tempObj = {};
-            tempObj.label = row[i].OrganTypeList[j].OrganTypeName;
-            tempObj.value = row[i].OrganTypeList[j].OrganTypeID;
-            selectData.push(tempObj);
-            //备份首选项
-            if (i == 0 && j == 0) {
-              this.partBackUp = tempObj.label =
-                row[i].OrganTypeList[j].OrganTypeName;
-              this.part = this.partBackUp;
-            }
+        var row = res.Result.MainOrganTypeItemList;
+        for (let j = 0; j < row.length; j++) {
+          var tempObj = {};
+          tempObj.label = row[j].OrganTypeName;
+          tempObj.value = row[j].OrganTypeID;
+          selectData.push(tempObj);
+          //备份首选项
+          if (j == 0) {
+            this.partBackUp = tempObj.label = row[j].OrganTypeName;
+            this.part = this.partBackUp;
           }
         }
-        this.cityList = selectData;
-        // for(let i = 0; i < row.length; i++) {
-        //   if(row[i].CategoryName == '镇办'){
-        //     this.TownToDo = row[i].OrganTypeList;
-        //   }else if(row[i].CategoryName == '区级部门'){
-        //     this.Department = row[i].OrganTypeList;
-        //   }
-        // }
-        debugger;
-        this.TownToDo = row;
-        var a = this.TownToDo;
-        this.part = this.TownToDo.OrganTypeList[0].OrganTypeName;
-      } else {
-        this.$Message.error(res.Reason);
+
+       debugger;
+        this.OrganTypeList = row;
       }
     });
     // 查询单位列表数据

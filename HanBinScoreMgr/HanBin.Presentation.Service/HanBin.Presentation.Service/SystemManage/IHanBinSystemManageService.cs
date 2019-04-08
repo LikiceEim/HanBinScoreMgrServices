@@ -228,5 +228,11 @@ namespace HanBin.Presentation.Service.SystemManage
       RequestFormat = WebMessageFormat.Json,
       ResponseFormat = WebMessageFormat.Json)]
         BaseResponse<AllOfficerListPerSecondAdminReult> GetAllOfficerListPerSecondAdmin(GetAllOfficerListPerSecondAdminParameter parameter);
+
+        [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
+        Method = "POST",
+         RequestFormat = WebMessageFormat.Json,
+         ResponseFormat = WebMessageFormat.Json)]
+        BaseResponse<GetMainOrganTypeResult> GetMainOrganType(BaseRequest param);
     }
 }

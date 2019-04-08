@@ -24,5 +24,7 @@ namespace HanBin.Services.OrganManager
         BaseResponse<GetOrganTypeResult> GetOrganTypeList();
 
         BaseResponse<GetAreaListResult> GetAreaList();
+
+        BaseResponse<GetMainOrganTypeResult> GetMainOrganType();
     }
 }

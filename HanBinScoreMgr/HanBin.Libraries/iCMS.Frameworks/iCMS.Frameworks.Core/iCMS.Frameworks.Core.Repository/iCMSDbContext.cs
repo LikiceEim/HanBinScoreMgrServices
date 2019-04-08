@@ -48,5 +48,7 @@ namespace HanBin.Frameworks.Core.Repository
         public DbSet<SysLog> SysLogs { get; set; }
 
         public DbSet<BackupLog> BackupLogs { get; set; }
+
+        public DbSet<MainOrganType> MainOrganTypes { get; set; }
     }
 }

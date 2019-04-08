@@ -84,3 +84,11 @@ export function quertDetailUnitInfo(data){
     data
   })
 }
+
+export function quertMainOrganType(){
+  return request({
+    url: 'HanBinSystemService.svc/GetMainOrganType',
+    // url: 'HanBin/SystemService/GetOrganDetailInfo',
+    method: 'post',
+  })
+}

@@ -1112,7 +1112,7 @@ namespace HanBin.Services.ScoreManager
 
                 int total = officers.Count();
 
-                officers = officers
+                officers = officers.OrderByDescending(t=>t.CurrentScore)
                            .Skip((parameter.Page - 1) * parameter.PageSize)
                            .Take(parameter.PageSize).OrderByDescending(t => t.CurrentScore);
                 int rank = 1;

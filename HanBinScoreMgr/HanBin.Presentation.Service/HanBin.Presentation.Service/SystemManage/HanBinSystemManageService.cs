@@ -564,5 +564,21 @@ namespace HanBin.Presentation.Service.SystemManage
                 return response;
             }
         }
+
+        public BaseResponse<GetMainOrganTypeResult> GetMainOrganType(BaseRequest param)
+        {
+            if (Validate(param))
+            {
+                return organManager.GetMainOrganType();
+            }
+            else
+            {
+                BaseResponse<GetMainOrganTypeResult> response = new BaseResponse<GetMainOrganTypeResult>();
+                response.IsSuccessful = false;
+                response.Code = "JWT_ERR";
+                response.Reason = "JWT_ERR";
+                return response;
+            }
+        }
     }
 }
