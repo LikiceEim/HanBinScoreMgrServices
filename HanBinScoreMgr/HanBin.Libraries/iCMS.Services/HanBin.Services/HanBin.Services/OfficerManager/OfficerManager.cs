@@ -45,6 +45,9 @@ namespace HanBin.Services.OfficerManager
         [Dependency]
         public IRepository<HBUser> userRepository { get; set; }
 
+        [Dependency]
+        public IRepository<MainOrganType> mainOrganTypeRepository { get; set; }
+
         public OfficerManager()
         {
             //解决部署IIS 依赖注入的问题
@@ -80,6 +83,7 @@ namespace HanBin.Services.OfficerManager
             organTypeRepository = new Repository<OrganType>();
             schRepository = new Repository<ScoreChangeHistory>();
             userRepository = new Repository<HBUser>();
+            mainOrganTypeRepository = new Repository<MainOrganType>();
         }
 
         #region 添加干部
@@ -471,7 +475,7 @@ namespace HanBin.Services.OfficerManager
                 result.OrganFullName = organ.OrganFullName;
                 result.OrganShortName = organ.OrganShortName;
                 result.OrganTypeID = organ.OrganTypeID;
-                var organType = organTypeRepository.GetDatas<OrganType>(t => !t.IsDeleted && t.OrganTypeID == result.OrganTypeID, true).FirstOrDefault();
+                var organType = mainOrganTypeRepository.GetDatas<MainOrganType>(t => !t.IsDeleted && t.OrganTypeID == result.OrganTypeID, true).FirstOrDefault();
                 if (organType == null)
                 {
                     throw new Exception();
@@ -778,6 +782,10 @@ namespace HanBin.Services.OfficerManager
                 using (iCMSDbContext dbContext = new iCMSDbContext())
                 {
                     var officerQuerable = dbContext.Officers.Where(t => !t.IsDeleted && t.IsOnService);
+
+                    //test 
+                    var temp = officerQuerable.ToList();
+
                     var currentUser = dbContext.HBUsers.Where(t => !t.IsDeleted && t.UserID == parameter.CurrentUserID).FirstOrDefault();
                     if (currentUser == null)
                     {
@@ -825,6 +833,8 @@ namespace HanBin.Services.OfficerManager
                                           IdentifyNumber = off.IdentifyCardNumber
                                       };
 
+
+                    var temp2 = officerLinq.ToList();
 
                     if (!string.IsNullOrEmpty(parameter.Keyword))
                     {

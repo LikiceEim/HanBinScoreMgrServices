@@ -466,7 +466,7 @@ namespace HanBin.Services.OrganManager
                     if (!string.IsNullOrEmpty(parameter.Keyword))
                     {
                         string matchedWord = parameter.Keyword.ToUpper();
-                        organQuerable = organQuerable.Where(t => t.OrganCode.ToUpper().Contains(matchedWord) || t.OrganFullName.ToUpper().Contains(matchedWord) || t.OrganShortName.ToUpper().Contains(matchedWord));
+                        organQuerable = organQuerable.Where(t => t.OrganCode.ToUpper().Contains(matchedWord) || t.OrganFullName.ToUpper().Contains(matchedWord));
                     }
 
                     var organListLinq = from organ in organQuerable

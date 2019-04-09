@@ -52,6 +52,9 @@ namespace HanBin.Services.ScoreManager
         [Dependency]
         public IRepository<OrganType> organTypeRepository { get; set; }
 
+        [Dependency]
+        public IRepository<MainOrganType> mainOrganTypeRepository { get; set; }
+
         public ScoreManager()
         {
             scoreItemRepository = new Repository<ScoreItem>();
@@ -65,6 +68,7 @@ namespace HanBin.Services.ScoreManager
             levelRepository = new Repository<OfficerLevelType>();
             organCategoryRepository = new Repository<OrganCategory>();
             organTypeRepository = new Repository<OrganType>();
+            mainOrganTypeRepository = new Repository<MainOrganType>();
         }
 
         #region 积分条目字典CRUD
@@ -1112,7 +1116,7 @@ namespace HanBin.Services.ScoreManager
 
                 int total = officers.Count();
 
-                officers = officers.OrderByDescending(t=>t.CurrentScore)
+                officers = officers.OrderByDescending(t => t.CurrentScore)
                            .Skip((parameter.Page - 1) * parameter.PageSize)
                            .Take(parameter.PageSize).OrderByDescending(t => t.CurrentScore);
                 int rank = 1;
@@ -1194,7 +1198,7 @@ namespace HanBin.Services.ScoreManager
                                           join ot in dbContext.Organizations
                                           on o.OrganizationID equals ot.OrganID into group1
                                           from g1 in group1
-                                          join c in dbContext.OrganTypes on g1.OrganTypeID equals c.OrganTypeID into group2
+                                          join c in dbContext.MainOrganTypes on g1.OrganTypeID equals c.OrganTypeID into group2
 
                                           from g2 in group2
                                           where g2.OrganTypeID == parameter.OrganTypeID.Value
@@ -1465,20 +1469,19 @@ namespace HanBin.Services.ScoreManager
 
             try
             {
-                var categpries = organCategoryRepository.GetDatas<OrganCategory>(t => !t.IsDeleted, true).ToList();
-                if (categpries.Any())
+                var mainOrganTypeList = mainOrganTypeRepository.GetDatas<MainOrganType>(t => !t.IsDeleted, true).ToList();
+                if (mainOrganTypeList.Any())
                 {
-                    foreach (var category in categpries)
+                    foreach (var mainType in mainOrganTypeList)
                     {
-                        //找到单位小类
-                        var organTypeIDList = organTypeRepository.GetDatas<OrganType>(t => !t.IsDeleted && t.CategoryID == category.CategoryID, true).Select(t => t.OrganTypeID).ToList();
+
                         //找到单位
-                        var organIDList = organRepository.GetDatas<Organization>(t => !t.IsDeleted && organTypeIDList.Contains(t.OrganTypeID), true).Select(t => t.OrganID).ToList();
+                        var organIDList = organRepository.GetDatas<Organization>(t => !t.IsDeleted && mainType.OrganTypeID == t.OrganTypeID, true).Select(t => t.OrganID).ToList();
                         //找到单位干部 并求平均分
                         var averageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && organIDList.Contains(t.OrganizationID), true).Select(t => t.CurrentScore).Average();
 
                         averageScore = Math.Floor(averageScore);
-                        result.OrganCategoryAverageScoreItemList.Add(new OrganCategoryAverageScoreItem { OrganCategoryID = category.CategoryID, OrganCategoryName = category.CategoryName, AverageScore = averageScore });
+                        result.OrganCategoryAverageScoreItemList.Add(new OrganCategoryAverageScoreItem { OrganCategoryID = mainType.OrganTypeID, OrganCategoryName = mainType.OrganTypeName, AverageScore = averageScore });
                     }
                 }
             }

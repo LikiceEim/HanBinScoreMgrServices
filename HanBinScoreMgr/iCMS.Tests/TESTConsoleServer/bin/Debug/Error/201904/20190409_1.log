@@ -1,0 +1,65 @@
+2019/4/9 10:48:02:952
+异常消息：请输入合法的身份证号码
+异常类型：System.Exception
+异常方法：ExecuteTrans
+异常源：HanBin.Service.Common
+异常堆栈：   在 HanBin.Service.Common.ExecuteDB.ExecuteTrans(Action`1 func) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\iCMS.Services.Common\ExecuteDB.cs:行号 119
+   在 HanBin.Services.OfficerManager.OfficerManager.AddOfficerRecord(AddOfficerParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 171
+
+
+2019/4/9 11:17:57:860
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 477
+
+
+2019/4/9 11:18:08:486
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 477
+
+
+2019/4/9 11:22:07:525
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 481
+
+
+2019/4/9 11:22:13:372
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 481
+
+
+2019/4/9 11:22:33:500
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 481
+
+
+2019/4/9 11:22:33:518
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 481
+
+
+2019/4/9 11:23:05:384
+异常消息：引发类型为“System.Exception”的异常。
+异常类型：System.Exception
+异常方法：GetOfficerDetailInfo
+异常源：HanBin.Services
+异常堆栈：   在 HanBin.Services.OfficerManager.OfficerManager.GetOfficerDetailInfo(GetOfficerDetailInfoParameter parameter) 位置 e:\HanBinScoreMgrGit\HanBinScoreMgr\HanBin.Libraries\iCMS.Services\HanBin.Services\HanBin.Services\OfficerManager\OfficerManager.cs:行号 481
+
+
