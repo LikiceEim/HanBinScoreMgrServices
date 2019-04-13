@@ -14,6 +14,7 @@ using HanBin.Service.Common;
 using HanBin.Common.Commonent.Data.Enum;
 using System.IO;
 using System.ComponentModel;
+using HanBin.Common.Component.Data.Request.HanBin.SystemManage;
 
 namespace HanBin.Services.ScoreManager
 {
@@ -533,15 +534,34 @@ namespace HanBin.Services.ScoreManager
 
         #region 首页
         #region 系统统计
-        public BaseResponse<SystemStatSummaryResult> SystemStatSummary()
+        public BaseResponse<SystemStatSummaryResult> SystemStatSummary(SystemStatSummaryParameter parameter)
         {
             BaseResponse<SystemStatSummaryResult> respose = new BaseResponse<SystemStatSummaryResult>();
             SystemStatSummaryResult result = new SystemStatSummaryResult();
+
+            var currentUser = userRepository.GetByKey(parameter.CurrentUserID);
+            if (currentUser == null)
+            {
+                respose.IsSuccessful = false;
+                respose.Reason = "当前登录用户信息异常";
+                return respose;
+            }
+
             try
             {
 
                 var organs = organRepository.GetDatas<Organization>(t => !t.IsDeleted, true);
                 var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true);
+
+                if (currentUser.RoleID == (int)EnumRoleType.SecondLevelAdmin)
+                {
+                    var currentOrgan = organRepository.GetByKey(currentUser.OrganizationID);
+                    if (currentOrgan == null)
+                    {
+                        throw new Exception("当前单位信息异常");
+                    }
+                    officers = officers.Where(t => t.OrganizationID == currentOrgan.OrganID);
+                }
                 var users = userRepository.GetDatas<HBUser>(t => !t.IsDeleted, true);
 
                 if (organs != null && organs.Any())
@@ -550,8 +570,8 @@ namespace HanBin.Services.ScoreManager
                 }
                 if (officers != null && officers.Any())
                 {
-                    result.OfficerCount = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Count();
-                    result.AvarageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && t.IsOnService, true).Select(t => t.CurrentScore).Average();
+                    result.OfficerCount = officers.Count();
+                    result.AvarageScore = officers.Select(t => t.CurrentScore).Average();
                 }
                 if (users != null && users.Any())
                 {
@@ -1474,11 +1494,15 @@ namespace HanBin.Services.ScoreManager
                 {
                     foreach (var mainType in mainOrganTypeList)
                     {
-
                         //找到单位
                         var organIDList = organRepository.GetDatas<Organization>(t => !t.IsDeleted && mainType.OrganTypeID == t.OrganTypeID, true).Select(t => t.OrganID).ToList();
                         //找到单位干部 并求平均分
-                        var averageScore = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && organIDList.Contains(t.OrganizationID), true).Select(t => t.CurrentScore).Average();
+                        var averageScore = 0d;
+                        var officers = officerRepository.GetDatas<Officer>(t => !t.IsDeleted && organIDList.Contains(t.OrganizationID), true);
+                        if (officers != null && officers.Any())
+                        {
+                            averageScore = officers.Select(t => t.CurrentScore).Average();
+                        }
 
                         averageScore = Math.Floor(averageScore);
                         result.OrganCategoryAverageScoreItemList.Add(new OrganCategoryAverageScoreItem { OrganCategoryID = mainType.OrganTypeID, OrganCategoryName = mainType.OrganTypeName, AverageScore = averageScore });

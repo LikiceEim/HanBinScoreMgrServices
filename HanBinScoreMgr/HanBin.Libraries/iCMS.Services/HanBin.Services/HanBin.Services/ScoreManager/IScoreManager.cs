@@ -1,5 +1,6 @@
 ﻿using HanBin.Common.Component.Data.Base;
 using HanBin.Common.Component.Data.Request.HanBin.ScoreManager;
+using HanBin.Common.Component.Data.Request.HanBin.SystemManage;
 using HanBin.Common.Component.Data.Response.HanBin.ScoreManager;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace HanBin.Services.ScoreManager
 
         BaseResponse<bool> CancelScoreApply(CancelScoreApplyParameter parameter);
 
-        BaseResponse<SystemStatSummaryResult> SystemStatSummary();
+        BaseResponse<SystemStatSummaryResult> SystemStatSummary(SystemStatSummaryParameter parameter);
 
         BaseResponse<GetHonourBoardResult> GetHonourBoard(GetHonourBoardParameter parameter);
 

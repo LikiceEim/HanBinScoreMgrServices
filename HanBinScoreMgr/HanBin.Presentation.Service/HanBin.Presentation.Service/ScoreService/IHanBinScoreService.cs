@@ -10,6 +10,7 @@ using System.ServiceModel.Web;
 using HanBin.Common.Component.Data.Response.HanBin.ScoreManager;
 using System.IO;
 using System.Runtime.Serialization;
+using HanBin.Common.Component.Data.Request.HanBin.SystemManage;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -68,7 +69,7 @@ namespace HanBin.Presentation.Service.ScoreService
            Method = "POST",
            RequestFormat = WebMessageFormat.Json,
            ResponseFormat = WebMessageFormat.Json)]
-        BaseResponse<SystemStatSummaryResult> SystemStatSummary(BaseRequest param);
+        BaseResponse<SystemStatSummaryResult> SystemStatSummary(SystemStatSummaryParameter param);
 
         [WebInvoke(BodyStyle = WebMessageBodyStyle.Bare,
              Method = "POST",

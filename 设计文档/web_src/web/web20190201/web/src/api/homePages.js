@@ -17,11 +17,12 @@ export function fetchList(query) {
 /**
  * 获取首页头部统计
  */
-export function queryAllPageList(){
+export function queryAllPageList(data){
   return request({
     url: 'HanBinScoreService.svc/SystemStatSummary',
      //url: 'HanBin/ScoreService/SystemStatSummary',
-    method: 'post'
+    method: 'post',
+    data
   })
 }
 

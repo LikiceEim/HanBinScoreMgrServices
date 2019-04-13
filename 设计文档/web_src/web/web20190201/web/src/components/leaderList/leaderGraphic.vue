@@ -90,7 +90,19 @@ export default {
             series: [
               {
                 data: yData,
-                type: "bar"
+                type: "bar",
+                 itemStyle: {
+                  normal: {
+                    label: {
+                      show: true, //开启显示
+                      position: 'top', //在上方显示
+                      textStyle: { //数值样式
+                        color: 'black',
+                        fontSize: 12
+                      }
+                    }
+                  }
+                },
               }
             ]
           };

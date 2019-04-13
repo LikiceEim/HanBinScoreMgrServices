@@ -116,7 +116,7 @@
                     v-for="(item,index) in RoleList"
                     :key="index"
                   >
-                    <Radio :key="index" :label="item.value" :value="item.value">
+                    <Radio :key="index" :label="item.value" :value="item.value" :disabled="!isEdit">
                       <span>{{item.label}}</span>
                     </Radio>
                   </RadioGroup>

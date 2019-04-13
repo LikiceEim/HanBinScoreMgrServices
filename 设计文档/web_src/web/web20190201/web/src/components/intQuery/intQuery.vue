@@ -124,7 +124,7 @@ export default {
       sexValue: "",
       columns7: [
         {
-          title: "积分排名",
+          title: "积分",
           key: "int",
           columns: {
             width: "100px"
@@ -190,10 +190,7 @@ export default {
             return h("span", this.formatSex(params.row.sex));
           }
         },
-        {
-          title: "出生年月",
-          key: "yer"
-        },
+        
         {
           title: "所在单位",
           key: "unit"
@@ -205,6 +202,10 @@ export default {
         {
           title: "级别",
           key: "jibie"
+        },
+        {
+          title: "出生年月",
+          key: "yer"
         },
         {
           title: "任职时间",

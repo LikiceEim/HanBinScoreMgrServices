@@ -198,13 +198,13 @@ export default {
       // 积分公示列
       PublicScore: [
         {
-          title: "积分排名",
-          key: "CurrentScore"
-        },
-        {
           title: "排名",
           key: "Rank"
         },
+        {
+          title: "积分",
+          key: "CurrentScore"
+        },       
         {
           title: "姓名",
           key: "Name"
@@ -216,10 +216,7 @@ export default {
             return h("span", this.formatSex(params.row.Gender));
           }
         },
-        {
-          title: "出生日期",
-          key: "Birthday"
-        },
+       
         {
           title: "所在单位",
           key: "OrganFullName"
@@ -231,6 +228,10 @@ export default {
         {
           title: "级别",
           key: "LevelName"
+        },
+         {
+          title: "出生日期",
+          key: "Birthday"
         },
         {
           title: "任职时间",
@@ -447,7 +448,12 @@ export default {
     // 获取头部信息
     getHeaderData() {
       debugger;
-      queryAllPageList().then(res => {
+
+       var CurrentUserID = Cookies.get("UserID");
+      var _data = {
+        CurrentUserID: CurrentUserID
+      };
+      queryAllPageList(_data).then(res => {
         debugger;
         if (res.IsSuccessful == true) {
           this.unit = res.Result.OrganizatonCount;
@@ -528,7 +534,19 @@ export default {
                 //   }
                 // },
                 data: yData,
-                type: "bar"
+                type: "bar",
+                itemStyle: {
+                  normal: {
+                    label: {
+                      show: true, //开启显示
+                      position: 'top', //在上方显示
+                      textStyle: { //数值样式
+                        color: 'black',
+                        fontSize: 12
+                      }
+                    }
+                  }
+                },
               }
             ]
           };
@@ -612,7 +630,19 @@ export default {
               //   }
               // },
               data: yData,
-              type: "bar"
+              type: "bar",
+               itemStyle: {
+                  normal: {
+                    label: {
+                      show: true, //开启显示
+                      position: 'top', //在上方显示
+                      textStyle: { //数值样式
+                        color: 'black',
+                        fontSize: 12
+                      }
+                    }
+                  }
+                },
             }
           ]
         };

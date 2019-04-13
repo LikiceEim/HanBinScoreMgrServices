@@ -13,6 +13,7 @@ using System.ComponentModel;
 using System.ServiceModel;
 using HanBin.Common.Component.Tool;
 using System.Web;
+using HanBin.Common.Component.Data.Request.HanBin.SystemManage;
 
 namespace HanBin.Presentation.Service.ScoreService
 {
@@ -148,11 +149,11 @@ namespace HanBin.Presentation.Service.ScoreService
             }
         }
 
-        public BaseResponse<SystemStatSummaryResult> SystemStatSummary(BaseRequest param)
+        public BaseResponse<SystemStatSummaryResult> SystemStatSummary(SystemStatSummaryParameter  param)
         {
             if (Validate(param))
             {
-                return scoreManager.SystemStatSummary();
+                return scoreManager.SystemStatSummary(param);
             }
             else
             {

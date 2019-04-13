@@ -14,9 +14,9 @@ import router from '../router'
 // create an axios instance
 const service = axios.create({
 	// baseURL: process.env.API_HOST, // api的base_url
-	 baseURL: "http://localhost:2892/", // api的base_url
+	 //baseURL: "http://localhost:2892/", // api的base_url
 	// baseURL: "http://111.231.200.224:8842/", // api的base_url   
-	//baseURL: "http://jfapi.51jtb.cn/",
+	baseURL: "http://jfapi.51jtb.cn/",
 	// baseURL: "http://192.168.0.105:2892/", // api的base_url
 	// baseURL: "http://integralapi.elaocloud.com/"
 	// baseURL: "http://jfapi.51jtb.cn/"

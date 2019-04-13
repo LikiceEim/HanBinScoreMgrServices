@@ -81,6 +81,7 @@
     <Compile Include="HanBin.SystemManage\DeleteUserParameter.cs" />
     <Compile Include="HanBin.SystemManage\QueryLogParameter.cs" />
     <Compile Include="HanBin.SystemManage\ResetPWDParameter.cs" />
+    <Compile Include="HanBin.SystemManage\SystemStatSummaryParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

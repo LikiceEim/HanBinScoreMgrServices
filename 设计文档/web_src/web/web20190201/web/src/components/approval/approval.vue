@@ -190,13 +190,14 @@ export default {
       // 积分公示列
       PublicScore:[
         {
-          title: '积分排名',
-          key: 'CurrentScore'
-        },
-        {
           title: '排名',
           key: 'Rank'
         },
+        {
+          title: '积分',
+          key: 'CurrentScore'
+        },
+        
         {
           title: '姓名',
           key: 'Name'
@@ -210,10 +211,7 @@ export default {
             )
           }
         },
-        {
-          title: '出生日期',
-          key: 'Birthday'
-        },
+        
         {
           title: '所在单位',
           key: 'OrganFullName'
@@ -225,6 +223,10 @@ export default {
         {
           title: '级别',
           key: 'LevelName'
+        },
+        {
+          title: '出生日期',
+          key: 'Birthday'
         },
         {
           title: '任职时间',
